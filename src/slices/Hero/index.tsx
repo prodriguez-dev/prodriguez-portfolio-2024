@@ -86,7 +86,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <div className="col-start-1 md:row-start-1">
           <h1
             className={
-              "mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tighter"
+              "mb-8 text-[clamp(3rem,10vmin,20rem)] font-extrabold leading-none"
             }
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
@@ -99,7 +99,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4x1">
+          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-4xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4x1">
             {slice.primary.tag_line}
           </span>
         </div>

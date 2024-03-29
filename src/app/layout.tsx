@@ -5,6 +5,7 @@ import {
   Sofia_Sans_Extra_Condensed,
 } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const sofia = Sofia_Sans({ subsets: ["latin"] });
 const sofia_cond = Sofia_Sans_Condensed({ subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-slate-900 text-slate-100">
+      <Header />
       <body className={sofia.className}>{children}</body>
     </html>
   );

@@ -23,8 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-slate-900 text-slate-100">
-      <Header />
-      <body className={sofia.className}>{children}</body>
+      <body className={sofia.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -8,11 +8,6 @@
 				"value": "atmosphere",
 				"type": "Text"
 			},
-			"description": {
-				"__TYPE__": "FieldContent",
-				"value": "street",
-				"type": "Text"
-			},
 			"button_link": {
 				"__TYPE__": "LinkContent",
 				"value": {
@@ -47,6 +42,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt ex nostrud quis commodo non dolor officia qui veniam Lorem tempor excepteur."
+						}
+					}
+				]
 			}
 		},
 		"items": []

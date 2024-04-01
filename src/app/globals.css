@@ -10,3 +10,15 @@
     hsla(222, 0%, 0%, 0) 100%
   );
 }
+
+.sofia {
+  font-family: "Sofia Sans";
+}
+
+.sofia-cond {
+  font-family: "Sofia Sans Condensed";
+}
+
+.sofia-extra-cond {
+  font-family: "Sofia Sans Extra Condensed";
+}

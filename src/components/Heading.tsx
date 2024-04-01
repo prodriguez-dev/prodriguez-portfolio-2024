@@ -5,6 +5,7 @@ type HeadingProps = {
   size?: "xl" | "lg" | "md" | "sm";
   children: React.ReactNode;
   className?: string;
+  style?: object;
 };
 
 export default function Heading({
@@ -12,6 +13,7 @@ export default function Heading({
   className,
   children,
   size = "lg",
+  style,
 }: HeadingProps) {
   return (
     <Comp

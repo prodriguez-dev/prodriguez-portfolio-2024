@@ -2,7 +2,7 @@
 
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { MdCircle } from "react-icons/md";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -22,6 +22,21 @@ export type TechListProps = SliceComponentProps<Content.TechListSlice>;
  */
 const TechList = ({ slice }: TechListProps): JSX.Element => {
   const component = useRef(null);
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // Set isClient to true after the component mounts to indicate client-side rendering
+    setIsClient(true);
+  }, []);
+
+  // Function to generate a random number between min (inclusive) and max (inclusive)
+  const getRandomNumber = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  // Generate a random number only on the client side
+  const randomLength = isClient ? getRandomNumber(14, 20) : 17; // Fallback to a default value on the server
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -65,7 +80,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       ref={component}
     >
       <Bounded as="div">
-        <Heading size="xl" className="mb-8" as="h2">
+        <Heading size="md" className="mb-1" as="h2">
           {slice.primary.heading}
         </Heading>
       </Bounded>
@@ -73,14 +88,14 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       {slice.items.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
-          className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"
+          className="tech-row mb-1 flex items-center justify-center gap-5 text-slate-700"
           aria-label={tech_name || ""}
         >
-          {Array.from({ length: 15 }, (_, index) => (
+          {Array.from({ length: randomLength }, (_, index) => (
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item text-8xl font-extrabold uppercase tracking-tighter"
+                  "tech-item whitespace-nowrap text-6xl font-extrabold uppercase tracking-tight"
                 }
                 style={{
                   color: index === 7 && tech_color ? tech_color : "inherit",
@@ -88,7 +103,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
               >
                 {tech_name}
               </span>
-              <span className="text-3xl">
+              <span className="text-2xl">
                 <MdCircle />
               </span>
             </React.Fragment>

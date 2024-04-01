@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Sofia_Sans,
-  Sofia_Sans_Condensed,
-  Sofia_Sans_Extra_Condensed,
-} from "next/font/google";
+import { Sofia_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,8 +8,6 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 
 const sofia = Sofia_Sans({ subsets: ["latin"] });
-const sofia_cond = Sofia_Sans_Condensed({ subsets: ["latin"] });
-const sofia_extra_cond = Sofia_Sans_Extra_Condensed({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();

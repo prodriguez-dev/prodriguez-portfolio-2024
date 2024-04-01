@@ -6,9 +6,9 @@ import { ContactShadows, Float, Environment } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
-export default function Shapes() {
+export function Shapes() {
   return (
-    <div className="row-span-1 row-start-1 -mt-9 aspect-square md:col-span-1 md:col-start-2 md:mt-0">
+    <div className="row-span-1 row-start-1 -mt-9 aspect-square  md:col-span-1 md:col-start-2 md:mt-0">
       <Canvas
         className="z-0"
         shadows
@@ -25,7 +25,7 @@ export default function Shapes() {
             blur={1}
             far={9}
           />
-          <Environment preset="sunset" />
+          <Environment preset="studio" />
         </Suspense>
       </Canvas>
     </div>
@@ -61,6 +61,12 @@ function Geometries() {
     },
   ];
 
+  const soundEffects = [
+    new Audio("/sounds/knock1.ogg"),
+    new Audio("/sounds/knock2.ogg"),
+    new Audio("/sounds/knock3.ogg"),
+  ];
+
   const materials = [
     new THREE.MeshNormalMaterial(),
     new THREE.MeshStandardMaterial({ color: 0x2ecc71, roughness: 0 }),
@@ -80,15 +86,9 @@ function Geometries() {
     }),
   ];
 
-  const soundEffects = [
-    new Audio("/sounds/knock1.ogg"),
-    new Audio("/sounds/knock2.ogg"),
-    new Audio("/sounds/knock3.ogg"),
-  ];
-
   return geometries.map(({ position, r, geometry }) => (
     <Geometry
-      key={JSON.stringify(position)}
+      key={JSON.stringify(position)} // Unique key
       position={position.map((p) => p * 2)}
       geometry={geometry}
       soundEffects={soundEffects}
@@ -121,6 +121,7 @@ function Geometry({ r, position, geometry, soundEffects, materials }) {
       ease: "elastic.out(1,0.3)",
       yoyo: true,
     });
+
     mesh.material = getRandomMaterial();
   }
 
@@ -139,12 +140,12 @@ function Geometry({ r, position, geometry, soundEffects, materials }) {
         x: 0,
         y: 0,
         z: 0,
-        duration: 1,
+        duration: gsap.utils.random(0.8, 1.2),
         ease: "elastic.out(1,0.3)",
-        delay: 0.3,
+        delay: gsap.utils.random(0, 0.5),
       });
     });
-    return () => ctx.revert(); //cleanup
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -157,7 +158,7 @@ function Geometry({ r, position, geometry, soundEffects, materials }) {
           onPointerOut={handlePointerOut}
           visible={visible}
           material={startingMaterial}
-        />
+        ></mesh>
       </Float>
     </group>
   );

@@ -68,11 +68,12 @@
           "select": null
         }
       },
-      "x_link": {
+      "twitter_link": {
         "type": "Link",
         "config": {
-          "label": "X Link",
+          "label": "Twitter Link",
           "placeholder": "",
+          "allowTargetBlank": false,
           "select": null
         }
       },

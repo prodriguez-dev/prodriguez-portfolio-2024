@@ -37,7 +37,7 @@ export default async function Footer() {
                 <li>
                   <PrismicNextLink
                     className={clsx(
-                      "group relative block overflow-hidden  rounded px-3 py-1 text-base font-bold text-slate-100 transition-colors duration-150 hover:hover:text-yellow-400"
+                      "group relative block overflow-hidden  rounded px-3 py-1 text-base font-bold text-slate-100 transition-colors duration-150 hover:hover:text-yellow-400",
                     )}
                     field={link}
                   >
@@ -66,6 +66,15 @@ export default async function Footer() {
               <FaGithub />
             </PrismicNextLink>
           )}
+          {isFilled.link(settings.data.twitter_link) && (
+            <PrismicNextLink
+              field={settings.data.twitter_link}
+              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+              aria-label={settings.data.name + " on Twitter"}
+            >
+              <FaTwitter />
+            </PrismicNextLink>
+          )}
           {isFilled.link(settings.data.linkedin_link) && (
             <PrismicNextLink
               field={settings.data.linkedin_link}
@@ -73,15 +82,6 @@ export default async function Footer() {
               aria-label={settings.data.name + " on LinkedIn"}
             >
               <FaLinkedin />
-            </PrismicNextLink>
-          )}
-          {isFilled.link(settings.data.x_link) && (
-            <PrismicNextLink
-              field={settings.data.x_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on Twitter"}
-            >
-              <FaTwitter />
             </PrismicNextLink>
           )}
         </div>

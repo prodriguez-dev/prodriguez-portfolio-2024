@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
+
+import ContentBody from "@/components/ContentBody";
 
 type Params = { uid: string };
 
@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("blog_post", params.uid)
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return <ContentBody page={page} />;
 }
 
 export async function generateMetadata({
@@ -27,7 +27,7 @@ export async function generateMetadata({
     .catch(() => notFound());
 
   return {
-    title: page.data.meta_title,
+    title: page.data.title,
     description: page.data.meta_description,
   };
 }

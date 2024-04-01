@@ -1,10 +1,9 @@
-import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import ContentList from "./ContentList";
 import { createClient } from "@/prismicio";
-
+import ContentList from "./ContentList";
+import Bounded from "@/components/Bounded";
+import Heading from "@/components/Heading";
 /**
  * Props for `ContentIndex`.
  */
@@ -39,7 +38,7 @@ const ContentIndex = async ({
       )}
       <ContentList
         items={items}
-        contentType={contentType}
+        contentType={slice.primary.content_type}
         viewMoreText={slice.primary.view_more_text}
         fallbackItemImage={slice.primary.fallback_item_image}
       />

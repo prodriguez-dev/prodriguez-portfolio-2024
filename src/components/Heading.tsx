@@ -5,7 +5,8 @@ type HeadingProps = {
   size?: "xl" | "lg" | "md" | "sm";
   children: React.ReactNode;
   className?: string;
-  style?: object;
+  style?: any;
+  ref?: any;
 };
 
 export default function Heading({
@@ -14,6 +15,7 @@ export default function Heading({
   children,
   size = "lg",
   style,
+  ref,
 }: HeadingProps) {
   return (
     <Comp
@@ -21,10 +23,12 @@ export default function Heading({
         "font-bold leading-tight tracking-tight  text-slate-300",
         size === "xl" && "text-7xl md:text-9xl",
         size === "lg" && "text-6xl md:text-8xl",
-        size === "md" && "text-5xl md:text-6xl",
+        size === "md" && "text-4xl md:text-6xl",
         size === "sm" && "text-3xl md:text-4xl",
         className,
       )}
+      style={style}
+      ref={ref}
     >
       {children}
     </Comp>

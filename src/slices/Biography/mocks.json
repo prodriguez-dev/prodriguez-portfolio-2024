@@ -3,11 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "atmosphere",
-				"type": "Text"
-			},
 			"button_link": {
 				"__TYPE__": "LinkContent",
 				"value": {
@@ -53,6 +48,21 @@
 						}
 					}
 				]
+			},
+			"last_name": {
+				"__TYPE__": "FieldContent",
+				"value": "rapidly",
+				"type": "Text"
+			},
+			"first_name": {
+				"__TYPE__": "FieldContent",
+				"value": "cannot",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "tape",
+				"type": "Text"
 			}
 		},
 		"items": []

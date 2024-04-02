@@ -1,0 +1,16 @@
+{
+  "id": "recent_content",
+  "type": "SharedSlice",
+  "name": "RecentContent",
+  "description": "RecentContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

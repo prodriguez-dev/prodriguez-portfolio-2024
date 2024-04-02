@@ -22,3 +22,15 @@
 .sofia-extra-cond {
   font-family: "Sofia Sans Extra Condensed";
 }
+
+.highlighted {
+  border: 2px solid #ffffff; /* Example: a white border */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Example: a light shadow */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Example: slightly lighten the background */
+  transition: all 0.3s ease-in-out; /* Smooth transition for the effect */
+}

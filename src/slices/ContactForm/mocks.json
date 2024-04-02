@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "yard",
+				"type": "Text"
+			},
+			"form": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing sint voluptate dolore consequat aute anim ea adipisicing nisi commodo eiusmod consequat id mollit sint."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

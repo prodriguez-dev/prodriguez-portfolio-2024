@@ -27,22 +27,30 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         .timeline()
         .fromTo(
           ".name-animation",
-          { x: -100, opacity: 0, rotate: -10 },
+          {
+            x: -100,
+            opacity: 0,
+            rotate: -10,
+            scaleX: 0, // Starting from a scaled-down state
+          },
           {
             x: 0,
             opacity: 1,
             rotate: 0,
-
+            scaleX: 1, // Scaling up to full size
             ease: "elastic.out(1,0.3)",
             duration: 1,
             transformOrigin: "left top",
-            stagger: { each: 0.1, from: "random" },
+            stagger: {
+              each: 0.1, // Delay between each letter animation
+              from: "random", // Randomize the order of animations
+            },
           },
         )
         .fromTo(
           ".job-title",
           {
-            y: 20,
+            y: 120,
             opacity: 0,
             scale: 1.2,
           },
@@ -81,9 +89,8 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         data-speed=".2"
       >
         <div>
-          {/* <div className="col-start-1 md:row-start-1 " data-speed=".2"> */}
           <h1
-            className="mb-8 text-[clamp(3rem,10vmin,20rem)] font-extrabold leading-none tracking-tighter"
+            className="mb-8 text-[clamp(3rem,10vmin,20rem)] font-extrabold leading-none tracking-normal"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
@@ -99,7 +106,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             {slice.primary.title}
           </span>
 
-          <div className="prose prose-xl prose-slate prose-invert col-start-1 mt-6">
+          <div className="type-animation prose prose-xl prose-slate prose-invert col-start-1 mt-6">
             <PrismicRichText field={slice.primary.description} />
           </div>
 

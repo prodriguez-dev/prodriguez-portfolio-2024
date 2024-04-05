@@ -168,6 +168,7 @@ export type ContactDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | RecentContentSlice
   | ExperienceSlice
   | TechListSlice
   | BiographySlice
@@ -1037,6 +1038,81 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *RecentContent → Primary*
+ */
+export interface RecentContentSliceDefaultPrimary {
+  /**
+   * Heading field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content_type field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.content_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  content_type: prismic.SelectField<"Blog" | "Project">;
+
+  /**
+   * Description field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * View More Text field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.view_more_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  view_more_text: prismic.KeyTextField;
+
+  /**
+   * Fallback Item Image field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.fallback_item_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  fallback_item_image: prismic.ImageField<never>;
+
+  /**
+   * Button Text field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *RecentContent → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recent_content.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
  * Default variation for RecentContent Slice
  *
  * - **API ID**: `default`
@@ -1045,7 +1121,7 @@ export type ImageBlockSlice = prismic.SharedSlice<
  */
 export type RecentContentSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<RecentContentSliceDefaultPrimary>,
   never
 >;
 
@@ -1236,6 +1312,7 @@ declare module "@prismicio/client" {
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
       RecentContentSlice,
+      RecentContentSliceDefaultPrimary,
       RecentContentSliceVariation,
       RecentContentSliceDefault,
       TechListSlice,

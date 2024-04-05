@@ -2,7 +2,69 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "weather",
+				"type": "Text"
+			},
+			"content_type": {
+				"__TYPE__": "FieldContent",
+				"value": "Blog",
+				"type": "Select"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit do aliqua adipisicing anim dolore consequat dolor esse sit magna fugiat do quis ullamco dolore. Commodo cillum fugiat ex consectetur velit."
+						}
+					}
+				]
+			},
+			"view_more_text": {
+				"__TYPE__": "FieldContent",
+				"value": "potatoes",
+				"type": "Text"
+			},
+			"fallback_item_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+					"width": 3648,
+					"height": 4560
+				},
+				"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+				"width": 3648,
+				"height": 4560,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "step",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

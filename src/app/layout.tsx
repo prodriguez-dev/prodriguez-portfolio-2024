@@ -28,13 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-900">
+    <html lang="en" className="background-master">
       <body className={clsx(sofia.className, "relative min-h-screen")}>
         <Header />
         {children}
         <Footer />
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
-        <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
+        <div className="pointer-events-none absolute inset-0 -z-40 h-full opacity-20 mix-blend-soft-light"></div>
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

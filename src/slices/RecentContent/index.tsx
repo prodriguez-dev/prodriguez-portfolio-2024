@@ -34,7 +34,7 @@ const RecentContent = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Heading size="md" className="mb-8">
+      <Heading size="md" className="mb-8 text-sky-600 drop-shadow-2xl">
         {slice.primary.heading}
       </Heading>
       {isFilled.richText(slice.primary.description) && (
@@ -51,7 +51,7 @@ const RecentContent = async ({
       <Button
         linkField={slice.primary.button_link}
         label={slice.primary.button_text}
-        className="mt-6"
+        className="mt-10"
       />
     </Bounded>
   );

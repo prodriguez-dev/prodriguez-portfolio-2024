@@ -3,28 +3,29 @@
 @tailwind utilities;
 
 .background-master {
-  background-color: #111111;
+  background-color: rgb(15, 23, 42);
 }
 
 .background-gradient {
   background: radial-gradient(
     circle at top center,
-    hsla(555, 80%, 60%, 0.5) 0%,
+    hsla(575, 80%, 60%, 0.5) 0%,
     hsla(555, 0%, 0%, 0) 50%,
     hsla(555, 0%, 0%, 0) 100%
   );
+  margin-top: -16px;
 }
 
 .sofia {
-  font-family: "Sofia Sans";
+  font-family: "Sofia Sans" !important;
 }
 
 .sofia-cond {
-  font-family: "Sofia Sans Condensed";
+  font-family: "Sofia Sans Condensed" !important;
 }
 
 .sofia-extra-cond {
-  font-family: "Sofia Sans Extra Condensed";
+  font-family: "Sofia Sans Extra Condensed" !important;
 }
 
 .highlighted {

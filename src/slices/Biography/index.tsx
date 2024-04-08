@@ -22,7 +22,6 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // create as many GSAP animations and/or ScrollTriggers here as you want...
       gsap
         .timeline()
         .fromTo(
@@ -30,27 +29,42 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
           {
             x: -100,
             opacity: 0,
-            rotate: -10,
-            scaleX: 0, // Starting from a scaled-down state
+
+            scaleX: 0,
           },
           {
             x: 0,
             opacity: 1,
-            rotate: 0,
-            scaleX: 1, // Scaling up to full size
+
+            scaleX: 1,
             ease: "elastic.out(1,0.3)",
             duration: 1,
             transformOrigin: "left top",
             stagger: {
-              each: 0.1, // Delay between each letter animation
-              from: "random", // Randomize the order of animations
+              each: 0.05,
+              from: "start",
             },
           },
         )
         .fromTo(
+          ".name-animation",
+          {
+            skewX: -20, // Initial skew
+          },
+          {
+            skewX: 0, // Final skew
+            duration: 0.5,
+            ease: "back.out(1.7)",
+            stagger: {
+              each: 0.05,
+            },
+          },
+          "-=0.5", // Overlap with the previous animation
+        )
+        .fromTo(
           ".job-title",
           {
-            y: 120,
+            y: 33,
             opacity: 0,
             scale: 1.2,
           },
@@ -63,7 +77,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
           },
         );
     }, component);
-    return () => ctx.revert(); // cleanup!
+    return () => ctx.revert(); // Cleanup
   }, []);
 
   const renderLetters = (name: KeyTextField, key: string) => {
@@ -90,12 +104,12 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       >
         <div>
           <h1
-            className="mb-8 text-[clamp(3rem,10vmin,20rem)] font-extrabold leading-none tracking-normal"
+            className="mb-8 text-[clamp(3rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className=" text-slate-300 ">
+            <span className="text-slate-300">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
             <span className="ml-6  text-slate-300">
@@ -106,14 +120,14 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             {slice.primary.title}
           </span>
 
-          <div className="type-animation prose prose-xl prose-slate prose-invert col-start-1 mt-6">
+          <div className="type-animation prose prose-2xl prose-slate prose-invert col-start-1 mt-10">
             <PrismicRichText field={slice.primary.description} />
           </div>
 
           <Button
             linkField={slice.primary.button_link}
             label={slice.primary.button_text}
-            className="mt-6"
+            className="mt-10"
           />
         </div>
 

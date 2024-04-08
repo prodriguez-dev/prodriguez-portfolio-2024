@@ -24,6 +24,13 @@ const ContactForm = ({ slice }: ContactProps): JSX.Element => {
         <div className="flex">
           <PrismicRichText field={slice.primary.form} />
         </div>
+        {/* Include JotForm script */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              '<script type="text/javascript" src="https://form.jotform.com/jsform/240918105932152"></script>',
+          }}
+        />
       </div>
     </Bounded>
   );

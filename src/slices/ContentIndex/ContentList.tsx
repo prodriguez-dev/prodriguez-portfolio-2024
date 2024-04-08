@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { asImageSrc, isFilled } from "@prismicio/client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MdArrowOutward } from "react-icons/md";
+import { FiEye } from "react-icons/fi";
 import { Content } from "@prismicio/client";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -117,7 +117,7 @@ export default function ContentList({
       : fallbackItemImage;
     return asImageSrc(image, {
       fit: "crop",
-      w: 220,
+      w: 360,
       h: 320,
       exp: -10,
     });
@@ -153,16 +153,19 @@ export default function ContentList({
             >
               <div className="flex flex-col">
                 <span className="text-3xl font-bold">{post.data.title}</span>
-                <div className="flex gap-3 text-yellow-400">
+                <div className="mt-3 flex gap-3  text-sky-600">
                   {post.tags.map((tag, index) => (
-                    <span key={index} className="text-lg font-bold">
+                    <span
+                      key={index}
+                      className="rounded-full bg-slate-800 px-3 text-lg font-bold"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
               <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
-                {viewMoreText} <MdArrowOutward />
+                {viewMoreText} <FiEye className="text-2xl" />
               </span>
             </a>
           </li>

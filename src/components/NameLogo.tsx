@@ -1,27 +1,26 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 
 export function NameLogo({ name }: { name: string }) {
   const logoRef = useRef<HTMLAnchorElement | null>(null);
+  const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
     const logoElement = logoRef.current;
 
     if (!logoElement) return;
 
-    let hoverAnimation: gsap.Tween | null = null;
-
     // Function to start the typewriting animation
     const startTypewritingAnimation = () => {
-      hoverAnimation = gsap.fromTo(
+      gsap.fromTo(
         logoElement.querySelectorAll("span"),
         {
           opacity: 0,
         },
         {
           opacity: 1,
-          duration: 0.2,
+          duration: 0.3,
           ease: "power1.in",
           stagger: {
             amount: 0.2,
@@ -33,19 +32,18 @@ export function NameLogo({ name }: { name: string }) {
 
     // Function to stop the typewriting animation
     const stopTypewritingAnimation = () => {
-      if (hoverAnimation) {
-        hoverAnimation.kill(); // Kill the animation
-        hoverAnimation = null;
-      }
+      gsap.killTweensOf(logoElement.querySelectorAll("span")); // Kill the animation
     };
 
     // Mouse enter event
     const handleMouseEnter = () => {
+      setHovering(true);
       startTypewritingAnimation();
     };
 
     // Mouse leave event
     const handleMouseLeave = () => {
+      setHovering(false);
       stopTypewritingAnimation();
     };
 

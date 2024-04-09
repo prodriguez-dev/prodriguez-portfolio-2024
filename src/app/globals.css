@@ -10,22 +10,22 @@
   background: radial-gradient(
     circle at top center,
     hsla(575, 80%, 60%, 0.5) 0%,
-    hsla(555, 0%, 0%, 0) 50%,
-    hsla(555, 0%, 0%, 0) 100%
+    hsla(575, 0%, 0%, 0) 50%,
+    hsla(575, 0%, 0%, 0) 100%
   );
   margin-top: -16px;
 }
 
 .sofia {
-  font-family: "Sofia Sans" !important;
+  font-family: "Sofia Sans", sans-serif !important;
 }
 
 .sofia-cond {
-  font-family: "Sofia Sans Condensed" !important;
+  font-family: "Sofia Sans Condensed", sans-serif !important;
 }
 
 .sofia-extra-cond {
-  font-family: "Sofia Sans Extra Condensed" !important;
+  font-family: "Sofia Sans Extra Condensed", sans-serif !important;
 }
 
 .highlighted {

@@ -142,7 +142,9 @@ export default function ContentList({
         {items.map((post, index) => (
           <li
             key={index}
-            ref={(el) => (itemsRef.current[index] = el)}
+            ref={(el) => {
+              itemsRef.current[index] = el;
+            }}
             onMouseEnter={() => onMouseEnter(index)}
             className="sofia list-item opacity-0"
           >
@@ -159,15 +161,15 @@ export default function ContentList({
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="rounded-full bg-slate-800 px-3 text-lg font-bold tracking-wide"
+                      className="whitespace-nowrap rounded-full bg-slate-800 px-3 text-lg font-bold tracking-wide"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-              <span className="ml-auto flex items-center gap-2 text-xl font-medium tracking-wide md:ml-0">
-                {viewMoreText} <FiEye className="text-2xl" />
+              <span className="ml-auto flex items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide md:ml-0 ">
+                {viewMoreText} <FiEye className="text-xl" />
               </span>
             </a>
           </li>

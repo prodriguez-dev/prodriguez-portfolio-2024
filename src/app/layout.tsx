@@ -12,8 +12,8 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 
 const sofia = Sofia_Sans({ subsets: ["latin"] });
-const sofia_cond = Sofia_Sans_Condensed({ subsets: ["latin"] });
-const sofia_extra_cond = Sofia_Sans_Extra_Condensed({ subsets: ["latin"] });
+const sofiaCond = Sofia_Sans_Condensed({ subsets: ["latin"] });
+const sofiaExtraCond = Sofia_Sans_Extra_Condensed({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -22,9 +22,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: settings.data.meta_title,
     description: settings.data.meta_description,
-    // openGraph: {
-    //   images: [settings.data.og_image?.url || ""],
-    // },
   };
 }
 
@@ -38,8 +35,8 @@ export default function RootLayout({
       <body
         className={clsx(
           sofia.className,
-          sofia_cond.className,
-          sofia_extra_cond.className,
+          sofiaCond.className,
+          sofiaExtraCond.className,
           "relative min-h-screen",
         )}
       >

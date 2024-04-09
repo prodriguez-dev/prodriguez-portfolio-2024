@@ -89,7 +89,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 {item.institution}
               </div>
 
-              <div className="mt-2 flex w-fit flex-col justify-between text-xl font-extrabold tracking-widest text-slate-600 md:flex-row">
+              <div className="mt-2 flex flex-col text-xl font-extrabold tracking-widest text-slate-600 md:flex-row md:justify-between">
                 {Boolean(item.location) && (
                   <span className="uppercase ">{item.location}</span>
                 )}

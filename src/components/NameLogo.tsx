@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
+import { KeyTextField } from "@prismicio/client";
 
-export function NameLogo({ name }: { name: string }) {
+export function NameLogo({ name }: { name: KeyTextField }) {
   const logoRef = useRef<HTMLAnchorElement | null>(null);
   const [hovering, setHovering] = useState(false);
 
@@ -64,8 +65,8 @@ export function NameLogo({ name }: { name: string }) {
 
   // Wrap each letter in a span for animation
   const logoLetters = name
-    .split("")
-    .map((letter, index) => <span key={index}>{letter}</span>);
+    ? name.split("").map((letter, index) => <span key={index}>{letter}</span>)
+    : null;
 
   return (
     <Link

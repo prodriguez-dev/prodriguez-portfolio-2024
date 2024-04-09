@@ -19,7 +19,7 @@ export default function NavBar({
 
   return (
     <nav aria-label="Main navigation">
-      <ul className="sofia flex flex-col justify-between rounded-b-lg bg-slate-900 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
+      <ul className="flex flex-col justify-between rounded-b-lg bg-slate-900 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
         <div className="flex items-center justify-between">
           <NameLogo name={settings.data.name} />
           <button

@@ -146,29 +146,29 @@ export default function ContentList({
               itemsRef.current[index] = el;
             }}
             onMouseEnter={() => onMouseEnter(index)}
-            className="sofia list-item opacity-0"
+            className="list-item opacity-0"
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row "
+              className="flex flex-col gap-1 border-t border-t-slate-100 py-10 text-slate-200 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
-              <div className="flex flex-col">
+              <div>
                 <span className="text-4xl font-bold tracking-wide">
                   {post.data.title}
                 </span>
-                <div className="mt-3 flex gap-3  text-sky-600">
+                <div className="mb-3 mt-3 flex max-w-screen-sm flex-row flex-wrap gap-4 text-sky-600">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="whitespace-nowrap rounded-full bg-slate-800 px-3 text-lg font-bold tracking-wide"
+                      className="w-fit whitespace-nowrap rounded-full bg-slate-800 px-3 text-lg font-bold tracking-wide"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-              <span className="ml-auto flex items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide md:ml-0 ">
+              <span className="flex h-fit items-center gap-2 whitespace-nowrap rounded-full bg-slate-900 text-lg font-medium tracking-wide transition-colors hover:text-sky-400">
                 {viewMoreText} <FiEye className="text-xl" />
               </span>
             </a>

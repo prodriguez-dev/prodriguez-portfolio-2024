@@ -67,14 +67,14 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         <Heading
           as="h3"
           size="md"
-          className="uppercase italic tracking-wide text-slate-400"
+          className="sofia-extra-cond uppercase italic tracking-wide text-slate-400"
         >
           {slice.primary.heading}
         </Heading>
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`experience sofia ml-6 mt-8 max-w-prose rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 px-8 py-7 ${index % 2 === 0 ? "md:ml-12" : "md:m6-12 md:ml-auto"} flex md:mt-16`}
+            className={`experience ml-6 mt-8 max-w-prose rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 px-8 py-7 ${index % 2 === 0 ? "md:ml-12" : "md:m6-12 md:ml-auto"} flex md:mt-16`}
           >
             <div className={`w-full ${index % 2 === 0 ? "" : "text-left"}`}>
               <Heading
@@ -89,19 +89,17 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 {item.institution}
               </div>
 
-              <div className="text-1xl mt-2 flex grid-cols-1 justify-between font-extrabold tracking-widest text-sky-600 md:grid-cols-2 md:text-xl">
+              <div className="mt-2 flex w-fit flex-col justify-between text-xl font-extrabold tracking-widest text-slate-600 md:flex-row">
                 {Boolean(item.location) && (
-                  <span className="col-span-1 uppercase text-slate-600">
-                    {item.location}
-                  </span>
+                  <span className="uppercase ">{item.location}</span>
                 )}
                 {Boolean(item.time_period) && (
-                  <span className="col-span-1 self-end">
+                  <span className="font-normal text-sky-600">
                     {item.time_period}
                   </span>
                 )}
               </div>
-              <div className="prose prose-xl prose-invert -ml-2 mt-4 ">
+              <div className="prose prose-xl prose-invert -ml-2 mt-4">
                 <PrismicRichText field={item.description} />
               </div>
             </div>

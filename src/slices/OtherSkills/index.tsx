@@ -36,7 +36,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
   };
 
   // Generate a random number only on the client side
-  const randomLength = isClient ? getRandomNumber(14, 22) : 17; // Fallback to a default value on the server
+  const randomLength = isClient ? getRandomNumber(14, 22) : 16; // Fallback to a default value on the server
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -82,7 +82,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       <Bounded as="div">
         <Heading
           size="md"
-          className="mb-1 uppercase italic tracking-wide text-slate-400"
+          className="sofia-extra-cond mb-1 uppercase italic tracking-wide text-slate-400"
           as="h2"
         >
           {slice.primary.heading}
@@ -99,15 +99,16 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item whitespace-nowrap text-3xl font-bold uppercase md:text-6xl"
+                  "tech-item whitespace-nowrap text-3xl font-normal uppercase md:text-4xl"
                 }
                 style={{
-                  color: index === 7 && skill_color ? skill_color : "inherit",
+                  color: index === 8 && skill_color ? skill_color : "inherit",
+                  fontWeight: index === 8 ? 800 : "inherit",
                 }}
               >
                 {skill_name}
               </span>
-              <span className="text-1xl md:text-2xl">
+              <span className="text-1xl md:text-1xl">
                 <MdCircle />
               </span>
             </React.Fragment>

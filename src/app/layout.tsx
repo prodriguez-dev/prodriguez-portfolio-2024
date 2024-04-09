@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-900">
       <body
-        className={clsx("relative min-h-screen")}
+        className={clsx("relative min-h-screen", "sofia")}
         suppressHydrationWarning={true}
       >
         <Header />

@@ -90,7 +90,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       >
         <div>
           <h1
-            className="sofia mb-8 text-[clamp(3rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
+            className="mb-8 text-[clamp(3rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
@@ -106,7 +106,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             {slice.primary.title}
           </span>
 
-          <div className="sofia type-animation prose prose-2xl prose-slate prose-invert col-start-1 mt-10">
+          <div className="type-animation prose prose-2xl prose-slate prose-invert col-start-1 mt-10">
             <PrismicRichText field={slice.primary.description} />
           </div>
 

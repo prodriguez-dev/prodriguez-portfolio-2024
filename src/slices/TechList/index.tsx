@@ -36,7 +36,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
   };
 
   // Generate a random number only on the client side
-  const randomLength = isClient ? getRandomNumber(14, 22) : 17; // Fallback to a default value on the server
+  const randomLength = isClient ? getRandomNumber(14, 22) : 16; // Fallback to a default value on the server
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -82,7 +82,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       <Bounded as="div">
         <Heading
           size="md"
-          className="mb-1 uppercase italic tracking-wide text-slate-400"
+          className="sofia-extra-cond b-1 uppercase italic tracking-wide text-slate-400"
           as="h2"
         >
           {slice.primary.heading}
@@ -99,10 +99,11 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item whitespace-nowrap text-3xl font-bold uppercase md:text-5xl"
+                  "tech-item whitespace-nowrap text-3xl font-normal uppercase md:text-5xl"
                 }
                 style={{
                   color: index === 7 && tech_color ? tech_color : "inherit",
+                  fontWeight: index === 7 ? 800 : "inherit",
                 }}
               >
                 {tech_name}

@@ -50,6 +50,14 @@
 							"value": "coming",
 							"type": "Text"
 						}
+					],
+					[
+						"location",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "driven",
+							"type": "Text"
+						}
 					]
 				]
 			}

@@ -37,7 +37,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             opacity: 1,
 
             scaleX: 1,
-            ease: "elastic.out(1,0.3)",
+            ease: "elastic.inOut",
             duration: 1,
             transformOrigin: "left top",
             stagger: {
@@ -46,21 +46,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             },
           },
         )
-        .fromTo(
-          ".name-animation",
-          {
-            skewX: -20, // Initial skew
-          },
-          {
-            skewX: 0, // Final skew
-            duration: 0.5,
-            ease: "back.out(1.7)",
-            stagger: {
-              each: 0.05,
-            },
-          },
-          "-=0.5", // Overlap with the previous animation
-        )
+
         .fromTo(
           ".job-title",
           {
@@ -104,7 +90,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       >
         <div>
           <h1
-            className="mb-8 text-[clamp(3rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
+            className="sofia mb-8 text-[clamp(3rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
@@ -116,11 +102,11 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase text-transparent opacity-0 md:text-3xl">
+          <span className="sofia-cond job-title block bg-gradient-to-tr from-sky-500 via-sky-100 to-sky-500 bg-clip-text text-2xl font-bold uppercase italic tracking-wide text-transparent opacity-0 md:text-4xl">
             {slice.primary.title}
           </span>
 
-          <div className="type-animation prose prose-2xl prose-slate prose-invert col-start-1 mt-10">
+          <div className="sofia type-animation prose prose-2xl prose-slate prose-invert col-start-1 mt-10">
             <PrismicRichText field={slice.primary.description} />
           </div>
 

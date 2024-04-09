@@ -21,10 +21,10 @@ export function NameLogo({ name }: { name: string }) {
         },
         {
           opacity: 1,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power1.in",
           stagger: {
-            amount: 0.3,
+            amount: 0.2,
             from: "start",
           },
         },

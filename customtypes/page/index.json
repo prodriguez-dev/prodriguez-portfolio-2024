@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "other_skills": {
+              "type": "SharedSlice"
+            },
             "experience": {
               "type": "SharedSlice"
             },

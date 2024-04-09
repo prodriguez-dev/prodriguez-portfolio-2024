@@ -7,6 +7,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
+import { isFilled } from "@prismicio/client";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,26 +64,44 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
       ref={component}
     >
       <Bounded as="div">
-        <Heading as="h3" size="md" className="text-sky-600">
+        <Heading
+          as="h3"
+          size="md"
+          className="uppercase italic tracking-wide text-slate-400"
+        >
           {slice.primary.heading}
         </Heading>
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`experience ml-6 mt-8 max-w-prose ${index % 2 === 0 ? "md:ml-12" : "md:m6-12 md:ml-auto"} flex md:mt-16`}
+            className={`experience sofia ml-6 mt-8 max-w-prose rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 px-8 py-7 ${index % 2 === 0 ? "md:ml-12" : "md:m6-12 md:ml-auto"} flex md:mt-16`}
           >
             <div className={`w-full ${index % 2 === 0 ? "" : "text-left"}`}>
-              <Heading as="h3" size="sm" className="text-sky-400">
+              <Heading
+                as="h3"
+                size="sm"
+                className="font-extrabold italic tracking-wide text-sky-100"
+              >
                 {item.title}
               </Heading>
 
-              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-semibold tracking-tight text-sky-600 md:text-3xl">
+              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-light italic tracking-wider text-sky-300 md:text-3xl">
                 {item.institution}
               </div>
-              <div className="text-1xl mt-1 flex justify-start gap-4 text-sky-700 md:text-2xl">
-                {item.time_period}
+
+              <div className="text-1xl mt-2 flex grid-cols-1 justify-between font-extrabold tracking-widest text-sky-600 md:grid-cols-2 md:text-xl">
+                {Boolean(item.location) && (
+                  <span className="col-span-1 uppercase text-slate-600">
+                    {item.location}
+                  </span>
+                )}
+                {Boolean(item.time_period) && (
+                  <span className="col-span-1 self-end">
+                    {item.time_period}
+                  </span>
+                )}
               </div>
-              <div className="prose prose-lg prose-invert -ml-2 mt-4">
+              <div className="prose prose-xl prose-invert -ml-2 mt-4 ">
                 <PrismicRichText field={item.description} />
               </div>
             </div>

@@ -28,6 +28,13 @@
             "placeholder": ""
           }
         },
+        "location": {
+          "type": "Text",
+          "config": {
+            "label": "Location",
+            "placeholder": ""
+          }
+        },
         "time_period": {
           "type": "Text",
           "config": {

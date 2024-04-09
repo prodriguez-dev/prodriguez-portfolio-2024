@@ -13,14 +13,14 @@ import Heading from "@/components/Heading";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * Props for `TechList`.
+ * Props for `OtherSkills`.
  */
-export type TechListProps = SliceComponentProps<Content.TechListSlice>;
+export type OtherSkillsProps = SliceComponentProps<Content.OtherSkillsSlice>;
 
 /**
- * Component for "TechList" Slices.
+ * Component for "OtherSkills" Slices.
  */
-const TechList = ({ slice }: TechListProps): JSX.Element => {
+const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
   const component = useRef(null);
 
   const [isClient, setIsClient] = useState(false);
@@ -89,11 +89,11 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
         </Heading>
       </Bounded>
 
-      {slice.items.map(({ tech_color, tech_name }, index) => (
+      {slice.items.map(({ skill_color, skill_name }, index) => (
         <div
           key={index}
           className="tech-row mb-1 flex items-center justify-center gap-5 italic text-slate-700"
-          aria-label={tech_name || ""}
+          aria-label={skill_name || ""}
         >
           {Array.from({ length: randomLength }, (_, index) => (
             <React.Fragment key={index}>
@@ -102,10 +102,10 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
                   "tech-item whitespace-nowrap text-3xl font-bold uppercase md:text-6xl"
                 }
                 style={{
-                  color: index === 7 && tech_color ? tech_color : "inherit",
+                  color: index === 7 && skill_color ? skill_color : "inherit",
                 }}
               >
-                {tech_name}
+                {skill_name}
               </span>
               <span className="text-1xl md:text-2xl">
                 <MdCircle />
@@ -118,4 +118,4 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
   );
 };
 
-export default TechList;
+export default OtherSkills;

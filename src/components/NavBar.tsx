@@ -4,7 +4,6 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import { Content, asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
-import Link from "next/link";
 import { MdMenu, MdClose } from "react-icons/md";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
@@ -20,7 +19,7 @@ export default function NavBar({
 
   return (
     <nav aria-label="Main navigation">
-      <ul className="flex flex-col justify-between rounded-b-lg bg-slate-900 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
+      <ul className="sofia flex flex-col justify-between rounded-b-lg bg-slate-900 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
         <div className="flex items-center justify-between">
           <NameLogo name={settings.data.name} />
           <button
@@ -63,7 +62,7 @@ export default function NavBar({
                 >
                   <span
                     className={clsx(
-                      "absolute inset-0 z-0 h-full translate-y-12 rounded bg-yellow-300 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
+                      "absolute inset-0 z-0 h-full translate-y-12 rounded bg-sky-600 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
                       pathname.includes(asLink(link) as string)
                         ? "translate-y-6"
                         : "translate-y-18",
@@ -104,7 +103,7 @@ function DesktopMenu({
   pathname: string;
 }) {
   return (
-    <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 md:flex">
+    <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 tracking-wide md:flex">
       {settings.data.nav_item.map(({ link, label }, index) => (
         <React.Fragment key={label}>
           <li>
@@ -121,8 +120,8 @@ function DesktopMenu({
                 className={clsx(
                   "absolute inset-0 z-0 h-full rounded bg-sky-600 transition-transform  duration-300 ease-in-out group-hover:translate-y-0",
                   pathname.includes(asLink(link) as string)
-                    ? "translate-y-6"
-                    : "translate-y-8",
+                    ? "translate-y-7"
+                    : "translate-y-10",
                 )}
               />
               <span className="relative">{label}</span>
@@ -130,7 +129,7 @@ function DesktopMenu({
           </li>
           {index < settings.data.nav_item.length - 1 && (
             <span
-              className="hidden text-4xl font-thin leading-[0] text-slate-400 md:inline"
+              className="hidden text-4xl font-thin leading-[0] text-slate-300 md:inline"
               aria-hidden="true"
             >
               /

@@ -34,7 +34,10 @@ const RecentContent = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Heading size="md" className="mb-8 text-sky-600 drop-shadow-2xl">
+      <Heading
+        size="md"
+        className="mb-8 uppercase italic tracking-wide text-slate-400"
+      >
         {slice.primary.heading}
       </Heading>
       {isFilled.richText(slice.primary.description) && (

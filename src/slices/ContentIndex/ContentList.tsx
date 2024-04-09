@@ -144,7 +144,7 @@ export default function ContentList({
             key={index}
             ref={(el) => (itemsRef.current[index] = el)}
             onMouseEnter={() => onMouseEnter(index)}
-            className="list-item opacity-0"
+            className="sofia list-item opacity-0"
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
@@ -152,19 +152,21 @@ export default function ContentList({
               aria-label={post.data.title || ""}
             >
               <div className="flex flex-col">
-                <span className="text-3xl font-bold">{post.data.title}</span>
+                <span className="text-4xl font-bold tracking-wide">
+                  {post.data.title}
+                </span>
                 <div className="mt-3 flex gap-3  text-sky-600">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="rounded-full bg-slate-800 px-3 text-lg font-bold"
+                      className="rounded-full bg-slate-800 px-3 text-lg font-bold tracking-wide"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-              <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
+              <span className="ml-auto flex items-center gap-2 text-xl font-medium tracking-wide md:ml-0">
                 {viewMoreText} <FiEye className="text-2xl" />
               </span>
             </a>

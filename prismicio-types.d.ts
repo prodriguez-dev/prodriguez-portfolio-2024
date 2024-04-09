@@ -238,6 +238,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | OtherSkillsSlice
   | ExperienceSlice
   | ContentIndexSlice
   | TechListSlice
@@ -870,6 +871,16 @@ export interface ExperienceSliceDefaultItem {
   title: prismic.KeyTextField;
 
   /**
+   * Location field in *Experience → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.items[].location
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  location: prismic.KeyTextField;
+
+  /**
    * Time Period field in *Experience → Items*
    *
    * - **Field Type**: Text
@@ -1035,6 +1046,76 @@ type ImageBlockSliceVariation = ImageBlockSliceDefault;
 export type ImageBlockSlice = prismic.SharedSlice<
   "image_block",
   ImageBlockSliceVariation
+>;
+
+/**
+ * Primary content in *OtherSkills → Primary*
+ */
+export interface OtherSkillsSliceDefaultPrimary {
+  /**
+   * Heading field in *OtherSkills → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: other_skills.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *OtherSkills → Items*
+ */
+export interface OtherSkillsSliceDefaultItem {
+  /**
+   * Skill Name field in *OtherSkills → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: other_skills.items[].skill_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  skill_name: prismic.KeyTextField;
+
+  /**
+   * Skill Color field in *OtherSkills → Items*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: other_skills.items[].skill_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  skill_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for OtherSkills Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OtherSkillsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OtherSkillsSliceDefaultPrimary>,
+  Simplify<OtherSkillsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *OtherSkills*
+ */
+type OtherSkillsSliceVariation = OtherSkillsSliceDefault;
+
+/**
+ * OtherSkills Shared Slice
+ *
+ * - **API ID**: `other_skills`
+ * - **Description**: OtherSkills
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OtherSkillsSlice = prismic.SharedSlice<
+  "other_skills",
+  OtherSkillsSliceVariation
 >;
 
 /**
@@ -1311,6 +1392,11 @@ declare module "@prismicio/client" {
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
+      OtherSkillsSlice,
+      OtherSkillsSliceDefaultPrimary,
+      OtherSkillsSliceDefaultItem,
+      OtherSkillsSliceVariation,
+      OtherSkillsSliceDefault,
       RecentContentSlice,
       RecentContentSliceDefaultPrimary,
       RecentContentSliceVariation,

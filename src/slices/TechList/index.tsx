@@ -92,7 +92,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       {slice.items.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
-          className="tech-row mb-1 flex items-center justify-center gap-5 italic text-slate-700"
+          className="tech-row mb-1 flex items-center justify-center gap-1 italic text-slate-700 md:gap-5"
           aria-label={tech_name || ""}
         >
           {Array.from({ length: randomLength }, (_, index) => (
@@ -108,7 +108,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
               >
                 {tech_name}
               </span>
-              <span className="text-1xl md:text-1xl">
+              <span className="md:text-1xl text-xs">
                 <MdCircle />
               </span>
             </React.Fragment>

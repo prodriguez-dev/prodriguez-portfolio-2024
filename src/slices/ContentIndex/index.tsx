@@ -30,7 +30,7 @@ const ContentIndex = async ({
     >
       <Heading
         size="xl"
-        className="mb-8 uppercase italic tracking-wide text-slate-400"
+        className="sofia-extra-cond mb-8 uppercase italic tracking-wide text-slate-400"
       >
         {slice.primary.heading}
       </Heading>

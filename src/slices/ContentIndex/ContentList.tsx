@@ -154,21 +154,21 @@ export default function ContentList({
               aria-label={post.data.title || ""}
             >
               <div>
-                <span className="text-4xl font-bold tracking-wide">
+                <span className="text-3xl font-bold tracking-wide transition-shadow hover:drop-shadow-xl md:text-4xl">
                   {post.data.title}
                 </span>
-                <div className="mb-3 mt-3 flex max-w-screen-sm flex-row flex-wrap gap-4 text-sky-600">
+                <div className="mb-3 mt-3 flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-slate-800 px-3 text-lg font-bold tracking-wide"
+                      className="w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-              <span className="flex h-fit items-center gap-2 whitespace-nowrap rounded-full bg-slate-900 text-lg font-medium tracking-wide transition-colors hover:text-sky-400">
+              <span className="flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide transition-shadow hover:drop-shadow-xl">
                 {viewMoreText} <FiEye className="text-xl" />
               </span>
             </a>

@@ -90,7 +90,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       >
         <div>
           <h1
-            className="mb-8 text-[clamp(3rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
+            className="mb-8 text-[clamp(4rem,9vmin,20rem)] font-extrabold leading-none tracking-tight"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
@@ -98,7 +98,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             <span className="text-slate-300">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
-            <span className="ml-6  text-slate-300">
+            <span className="block text-slate-300 md:ml-3 md:inline">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>

@@ -92,14 +92,14 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       {slice.items.map(({ skill_color, skill_name }, index) => (
         <div
           key={index}
-          className="tech-row mb-1 flex items-center justify-center gap-5 italic text-slate-700"
+          className="tech-row mb-1 flex items-center justify-center gap-1 italic text-slate-700 md:gap-5"
           aria-label={skill_name || ""}
         >
           {Array.from({ length: randomLength }, (_, index) => (
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item whitespace-nowrap text-3xl font-normal uppercase md:text-4xl"
+                  "tech-item whitespace-nowrap text-2xl font-normal uppercase md:text-4xl"
                 }
                 style={{
                   color: index === 8 && skill_color ? skill_color : "inherit",
@@ -108,7 +108,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
               >
                 {skill_name}
               </span>
-              <span className="text-1xl md:text-1xl">
+              <span className="md:text-1xl text-xs">
                 <MdCircle />
               </span>
             </React.Fragment>

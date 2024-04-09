@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,15 +19,15 @@
 }
 
 .sofia {
-  font-family: "Sofia Sans", sans-serif !important;
+  font-family: "Sofia Sans", sans-serif;
 }
 
 .sofia-cond {
-  font-family: "Sofia Sans Condensed", sans-serif !important;
+  font-family: "Sofia Sans Condensed", sans-serif;
 }
 
 .sofia-extra-cond {
-  font-family: "Sofia Sans Extra Condensed", sans-serif !important;
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
 }
 
 .highlighted {

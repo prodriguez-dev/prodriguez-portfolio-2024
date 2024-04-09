@@ -99,7 +99,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item whitespace-nowrap text-3xl font-bold uppercase md:text-6xl"
+                  "tech-item whitespace-nowrap text-3xl font-bold uppercase md:text-5xl"
                 }
                 style={{
                   color: index === 7 && tech_color ? tech_color : "inherit",
@@ -107,7 +107,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
               >
                 {tech_name}
               </span>
-              <span className="text-1xl md:text-2xl">
+              <span className="text-1xl md:text-1xl">
                 <MdCircle />
               </span>
             </React.Fragment>

@@ -1,55 +1,26 @@
-"use client";
-
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 import Bounded from "@/components/Bounded";
 import { isFilled } from "@prismicio/client";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
-import NameLogo from "./NameLogo";
+import Link from "next/link";
 
-interface SettingsData {
-  name: string;
-  nav_item: { link: string; label: string }[];
-  github_link?: string;
-  linkedin_link?: string;
-  twitter_link?: string;
-  data?: any;
-}
-
-export default function Footer() {
-  const [settings, setSettings] = useState<SettingsData | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const client = createClient();
-      try {
-        const settingsData =
-          await client.getSingle<SettingsDocumentData>("settings");
-        if (settingsData) {
-          setSettings(settingsData);
-        } else {
-          // Handle the case where settingsData is null or undefined
-        }
-      } catch (error) {
-        // Handle any errors that occur during fetching
-        console.error("Error fetching settings:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!settings) {
-    return null; // Or return loading indicator
-  }
+export default async function Footer() {
+  const client = createClient();
+  const settings = await client.getSingle("settings");
 
   return (
     <Bounded as="footer" className="tracking-wide text-slate-600">
       <div className="container mx-auto mt-20 flex flex-col items-center justify-between gap-6 py-8 sm:flex-row ">
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
-          <NameLogo name={settings.data.name} />
+          <Link
+            href="/"
+            className="text-xl font-extrabold tracking-wide text-slate-100 transition-colors duration-150 hover:text-sky-500"
+          >
+            {settings.data.name}
+          </Link>
         </div>
         <nav className="navigation" aria-label="Footer Navigation">
           <ul className="flex items-center gap-1">

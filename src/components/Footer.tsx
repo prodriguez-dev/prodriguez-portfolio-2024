@@ -80,7 +80,7 @@ export default async function Footer() {
           )}
         </div>
       </div>
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4 text-center">
         <p className=" text-sm text-slate-300 ">
           © {new Date().getFullYear()} {settings.data.name} / prodriguez.dev /
           All Rights Reserved.

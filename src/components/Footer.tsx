@@ -85,7 +85,7 @@ export default async function Footer() {
           © {new Date().getFullYear()} {settings.data.name} / prodriguez.dev /
           All Rights Reserved.
         </p>
-        <p className="text-md text-slate-600">
+        <p className="text-md text-slate-500">
           Built with{" "}
           <a
             href="https://nextjs.org/"

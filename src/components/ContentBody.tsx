@@ -14,11 +14,16 @@ export default function ContentBody({
   const formattedDate = formatDate(page.data.date);
   return (
     <Bounded as="article">
-      <div className="rounded-2xl border-2 border-slate-800 bg-slate-900 px-4 py-10 md:px-8 md:py-20">
-        <Heading as="h1">{page.data.title}</Heading>
-        <div className="flex gap-4 text-sky-500">
+      <div className="px-4">
+        <Heading as="h1" className="tracking-normal">
+          {page.data.title}
+        </Heading>
+        <div className="mb-3 mt-3 flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4">
           {page.tags.map((tag, index) => (
-            <span key={index} className="text-xl font-bold">
+            <span
+              key={index}
+              className="w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
+            >
               {tag}
             </span>
           ))}

@@ -72,8 +72,8 @@ export default function ContentList({
       let ctx = gsap.context(() => {
         // Animate the image holder
         if (currentItem !== null) {
-          const maxY = window.scrollY + window.innerHeight - 350;
-          const maxX = window.innerWidth - 250;
+          const maxY = window.scrollY + window.innerHeight - 360;
+          const maxX = window.innerWidth - 320;
 
           gsap.to(revealRef.current, {
             x: gsap.utils.clamp(0, maxX, mousePos.x - 110),
@@ -117,8 +117,8 @@ export default function ContentList({
       : fallbackItemImage;
     return asImageSrc(image, {
       fit: "crop",
-      w: 360,
-      h: 320,
+      w: 300,
+      h: 300,
       exp: -10,
     });
   });
@@ -177,7 +177,7 @@ export default function ContentList({
 
         {/* Hover element */}
         <div
-          className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+          className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[300px] w-[300px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
           style={{
             backgroundImage:
               currentItem !== null ? `url(${contentImages[currentItem]})` : "",

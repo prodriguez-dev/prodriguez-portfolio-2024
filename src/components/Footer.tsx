@@ -86,7 +86,7 @@ export default async function Footer() {
           All Rights Reserved.
         </p>
         <p className="text-md text-slate-500">
-          Built with{" "}
+          Powered by{" "}
           <a
             href="https://nextjs.org/"
             target="_blank"

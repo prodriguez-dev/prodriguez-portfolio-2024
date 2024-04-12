@@ -343,6 +343,17 @@ interface ProjectDocumentData {
   hover_image: prismic.ImageField<never>;
 
   /**
+   * Client field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.client
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  client: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Project*
    *
    * - **Field Type**: Slice Zone
@@ -1338,6 +1349,51 @@ export type TextBlockSlice = prismic.SharedSlice<
   TextBlockSliceVariation
 >;
 
+/**
+ * Primary content in *TextImageBlock → Primary*
+ */
+export interface TextImageBlockSliceDefaultPrimary {
+  /**
+   * Image field in *TextImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for TextImageBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImageBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextImageBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextImageBlock*
+ */
+type TextImageBlockSliceVariation = TextImageBlockSliceDefault;
+
+/**
+ * TextImageBlock Shared Slice
+ *
+ * - **API ID**: `text_image_block`
+ * - **Description**: TextImageBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImageBlockSlice = prismic.SharedSlice<
+  "text_image_block",
+  TextImageBlockSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1410,6 +1466,10 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      TextImageBlockSlice,
+      TextImageBlockSliceDefaultPrimary,
+      TextImageBlockSliceVariation,
+      TextImageBlockSliceDefault,
     };
   }
 }

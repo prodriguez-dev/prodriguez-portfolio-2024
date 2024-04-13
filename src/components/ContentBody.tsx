@@ -38,8 +38,8 @@ export default function ContentBody({
           )}
         </div>
         <div className="flex md:flex-row">
-          <div>
-            <p className="mt-8 text-xl font-extrabold text-sky-400 md:text-2xl">
+          <div className="col-span-1 md:w-[500px]">
+            <p className="mt-8 text-2xl font-extrabold text-sky-400">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
@@ -63,28 +63,24 @@ export default function ContentBody({
               />
             )}
           </div>
-          {isFilled.link(page.data.link) ? (
-            <PrismicNextLink field={page.data.link}>
-              {isFilled.image(page.data.hover_image) && (
-                <PrismicNextImage
-                  field={page.data.hover_image}
-                  imgixParams={{ w: 600 }}
-                  className="not-prose transition-transform hover:scale-105"
-                />
-              )}
-            </PrismicNextLink>
-          ) : (
-            <>
-              {isFilled.image(page.data.hover_image) && (
-                <div>
+          {isFilled.image(page.data.hover_image) && (
+            <div className="col-span-1">
+              {isFilled.link(page.data.link) ? (
+                <PrismicNextLink field={page.data.link}>
                   <PrismicNextImage
                     field={page.data.hover_image}
                     imgixParams={{ w: 600 }}
-                    className="not-prose"
+                    className="not-prose transition-transform hover:scale-105"
                   />
-                </div>
+                </PrismicNextLink>
+              ) : (
+                <PrismicNextImage
+                  field={page.data.hover_image}
+                  imgixParams={{ w: 600 }}
+                  className="not-prose"
+                />
               )}
-            </>
+            </div>
           )}
         </div>
         <div className="prose prose-lg prose-invert mt-12 w-full max-w-none md:mt-20">

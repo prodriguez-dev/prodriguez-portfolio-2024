@@ -65,7 +65,7 @@ export default function NavBar({
                       "absolute inset-0 z-0 h-full translate-y-12 rounded bg-sky-600 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
                       pathname.includes(asLink(link) as string)
                         ? "translate-y-6"
-                        : "translate-y-18",
+                        : "translate-y-12",
                     )}
                   />
                   <span className="relative">{label}</span>

@@ -6,6 +6,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiEye } from "react-icons/fi";
 import { Content } from "@prismicio/client";
+import page from "@/app/page";
+import { PrismicRichText } from "@prismicio/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -157,7 +159,7 @@ export default function ContentList({
                 <span className="text-3xl font-bold tracking-wide transition-shadow hover:drop-shadow-xl md:text-4xl">
                   {post.data.title}
                 </span>
-                <div className="mb-3 mt-3 flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4">
+                {/* <div className="mb-3 mt-3 flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
@@ -166,9 +168,25 @@ export default function ContentList({
                       {tag}
                     </span>
                   ))}
+                </div> */}
+
+                <div className="mt-5 flex flex-row flex-wrap gap-2 text-sky-500 md:gap-4">
+                  {post.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {isFilled.richText(post.data.tags) && (
+                    <span className="tags">
+                      <PrismicRichText field={post.data.tags} />
+                    </span>
+                  )}
                 </div>
               </div>
-              <span className="flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide transition-shadow hover:drop-shadow-xl">
+              <span className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide transition-shadow hover:drop-shadow-xl md:mt-0">
                 {viewMoreText} <FiEye className="text-xl" />
               </span>
             </a>

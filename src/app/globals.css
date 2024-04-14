@@ -41,3 +41,14 @@
   ); /* Example: slightly lighten the background */
   transition: all 0.3s ease-in-out; /* Smooth transition for the effect */
 }
+
+.tags {
+  ul {
+    list-style-type: none;
+    @apply flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4;
+
+    li {
+      @apply w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
+    }
+  }
+}

@@ -15,13 +15,14 @@ export default function ContentBody({
   page: Content.BlogPostDocument | Content.ProjectDocument;
 }) {
   const formattedDate = formatDate(page.data.date);
+
   return (
     <Bounded as="article">
       <div className="px-4">
         <Heading as="h1" className="border-b border-slate-600 pb-3">
           {page.data.title}
         </Heading>
-        <div className="mt-6 flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4">
+        <div className="mt-6 flex flex-row flex-wrap gap-2 text-sky-500 md:gap-4">
           {page.tags.map((tag, index) => (
             <span
               key={index}
@@ -30,6 +31,11 @@ export default function ContentBody({
               {tag}
             </span>
           ))}
+          {isFilled.richText(page.data.tags) && (
+            <span className="tags">
+              <PrismicRichText field={page.data.tags} />
+            </span>
+          )}
         </div>
         <div className="flex md:flex-row">
           <div>

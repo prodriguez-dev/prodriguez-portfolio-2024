@@ -22,6 +22,17 @@ interface BlogPostDocumentData {
   title: prismic.KeyTextField;
 
   /**
+   * Tags field in *Blog Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.tags
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tags: prismic.RichTextField;
+
+  /**
    * Date field in *Blog Post*
    *
    * - **Field Type**: Date
@@ -352,6 +363,17 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * Tags field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.tags
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tags: prismic.RichTextField;
 
   /**
    * Date field in *Project*

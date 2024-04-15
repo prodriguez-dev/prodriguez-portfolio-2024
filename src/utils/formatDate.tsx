@@ -2,14 +2,19 @@ import { DateField } from "@prismicio/client";
 
 export function formatDate(dateStr: DateField): string {
   if (!dateStr) return "";
-  const date = new Date(dateStr);
 
-  // Options for formatting
+  // Parse the date as UTC
+  const date = new Date(
+    new Date(dateStr).toLocaleString("en-US", { timeZone: "UTC" }),
+  );
+
+  // Options for formatting, adjusted to interpret as UTC
   const options: Intl.DateTimeFormatOptions = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC", // Ensure the formatting also considers the date as UTC
   };
 
   // Format the date to parts
@@ -18,7 +23,6 @@ export function formatDate(dateStr: DateField): string {
 
   // Build the custom date string, handling commas appropriately
   let customDateString = "";
-  let previousType = "";
   for (const part of parts) {
     if (part.type === "weekday") {
       customDateString += part.value + " "; // Add space after weekday
@@ -29,7 +33,6 @@ export function formatDate(dateStr: DateField): string {
     } else {
       customDateString += " " + part.value;
     }
-    previousType = part.type;
   }
 
   return customDateString.trim(); // Trim any trailing spaces

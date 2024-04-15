@@ -1,7 +1,7 @@
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { createClient } from "@/prismicio";
-import ContentList from "../../components/ContentList";
+import ContentList from "@/components/ContentList";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import Button from "@/components/Button";
@@ -24,10 +24,23 @@ const RecentContent = async ({
 
   const contentType = slice.primary.content_type || "Blog";
 
-  let items = contentType === "Blog" ? blogPosts : projects;
+  let items: Array<Content.BlogPostDocument | Content.ProjectDocument>;
 
-  // Filter the items to only include the first three
-  items = items.slice(0, 3);
+  if (contentType === "Blog") {
+    items = await client.getAllByType("blog_post");
+  } else {
+    items = await client.getAllByType("project");
+  }
+
+  items = items
+    .filter((item) => item.data.date) // Continue filtering out null dates
+    .sort((a, b) => {
+      return (
+        new Date(b.data.date!.toString()).getTime() -
+        new Date(a.data.date!.toString()).getTime()
+      );
+    })
+    .slice(0, 3); // Get only the first three items from the sorted array
 
   return (
     <Bounded

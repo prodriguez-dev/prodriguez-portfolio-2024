@@ -51,7 +51,7 @@ export default function ContentBody({
               </p>
             )}
             {isFilled.richText(page.data.description) && (
-              <div className="prose prose-lg prose-slate prose-invert col-start-1 mt-3">
+              <div className="prose prose-lg prose-slate prose-invert col-start-1 mt-5">
                 <PrismicRichText field={page.data.description} />
               </div>
             )}

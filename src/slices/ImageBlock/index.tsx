@@ -14,7 +14,7 @@ const ImageBlock = ({ slice }: ImageBlockProps): JSX.Element => {
   return (
     <PrismicNextImage
       field={slice.primary.image}
-      imgixParams={{ w: 600 }}
+      imgixParams={{ w: 1000 }}
       className="not-prose my-10 h-full w-full  rounded-md md:my-14 lg:my-16"
     />
   );

@@ -37,9 +37,9 @@ export default function ContentBody({
             </span>
           )}
         </div>
-        <div className="flex flex-col md:flex-row">
+        <div className="mt-8 flex flex-col md:mt-14 md:flex-row">
           <div className="col-span-1 md:w-[500px]">
-            <p className="mt-8 text-2xl font-extrabold text-sky-400">
+            <p className="text-2xl font-extrabold text-sky-400">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
@@ -64,13 +64,13 @@ export default function ContentBody({
             )}
           </div>
           {isFilled.image(page.data.hover_image) && (
-            <div className="col-span-1 mt-8 block md:mt-0 md:flex">
+            <div className="col-span-1 mt-8 block md:ml-auto md:mt-0 md:flex">
               {isFilled.link(page.data.link) ? (
                 <PrismicNextLink field={page.data.link}>
                   <PrismicNextImage
                     field={page.data.hover_image}
                     imgixParams={{ w: 600 }}
-                    className="not-prose transition-transform duration-500 hover:scale-95"
+                    className="not-prose rounded-b-2xl transition-transform duration-700 hover:scale-105 md:rounded-b-3xl"
                   />
                 </PrismicNextLink>
               ) : (

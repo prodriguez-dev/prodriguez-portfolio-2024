@@ -12,6 +12,25 @@ export function formatDate(dateStr: DateField): string {
     day: "numeric",
   };
 
-  // Format the date
-  return new Intl.DateTimeFormat("en-US", options).format(date);
+  // Format the date to parts
+  const formatter = new Intl.DateTimeFormat("en-US", options);
+  const parts = formatter.formatToParts(date);
+
+  // Build the custom date string, handling commas appropriately
+  let customDateString = "";
+  let previousType = "";
+  for (const part of parts) {
+    if (part.type === "weekday") {
+      customDateString += part.value + " "; // Add space after weekday
+    } else if (part.type === "day") {
+      customDateString += part.value + ","; // Add comma after day
+    } else if (part.type === "literal" && part.value.trim() === ",") {
+      continue; // Skip the original comma
+    } else {
+      customDateString += " " + part.value;
+    }
+    previousType = part.type;
+  }
+
+  return customDateString.trim(); // Trim any trailing spaces
 }

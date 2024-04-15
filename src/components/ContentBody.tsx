@@ -39,18 +39,17 @@ export default function ContentBody({
         </div>
         <div className="flex md:flex-row">
           <div>
-            <p className="mt-8 text-xl font-extrabold text-sky-400">
+            <p className="mt-8 text-xl font-extrabold text-sky-400 md:text-2xl">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
               <p className="mt-3 text-xl font-medium text-slate-300">
                 Client:{" "}
-                <span className="ml-1 font-extrabold text-sky-400">
+                <span className="ml-1 font-extrabold text-sky-400 md:text-2xl">
                   {page.data.client_name}
                 </span>
               </p>
             )}
-
             {isFilled.richText(page.data.description) && (
               <div className="prose prose-lg prose-slate prose-invert col-start-1 mt-3">
                 <PrismicRichText field={page.data.description} />
@@ -64,14 +63,28 @@ export default function ContentBody({
               />
             )}
           </div>
-          {isFilled.image(page.data.hover_image) && (
-            <div>
-              <PrismicNextImage
-                field={page.data.hover_image}
-                imgixParams={{ w: 600 }}
-                className="not-prose"
-              />
-            </div>
+          {isFilled.link(page.data.link) ? (
+            <PrismicNextLink field={page.data.link}>
+              {isFilled.image(page.data.hover_image) && (
+                <PrismicNextImage
+                  field={page.data.hover_image}
+                  imgixParams={{ w: 600 }}
+                  className="not-prose transition-transform hover:scale-105"
+                />
+              )}
+            </PrismicNextLink>
+          ) : (
+            <>
+              {isFilled.image(page.data.hover_image) && (
+                <div>
+                  <PrismicNextImage
+                    field={page.data.hover_image}
+                    imgixParams={{ w: 600 }}
+                    className="not-prose"
+                  />
+                </div>
+              )}
+            </>
           )}
         </div>
         <div className="prose prose-lg prose-invert mt-12 w-full max-w-none md:mt-20">

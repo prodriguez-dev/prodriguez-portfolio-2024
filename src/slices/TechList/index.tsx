@@ -92,18 +92,17 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       {slice.items.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
-          className="tech-row mb-1 flex items-center justify-center gap-1 italic text-slate-700 md:gap-5"
+          className="tech-row mb-1 flex items-center justify-center gap-1 font-extrabold italic text-slate-800 md:gap-5"
           aria-label={tech_name || ""}
         >
           {Array.from({ length: randomLength }, (_, index) => (
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item whitespace-nowrap text-3xl font-normal uppercase md:text-5xl"
+                  "tech-item whitespace-nowrap text-3xl uppercase md:text-5xl"
                 }
                 style={{
                   color: index === 7 && tech_color ? tech_color : "inherit",
-                  fontWeight: index === 7 ? 800 : "inherit",
                 }}
               >
                 {tech_name}

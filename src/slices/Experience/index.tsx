@@ -38,15 +38,15 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(50, 50)
-              : gsap.utils.random(-50, -50);
+              ? gsap.utils.random(30, 30)
+              : gsap.utils.random(-30, -30);
           },
         },
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(-50, -50)
-              : gsap.utils.random(50, 50);
+              ? gsap.utils.random(-30, -30)
+              : gsap.utils.random(30, 30);
           },
           ease: "power2.inOut",
         },
@@ -73,7 +73,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`experience ml-6 mt-8 max-w-prose rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 px-8 py-7 ${index % 2 === 0 ? "md:ml-12" : "md:m6-12 md:ml-auto"} flex md:mt-16`}
+            className={`experience ml-6 mt-8 flex max-w-prose rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 px-8 py-7 md:mt-16`}
           >
             <div className={`w-full ${index % 2 === 0 ? "" : "text-left"}`}>
               <Heading

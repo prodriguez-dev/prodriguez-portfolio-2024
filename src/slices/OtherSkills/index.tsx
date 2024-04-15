@@ -92,7 +92,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       {slice.items.map(({ skill_color, skill_name }, index) => (
         <div
           key={index}
-          className="tech-row mb-1 flex items-center justify-center gap-1 italic text-slate-700 md:gap-5"
+          className="tech-row mb-1 flex items-center justify-center gap-1 font-extrabold italic text-slate-800 md:gap-5"
           aria-label={skill_name || ""}
         >
           {Array.from({ length: randomLength }, (_, index) => (

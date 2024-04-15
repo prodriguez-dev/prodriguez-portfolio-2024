@@ -67,7 +67,7 @@ const RecentContent = async ({
       <Button
         linkField={slice.primary.button_link}
         label={slice.primary.button_text}
-        className="mx-auto mt-10 md:mr-0"
+        className="mx-auto mt-10"
       />
     </Bounded>
   );

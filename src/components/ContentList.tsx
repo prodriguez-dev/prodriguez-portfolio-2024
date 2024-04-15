@@ -159,22 +159,11 @@ export default function ContentList({
                 <span className="text-3xl font-bold tracking-wide transition-shadow hover:drop-shadow-xl md:text-4xl">
                   {post.data.title}
                 </span>
-                {/* <div className="mb-3 mt-3 flex flex-row flex-wrap gap-2 text-sky-600 md:gap-4">
+                <div className="mt-5 flex flex-row flex-wrap gap-2 text-slate-900 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div> */}
-
-                <div className="mt-5 flex flex-row flex-wrap gap-2 text-sky-500 md:gap-4">
-                  {post.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
+                      className="w-fit whitespace-nowrap rounded-full bg-sky-600 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
                     >
                       {tag}
                     </span>

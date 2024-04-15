@@ -158,7 +158,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             <Button
               linkField={slice.primary.button_link}
               label={slice.primary.button_text}
-              className="mt-10"
+              className="mt-10 text-xl font-medium text-slate-300"
             />
           </div>
         </div>

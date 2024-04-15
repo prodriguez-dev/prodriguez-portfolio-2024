@@ -36,7 +36,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
   };
 
   // Generate a random number only on the client side
-  const randomLength = isClient ? getRandomNumber(14, 22) : 16; // Fallback to a default value on the server
+  const randomLength = isClient ? getRandomNumber(14, 22) : 14; // Fallback to a default value on the server
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {

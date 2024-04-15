@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "text_left_column": {
+          "type": "Boolean",
+          "config": {
+            "label": "Text Left Column",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        },
         "first_name": {
           "type": "Text",
           "config": {

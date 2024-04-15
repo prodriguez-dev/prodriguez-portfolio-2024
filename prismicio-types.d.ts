@@ -689,6 +689,17 @@ export type AllDocumentTypes =
  */
 export interface BiographySliceDefaultPrimary {
   /**
+   * Text Left Column field in *Biography → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: biography.primary.text_left_column
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  text_left_column: prismic.BooleanField;
+
+  /**
    * First Name field in *Biography → Primary*
    *
    * - **Field Type**: Text

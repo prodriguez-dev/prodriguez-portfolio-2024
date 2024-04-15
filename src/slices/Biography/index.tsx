@@ -78,8 +78,6 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
     ));
   };
 
-  console.log("left column", slice.primary.text_left_column);
-
   return (
     <Bounded
       data-slice-type={slice.slice_type}

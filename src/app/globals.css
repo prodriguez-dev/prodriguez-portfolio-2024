@@ -43,3 +43,27 @@
 .tags li {
   display: flex;
 }
+
+.stroke-effect {
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 6px rgb(15, 23, 42);
+  @supports (-webkit-text-stroke: 4px rgb(15, 23, 42)) {
+    -webkit-text-stroke: 4px rgb(15, 23, 42);
+    -webkit-text-fill-color: rgb(226, 232, 240);
+  }
+}
+
+.stroke-headline {
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 6px rgb(15, 23, 42);
+  @supports (-webkit-text-stroke: 3px rgb(15, 23, 42)) {
+    -webkit-text-stroke: 3px rgb(15, 23, 42);
+    -webkit-text-fill-color: rgb(148, 163, 184);
+  }
+}
+
+.stroke-effect-svg {
+  stroke: rgb(15, 23, 42); /* The color of the stroke */
+  stroke-width: 4; /* The width of the stroke */
+  fill: rgb(226, 232, 240); /* The fill color of the SVG */
+}

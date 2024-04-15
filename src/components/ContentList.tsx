@@ -156,9 +156,9 @@ export default function ContentList({
               aria-label={post.data.title || ""}
             >
               <div>
-                <span className="text-3xl font-bold tracking-wide transition-shadow hover:drop-shadow-xl md:text-4xl">
+                <div className="stroke-effect hover:shadow-outline text-3xl font-bold tracking-wide md:text-4xl">
                   {post.data.title}
-                </span>
+                </div>
                 <div className="mt-5 flex flex-row flex-wrap gap-2 text-slate-900 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
@@ -175,9 +175,9 @@ export default function ContentList({
                   )}
                 </div>
               </div>
-              <span className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide transition-shadow hover:drop-shadow-xl md:mt-0">
-                {viewMoreText} <FiEye className="text-xl" />
-              </span>
+              <div className="stroke-effect mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide md:mt-0">
+                {viewMoreText} <FiEye className="stroke-effect-svg text-xl" />
+              </div>
             </a>
           </li>
         ))}

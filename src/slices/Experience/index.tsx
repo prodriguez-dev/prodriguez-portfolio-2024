@@ -84,7 +84,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 {item.title}
               </Heading>
 
-              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-xl font-light italic tracking-wider text-sky-300 md:text-3xl">
+              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-medium italic tracking-wide text-sky-500 md:text-3xl">
                 {item.institution}
               </div>
 
@@ -93,7 +93,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                   <span className="uppercase ">{item.location}</span>
                 )}
                 {Boolean(item.time_period) && (
-                  <span className="font-normal text-sky-600">
+                  <span className="font-normal text-sky-300">
                     {item.time_period}
                   </span>
                 )}

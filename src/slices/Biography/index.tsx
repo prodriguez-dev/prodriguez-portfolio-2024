@@ -123,7 +123,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
           <Button
             linkField={slice.primary.button_link}
             label={slice.primary.button_text}
-            className="mt-10"
+            className="mx-auto mt-10 md:mx-0"
             icon={
               resumeButton ? (
                 <BsPersonLinesFill className="-mt-1 inline-block" />

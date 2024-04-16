@@ -51,7 +51,7 @@ export default function NavBar({
               <li className="first:mt-8">
                 <PrismicNextLink
                   className={clsx(
-                    "group relative block overflow-hidden rounded px-3 text-3xl font-bold text-slate-50 ",
+                    "group relative block overflow-hidden rounded px-3 text-xl font-bold text-slate-50 ",
                   )}
                   field={link}
                   onClick={() => setOpen(false)}

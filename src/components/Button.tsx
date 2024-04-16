@@ -23,7 +23,7 @@ export default function Button({
       field={linkField}
       target={target}
       className={clsx(
-        "border-master group relative flex w-fit items-center justify-center overflow-hidden rounded-md border-2 bg-yellow-800 px-4 py-2 font-bold tracking-wide text-yellow-50 transition-all duration-300 ease-out hover:scale-105 hover:text-yellow-950",
+        "group relative flex w-fit items-center justify-center overflow-hidden rounded-md bg-yellow-800 px-4 py-2 font-bold tracking-wide text-yellow-50 transition-all duration-300 ease-out hover:scale-105 hover:text-yellow-950",
         className,
       )}
     >

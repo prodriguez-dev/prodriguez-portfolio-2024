@@ -91,7 +91,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
 
   function renderRepeatedSkills(skills: Skill[]) {
     return (
-      <div className="tech-row flex items-center justify-center gap-1 md:gap-5">
+      <div className="tech-row flex items-center justify-center gap-1 md:gap-3">
         {[...Array(3)].map((_, repeatIndex) => (
           <React.Fragment key={repeatIndex}>
             {skills.map(({ skill_name }, index) => (

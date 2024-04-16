@@ -98,7 +98,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                   </span>
                 )}
               </div>
-              <div className="prose-md prose prose-invert -ml-2 mt-0 tracking-wide text-yellow-50 md:prose-xl md:mt-4">
+              <div className="prose-md bullet-markers prose prose-invert -ml-2 mt-0 tracking-wide text-yellow-50 md:prose-xl md:mt-4">
                 <PrismicRichText field={item.description} />
               </div>
             </div>

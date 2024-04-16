@@ -77,6 +77,12 @@
   fill: rgb(254, 252, 232); /* The fill color of the SVG */
 }
 
+.bullet-markers {
+  li::marker {
+    color: #fffbeb !important;
+  }
+}
+
 .footer-icons {
   @apply p-2 text-2xl text-slate-50 transition-all duration-150 hover:scale-125 hover:text-yellow-400;
 }

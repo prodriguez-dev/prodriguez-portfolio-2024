@@ -39,13 +39,13 @@ export default function ContentBody({
             </span>
           )}
         </div>
-        <div className="mt-6 flex flex-col tracking-wide md:mt-14 md:flex-row">
+        <div className="mt-5 flex flex-col tracking-wide md:mt-14 md:flex-row">
           <div className="col-span-1 md:w-[500px]">
             <p className="text-2xl font-extrabold text-yellow-50">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
-              <p className="mt-1 text-2xl text-yellow-50 md:mt-3">
+              <p className="mt-2 text-2xl text-yellow-50 md:mt-3">
                 Client:{" "}
                 <span className="ml-1 font-extrabold text-yellow-500">
                   {page.data.client_name}
@@ -53,7 +53,7 @@ export default function ContentBody({
               </p>
             )}
             {isFilled.richText(page.data.description) && (
-              <div className="prose prose-lg prose-slate prose-invert col-start-1 mt-5 text-yellow-50">
+              <div className="bullet-markers prose prose-lg prose-invert col-start-1 -ml-2 mt-1 text-yellow-50 md:mt-5">
                 <PrismicRichText field={page.data.description} />
               </div>
             )}

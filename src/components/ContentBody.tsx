@@ -61,7 +61,7 @@ export default function ContentBody({
               <Button
                 linkField={page.data.link}
                 label="Visit Site"
-                className="mt-8 text-xl"
+                className="mx-auto mt-8 md:mx-0 md:text-xl"
               />
             )}
           </div>

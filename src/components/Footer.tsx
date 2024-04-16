@@ -5,7 +5,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default async function Footer() {
   const client = createClient();
@@ -75,7 +75,7 @@ export default async function Footer() {
               className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-sky-500"
               aria-label={settings.data.name + " on Twitter"}
             >
-              <FaTwitter />
+              <FaXTwitter />
             </PrismicNextLink>
           )}
         </div>

@@ -1175,16 +1175,6 @@ export interface OtherSkillsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   skill_name: prismic.KeyTextField;
-
-  /**
-   * Skill Color field in *OtherSkills → Items*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: other_skills.items[].skill_color
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  skill_color: prismic.ColorField;
 }
 
 /**

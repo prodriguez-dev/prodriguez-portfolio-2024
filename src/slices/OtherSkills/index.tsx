@@ -12,6 +12,10 @@ import Heading from "@/components/Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface Skill {
+  skill_name: string | null;
+}
+
 /**
  * Props for `OtherSkills`.
  */
@@ -22,21 +26,6 @@ export type OtherSkillsProps = SliceComponentProps<Content.OtherSkillsSlice>;
  */
 const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
   const component = useRef(null);
-
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Set isClient to true after the component mounts to indicate client-side rendering
-    setIsClient(true);
-  }, []);
-
-  // Function to generate a random number between min (inclusive) and max (inclusive)
-  const getRandomNumber = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-
-  // Generate a random number only on the client side
-  const randomLength = isClient ? getRandomNumber(14, 22) : 16; // Fallback to a default value on the server
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -72,6 +61,10 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
     return () => ctx.revert(); // cleanup!
   }, []);
 
+  const midPoint = Math.ceil(slice.items.length / 2);
+  const firstHalf = slice.items.slice(0, midPoint);
+  const secondHalf = slice.items.slice(midPoint);
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -89,34 +82,36 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         </Heading>
       </Bounded>
 
-      {slice.items.map(({ skill_color, skill_name }, index) => (
-        <div
-          key={index}
-          className="tech-row mb-1 flex items-center justify-center gap-1 font-extrabold italic text-slate-800 md:gap-5"
-          aria-label={skill_name || ""}
-        >
-          {Array.from({ length: randomLength }, (_, index) => (
-            <React.Fragment key={index}>
-              <span
-                className={
-                  "tech-item whitespace-nowrap text-2xl font-normal uppercase md:text-4xl"
-                }
-                style={{
-                  color: index === 8 && skill_color ? skill_color : "inherit",
-                  fontWeight: index === 8 ? 800 : "inherit",
-                }}
-              >
-                {skill_name}
-              </span>
-              <span className="md:text-1xl text-xs">
-                <MdCircle />
-              </span>
-            </React.Fragment>
-          ))}
-        </div>
-      ))}
+      <div className="text-1xl flex flex-col justify-between gap-1 font-extrabold uppercase italic text-sky-900 md:gap-3 md:text-3xl">
+        {renderRepeatedSkills(firstHalf)}
+        {renderRepeatedSkills(secondHalf)}
+      </div>
     </section>
   );
+
+  function renderRepeatedSkills(skills: Skill[]) {
+    return (
+      <div className="tech-row flex items-center justify-center gap-1 md:gap-5">
+        {[...Array(3)].map((_, repeatIndex) => (
+          <React.Fragment key={repeatIndex}>
+            {skills.map(({ skill_name }, index) => (
+              <>
+                <span
+                  key={index}
+                  className="tech-item flex items-center whitespace-nowrap"
+                >
+                  {skill_name}
+                </span>
+                <span className="text-xs">
+                  <MdCircle />
+                </span>
+              </>
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
+    );
+  }
 };
 
 export default OtherSkills;

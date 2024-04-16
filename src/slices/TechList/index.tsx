@@ -23,21 +23,6 @@ export type TechListProps = SliceComponentProps<Content.TechListSlice>;
 const TechList = ({ slice }: TechListProps): JSX.Element => {
   const component = useRef(null);
 
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Set isClient to true after the component mounts to indicate client-side rendering
-    setIsClient(true);
-  }, []);
-
-  // Function to generate a random number between min (inclusive) and max (inclusive)
-  const getRandomNumber = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-
-  // Generate a random number only on the client side
-  const randomLength = isClient ? getRandomNumber(14, 22) : 17; // Fallback to a default value on the server
-
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // create as many GSAP animations and/or ScrollTriggers here as you want...
@@ -95,11 +80,11 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           className="tech-row mb-1 flex items-center justify-center gap-1 font-extrabold italic text-slate-800 md:gap-5"
           aria-label={tech_name || ""}
         >
-          {Array.from({ length: randomLength }, (_, index) => (
+          {Array.from({ length: 17 }, (_, index) => (
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item whitespace-nowrap text-3xl uppercase md:text-5xl"
+                  "tech-item whitespace-nowrap text-2xl uppercase md:text-4xl"
                 }
                 style={{
                   color: index === 8 && tech_color ? tech_color : "inherit",
@@ -107,7 +92,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
               >
                 {tech_name}
               </span>
-              <span className="md:text-1xl text-xs">
+              <span className="text-xs">
                 <MdCircle />
               </span>
             </React.Fragment>

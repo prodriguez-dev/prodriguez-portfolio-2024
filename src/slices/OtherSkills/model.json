@@ -27,13 +27,6 @@
             "label": "Skill Name",
             "placeholder": ""
           }
-        },
-        "skill_color": {
-          "type": "Color",
-          "config": {
-            "label": "Skill Color",
-            "placeholder": ""
-          }
         }
       }
     }

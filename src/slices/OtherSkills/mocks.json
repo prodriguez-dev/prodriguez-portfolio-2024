@@ -20,14 +20,6 @@
 							"value": "cap",
 							"type": "Text"
 						}
-					],
-					[
-						"skill_color",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "#56c11a",
-							"type": "Color"
-						}
 					]
 				]
 			}

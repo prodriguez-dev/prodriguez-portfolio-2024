@@ -81,7 +81,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         </Heading>
       </Bounded>
 
-      <div className="text-1xl flex flex-col justify-between gap-1 font-extrabold uppercase italic text-sky-800 md:gap-3 md:text-3xl">
+      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-sky-800 md:gap-3 md:text-3xl md:font-extrabold">
         {renderRepeatedSkills(firstHalf)}
         {renderRepeatedSkills(secondHalf)}
       </div>
@@ -91,7 +91,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
   function renderRepeatedSkills(skills: Skill[]) {
     return (
       <div className="tech-row flex items-center justify-center gap-1 md:gap-3">
-        {[...Array(3)].map((_, repeatIndex) => (
+        {[...Array(4)].map((_, repeatIndex) => (
           <React.Fragment key={repeatIndex}>
             {skills.map(({ skill_name }, index) => (
               <>
@@ -101,8 +101,8 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
                 >
                   {skill_name}
                 </span>
-                <span className="text-xs">
-                  <MdCircle />
+                <span className="text-[6px] md:text-xs">
+                  <MdCircle className="-mt-1 md:mt-0" />
                 </span>
               </>
             ))}

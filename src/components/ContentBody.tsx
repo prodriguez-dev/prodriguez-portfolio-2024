@@ -39,13 +39,13 @@ export default function ContentBody({
             </span>
           )}
         </div>
-        <div className="mt-8 flex flex-col md:mt-14 md:flex-row">
+        <div className="mt-6 flex flex-col tracking-wide md:mt-14 md:flex-row">
           <div className="col-span-1 md:w-[500px]">
             <p className="text-2xl font-extrabold text-yellow-50">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
-              <p className="mt-3 text-xl font-medium text-yellow-50 md:text-2xl">
+              <p className="mt-1 text-2xl text-yellow-50 md:mt-3">
                 Client:{" "}
                 <span className="ml-1 font-extrabold text-yellow-500">
                   {page.data.client_name}

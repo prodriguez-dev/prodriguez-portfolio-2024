@@ -81,7 +81,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         </Heading>
       </Bounded>
 
-      <div className="text-1xl flex flex-col justify-between gap-1 font-extrabold uppercase italic text-sky-900 md:gap-3 md:text-3xl">
+      <div className="text-1xl flex flex-col justify-between gap-1 font-extrabold uppercase italic text-sky-800 md:gap-3 md:text-3xl">
         {renderRepeatedSkills(firstHalf)}
         {renderRepeatedSkills(secondHalf)}
       </div>

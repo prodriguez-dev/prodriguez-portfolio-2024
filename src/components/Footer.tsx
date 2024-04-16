@@ -104,6 +104,14 @@ export default async function Footer() {
           </a>
           ,{" "}
           <a
+            href="https://nodejs.org/"
+            target="_blank"
+            className="font-extrabold transition-colors hover:text-slate-300"
+          >
+            Node.js
+          </a>
+          ,{" "}
+          <a
             href="https://tailwindcss.com/"
             target="_blank"
             className="font-extrabold transition-colors hover:text-slate-300"

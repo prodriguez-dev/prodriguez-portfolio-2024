@@ -75,7 +75,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
             key={index}
             className={`experience ml-6 mt-8 flex max-w-prose rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 px-8 py-7 md:mt-16`}
           >
-            <div className={`w-full ${index % 2 === 0 ? "" : "text-left"}`}>
+            <div className="w-full">
               <Heading
                 as="h3"
                 size="sm"
@@ -84,11 +84,11 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 {item.title}
               </Heading>
 
-              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-light italic tracking-wider text-sky-300 md:text-3xl">
+              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-xl font-light italic tracking-wider text-sky-300 md:text-3xl">
                 {item.institution}
               </div>
 
-              <div className="mt-2 flex flex-col text-xl font-extrabold tracking-widest text-slate-600 md:flex-row md:justify-between">
+              <div className="mt-2 flex flex-col text-lg font-extrabold tracking-widest text-slate-600 md:flex-row md:justify-between md:text-xl">
                 {Boolean(item.location) && (
                   <span className="uppercase ">{item.location}</span>
                 )}

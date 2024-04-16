@@ -66,6 +66,15 @@
             "select": null
           }
         },
+        "resume_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Resume Button",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
         "avatar": {
           "type": "Image",
           "config": {

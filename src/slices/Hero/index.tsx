@@ -1,11 +1,11 @@
 "use client";
 
 import Bounded from "@/components/Bounded";
+import Shapes from "@/slices/Hero/Shapes";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import Shapes from "@/slices/Hero/Shapes";
 
 /**
  * Props for `Hero`.

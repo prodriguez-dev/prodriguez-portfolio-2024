@@ -1,10 +1,11 @@
+import Bounded from "@/components/Bounded";
+import Button from "@/components/Button";
+import ContentList from "@/components/ContentList";
+import Heading from "@/components/Heading";
+import { createClient } from "@/prismicio";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { createClient } from "@/prismicio";
-import ContentList from "@/components/ContentList";
-import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
-import Button from "@/components/Button";
+import { MdViewList } from "react-icons/md";
 
 /**
  * Props for `RecentContent`.
@@ -19,9 +20,6 @@ const RecentContent = async ({
   slice,
 }: RecentContentProps): Promise<JSX.Element> => {
   const client = createClient();
-  const blogPosts = await client.getAllByType("blog_post");
-  const projects = await client.getAllByType("project");
-
   const contentType = slice.primary.content_type || "Blog";
 
   let items: Array<Content.BlogPostDocument | Content.ProjectDocument>;
@@ -64,11 +62,14 @@ const RecentContent = async ({
         viewMoreText={slice.primary.view_more_text}
         fallbackItemImage={slice.primary.fallback_item_image}
       />
-      <Button
-        linkField={slice.primary.button_link}
-        label={slice.primary.button_text}
-        className="mx-auto mt-10"
-      />
+      <div className="mx-auto w-fit">
+        <Button
+          linkField={slice.primary.button_link}
+          label={slice.primary.button_text}
+          className="mt-10"
+          icon={<MdViewList className="inline-block" />}
+        />
+      </div>
     </Bounded>
   );
 };

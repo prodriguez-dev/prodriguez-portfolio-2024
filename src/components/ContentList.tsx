@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { asImageSrc, isFilled } from "@prismicio/client";
+import { Content, asImageSrc, isFilled } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef, useState } from "react";
 import { FiEye } from "react-icons/fi";
-import { Content } from "@prismicio/client";
-import page from "@/app/page";
-import { PrismicRichText } from "@prismicio/react";
 
 gsap.registerPlugin(ScrollTrigger);
 

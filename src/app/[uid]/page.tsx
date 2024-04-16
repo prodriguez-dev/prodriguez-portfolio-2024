@@ -1,9 +1,8 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { SliceZone } from "@prismicio/react";
-
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { SliceZone } from "@prismicio/react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type Params = { uid: string };
 

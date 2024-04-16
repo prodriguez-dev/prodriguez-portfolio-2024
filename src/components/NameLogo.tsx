@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
-import Link from "next/link";
-import gsap from "gsap";
 import { KeyTextField } from "@prismicio/client";
+import gsap from "gsap";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export function NameLogo({ name }: { name: KeyTextField }) {
   const logoRef = useRef<HTMLAnchorElement | null>(null);

@@ -67,6 +67,10 @@
 			"text_left_column": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"resume_button": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

@@ -1,13 +1,11 @@
-import { PrismicRichText, SliceZone } from "@prismicio/react";
-import { Content, isFilled } from "@prismicio/client";
-
-import { components } from "@/slices";
-import Heading from "@/components/Heading";
 import Bounded from "@/components/Bounded";
-import { formatDate } from "@/utils/formatDate";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import Link from "next/link";
 import Button from "@/components/Button";
+import Heading from "@/components/Heading";
+import { components } from "@/slices";
+import { formatDate } from "@/utils/formatDate";
+import { Content, isFilled } from "@prismicio/client";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicRichText, SliceZone } from "@prismicio/react";
 
 export default function ContentBody({
   page,

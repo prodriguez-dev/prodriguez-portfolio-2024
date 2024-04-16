@@ -1,9 +1,9 @@
+import Bounded from "@/components/Bounded";
+import ContentList from "@/components/ContentList";
+import Heading from "@/components/Heading";
+import { createClient } from "@/prismicio";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { createClient } from "@/prismicio";
-import ContentList from "@/components/ContentList";
-import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
 /**
  * Props for `ContentIndex`.
  */

@@ -8,6 +8,7 @@ import { MdMenu, MdClose } from "react-icons/md";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
 import { NameLogo } from "./NameLogo";
+import { MdEmail } from "react-icons/md";
 
 export default function NavBar({
   settings,
@@ -86,6 +87,7 @@ export default function NavBar({
               linkField={settings.data.cta_link}
               label={settings.data.cta_label}
               className="ml-3"
+              icon={<MdEmail className="-mt-1 inline-block" />}
             />
           </li>
         </div>
@@ -142,6 +144,7 @@ function DesktopMenu({
           linkField={settings.data.cta_link}
           label={settings.data.cta_label}
           className="ml-3"
+          icon={<MdEmail className="-mt-1 inline-block" />}
         />
       </li>
     </div>

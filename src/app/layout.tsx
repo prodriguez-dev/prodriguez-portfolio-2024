@@ -1,10 +1,10 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { createClient, repositoryName } from "@/prismicio";
+import { PrismicPreview } from "@prismicio/next";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import clsx from "clsx";
-import { PrismicPreview } from "@prismicio/next";
-import { createClient, repositoryName } from "@/prismicio";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();

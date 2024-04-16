@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 import { ImageField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 export default function Avatar({
   image,

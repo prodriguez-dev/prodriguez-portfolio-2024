@@ -212,6 +212,7 @@ export type ContactDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | OtherSkillsSlice
   | RecentContentSlice
   | ExperienceSlice
   | TechListSlice
@@ -758,6 +759,17 @@ export interface BiographySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
+
+  /**
+   * Resume Button field in *Biography → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: biography.primary.resume_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  resume_button: prismic.BooleanField;
 
   /**
    * Avatar field in *Biography → Primary*

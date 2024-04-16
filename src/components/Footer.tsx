@@ -1,11 +1,11 @@
-import clsx from "clsx";
-import React from "react";
-import { createClient } from "@/prismicio";
-import { PrismicNextLink } from "@prismicio/next";
 import Bounded from "@/components/Bounded";
+import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
+import { PrismicNextLink } from "@prismicio/next";
+import clsx from "clsx";
 import Link from "next/link";
+import React from "react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 export default async function Footer() {
   const client = createClient();
@@ -23,7 +23,7 @@ export default async function Footer() {
           </Link>
         </div>
         <nav className="navigation" aria-label="Footer Navigation">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-1 md:mr-12">
             {settings.data.nav_item.map(
               ({ link, label }: { link: any; label: any }, index: number) => (
                 <React.Fragment key={label}>

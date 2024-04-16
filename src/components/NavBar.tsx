@@ -26,7 +26,7 @@ export default function NavBar({
           <button
             aria-expanded={open}
             aria-label="Open menu"
-            className="block p-2 text-2xl text-yellow-500 md:hidden"
+            className="block p-2 text-2xl text-yellow-50 transition-colors duration-300 hover:text-yellow-400 md:hidden"
             onClick={() => setOpen(true)}
           >
             <MdMenu />
@@ -41,7 +41,7 @@ export default function NavBar({
           <button
             aria-label="Close menu"
             aria-expanded={open}
-            className="fixed right-4 top-3 block p-2 text-2xl text-yellow-500 md:hidden "
+            className="fixed right-4 top-3 block p-2 text-2xl text-yellow-50 transition-colors duration-300 hover:text-yellow-400 md:hidden "
             onClick={() => setOpen(false)}
           >
             <MdClose />
@@ -74,7 +74,7 @@ export default function NavBar({
               </li>
               {index < settings.data.nav_item.length - 1 && (
                 <span
-                  className="hidden text-4xl font-thin leading-[0] text-slate-400 md:inline"
+                  className="hidden text-4xl font-thin leading-[0] text-yellow-50 md:inline"
                   aria-hidden="true"
                 >
                   /

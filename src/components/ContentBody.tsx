@@ -16,10 +16,11 @@ export default function ContentBody({
 
   return (
     <Bounded as="article">
-      <div className="px-4">
+      <div className="px-0 md:px-4">
         <Heading
           as="h1"
           className="border-b border-yellow-100 pb-3 text-yellow-50"
+          size="lg"
         >
           {page.data.title}
         </Heading>

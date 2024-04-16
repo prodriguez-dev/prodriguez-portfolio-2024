@@ -5,15 +5,19 @@
 @tailwind utilities;
 
 .background-master {
-  background-color: rgb(15, 23, 42);
+  background-color: rgb(23, 20, 14);
+}
+
+.border-master {
+  border-color: rgb(23, 20, 14);
 }
 
 .background-gradient {
   background: radial-gradient(
     circle at top center,
-    hsla(575, 80%, 60%, 0.5) 0%,
-    hsla(575, 0%, 0%, 0) 50%,
-    hsla(575, 0%, 0%, 0) 100%
+    hsla(69, 80%, 60%, 0.5) 0%,
+    hsla(69, 0%, 0%, 0) 50%,
+    hsla(69, 0%, 0%, 0) 100%
   );
   margin-top: -16px;
 }
@@ -32,12 +36,13 @@
 
 .tags,
 .tags ul {
-  @apply flex list-none flex-row flex-wrap gap-2 text-sky-600 md:gap-4;
+  @apply flex list-none flex-row flex-wrap gap-2 text-yellow-700 md:gap-4;
 }
 
 .tags li,
 .tags span {
-  @apply w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
+  @apply w-fit whitespace-nowrap rounded-full px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
+  background-color: rgb(23, 20, 14);
 }
 
 .tags li {
@@ -46,24 +51,32 @@
 
 .stroke-effect {
   paint-order: stroke fill;
-  text-shadow: 3px 3px 6px rgb(15, 23, 42);
+  text-shadow: 3px 3px 6px rgb(23, 20, 14);
   @supports (-webkit-text-stroke: 4px rgb(15, 23, 42)) {
-    -webkit-text-stroke: 4px rgb(15, 23, 42);
-    -webkit-text-fill-color: rgb(226, 232, 240);
+    -webkit-text-stroke: 4px rgb(23, 20, 14);
+    -webkit-text-fill-color: rgb(254, 252, 232);
   }
 }
 
 .stroke-headline {
   paint-order: stroke fill;
-  text-shadow: 3px 3px 6px rgb(15, 23, 42);
+  text-shadow: 3px 3px 6px rgb(23, 20, 14);
   @supports (-webkit-text-stroke: 3px rgb(15, 23, 42)) {
-    -webkit-text-stroke: 3px rgb(15, 23, 42);
-    -webkit-text-fill-color: rgb(148, 163, 184);
+    -webkit-text-stroke: 3px rgb(23, 20, 14);
+    -webkit-text-fill-color: rgb(254, 252, 232);
   }
 }
 
 .stroke-effect-svg {
-  stroke: rgb(15, 23, 42); /* The color of the stroke */
+  stroke: rgb(23, 20, 14); /* The color of the stroke */
   stroke-width: 4; /* The width of the stroke */
-  fill: rgb(226, 232, 240); /* The fill color of the SVG */
+  fill: rgb(254, 252, 232); /* The fill color of the SVG */
+}
+
+.footer-icons {
+  @apply p-2 text-2xl text-slate-50 transition-all duration-150 hover:scale-125 hover:text-yellow-400;
+}
+
+.footer-power {
+  @apply font-extrabold transition-colors hover:text-yellow-400;
 }

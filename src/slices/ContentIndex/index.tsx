@@ -16,9 +16,6 @@ const ContentIndex = async ({
   slice,
 }: ContentIndexProps): Promise<JSX.Element> => {
   const client = createClient();
-  const blogPosts = await client.getAllByType("blog_post");
-  const projects = await client.getAllByType("project");
-
   const contentType = slice.primary.content_type || "Blog";
 
   let items: Array<Content.BlogPostDocument | Content.ProjectDocument>;
@@ -45,7 +42,7 @@ const ContentIndex = async ({
     >
       <Heading
         size="xl"
-        className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-slate-400"
+        className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-yellow-50"
       >
         {slice.primary.heading}
       </Heading>

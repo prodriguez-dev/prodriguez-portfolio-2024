@@ -92,10 +92,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className="block text-red-300">
+            <span className="block text-yellow-50">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
-            <span className="-mt-[.2em] block text-slate-500">
+            <span className="-mt-[.2em] block text-yellow-50">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>

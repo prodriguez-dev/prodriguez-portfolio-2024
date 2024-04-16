@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-900">
+    <html lang="en" className="background-master">
       <body
         className={clsx("relative min-h-screen", "sofia")}
         suppressHydrationWarning={true}

@@ -11,7 +11,7 @@ export type TextBlockProps = SliceComponentProps<Content.TextBlockSlice>;
  */
 const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
   return (
-    <div className="max-w-prose">
+    <div className="max-w-prose text-yellow-50">
       <PrismicRichText field={slice.primary.text} />
     </div>
   );

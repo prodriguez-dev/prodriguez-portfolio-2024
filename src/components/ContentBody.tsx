@@ -17,14 +17,17 @@ export default function ContentBody({
   return (
     <Bounded as="article">
       <div className="px-4">
-        <Heading as="h1" className="border-b border-slate-600 pb-3">
+        <Heading
+          as="h1"
+          className="border-b border-yellow-100 pb-3 text-yellow-50"
+        >
           {page.data.title}
         </Heading>
-        <div className="mt-6 flex flex-row flex-wrap gap-2 text-sky-500 md:gap-4">
+        <div className="mt-6 flex flex-row flex-wrap gap-2 text-yellow-950 md:gap-4">
           {page.tags.map((tag, index) => (
             <span
               key={index}
-              className="w-fit whitespace-nowrap rounded-full bg-slate-900 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
+              className="w-fit whitespace-nowrap rounded-full bg-yellow-600 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
             >
               {tag}
             </span>
@@ -37,19 +40,19 @@ export default function ContentBody({
         </div>
         <div className="mt-8 flex flex-col md:mt-14 md:flex-row">
           <div className="col-span-1 md:w-[500px]">
-            <p className="text-2xl font-extrabold text-sky-400">
+            <p className="text-2xl font-extrabold text-yellow-50">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
-              <p className="mt-3 text-xl font-medium text-slate-300">
+              <p className="mt-3 text-xl font-medium text-yellow-50 md:text-2xl">
                 Client:{" "}
-                <span className="ml-1 font-extrabold text-sky-400 md:text-2xl">
+                <span className="ml-1 font-extrabold text-yellow-500">
                   {page.data.client_name}
                 </span>
               </p>
             )}
             {isFilled.richText(page.data.description) && (
-              <div className="prose prose-lg prose-slate prose-invert col-start-1 mt-5">
+              <div className="prose prose-lg prose-slate prose-invert col-start-1 mt-5 text-yellow-50">
                 <PrismicRichText field={page.data.description} />
               </div>
             )}
@@ -57,7 +60,7 @@ export default function ContentBody({
               <Button
                 linkField={page.data.link}
                 label="Visit Site"
-                className="mt-8 text-xl font-medium text-slate-300"
+                className="mt-8 text-xl"
               />
             )}
           </div>

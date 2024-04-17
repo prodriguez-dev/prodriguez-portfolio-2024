@@ -161,7 +161,7 @@ export default function ContentList({
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-emerald-600 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
+                      className="w-fit whitespace-nowrap rounded-full bg-emerald-500 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
                     >
                       {tag}
                     </span>

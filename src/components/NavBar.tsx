@@ -108,7 +108,7 @@ function DesktopMenu({
           <li>
             <PrismicNextLink
               className={clsx(
-                "group relative block overflow-hidden rounded px-4 py-1 text-2xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-300 hover:text-emerald-950",
+                "group relative block overflow-hidden rounded px-4 py-1 text-xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-300 hover:text-emerald-950",
               )}
               field={link}
               aria-current={
@@ -119,7 +119,7 @@ function DesktopMenu({
                 className={clsx(
                   "absolute inset-0 z-0 h-full rounded bg-emerald-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
                   pathname.includes(asLink(link) as string)
-                    ? "translate-y-9"
+                    ? "translate-y-8"
                     : "translate-y-10",
                 )}
               />

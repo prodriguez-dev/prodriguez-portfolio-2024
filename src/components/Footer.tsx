@@ -17,7 +17,7 @@ export default async function Footer() {
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
             href="/"
-            className="text-3xl font-extrabold tracking-wide transition-colors duration-150 hover:text-emerald-400"
+            className="text-3xl font-extrabold tracking-wide transition-colors duration-300 hover:text-emerald-400"
           >
             {settings.data.name}
           </Link>
@@ -30,7 +30,7 @@ export default async function Footer() {
                   <li>
                     <PrismicNextLink
                       className={clsx(
-                        "group relative block overflow-hidden rounded px-1 py-1 text-xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-150 hover:text-emerald-400  md:px-3 md:text-2xl",
+                        "group relative block overflow-hidden rounded px-1 py-1 text-xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-300 hover:text-emerald-400  md:px-3 md:text-2xl",
                       )}
                       field={link}
                     >
@@ -81,11 +81,11 @@ export default async function Footer() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-sm text-emerald-700">
+        <p className="text-sm text-emerald-500">
           © {new Date().getFullYear()} {settings.data.name}. All Rights
           Reserved.
         </p>
-        <p className="text-md text-emerald-900">
+        <p className="text-md text-emerald-700">
           Powered by{" "}
           <a
             href="https://nextjs.org/"

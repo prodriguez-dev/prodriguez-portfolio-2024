@@ -9,7 +9,7 @@
 }
 
 .border-master {
-  border-color: rgb(2, 44, 34);
+  @apply bg-emerald-950;
 }
 
 .background-gradient {
@@ -84,9 +84,9 @@
 }
 
 .footer-icons {
-  @apply p-2 text-2xl text-slate-50 transition-all duration-150 hover:scale-125 hover:text-emerald-400;
+  @apply p-2 text-2xl text-slate-50 transition-all duration-300 hover:scale-125 hover:text-emerald-400;
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors hover:text-emerald-400;
+  @apply font-extrabold transition-colors duration-300 hover:text-emerald-400;
 }

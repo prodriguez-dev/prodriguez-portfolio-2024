@@ -38,15 +38,15 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(30, 30)
-              : gsap.utils.random(-30, -30);
+              ? gsap.utils.random(20, 20)
+              : gsap.utils.random(-20, -20);
           },
         },
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(-30, -30)
-              : gsap.utils.random(30, 30);
+              ? gsap.utils.random(-20, -20)
+              : gsap.utils.random(20, 20);
           },
           ease: "power2.inOut",
         },
@@ -77,14 +77,14 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
           >
             <div className="w-full">
               <Heading
-                as="h3"
+                as="h4"
                 size="sm"
                 className="font-extrabold italic tracking-wide text-emerald-50"
               >
                 {item.title}
               </Heading>
 
-              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-medium italic tracking-wide text-emerald-400 md:text-3xl">
+              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-medium italic tracking-wide text-emerald-500 md:text-3xl">
                 {item.institution}
               </div>
 

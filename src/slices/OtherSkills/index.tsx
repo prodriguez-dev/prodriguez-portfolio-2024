@@ -74,14 +74,14 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       <Bounded as="div">
         <Heading
           size="md"
-          className="sofia-extra-cond mb-1 uppercase italic tracking-wide text-yellow-50"
+          className="sofia-extra-cond mb-1 uppercase italic tracking-wide text-emerald-50"
           as="h2"
         >
           {slice.primary.heading}
         </Heading>
       </Bounded>
 
-      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-yellow-800 md:gap-3 md:text-3xl md:font-extrabold">
+      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-emerald-800 md:gap-3 md:text-3xl md:font-extrabold">
         {renderRepeatedSkills(firstHalf)}
         {renderRepeatedSkills(secondHalf)}
       </div>

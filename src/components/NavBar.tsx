@@ -9,6 +9,8 @@ import Button from "./Button";
 import { usePathname } from "next/navigation";
 import { NameLogo } from "./NameLogo";
 import { MdEmail } from "react-icons/md";
+import Link from "next/link";
+import { list } from "postcss";
 
 export default function NavBar({
   settings,
@@ -26,7 +28,7 @@ export default function NavBar({
           <button
             aria-expanded={open}
             aria-label="Open menu"
-            className="block p-2 text-2xl text-yellow-50 transition-colors duration-300 hover:text-yellow-400 md:hidden"
+            className="block p-2 text-2xl text-emerald-50 transition-colors duration-300 hover:text-emerald-400 md:hidden"
             onClick={() => setOpen(true)}
           >
             <MdMenu />
@@ -41,47 +43,66 @@ export default function NavBar({
           <button
             aria-label="Close menu"
             aria-expanded={open}
-            className="fixed right-4 top-3 block p-2 text-2xl text-yellow-50 transition-colors duration-300 hover:text-yellow-400 md:hidden "
+            className="fixed right-4 top-3 block p-2 text-2xl text-emerald-50 transition-colors duration-300 hover:text-emerald-400 md:hidden "
             onClick={() => setOpen(false)}
           >
             <MdClose />
           </button>
-          {settings.data.nav_item.map(({ link, label }, index) => (
-            <React.Fragment key={label}>
-              <li className="first:mt-8">
-                <PrismicNextLink
-                  className={clsx(
-                    "group relative block overflow-hidden rounded px-3 py-1 text-xl font-bold text-yellow-50 transition-colors duration-300 hover:text-yellow-950",
+          {settings.data.nav_item.map(({ link, label }, index) => {
+            const isResumeLink = label === "Resume";
+            return (
+              <React.Fragment key={label}>
+                <li className="first:mt-8">
+                  {isResumeLink ? (
+                    <a
+                      href={asLink(link) as string}
+                      target={"_blank"} // Ensure this is always set for the "Resume" link
+                      rel="noopener noreferrer"
+                      className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-emerald-50 transition-colors duration-300 hover:text-emerald-950"
+                      onClick={() => setOpen(false)}
+                      aria-current={
+                        pathname.includes(asLink(link) as string)
+                          ? "page"
+                          : undefined
+                      }
+                    >
+                      <span className="relative">{label}</span>
+                    </a>
+                  ) : (
+                    <PrismicNextLink
+                      field={link}
+                      className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-emerald-50 transition-colors duration-300 hover:text-emerald-950"
+                      onClick={() => setOpen(false)}
+                      aria-current={
+                        pathname.includes(asLink(link) as string)
+                          ? "page"
+                          : undefined
+                      }
+                    >
+                      <span
+                        className={clsx(
+                          "absolute inset-0 z-0 h-full rounded bg-emerald-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
+                          pathname.includes(asLink(link) as string)
+                            ? "translate-y-9"
+                            : "translate-y-12",
+                        )}
+                      />
+                      <span className="relative">{label}</span>
+                    </PrismicNextLink>
                   )}
-                  field={link}
-                  onClick={() => setOpen(false)}
-                  aria-current={
-                    pathname.includes(asLink(link) as string)
-                      ? "page"
-                      : undefined
-                  }
-                >
+                </li>
+                {index < settings.data.nav_item.length - 1 && (
                   <span
-                    className={clsx(
-                      "absolute inset-0 z-0 h-full rounded bg-yellow-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
-                      pathname.includes(asLink(link) as string)
-                        ? "translate-y-8"
-                        : "translate-y-12",
-                    )}
-                  />
-                  <span className="relative">{label}</span>
-                </PrismicNextLink>
-              </li>
-              {index < settings.data.nav_item.length - 1 && (
-                <span
-                  className="hidden text-4xl font-thin leading-[0] text-yellow-50 md:inline"
-                  aria-hidden="true"
-                >
-                  /
-                </span>
-              )}
-            </React.Fragment>
-          ))}
+                    className="hidden text-4xl font-thin leading-[0] text-emerald-50 md:inline"
+                    aria-hidden="true"
+                  >
+                    /
+                  </span>
+                )}
+              </React.Fragment>
+            );
+          })}
+
           <li>
             <Button
               linkField={settings.data.cta_link}
@@ -105,13 +126,13 @@ function DesktopMenu({
   pathname: string;
 }) {
   return (
-    <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 tracking-wide md:flex">
+    <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 md:flex">
       {settings.data.nav_item.map(({ link, label }, index) => (
         <React.Fragment key={label}>
           <li>
             <PrismicNextLink
               className={clsx(
-                "group relative block overflow-hidden rounded px-3 py-1 text-base font-bold text-yellow-50 transition-colors duration-300 hover:text-yellow-950",
+                "group relative block overflow-hidden rounded px-4 py-1 text-2xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-300 hover:text-emerald-950",
               )}
               field={link}
               aria-current={
@@ -120,9 +141,9 @@ function DesktopMenu({
             >
               <span
                 className={clsx(
-                  "absolute inset-0 z-0 h-full rounded bg-yellow-500 transition-transform  duration-300 ease-in-out group-hover:translate-y-0",
+                  "absolute inset-0 z-0 h-full rounded bg-emerald-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
                   pathname.includes(asLink(link) as string)
-                    ? "translate-y-7"
+                    ? "translate-y-9"
                     : "translate-y-10",
                 )}
               />
@@ -131,7 +152,7 @@ function DesktopMenu({
           </li>
           {index < settings.data.nav_item.length - 1 && (
             <span
-              className="hidden text-4xl font-thin leading-[0] text-yellow-50 md:inline"
+              className="hidden text-3xl font-thin leading-[0] text-emerald-50 md:inline"
               aria-hidden="true"
             >
               /
@@ -143,8 +164,8 @@ function DesktopMenu({
         <Button
           linkField={settings.data.cta_link}
           label={settings.data.cta_label}
-          className="ml-3"
-          icon={<MdEmail className="-mt-1 inline-block" />}
+          className="ml-3 text-xl"
+          icon={<MdEmail className="inline-block" />}
         />
       </li>
     </div>

@@ -12,25 +12,25 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Bounded as="footer" className="tracking-wide text-yellow-50">
+    <Bounded as="footer" className="tracking-wide text-emerald-50">
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row ">
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
             href="/"
-            className="text-2xl font-extrabold tracking-wide transition-colors duration-150 hover:text-yellow-400"
+            className="text-3xl font-extrabold tracking-wide transition-colors duration-150 hover:text-emerald-400"
           >
             {settings.data.name}
           </Link>
         </div>
         <nav className="navigation" aria-label="Footer Navigation">
-          <ul className="flex items-center gap-1 md:mr-12">
+          <ul className="flex flex-wrap items-center gap-1 md:mr-12">
             {settings.data.nav_item.map(
               ({ link, label }: { link: any; label: any }, index: number) => (
                 <React.Fragment key={label}>
                   <li>
                     <PrismicNextLink
                       className={clsx(
-                        "group relative block overflow-hidden  rounded px-3 py-1 text-base font-bold text-yellow-50 transition-colors duration-150 hover:hover:text-yellow-400",
+                        "group relative block overflow-hidden rounded px-1 py-1 text-xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-150 hover:text-emerald-400  md:px-3 md:text-2xl",
                       )}
                       field={link}
                     >
@@ -39,7 +39,7 @@ export default async function Footer() {
                   </li>
                   {index < settings.data.nav_item.length - 1 && (
                     <span
-                      className="text-4xl font-thin leading-[0] text-yellow-50"
+                      className="text-4xl font-thin leading-[0] text-emerald-50"
                       aria-hidden="true"
                     >
                       /
@@ -81,11 +81,11 @@ export default async function Footer() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-sm text-yellow-700">
+        <p className="text-sm text-emerald-700">
           © {new Date().getFullYear()} {settings.data.name}. All Rights
           Reserved.
         </p>
-        <p className="text-md text-yellow-900">
+        <p className="text-md text-emerald-900">
           Powered by{" "}
           <a
             href="https://nextjs.org/"

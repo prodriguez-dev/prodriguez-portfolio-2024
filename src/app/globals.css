@@ -5,20 +5,20 @@
 @tailwind utilities;
 
 .background-master {
-  background-color: rgb(23, 20, 14);
+  @apply bg-emerald-950;
 }
 
 .border-master {
-  border-color: rgb(23, 20, 14);
+  border-color: rgb(2, 44, 34);
 }
 
 .background-gradient {
   margin-top: -16px;
   background: radial-gradient(
     circle at top center,
-    hsla(38, 92%, 50%, 0.65) 0%,
-    hsla(38, 0%, 0%, 0) 50%,
-    hsla(38, 0%, 0%, 0) 100%
+    hsla(158, 64%, 51%, 0.75) 0%,
+    hsla(158, 0%, 0%, 0) 50%,
+    hsla(158, 0%, 0%, 0) 100%
   );
 
   @media only screen and (max-width: 767px) {
@@ -40,13 +40,13 @@
 
 .tags,
 .tags ul {
-  @apply flex list-none flex-row flex-wrap gap-2 text-yellow-700 md:gap-4;
+  @apply flex list-none flex-row flex-wrap gap-2 text-emerald-700 md:gap-4;
 }
 
 .tags li,
 .tags span {
   @apply w-fit whitespace-nowrap rounded-full px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
-  background-color: rgb(23, 20, 14);
+  background-color: rgb(2, 44, 34);
 }
 
 .tags li {
@@ -55,38 +55,38 @@
 
 .stroke-effect {
   paint-order: stroke fill;
-  text-shadow: 3px 3px 6px rgb(23, 20, 14);
-  @supports (-webkit-text-stroke: 4px rgb(15, 23, 42)) {
-    -webkit-text-stroke: 4px rgb(23, 20, 14);
-    -webkit-text-fill-color: rgb(254, 252, 232);
+  text-shadow: 3px 3px 6px rgb(2, 44, 34);
+  @supports (-webkit-text-stroke: 4px rgb(2, 44, 34)) {
+    -webkit-text-stroke: 4px rgb(2, 44, 34);
+    -webkit-text-fill-color: rgb(236, 253, 245);
   }
 }
 
 .stroke-headline {
   paint-order: stroke fill;
-  text-shadow: 3px 3px 6px rgb(23, 20, 14);
-  @supports (-webkit-text-stroke: 3px rgb(15, 23, 42)) {
-    -webkit-text-stroke: 3px rgb(23, 20, 14);
-    -webkit-text-fill-color: rgb(254, 252, 232);
+  text-shadow: 3px 3px 6px rgb(2, 44, 34);
+  @supports (-webkit-text-stroke: 3px rgb(2, 44, 34)) {
+    -webkit-text-stroke: 3px rgb(2, 44, 34);
+    -webkit-text-fill-color: rgb(236, 253, 245);
   }
 }
 
 .stroke-effect-svg {
-  stroke: rgb(23, 20, 14); /* The color of the stroke */
-  stroke-width: 4; /* The width of the stroke */
-  fill: rgb(254, 252, 232); /* The fill color of the SVG */
+  stroke: rgb(2, 44, 34);
+  stroke-width: 4;
+  fill: rgb(236, 253, 245);
 }
 
 .bullet-markers {
   li::marker {
-    color: #fffbeb !important;
+    color: #ecfdf5 !important;
   }
 }
 
 .footer-icons {
-  @apply p-2 text-2xl text-slate-50 transition-all duration-150 hover:scale-125 hover:text-yellow-400;
+  @apply p-2 text-2xl text-slate-50 transition-all duration-150 hover:scale-125 hover:text-emerald-400;
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors hover:text-yellow-400;
+  @apply font-extrabold transition-colors hover:text-emerald-400;
 }

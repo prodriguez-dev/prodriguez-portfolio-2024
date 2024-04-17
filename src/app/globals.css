@@ -13,13 +13,13 @@
 }
 
 .background-gradient {
+  margin-top: -16px;
   background: radial-gradient(
     circle at top center,
-    hsla(60, 80%, 60%, 0.5) 0%,
-    hsla(60, 0%, 0%, 0) 50%,
-    hsla(60, 0%, 0%, 0) 100%
+    hsla(38, 92%, 50%, 0.65) 0%,
+    hsla(38, 0%, 0%, 0) 50%,
+    hsla(38, 0%, 0%, 0) 100%
   );
-  margin-top: -16px;
 
   @media only screen and (max-width: 767px) {
     margin-top: 64px;

@@ -31,7 +31,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
-        <div className="pointer-events-none absolute inset-0 -z-40 h-full opacity-20 mix-blend-soft-light"></div>
+        <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-15 mix-blend-soft-light"></div>
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

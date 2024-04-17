@@ -49,47 +49,23 @@ export default function NavBar({
             <MdClose />
           </button>
           {settings.data.nav_item.map(({ link, label }, index) => {
-            const isResumeLink = label === "Resume";
             return (
               <React.Fragment key={label}>
                 <li className="first:mt-8">
-                  {isResumeLink ? (
-                    <a
-                      href={asLink(link) as string}
-                      target={"_blank"} // Ensure this is always set for the "Resume" link
-                      rel="noopener noreferrer"
-                      className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-emerald-50 transition-colors duration-300 hover:text-emerald-950"
-                      onClick={() => setOpen(false)}
-                      aria-current={
-                        pathname.includes(asLink(link) as string)
-                          ? "page"
-                          : undefined
-                      }
-                    >
-                      <span className="relative">{label}</span>
-                    </a>
-                  ) : (
-                    <PrismicNextLink
-                      field={link}
-                      className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-emerald-50 transition-colors duration-300 hover:text-emerald-950"
-                      onClick={() => setOpen(false)}
-                      aria-current={
-                        pathname.includes(asLink(link) as string)
-                          ? "page"
-                          : undefined
-                      }
-                    >
-                      <span
-                        className={clsx(
-                          "absolute inset-0 z-0 h-full rounded bg-emerald-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
-                          pathname.includes(asLink(link) as string)
-                            ? "translate-y-9"
-                            : "translate-y-12",
-                        )}
-                      />
-                      <span className="relative">{label}</span>
-                    </PrismicNextLink>
-                  )}
+                  <a
+                    href={asLink(link) as string}
+                    target={label === "Resume" ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-emerald-50 transition-colors duration-300 hover:text-emerald-950"
+                    onClick={() => setOpen(false)}
+                    aria-current={
+                      pathname.includes(asLink(link) as string)
+                        ? "page"
+                        : undefined
+                    }
+                  >
+                    <span className="relative">{label}</span>
+                  </a>
                 </li>
                 {index < settings.data.nav_item.length - 1 && (
                   <span

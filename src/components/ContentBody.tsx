@@ -28,7 +28,7 @@ export default function ContentBody({
           {page.tags.map((tag, index) => (
             <span
               key={index}
-              className="w-fit whitespace-nowrap rounded-full bg-emerald-600 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
+              className="w-fit whitespace-nowrap rounded-full bg-emerald-500 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
             >
               {tag}
             </span>
@@ -41,13 +41,13 @@ export default function ContentBody({
         </div>
         <div className="mt-5 flex flex-col tracking-wide md:mt-14 md:flex-row">
           <div className="col-span-1 md:w-[500px]">
-            <p className="text-2xl font-extrabold text-emerald-50">
+            <p className="text-2xl font-bold text-emerald-50">
               {formattedDate}
             </p>
             {isFilled.keyText(page.data.client_name) && (
-              <p className="mt-2 text-2xl text-emerald-50 md:mt-3">
+              <p className="mt-2 text-2xl font-light text-emerald-50 md:mt-3">
                 Client:{" "}
-                <span className="ml-1 font-extrabold text-emerald-500">
+                <span className="ml-1 font-extrabold text-emerald-400">
                   {page.data.client_name}
                 </span>
               </p>
@@ -72,14 +72,14 @@ export default function ContentBody({
                   <PrismicNextImage
                     field={page.data.hover_image}
                     imgixParams={{ w: 600 }}
-                    className="not-prose rounded-b-2xl transition-transform duration-700 hover:scale-105 md:rounded-b-3xl"
+                    className="not-prose rounded-lg transition-transform duration-500 hover:scale-105"
                   />
                 </PrismicNextLink>
               ) : (
                 <PrismicNextImage
                   field={page.data.hover_image}
                   imgixParams={{ w: 600 }}
-                  className="not-prose"
+                  className="not-prose rounded-lg"
                 />
               )}
             </div>

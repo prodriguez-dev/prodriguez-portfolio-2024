@@ -9,6 +9,7 @@ type ButtonProps = {
   className?: string;
   icon?: React.ReactNode;
   target?: string;
+  iconPosition?: string;
 };
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
   label,
   className,
   icon,
+  iconPosition = "right",
   target,
 }: ButtonProps) {
   return (
@@ -33,8 +35,18 @@ export default function Button({
         )}
       />
       <span className="relative flex items-center justify-center gap-2">
-        {label}
-        {icon && icon}
+        {iconPosition === "right" && (
+          <>
+            {label}
+            {icon && icon}
+          </>
+        )}
+        {iconPosition === "left" && (
+          <>
+            {icon && icon}
+            {label}
+          </>
+        )}
       </span>
     </PrismicNextLink>
   );

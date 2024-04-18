@@ -100,6 +100,14 @@ export default async function Footer() {
           </a>
           ,{" "}
           <a
+            href="https://www.typescriptlang.org/"
+            target="_blank"
+            className="footer-power"
+          >
+            TypeScript
+          </a>
+          ,{" "}
+          <a
             href="https://nodejs.org/"
             target="_blank"
             className="footer-power"
@@ -117,15 +125,32 @@ export default async function Footer() {
           ,{" "}
           <a href="https://gsap.com/" target="_blank" className="footer-power">
             GSAP
-          </a>{" "}
-          and{" "}
+          </a>
+          ,{" "}
           <a
             href="https://prismic.io/"
             target="_blank"
             className="footer-power"
           >
-            Prismic.io
+            Prismic
           </a>
+          ,{" "}
+          <a
+            href="https://github.com/"
+            target="_blank"
+            className="footer-power"
+          >
+            GitHub
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://vercel.com/"
+            target="_blank"
+            className="footer-power"
+          >
+            Vercel
+          </a>
+          .
         </p>
       </div>
     </Bounded>

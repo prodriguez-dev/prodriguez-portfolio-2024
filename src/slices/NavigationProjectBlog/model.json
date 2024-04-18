@@ -1,0 +1,49 @@
+{
+  "id": "navigation_project_blog",
+  "type": "SharedSlice",
+  "name": "NavigationProjectBlog",
+  "description": "NavigationProjectBlog",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "nav_type": {
+          "type": "Select",
+          "config": {
+            "label": "Nav Type",
+            "placeholder": "",
+            "options": [
+              "Project",
+              "Blog Post"
+            ],
+            "default_value": "Project"
+          }
+        },
+        "prev_link": {
+          "type": "Link",
+          "config": {
+            "label": "Prev Link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "next_link": {
+          "type": "Link",
+          "config": {
+            "label": "Next Link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

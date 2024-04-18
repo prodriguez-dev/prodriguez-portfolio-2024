@@ -25,8 +25,8 @@ export default function Button({
       field={linkField}
       target={target}
       className={clsx(
-        "group relative flex w-fit items-center justify-center overflow-hidden rounded-md bg-emerald-800 px-4 py-2 text-xl font-bold tracking-wide text-emerald-50 drop-shadow-md transition-all duration-300 ease-out hover:scale-105 hover:text-emerald-950",
         className,
+        "group relative flex w-fit items-center justify-center overflow-hidden rounded-md bg-emerald-800 px-4 py-2 text-xl font-bold tracking-wide no-underline drop-shadow-md transition-all duration-300 ease-out hover:scale-105 hover:text-emerald-950",
       )}
     >
       <span
@@ -34,7 +34,7 @@ export default function Button({
           "group-hover: absolute inset-0 z-0 h-full translate-y-10 bg-emerald-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
         )}
       />
-      <span className="relative flex items-center justify-center gap-2">
+      <span className="relative flex items-center justify-center gap-2 text-emerald-50 ">
         {iconPosition === "right" && (
           <>
             {label}

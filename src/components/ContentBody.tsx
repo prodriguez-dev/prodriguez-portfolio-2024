@@ -40,7 +40,7 @@ export default function ContentBody({
           )}
         </div>
         <div className="mt-5 flex flex-col tracking-wide md:mt-14 md:flex-row">
-          <div className="col-span-1 md:w-[500px]">
+          <div className="md:ml-6">
             <p className="text-2xl font-bold text-emerald-50">
               {formattedDate}
             </p>
@@ -61,7 +61,7 @@ export default function ContentBody({
               <Button
                 linkField={page.data.link}
                 label="Visit Site"
-                className="mx-auto mt-8 md:mx-0 md:text-xl"
+                className="mx-auto mt-8 md:mx-0"
               />
             )}
           </div>

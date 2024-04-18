@@ -72,6 +72,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "navigation_project_blog": {
+              "type": "SharedSlice"
+            },
             "image_block": {
               "type": "SharedSlice"
             },

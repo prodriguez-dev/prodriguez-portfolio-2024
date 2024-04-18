@@ -140,7 +140,7 @@ function DesktopMenu({
         <Button
           linkField={settings.data.cta_link}
           label={settings.data.cta_label}
-          className="ml-3 text-xl"
+          className="ml-3"
           icon={<MdEmail className="inline-block" />}
         />
       </li>

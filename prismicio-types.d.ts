@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPostDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type BlogPostDocumentDataSlicesSlice =
+  | NavigationProjectBlogSlice
+  | ImageBlockSlice
+  | TextBlockSlice;
 
 /**
  * Content for Blog Post documents
@@ -348,7 +351,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type ProjectDocumentDataSlicesSlice =
+  | NavigationProjectBlogSlice
+  | ImageBlockSlice
+  | TextBlockSlice;
 
 /**
  * Content for Project documents
@@ -1160,6 +1166,72 @@ export type ImageBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *NavigationProjectBlog → Primary*
+ */
+export interface NavigationProjectBlogSliceDefaultPrimary {
+  /**
+   * Nav Type field in *NavigationProjectBlog → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Project
+   * - **API ID Path**: navigation_project_blog.primary.nav_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  nav_type: prismic.SelectField<"Project" | "Blog Post", "filled">;
+
+  /**
+   * Prev Link field in *NavigationProjectBlog → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_project_blog.primary.prev_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  prev_link: prismic.LinkField;
+
+  /**
+   * Next Link field in *NavigationProjectBlog → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_project_blog.primary.next_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  next_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for NavigationProjectBlog Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationProjectBlogSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavigationProjectBlogSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NavigationProjectBlog*
+ */
+type NavigationProjectBlogSliceVariation = NavigationProjectBlogSliceDefault;
+
+/**
+ * NavigationProjectBlog Shared Slice
+ *
+ * - **API ID**: `navigation_project_blog`
+ * - **Description**: NavigationProjectBlog
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationProjectBlogSlice = prismic.SharedSlice<
+  "navigation_project_blog",
+  NavigationProjectBlogSliceVariation
+>;
+
+/**
  * Primary content in *OtherSkills → Primary*
  */
 export interface OtherSkillsSliceDefaultPrimary {
@@ -1493,6 +1565,10 @@ declare module "@prismicio/client" {
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,
       ImageBlockSliceDefault,
+      NavigationProjectBlogSlice,
+      NavigationProjectBlogSliceDefaultPrimary,
+      NavigationProjectBlogSliceVariation,
+      NavigationProjectBlogSliceDefault,
       OtherSkillsSlice,
       OtherSkillsSliceDefaultPrimary,
       OtherSkillsSliceDefaultItem,

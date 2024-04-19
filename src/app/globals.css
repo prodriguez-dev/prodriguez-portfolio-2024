@@ -96,3 +96,27 @@
     @apply translate-y-8 md:translate-y-10;
   }
 }
+
+.img-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  transition:
+    transform 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+  transform: translateX(-50%) skewX(45deg);
+}
+
+.img-shine:hover::after {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%) translateX(100%) skewX(45deg);
+}

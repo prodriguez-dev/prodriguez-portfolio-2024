@@ -19,6 +19,14 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "image_link": {
+          "type": "Link",
+          "config": {
+            "label": "Image Link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}

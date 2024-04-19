@@ -1133,6 +1133,16 @@ export interface ImageBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image Link field in *ImageBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_block.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  image_link: prismic.LinkField;
 }
 
 /**

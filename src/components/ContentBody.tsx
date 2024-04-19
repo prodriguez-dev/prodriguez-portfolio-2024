@@ -71,14 +71,14 @@ export default function ContentBody({
                 <PrismicNextLink field={page.data.link}>
                   <PrismicNextImage
                     field={page.data.hover_image}
-                    imgixParams={{ w: 600 }}
+                    imgixParams={{ w: 600, q: 70 }}
                     className="not-prose rounded-lg transition-transform duration-500 hover:scale-105"
                   />
                 </PrismicNextLink>
               ) : (
                 <PrismicNextImage
                   field={page.data.hover_image}
-                  imgixParams={{ w: 600 }}
+                  imgixParams={{ w: 600, q: 70 }}
                   className="not-prose rounded-lg"
                 />
               )}

@@ -50,13 +50,11 @@ export function NameLogo({ name }: { name: KeyTextField }) {
 
     // Add event listeners
     logoElement.addEventListener("mouseenter", handleMouseEnter);
-    logoElement.addEventListener("mouseleave", handleMouseLeave);
 
     // Cleanup function
     return () => {
       // Remove event listeners
       logoElement.removeEventListener("mouseenter", handleMouseEnter);
-      logoElement.removeEventListener("mouseleave", handleMouseLeave);
 
       // Stop the animation if component unmounts
       stopTypewritingAnimation();

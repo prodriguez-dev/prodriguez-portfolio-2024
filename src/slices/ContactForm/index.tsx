@@ -18,7 +18,7 @@ const ContactForm = ({ slice }: ContactProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="grid grid-cols-1 items-center">
-        <Heading size="lg" as="h1" className="text-emerald-50">
+        <Heading size="lg" as="h1" className="text-green-50">
           {slice.primary.heading}
         </Heading>
         <div className="flex">

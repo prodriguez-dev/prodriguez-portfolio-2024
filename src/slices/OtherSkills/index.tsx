@@ -60,9 +60,10 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
     return () => ctx.revert(); // cleanup!
   }, []);
 
-  const midPoint = Math.ceil(slice.items.length / 2);
-  const firstHalf = slice.items.slice(0, midPoint);
-  const secondHalf = slice.items.slice(midPoint);
+  const thirdPoint = Math.ceil(slice.items.length / 3);
+  const firstThird = slice.items.slice(0, thirdPoint);
+  const secondThird = slice.items.slice(thirdPoint, thirdPoint * 2);
+  const thirdThird = slice.items.slice(thirdPoint * 2);
 
   return (
     <section
@@ -74,16 +75,17 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       <Bounded as="div">
         <Heading
           size="md"
-          className="sofia-extra-cond mb-1 uppercase italic tracking-wide text-emerald-50"
+          className="sofia-extra-cond stroke-headline mb-1 uppercase italic tracking-wide text-[#418a91]"
           as="h2"
         >
           {slice.primary.heading}
         </Heading>
       </Bounded>
 
-      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-emerald-800 md:gap-3 md:text-3xl md:font-extrabold">
-        {renderRepeatedSkills(firstHalf)}
-        {renderRepeatedSkills(secondHalf)}
+      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-[#418a91] opacity-65 mix-blend-darken md:text-7xl md:font-black">
+        {renderRepeatedSkills(firstThird)}
+        {renderRepeatedSkills(secondThird)}
+        {renderRepeatedSkills(thirdThird)}
       </div>
     </section>
   );

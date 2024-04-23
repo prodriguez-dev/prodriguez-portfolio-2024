@@ -86,9 +86,10 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={component}
+      className=""
     >
       <div
-        className={`grid gap-x-8 gap-y-6 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}]`}
+        className={`grid gap-x-8 gap-y-6 rounded-2xl bg-[#60a5fa] px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}]`}
         data-speed=".2"
       >
         {!textLeftColumn && (
@@ -104,10 +105,10 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className="text-emerald-50">
+            <span className="text-yellow-300">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
-            <span className="block text-emerald-50 md:ml-4 md:inline">
+            <span className="block text-yellow-300 md:ml-4 md:inline">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
@@ -116,7 +117,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             {slice.primary.title}
           </span>
 
-          <div className="prose prose-xl prose-invert col-start-1 mt-4 text-emerald-50 md:prose-2xl md:mt-10">
+          <div className="prose prose-xl col-start-1 mt-4 text-green-800 md:prose-2xl md:mt-10">
             <PrismicRichText field={slice.primary.description} />
           </div>
 

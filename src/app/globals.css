@@ -5,21 +5,21 @@
 @tailwind utilities;
 
 .background-master {
-  @apply bg-emerald-950;
+  @apply bg-green-400;
 }
 
 .border-master {
-  @apply bg-emerald-950;
+  @apply bg-green-400;
 }
 
 .background-gradient {
   margin-top: -16px;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at top center,
     hsla(158, 64%, 51%, 0.75) 0%,
     hsla(158, 0%, 0%, 0) 50%,
     hsla(158, 0%, 0%, 0) 100%
-  );
+  ); */
 
   @media only screen and (max-width: 767px) {
     margin-top: 64px;
@@ -40,12 +40,14 @@
 
 .tags,
 .tags ul {
-  @apply flex list-none flex-row flex-wrap gap-2 text-emerald-500 md:gap-4;
+  color: #f7efd8;
+  @apply flex list-none flex-row flex-wrap gap-2 md:gap-4;
 }
 
 .tags li,
 .tags span {
-  @apply w-fit whitespace-nowrap rounded-full bg-emerald-950 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
+  background-color: #e8b45e;
+  @apply w-fit whitespace-nowrap rounded-full px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
 }
 
 .tags li {
@@ -54,26 +56,26 @@
 
 .stroke-effect {
   paint-order: stroke fill;
-  text-shadow: 3px 3px 6px rgb(2, 44, 34);
-  @supports (-webkit-text-stroke: 4px rgb(2, 44, 34)) {
-    -webkit-text-stroke: 4px rgb(2, 44, 34);
-    -webkit-text-fill-color: rgb(236, 253, 245);
+  /* text-shadow: 14px 14px 16px rgb(247, 239, 216); */
+  @supports (-webkit-text-stroke: 6px rgb(247, 239, 216)) {
+    -webkit-text-stroke: 6px rgb(247, 239, 216);
+    -webkit-text-fill-color: rgb(65, 138, 145);
   }
 }
 
 .stroke-headline {
   paint-order: stroke fill;
-  text-shadow: 3px 3px 6px rgb(2, 44, 34);
-  @supports (-webkit-text-stroke: 3px rgb(2, 44, 34)) {
-    -webkit-text-stroke: 3px rgb(2, 44, 34);
-    -webkit-text-fill-color: rgb(236, 253, 245);
+  /* text-shadow: 20px 20px 2px rgb(247, 239, 216); */
+  @supports (-webkit-text-stroke: 26px rgb(247, 239, 216)) {
+    -webkit-text-stroke: 26px rgb(247, 239, 216);
+    -webkit-text-fill-color: rgb(65, 138, 145);
   }
 }
 
 .stroke-effect-svg {
-  stroke: rgb(2, 44, 34);
-  stroke-width: 4;
-  fill: rgb(236, 253, 245);
+  stroke: rgb(247, 239, 216);
+  stroke-width: 2;
+  fill: rgb(247, 239, 216);
 }
 
 .bullet-markers {
@@ -83,11 +85,11 @@
 }
 
 .footer-icons {
-  @apply p-2 text-2xl text-slate-50 transition-all duration-300 hover:scale-125 hover:text-emerald-400;
+  @apply p-2 text-2xl text-green-50 transition-all duration-300 hover:scale-125 hover:text-green-400;
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors duration-300 hover:text-emerald-400;
+  @apply font-extrabold transition-colors duration-300 hover:text-green-400;
 }
 
 .nav-proj-blog {

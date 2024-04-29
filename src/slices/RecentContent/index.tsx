@@ -48,7 +48,7 @@ const RecentContent = async ({
       <div className="bg-blue-400">
         <Heading
           size="md"
-          className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-green-50"
+          className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-blue-50"
         >
           {slice.primary.heading}
         </Heading>

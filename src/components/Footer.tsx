@@ -12,12 +12,12 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Bounded as="footer" className="tracking-wide text-green-50">
+    <Bounded as="footer" className="tracking-wide text-blue-50">
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row ">
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
             href="/"
-            className="text-3xl font-extrabold tracking-wide transition-colors duration-300 hover:text-green-400"
+            className="text-3xl font-extrabold tracking-wide transition-colors duration-300 hover:text-blue-400"
           >
             {settings.data.name}
           </Link>
@@ -30,7 +30,7 @@ export default async function Footer() {
                   <li>
                     <PrismicNextLink
                       className={clsx(
-                        "group relative block overflow-hidden rounded px-1 py-1 text-xl font-extrabold tracking-wide text-green-50 transition-colors duration-300 hover:text-green-400  md:px-3 md:text-2xl",
+                        "group relative block overflow-hidden rounded px-1 py-1 text-xl font-extrabold tracking-wide text-blue-50 transition-colors duration-300 hover:text-blue-400  md:px-3 md:text-2xl",
                       )}
                       field={link}
                     >
@@ -39,7 +39,7 @@ export default async function Footer() {
                   </li>
                   {index < settings.data.nav_item.length - 1 && (
                     <span
-                      className="text-4xl font-thin leading-[0] text-green-50"
+                      className="text-4xl font-thin leading-[0] text-blue-50"
                       aria-hidden="true"
                     >
                       /
@@ -81,11 +81,11 @@ export default async function Footer() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-sm text-green-500">
+        <p className="text-sm text-blue-500">
           © {new Date().getFullYear()} {settings.data.name}. All Rights
           Reserved.
         </p>
-        <p className="text-md text-green-700">
+        <p className="text-md text-blue-700">
           Powered by{" "}
           <a
             href="https://nextjs.org/"

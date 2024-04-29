@@ -215,6 +215,7 @@ export type ContactDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | HomeHero1Slice
   | OtherSkillsSlice
   | RecentContentSlice
   | ExperienceSlice
@@ -1121,6 +1122,81 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *HomeHero1 → Primary*
+ */
+export interface HomeHero1SliceDefaultPrimary {
+  /**
+   * First Name field in *HomeHero1 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_hero1.primary.first_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  first_name: prismic.KeyTextField;
+
+  /**
+   * Last Name field in *HomeHero1 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_hero1.primary.last_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  last_name: prismic.KeyTextField;
+
+  /**
+   * Description field in *HomeHero1 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_hero1.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Avatar field in *HomeHero1 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_hero1.primary.avatar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HomeHero1 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHero1SliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HomeHero1SliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HomeHero1*
+ */
+type HomeHero1SliceVariation = HomeHero1SliceDefault;
+
+/**
+ * HomeHero1 Shared Slice
+ *
+ * - **API ID**: `home_hero1`
+ * - **Description**: HomeHero1
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHero1Slice = prismic.SharedSlice<
+  "home_hero1",
+  HomeHero1SliceVariation
+>;
+
+/**
  * Primary content in *ImageBlock → Primary*
  */
 export interface ImageBlockSliceDefaultPrimary {
@@ -1571,6 +1647,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HomeHero1Slice,
+      HomeHero1SliceDefaultPrimary,
+      HomeHero1SliceVariation,
+      HomeHero1SliceDefault,
       ImageBlockSlice,
       ImageBlockSliceDefaultPrimary,
       ImageBlockSliceVariation,

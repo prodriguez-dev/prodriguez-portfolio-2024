@@ -1,3 +1,4 @@
+import Bounded from "@/components/Bounded";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
@@ -16,21 +17,23 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="home-hero-1 bg-no-repeat bg-cover object-fit -mt-32 w-100 pt-24 pb-48 bg-[url('/bg/paul-stage-bg-ext-optim.svg')]"
+      className="home-hero-1 -mt-32 bg-[url('/bg/paul-stage-bg-ext-optim.svg')] bg-cover bg-no-repeat object-cover pt-24"
     >
-      <h1 className="center">Hello</h1>
-      <PrismicNextImage
-        field={slice.primary.avatar}
-        className="object-fit ml-auto w-36 mr-96"
-        imgixParams={{ q: 90 }}
-        placeholder="empty"
-        priority
-      />
+      <Bounded>
+        <h1 className="center">Hello</h1>
+        <PrismicNextImage
+          field={slice.primary.avatar}
+          className="object-fit ml-auto mr-96 w-36"
+          imgixParams={{ q: 90 }}
+          placeholder="empty"
+          priority
+        />
 
-      {/* <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
+        {/* <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
       <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/bg/paul-stage-optim.svg')] opacity-80 mix-blend-soft-light md:-mt-4">
         Hello
       </div> */}
+      </Bounded>
     </section>
   );
 };

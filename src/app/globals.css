@@ -26,6 +26,10 @@
   }
 }
 
+.home-hero-1 {
+  background-position: center center;
+}
+
 .sofia {
   font-family: "Sofia Sans", sans-serif;
 }

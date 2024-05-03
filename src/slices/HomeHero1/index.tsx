@@ -21,11 +21,11 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
     >
       <Bounded>
 
-        <div className="flex">
-          {isFilled.richText(slice.primary.description) && <PrismicRichText field={slice.primary.description} />}
+        <div className="flex mx-36 mt-48 mb-36">
+          {isFilled.keyText(slice.primary.description) && <h2>{slice.primary.description}</h2>}
           <PrismicNextImage
             field={slice.primary.avatar}
-            className="object-fit ml-auto mr-96 w-36"
+            className="object-fit w-36"
             imgixParams={{ q: 90 }}
             placeholder="empty"
             priority

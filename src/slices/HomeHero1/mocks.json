@@ -3,29 +3,7 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"first_name": {
-				"__TYPE__": "FieldContent",
-				"value": "major",
-				"type": "Text"
-			},
-			"last_name": {
-				"__TYPE__": "FieldContent",
-				"value": "drop",
-				"type": "Text"
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Aute labore non dolore cupidatat ipsum adipisicing est amet id pariatur elit consequat ut sunt magna."
-						}
-					}
-				]
-			},
 			"avatar": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
@@ -43,9 +21,22 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "detail",
+				"type": "Text"
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

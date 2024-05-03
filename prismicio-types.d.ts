@@ -1126,34 +1126,14 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface HomeHero1SliceDefaultPrimary {
   /**
-   * First Name field in *HomeHero1 → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero1.primary.first_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  first_name: prismic.KeyTextField;
-
-  /**
-   * Last Name field in *HomeHero1 → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_hero1.primary.last_name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  last_name: prismic.KeyTextField;
-
-  /**
    * Description field in *HomeHero1 → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: home_hero1.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  description: prismic.RichTextField;
+  description: prismic.KeyTextField;
 
   /**
    * Avatar field in *HomeHero1 → Primary*

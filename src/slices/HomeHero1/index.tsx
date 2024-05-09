@@ -142,7 +142,7 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
       <Bounded>
         <div className={`hero-bounded ${!isPageLoaded ? "opacity-0" : ""}`}>
           {isFilled.keyText(slice.primary.description) && (
-            <h2 ref={textRef} className="hero-text">
+            <h2 ref={textRef} className="hero-text tracking-wide text-blue-950">
               {slice.primary.description}
             </h2>
           )}

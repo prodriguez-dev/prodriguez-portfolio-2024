@@ -40,13 +40,13 @@
 
 .tags,
 .tags ul {
-  color: #f7efd8;
+  color: #f8fafc;
   @apply flex list-none flex-row flex-wrap gap-2 md:gap-4;
 }
 
 .tags li,
 .tags span {
-  background-color: #e8b45e;
+  background-color: #1e3a8a;
   @apply w-fit whitespace-nowrap rounded-full px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
 }
 
@@ -58,9 +58,9 @@
   paint-order: stroke fill;
 
   /* text-shadow: 14px 14px 16px rgb(247, 239, 216); */
-  @supports (-webkit-text-stroke: 6px rgb(247, 239, 216)) {
-    -webkit-text-stroke: 6px rgb(247, 239, 216);
-    -webkit-text-fill-color: rgb(65, 138, 145);
+  @supports (-webkit-text-stroke: 6px rgb(96, 165, 250)) {
+    -webkit-text-stroke: 6px rgb(96, 165, 250);
+    -webkit-text-fill-color: rgb(248, 250, 252);
   }
 }
 
@@ -68,21 +68,21 @@
   paint-order: stroke fill;
 
   /* text-shadow: 20px 20px 2px rgb(247, 239, 216); */
-  @supports (-webkit-text-stroke: 26px rgb(247, 239, 216)) {
-    -webkit-text-stroke: 26px rgb(247, 239, 216);
-    -webkit-text-fill-color: rgb(65, 138, 145);
+  @supports (-webkit-text-stroke: 26px rgb(96, 165, 250)) {
+    -webkit-text-stroke: 26px rgb(96, 165, 250);
+    -webkit-text-fill-color: rgb(248, 250, 252);
   }
 }
 
 .stroke-effect-svg {
-  stroke: rgb(247, 239, 216);
+  stroke: rgb(96, 165, 250);
   stroke-width: 2;
-  fill: rgb(247, 239, 216);
+  fill: rgb(248, 250, 252);
 }
 
 .bullet-markers {
   li::marker {
-    color: #ecfdf5 !important;
+    color: #eff6ff !important;
   }
 }
 
@@ -166,7 +166,7 @@
   }
 
   .hero-text {
-    font-size: 2rem; /* 32px to rem */
+    font-size: 1.9rem; /* 32px to rem */
     line-height: 3.375rem; /* 54px to rem */
   }
 

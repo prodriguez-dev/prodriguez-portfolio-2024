@@ -1,343 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 2000">
+<svg id="prefix__Layer_1" data-name="Layer 1"
+  xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2000 2000">
   <defs>
     <style>
-      .cls-1 {
-        fill: #fac713;
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
-        stroke-width: 0px;
-      }
-
-      .cls-2 {
-        fill: #ecd0aa;
-      }
-
-      .cls-3 {
-        fill: #18b05b;
-      }
-
-      .cls-3, .cls-4, .cls-7 {
-        fill-rule: evenodd;
-      }
-
-      .cls-4 {
-        fill: #36c2eb;
-      }
-
-      .cls-5 {
-        fill: #211614;
-      }
-
-      .cls-6 {
-        fill: #fab019;
-      }
-
-      .cls-7 {
-        fill: #5132ce;
-      }
-
-      .cls-8 {
-        fill: #ee3d7d;
-      }
+            .prefix__cls-1{fill:#fac713;stroke-width:0}.prefix__cls-3,.prefix__cls-4,.prefix__cls-5,.prefix__cls-6,.prefix__cls-7,.prefix__cls-8{stroke-width:0}.prefix__cls-3{fill:#18b05b}.prefix__cls-3,.prefix__cls-4,.prefix__cls-7{fill-rule:evenodd}.prefix__cls-4{fill:#36c2eb}.prefix__cls-5{fill:#211614}.prefix__cls-6{fill:#fab019}.prefix__cls-7{fill:#5132ce}.prefix__cls-8{fill:#ee3d7d}
     </style>
   </defs>
-  <g id="Background">
-    <rect class="cls-2" x="0" y="0" width="2000" height="2000"/>
-  </g>
-  <g id="Pattern">
-    <rect class="cls-5" x="0" y="0" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="0" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="0" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="374.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="374.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="125" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="125" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="125" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="499.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="499.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="249.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="249.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="249.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="624.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="624.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="374.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="374.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="374.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="749.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="749.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="499.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="499.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="499.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="874.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="874.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="437.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="437.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="437.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="62.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="62.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="562.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="562.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="562.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="187.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="187.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="687.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="687.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="687.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="312.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="312.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="812.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="812.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="812.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="437.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="437.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="937.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="937.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="937.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="562.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="562.3" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="312.5" y="0" width="687.5" height="187.7"/>
-    <rect class="cls-1" x="625" y="187.7" width="375" height="812"/>
-    <polygon class="cls-4" points="625 374.9 625 187.7 312.5 187.7 312.5 249.9 312.5 312.4 312.5 374.9 375 374.9 437.5 374.9 500 374.9 562.5 374.9 625 374.9"/>
-    <polygon class="cls-7" points="312.5 687.3 312.5 624.8 250 624.8 187.5 624.8 125 624.8 62.5 624.8 0 624.8 0 999.7 312.5 999.7 312.5 937.2 312.5 874.8 312.5 812.3 312.5 749.8 312.5 687.3"/>
-    <rect class="cls-6" x="625" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="657.6" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="690.2" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="722.8" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="755.4" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="788" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="820.7" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="853.3" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="885.9" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="918.5" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="951.1" y="187.7" width="16.3" height="812"/>
-    <rect class="cls-6" x="983.7" y="187.7" width="16.3" height="812"/>
-    <polygon class="cls-3" points="312.5 624.8 0 999.7 312.5 999.7 312.5 937.2 312.5 874.8 312.5 812.3 312.5 749.8 312.5 687.3 312.5 624.8"/>
-    <rect class="cls-8" x="0" y="624.8" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="0" y="749.8" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="250" y="812.3" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="250" y="937.2" width="62.5" height="62.5"/>
-    <polygon class="cls-7" points="499.7 187.7 312.5 374.9 375 374.9 437.5 374.9 499.7 374.9 499.7 187.7"/>
-    <polygon class="cls-7" points="1000 .5 812.8 187.7 875.3 187.7 937.8 187.7 1000 187.7 1000 .5"/>
-    <rect class="cls-5" x="1000" y="937.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="937.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="937.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="562.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="562.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="812.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="812.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="812.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="437.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="437.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="687.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="687.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="687.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="313" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="313" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="562.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="562.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="562.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="188" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="188" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="437.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="437.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="437.9" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="63" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="63" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="500.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="500.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="500.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="875.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="875.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="375.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="375.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="375.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="750.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="750.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="250.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="250.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="250.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="625.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="625.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="125.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="125.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="125.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="500.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="500.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y=".5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y=".5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y=".5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="375.4" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="375.4" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1312.5" y="812.6" width="687.5" height="187.7"/>
-    <rect class="cls-1" x="1625" y=".5" width="375" height="812"/>
-    <polygon class="cls-4" points="1625 625.4 1625 812.6 1312.5 812.6 1312.5 750.3 1312.5 687.9 1312.5 625.4 1375 625.4 1437.5 625.4 1500 625.4 1562.5 625.4 1625 625.4"/>
-    <polygon class="cls-7" points="1312.5 313 1312.5 375.4 1250 375.4 1187.5 375.4 1125 375.4 1062.5 375.4 1000 375.4 1000 .5 1312.5 .5 1312.5 63 1312.5 125.5 1312.5 188 1312.5 250.5 1312.5 313"/>
-    <rect class="cls-6" x="1625" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1657.6" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1690.2" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1722.8" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1755.4" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1788" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1820.7" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1853.3" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1885.9" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1918.5" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1951.1" y=".5" width="16.3" height="812"/>
-    <rect class="cls-6" x="1983.7" y=".5" width="16.3" height="812"/>
-    <polygon class="cls-3" points="1312.5 375.4 1000 .5 1312.5 .5 1312.5 63 1312.5 125.5 1312.5 188 1312.5 250.5 1312.5 313 1312.5 375.4"/>
-    <rect class="cls-8" x="1000" y="313" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1000" y="188" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1250" y="125.5" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1250" y=".5" width="62.5" height="62.5"/>
-    <polygon class="cls-7" points="1499.7 812.6 1312.5 625.4 1375 625.4 1437.5 625.4 1499.7 625.4 1499.7 812.6"/>
-    <polygon class="cls-7" points="2000 999.7 1812.8 812.6 1875.3 812.6 1937.8 812.6 2000 812.6 2000 999.7"/>
-    <rect class="cls-5" x="0" y="999.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="999.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="999.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="1374.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="1374.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="1124.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="1124.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="1124.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="1499.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="1499.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="1249.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="1249.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="1249.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="1624.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="1624.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="1374.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="1374.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="1374.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="1749.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="1749.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="0" y="1499.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="125" y="1499.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="250" y="1499.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="375" y="1874.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="500" y="1874.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="1437.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="1437.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="1437.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="1062.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="1062.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="1562.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="1562.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="1562.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="1187.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="1187.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="1687" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="1687" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="1687" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="1312.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="1312.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="1812" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="1812" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="1812" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="1437.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="1437.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="562.5" y="1937" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="437.5" y="1937" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="312.5" y="1937" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="187.5" y="1562.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="62.5" y="1562.1" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="312.5" y="999.7" width="687.5" height="187.7"/>
-    <rect class="cls-1" x="625" y="1187.4" width="375" height="812"/>
-    <polygon class="cls-4" points="625 1374.6 625 1187.4 312.5 1187.4 312.5 1249.7 312.5 1312.1 312.5 1374.6 375 1374.6 437.5 1374.6 500 1374.6 562.5 1374.6 625 1374.6"/>
-    <polygon class="cls-7" points="312.5 1687 312.5 1624.6 250 1624.6 187.5 1624.6 125 1624.6 62.5 1624.6 0 1624.6 0 1999.5 312.5 1999.5 312.5 1937 312.5 1874.5 312.5 1812 312.5 1749.5 312.5 1687"/>
-    <rect class="cls-6" x="625" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="657.6" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="690.2" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="722.8" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="755.4" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="788" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="820.7" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="853.3" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="885.9" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="918.5" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="951.1" y="1187.4" width="16.3" height="812"/>
-    <rect class="cls-6" x="983.7" y="1187.4" width="16.3" height="812"/>
-    <polygon class="cls-3" points="312.5 1624.6 0 1999.5 312.5 1999.5 312.5 1937 312.5 1874.5 312.5 1812 312.5 1749.5 312.5 1687 312.5 1624.6"/>
-    <rect class="cls-8" x="0" y="1624.6" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="0" y="1749.5" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="250" y="1812" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="250" y="1937" width="62.5" height="62.5"/>
-    <polygon class="cls-7" points="499.7 1187.4 312.5 1374.6 375 1374.6 437.5 1374.6 499.7 1374.6 499.7 1187.4"/>
-    <polygon class="cls-7" points="1000 1000.3 812.8 1187.4 875.3 1187.4 937.8 1187.4 1000 1187.4 1000 1000.3"/>
-    <rect class="cls-5" x="1000" y="1937.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="1937.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="1937.5" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="1562.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="1562.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="1812.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="1812.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="1812.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="1437.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="1437.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="1687.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="1687.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="1687.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="1312.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="1312.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="1562.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="1562.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="1562.6" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="1187.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="1187.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1000" y="1437.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1125" y="1437.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1250" y="1437.7" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1375" y="1062.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1500" y="1062.8" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="1500.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="1500.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="1500.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="1875" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="1875" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="1375.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="1375.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="1375.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="1750.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="1750.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="1250.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="1250.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="1250.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="1625.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="1625.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="1125.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="1125.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="1125.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="1500.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="1500.1" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1562.5" y="1000.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1437.5" y="1000.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1312.5" y="1000.3" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1187.5" y="1375.2" width="62.5" height="62.5"/>
-    <rect class="cls-5" x="1062.5" y="1375.2" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1312.5" y="1812.3" width="687.5" height="187.7"/>
-    <rect class="cls-1" x="1625" y="1000.3" width="375" height="812"/>
-    <polygon class="cls-4" points="1625 1625.1 1625 1812.3 1312.5 1812.3 1312.5 1750.1 1312.5 1687.6 1312.5 1625.1 1375 1625.1 1437.5 1625.1 1500 1625.1 1562.5 1625.1 1625 1625.1"/>
-    <polygon class="cls-7" points="1312.5 1312.7 1312.5 1375.2 1250 1375.2 1187.5 1375.2 1125 1375.2 1062.5 1375.2 1000 1375.2 1000 1000.3 1312.5 1000.3 1312.5 1062.8 1312.5 1125.2 1312.5 1187.7 1312.5 1250.2 1312.5 1312.7"/>
-    <rect class="cls-6" x="1625" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1657.6" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1690.2" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1722.8" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1755.4" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1788" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1820.7" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1853.3" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1885.9" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1918.5" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1951.1" y="1000.3" width="16.3" height="812"/>
-    <rect class="cls-6" x="1983.7" y="1000.3" width="16.3" height="812"/>
-    <polygon class="cls-3" points="1312.5 1375.2 1000 1000.3 1312.5 1000.3 1312.5 1062.8 1312.5 1125.2 1312.5 1187.7 1312.5 1250.2 1312.5 1312.7 1312.5 1375.2"/>
-    <rect class="cls-8" x="1000" y="1312.7" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1000" y="1187.7" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1250" y="1125.2" width="62.5" height="62.5"/>
-    <rect class="cls-8" x="1250" y="1000.3" width="62.5" height="62.5"/>
-    <polygon class="cls-7" points="1499.7 1812.3 1312.5 1625.1 1375 1625.1 1437.5 1625.1 1499.7 1625.1 1499.7 1812.3"/>
-    <polygon class="cls-7" points="2000 1999.5 1812.8 1812.3 1875.3 1812.3 1937.8 1812.3 2000 1812.3 2000 1999.5"/>
+  <path stroke-width="0" fill="#ecd0aa" id="prefix__Background" d="M0 0h2000v2000H0z"/>
+  <g id="prefix__Pattern">
+    <path class="prefix__cls-5" d="M1937.5 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-249.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-250h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-249.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-249.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zM1375 437.4h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5V125H1750zm125 0h62.5V125H1875zm-500 499.8h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zm-500 499.9h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zm-500 499.9h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zm-500 499.8h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875z"/>
+    <path class="prefix__cls-8" d="M1000 0h687.5v187.7H1000z"/>
+    <path class="prefix__cls-1" d="M1000 187.7h375v812h-375z"/>
+    <path class="prefix__cls-4" d="M1437.5 374.9h250V187.7H1375v187.2z"/>
+    <path class="prefix__cls-7" d="M1687.5 749.8v249.9H2000V624.8h-312.5z"/>
+    <path class="prefix__cls-6" d="M1358.7 187.7h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.7 0h16.3v812H1163zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812H1000z"/>
+    <path class="prefix__cls-3" d="M1687.5 687.3v312.4H2000l-312.5-374.9z"/>
+    <path class="prefix__cls-8" d="M1937.5 624.8h62.5v62.5h-62.5zm0 125h62.5v62.5h-62.5zm-250 62.5h62.5v62.5h-62.5zm0 124.9h62.5v62.5h-62.5z"/>
+    <path class="prefix__cls-7" d="M1500.3 374.9h187.2l-187.2-187.2zM1000 187.7h187.2L1000 .5z"/>
+    <path class="prefix__cls-5" d="M937.5 937.8h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 249.9h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 250h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zM562.5 313H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 249.9h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zM562.5 188H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 249.9h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zM562.5 63H625v62.5h-62.5zm-125 0H500v62.5h-62.5zM375 500.4h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zM375 375.4h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zM375 250.5h62.5V313H375zm125 0h62.5V313H500zm125 0h62.5V313H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zM375 125.5h62.5V188H375zm125 0h62.5V188H500zm125 0h62.5V188H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zM375 .5h62.5V63H375zm125 0h62.5V63H500zm125 0h62.5V63H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875z"/>
+    <path class="prefix__cls-8" d="M0 812.6h687.5v187.7H0z"/>
+    <path class="prefix__cls-1" d="M0 .5h375v812H0z"/>
+    <path class="prefix__cls-4" d="M437.5 625.4h250v187.2H375V625.4z"/>
+    <path class="prefix__cls-7" d="M687.5 250.5V.5H1000v374.9H687.5z"/>
+    <path class="prefix__cls-6" d="M358.7.5H375v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0H212v812h-16.3zM163 .5h16.3v812H163zm-32.6 0h16.3v812h-16.3zM97.8.5h16.3v812H97.8zM65.2.5h16.3v812H65.2zM32.6.5h16.3v812H32.6zM0 .5h16.3v812H0z"/>
+    <path class="prefix__cls-3" d="M687.5 313V.5H1000L687.5 375.4z"/>
+    <path class="prefix__cls-8" d="M937.5 313h62.5v62.5h-62.5zm0-125h62.5v62.5h-62.5zm-250-62.5H750V188h-62.5zm0-125H750V63h-62.5z"/>
+    <path class="prefix__cls-7" d="M500.3 625.4h187.2L500.3 812.6zM0 812.6h187.2L0 999.7z"/>
+    <path class="prefix__cls-5" d="M1937.5 999.7h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-249.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-249.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-250h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm500-249.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-125 374.9h62.5v62.5h-62.5zm-125 0h62.5v62.5h-62.5zm-62.5-437.4h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zm-500 499.9h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zM1375 1687h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zM1375 1812h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875zM1375 1937h62.5v62.5H1375zm125 0h62.5v62.5H1500zm125 0h62.5v62.5H1625zm125-374.9h62.5v62.5H1750zm125 0h62.5v62.5H1875z"/>
+    <path class="prefix__cls-8" d="M1000 999.7h687.5v187.7H1000z"/>
+    <path class="prefix__cls-1" d="M1000 1187.4h375v812h-375z"/>
+    <path class="prefix__cls-4" d="M1437.5 1374.6h250v-187.2H1375v187.2z"/>
+    <path class="prefix__cls-7" d="M1687.5 1749.5v250H2000v-374.9h-312.5z"/>
+    <path class="prefix__cls-6" d="M1358.7 1187.4h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.7 0h16.3v812H1163zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812H1000z"/>
+    <path class="prefix__cls-3" d="M1687.5 1687v312.5H2000l-312.5-374.9z"/>
+    <path class="prefix__cls-8" d="M1937.5 1624.6h62.5v62.5h-62.5zm0 124.9h62.5v62.5h-62.5zm-250 62.5h62.5v62.5h-62.5zm0 125h62.5v62.5h-62.5z"/>
+    <path class="prefix__cls-7" d="M1500.3 1374.6h187.2l-187.2-187.2zM1000 1187.4h187.2L1000 1000.3z"/>
+    <path class="prefix__cls-5" d="M937.5 1937.5h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 250h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 249.9h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 249.9h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zm500 250h62.5v62.5h-62.5zm-125 0H875v62.5h-62.5zm-125 0H750v62.5h-62.5zm-125-374.9H625v62.5h-62.5zm-125 0H500v62.5h-62.5zM375 1500.1h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zM750 1875h62.5v62.5H750zm125 0h62.5v62.5H875zm-500-499.8h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zm-500-499.9h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zm-500-499.9h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875zm-500-499.8h62.5v62.5H375zm125 0h62.5v62.5H500zm125 0h62.5v62.5H625zm125 374.9h62.5v62.5H750zm125 0h62.5v62.5H875z"/>
+    <path class="prefix__cls-8" d="M0 1812.3h687.5V2000H0z"/>
+    <path class="prefix__cls-1" d="M0 1000.3h375v812H0z"/>
+    <path class="prefix__cls-4" d="M437.5 1625.1h250v187.2H375v-187.2z"/>
+    <path class="prefix__cls-7" d="M687.5 1250.2v-249.9H1000v374.9H687.5z"/>
+    <path class="prefix__cls-6" d="M358.7 1000.3H375v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812h-16.3zm-32.6 0H212v812h-16.3zm-32.7 0h16.3v812H163zm-32.6 0h16.3v812h-16.3zm-32.6 0h16.3v812H97.8zm-32.6 0h16.3v812H65.2zm-32.6 0h16.3v812H32.6zm-32.6 0h16.3v812H0z"/>
+    <path class="prefix__cls-3" d="M687.5 1312.7v-312.4H1000l-312.5 374.9z"/>
+    <path class="prefix__cls-8" d="M937.5 1312.7h62.5v62.5h-62.5zm0-125h62.5v62.5h-62.5zm-250-62.5H750v62.5h-62.5zm0-124.9H750v62.5h-62.5z"/>
+    <path class="prefix__cls-7" d="M500.3 1625.1h187.2l-187.2 187.2zM0 1812.3h187.2L0 1999.5z"/>
   </g>
 </svg>

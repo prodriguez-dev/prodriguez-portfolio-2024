@@ -82,7 +82,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         </Heading>
       </Bounded>
 
-      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-[#418a91] opacity-65 mix-blend-darken md:text-7xl md:font-black">
+      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-[#f8fafc] mix-blend-overlay md:text-7xl md:font-black">
         {renderRepeatedSkills(firstThird)}
         {renderRepeatedSkills(secondThird)}
         {renderRepeatedSkills(thirdThird)}

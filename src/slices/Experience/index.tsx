@@ -66,20 +66,20 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         <Heading
           as="h3"
           size="md"
-          className="sofia-extra-cond uppercase italic tracking-wide text-blue-50"
+          className="sofia-extra-cond stroke-headline uppercase italic tracking-wide"
         >
           {slice.primary.heading}
         </Heading>
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`experience to-blue-[950] ml-6 mt-8 flex max-w-prose rounded-xl bg-gradient-to-b from-neutral-950 px-8 py-7 md:mt-16`}
+            className={`experience to-blue-[950] ml-6 mt-8 flex max-w-prose rounded-xl bg-blue-400 px-8 py-7 md:mt-16`}
           >
             <div className="w-full">
               <Heading
                 as="h4"
                 size="sm"
-                className="font-extrabold italic tracking-wide text-blue-50"
+                className="font-extrabold italic tracking-wide text-blue-950"
               >
                 {item.title}
               </Heading>
@@ -98,7 +98,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                   </span>
                 )}
               </div>
-              <div className="prose-md bullet-markers prose prose-invert -ml-2 mt-0 tracking-wide text-blue-50 md:prose-xl md:mt-4">
+              <div className="prose-md bullet-markers prose -ml-2 mt-0 tracking-wide text-blue-50 md:prose-xl md:mt-4">
                 <PrismicRichText field={item.description} />
               </div>
             </div>

@@ -1312,6 +1312,16 @@ export type NavigationProjectBlogSlice = prismic.SharedSlice<
  */
 export interface OtherSkillsSliceDefaultPrimary {
   /**
+   * Background field in *OtherSkills → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: other_skills.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background: prismic.ImageField<never>;
+
+  /**
    * Heading field in *OtherSkills → Primary*
    *
    * - **Field Type**: Text

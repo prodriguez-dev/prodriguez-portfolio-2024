@@ -134,11 +134,7 @@ export default function ContentList({
 
   return (
     <>
-      <ul
-        ref={component}
-        className="-z-20 grid border-b border-b-[#f7efd8]"
-        onMouseLeave={onMouseLeave}
-      >
+      <ul ref={component} className="-z-20 grid" onMouseLeave={onMouseLeave}>
         {items.map((post, index) => (
           <li
             key={index}
@@ -150,11 +146,11 @@ export default function ContentList({
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="my-4 flex flex-col gap-1 rounded-xl px-8 py-6 text-blue-50 md:flex-row md:justify-between"
+              className="my-4 flex flex-col gap-1 rounded-xl border-t border-t-2 border-t-blue-50 px-8 py-6 text-blue-50 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
               <div>
-                <div className="z-20 text-3xl font-extrabold tracking-wide text-blue-950 md:text-4xl">
+                <div className="z-20 text-3xl font-extrabold tracking-wide text-blue-50 md:text-4xl">
                   {post.data.title}
                 </div>
                 <div className="mt-5 flex flex-row flex-wrap gap-2 text-blue-50 md:gap-4">

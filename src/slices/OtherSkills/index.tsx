@@ -2,7 +2,8 @@
 
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -72,17 +73,27 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       className="wrapper overflow-hidden"
       ref={component}
     >
-      <Bounded as="div">
-        <Heading
-          size="md"
-          className="sofia-extra-cond stroke-headline mb-1 uppercase italic tracking-wide text-[#418a91]"
-          as="h2"
-        >
-          {slice.primary.heading}
-        </Heading>
+      <Bounded as="div" className="relative">
+        {isFilled.image(slice.primary.background) && (
+          <PrismicNextImage
+            field={slice.primary.background}
+            className=""
+            placeholder="empty"
+            priority
+          />
+        )}
+        <div className="mt-[-31%] flex flex-col justify-center">
+          <Heading
+            size="md"
+            className="mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-blue-950"
+            as="h2"
+          >
+            {slice.primary.heading}
+          </Heading>
+        </div>
       </Bounded>
 
-      <div className="flex flex-col justify-between gap-0 text-lg font-bold uppercase italic text-[#f8fafc] mix-blend-overlay md:text-7xl md:font-black">
+      <div className="sofia-extra-cond mx-auto -mt-[2%] mb-[6%] flex max-w-6xl flex-col justify-between gap-3 overflow-hidden text-lg font-bold uppercase text-blue-950 opacity-70 mix-blend-hard-light md:text-5xl md:font-black">
         {renderRepeatedSkills(firstThird)}
         {renderRepeatedSkills(secondThird)}
         {renderRepeatedSkills(thirdThird)}
@@ -92,7 +103,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
 
   function renderRepeatedSkills(skills: Skill[]) {
     return (
-      <div className="tech-row flex items-center justify-center gap-1 md:gap-3">
+      <div className="tech-row flex items-center justify-center gap-1 md:gap-4">
         {[...Array(4)].map((_, repeatIndex) => (
           <React.Fragment key={repeatIndex}>
             {skills.map(({ skill_name }, index) => (

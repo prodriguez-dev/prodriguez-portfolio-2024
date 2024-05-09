@@ -12,6 +12,14 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "background": {
+          "type": "Image",
+          "config": {
+            "label": "Background",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "description": {
           "type": "Text",
           "config": {

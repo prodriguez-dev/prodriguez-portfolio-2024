@@ -1126,6 +1126,16 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export interface HomeHero1SliceDefaultPrimary {
   /**
+   * Background field in *HomeHero1 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_hero1.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background: prismic.ImageField<never>;
+
+  /**
    * Description field in *HomeHero1 → Primary*
    *
    * - **Field Type**: Text

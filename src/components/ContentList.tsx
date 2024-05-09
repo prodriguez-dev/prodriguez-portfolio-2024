@@ -119,7 +119,7 @@ export default function ContentList({
       fit: "crop",
       w: 220,
       h: 140,
-      exp: -9,
+      exp: -1,
     });
   });
 
@@ -136,7 +136,7 @@ export default function ContentList({
     <>
       <ul
         ref={component}
-        className="grid border-b border-b-emerald-50"
+        className="-z-20 grid border-b border-b-[#f7efd8]"
         onMouseLeave={onMouseLeave}
       >
         {items.map((post, index) => (
@@ -150,18 +150,18 @@ export default function ContentList({
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="flex flex-col gap-1 border-t border-t-emerald-100 py-10 text-emerald-50 md:flex-row md:justify-between"
+              className="my-4 flex flex-col gap-1 rounded-xl px-8 py-6 text-blue-50 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
               <div>
-                <div className="stroke-effect hover:shadow-outline text-3xl font-bold tracking-wide md:text-4xl">
+                <div className="z-20 text-3xl font-extrabold tracking-wide text-blue-950 md:text-4xl">
                   {post.data.title}
                 </div>
-                <div className="mt-5 flex flex-row flex-wrap gap-2 text-emerald-950 md:gap-4">
+                <div className="mt-5 flex flex-row flex-wrap gap-2 text-blue-50 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-emerald-500 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
+                      className="w-fit whitespace-nowrap rounded-full bg-blue-700 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
                     >
                       {tag}
                     </span>
@@ -173,8 +173,8 @@ export default function ContentList({
                   )}
                 </div>
               </div>
-              <div className="stroke-effect mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide md:mt-0">
-                {viewMoreText} <FiEye className="stroke-effect-svg text-xl" />
+              <div className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide text-blue-950 md:mt-0">
+                {viewMoreText} <FiEye className="text-xl" />
               </div>
             </a>
           </li>
@@ -182,7 +182,7 @@ export default function ContentList({
 
         {/* Hover element */}
         <div
-          className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[140px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+          className="hover-reveal pointer-events-none absolute left-0 top-0 z-10 h-[140px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
           style={{
             backgroundImage:
               currentItem !== null ? `url(${contentImages[currentItem]})` : "",

@@ -66,7 +66,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       <Bounded as="div">
         <Heading
           size="md"
-          className="sofia-extra-cond b-1 uppercase italic tracking-wide text-emerald-50"
+          className="sofia-extra-cond b-1 uppercase italic tracking-wide text-blue-50"
           as="h2"
         >
           {slice.primary.heading}
@@ -76,7 +76,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       {slice.items.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
-          className="tech-row mb-1 flex items-center justify-center gap-1 font-extrabold italic text-emerald-900 md:gap-5"
+          className="tech-row mb-1 flex items-center justify-center gap-1 font-extrabold italic text-blue-900 md:gap-5"
           aria-label={tech_name || ""}
         >
           {Array.from({ length: 17 }, (_, index) => (

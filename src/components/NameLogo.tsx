@@ -1,39 +1,53 @@
-import { KeyTextField } from "@prismicio/client";
 import gsap from "gsap";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { SplitText } from "gsap/SplitText";
+import { KeyTextField } from "@prismicio/client";
 
-export function NameLogo({ name }: { name: KeyTextField }) {
+gsap.registerPlugin(SplitText);
+
+export function NameLogo({ name }: { name: KeyTextField | null }) {
   const logoRef = useRef<HTMLAnchorElement | null>(null);
   const [hovering, setHovering] = useState(false);
+  let splitTextRef = useRef<SplitText | null>(null);
 
   useEffect(() => {
     const logoElement = logoRef.current;
 
     if (!logoElement) return;
 
-    // Function to start the typewriting animation
+    splitTextRef.current = new SplitText(logoElement, {
+      type: "chars",
+      charsClass: "char",
+    });
+
     const startTypewritingAnimation = () => {
-      gsap.fromTo(
-        logoElement.querySelectorAll("span"),
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power1.in",
-          stagger: {
-            amount: 0.2,
-            from: "start",
+      const chars = splitTextRef.current?.chars;
+      if (chars) {
+        gsap.fromTo(
+          chars,
+          {
+            x: gsap.utils.random(-30, 30),
+            y: gsap.utils.random(-20, 20),
+            opacity: 0,
           },
-        },
-      );
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            duration: 0.08,
+            stagger: 0.08,
+            ease: "expoScale(0.5,7,none)",
+          },
+        );
+      }
     };
 
-    // Function to stop the typewriting animation
     const stopTypewritingAnimation = () => {
-      gsap.killTweensOf(logoElement.querySelectorAll("span")); // Kill the animation
+      const chars = splitTextRef.current?.chars;
+      if (chars) {
+        gsap.killTweensOf(chars);
+      }
     };
 
     // Mouse enter event
@@ -53,27 +67,22 @@ export function NameLogo({ name }: { name: KeyTextField }) {
 
     // Cleanup function
     return () => {
-      // Remove event listeners
       logoElement.removeEventListener("mouseenter", handleMouseEnter);
 
-      // Stop the animation if component unmounts
       stopTypewritingAnimation();
     };
   }, []);
 
-  // Wrap each letter in a span for animation
-  const logoLetters = name
-    ? name.split("").map((letter, index) => <span key={index}>{letter}</span>)
-    : null;
+  const logoName = name ? name : "Logo";
 
   return (
     <Link
       href="/"
       aria-label="Home page"
-      className="text-3xl font-extrabold tracking-normal text-emerald-50"
+      className="text-3xl font-extrabold tracking-normal text-[#f7efd8]"
       ref={logoRef}
     >
-      {logoLetters}
+      {logoName}
     </Link>
   );
 }

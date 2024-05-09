@@ -45,30 +45,34 @@ const RecentContent = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Heading
-        size="md"
-        className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-emerald-50"
-      >
-        {slice.primary.heading}
-      </Heading>
-      {isFilled.richText(slice.primary.description) && (
-        <div className="prose prose-xl prose-invert mb-10">
-          <PrismicRichText field={slice.primary.description} />
+      <div className="bg-blue-400 pb-10 md:rounded-xl">
+        <Heading
+          size="md"
+          className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-blue-50"
+        >
+          {slice.primary.heading}
+        </Heading>
+        <div className="">
+          {isFilled.richText(slice.primary.description) && (
+            <div className="prose prose-xl mb-10">
+              <PrismicRichText field={slice.primary.description} />
+            </div>
+          )}
+          <ContentList
+            items={items}
+            contentType={slice.primary.content_type}
+            viewMoreText={slice.primary.view_more_text}
+            fallbackItemImage={slice.primary.fallback_item_image}
+          />
+          <div className="mx-auto w-fit">
+            <Button
+              linkField={slice.primary.button_link}
+              label={slice.primary.button_text}
+              className="mt-10"
+              icon={<MdViewList className="inline-block" />}
+            />
+          </div>
         </div>
-      )}
-      <ContentList
-        items={items}
-        contentType={slice.primary.content_type}
-        viewMoreText={slice.primary.view_more_text}
-        fallbackItemImage={slice.primary.fallback_item_image}
-      />
-      <div className="mx-auto w-fit">
-        <Button
-          linkField={slice.primary.button_link}
-          label={slice.primary.button_text}
-          className="mt-10"
-          icon={<MdViewList className="inline-block" />}
-        />
       </div>
     </Bounded>
   );

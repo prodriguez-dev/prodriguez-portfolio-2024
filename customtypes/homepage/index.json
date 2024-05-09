@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "home_hero1": {
+              "type": "SharedSlice"
+            },
             "other_skills": {
               "type": "SharedSlice"
             },

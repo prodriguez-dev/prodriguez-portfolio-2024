@@ -22,13 +22,13 @@ export default function NavBar({
 
   return (
     <nav aria-label="Main navigation">
-      <ul className="background-master flex flex-col justify-between px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
+      <ul className="flex flex-col justify-between bg-blue-400 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
         <div className="flex items-center justify-between">
           <NameLogo name={settings.data.name} />
           <button
             aria-expanded={open}
             aria-label="Open menu"
-            className="block p-2 text-2xl text-emerald-50 transition-colors duration-300 hover:text-emerald-400 md:hidden"
+            className="block p-2 text-2xl text-[#f7efd8] transition-colors duration-300 hover:text-blue-400 md:hidden"
             onClick={() => setOpen(true)}
           >
             <MdMenu />
@@ -43,7 +43,7 @@ export default function NavBar({
           <button
             aria-label="Close menu"
             aria-expanded={open}
-            className="fixed right-4 top-3 block p-2 text-2xl text-emerald-50 transition-colors duration-300 hover:text-emerald-400 md:hidden "
+            className="fixed right-4 top-3 block p-2 text-2xl text-[#f7efd8] transition-colors duration-300 hover:text-blue-400 md:hidden "
             onClick={() => setOpen(false)}
           >
             <MdClose />
@@ -56,7 +56,7 @@ export default function NavBar({
                     href={asLink(link) as string}
                     target={label === "Resume" ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-emerald-50 transition-colors duration-300 hover:text-emerald-950"
+                    className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-[#f7efd8] transition-colors duration-300 hover:text-blue-950"
                     onClick={() => setOpen(false)}
                     aria-current={
                       pathname.includes(asLink(link) as string)
@@ -69,7 +69,7 @@ export default function NavBar({
                 </li>
                 {index < settings.data.nav_item.length - 1 && (
                   <span
-                    className="hidden text-4xl font-thin leading-[0] text-emerald-50 md:inline"
+                    className="hidden text-4xl font-thin leading-[0] text-[#f7efd8] md:inline"
                     aria-hidden="true"
                   >
                     /
@@ -108,7 +108,7 @@ function DesktopMenu({
           <li>
             <PrismicNextLink
               className={clsx(
-                "group relative block overflow-hidden rounded px-4 py-1 text-xl font-extrabold tracking-wide text-emerald-50 transition-colors duration-300 hover:text-emerald-950",
+                "group relative block overflow-hidden rounded px-4 py-1 text-xl font-extrabold tracking-wide text-[#f7efd8] transition-colors duration-300 hover:text-blue-950",
               )}
               field={link}
               aria-current={
@@ -117,7 +117,7 @@ function DesktopMenu({
             >
               <span
                 className={clsx(
-                  "absolute inset-0 z-0 h-full rounded bg-emerald-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
+                  "absolute inset-0 z-0 h-full rounded bg-blue-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
                   pathname.includes(asLink(link) as string)
                     ? "translate-y-8"
                     : "translate-y-10",
@@ -128,7 +128,7 @@ function DesktopMenu({
           </li>
           {index < settings.data.nav_item.length - 1 && (
             <span
-              className="hidden text-3xl font-thin leading-[0] text-emerald-50 md:inline"
+              className="hidden text-3xl font-thin leading-[0] text-[#f7efd8] md:inline"
               aria-hidden="true"
             >
               /

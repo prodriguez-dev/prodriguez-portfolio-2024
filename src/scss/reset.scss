@@ -1,0 +1,314 @@
+@import "src/scss/variables.scss";
+@import "src/scss/functions.scss";
+@import "src/scss/mixins.scss";
+
+/* generic reset */
+
+*,
+:after,
+:before {
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  // we're setting this to red here so we can see where the color is not explicitly set on the child elements
+  // will be removed after the development is done
+  // background: $white;
+  // color: red;
+
+  line-height: inherit;
+
+  svg {
+    color: inherit;
+  }
+
+  @include print {
+    padding-top: 0 !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+table {
+  border-collapse: collapse;
+  border-color: inherit;
+  text-indent: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+blockquote,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[role="button"],
+button {
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: default;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* end generic reset */
+
+html {
+  font-size: 62.5%; // = 10px with the default browser font size of 16px
+}
+
+body {
+  color: $black;
+  font-family: $sofia;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  margin: 0;
+  min-height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  text-rendering: geometricPrecision;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  scroll-behavior: auto;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+hr {
+  opacity: 1;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+:focus-visible {
+  box-shadow: 0 0 0 2px black;
+  outline: 2px solid white;
+  outline-offset: 2px;
+  overflow: visible;
+
+  &.inverted-outline {
+    box-shadow: 0 0 0 2px white;
+    outline-color: black;
+  }
+}
+
+@media print {
+  * {
+    background: inherit !important;
+    color: inherit !important;
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
+
+  @include mobile {
+    max-width: 430px;
+  }
+
+  &.no-print {
+    @include print {
+      display: none;
+    }
+  }
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+
+p {
+  font-family: $sofia;
+  font-weight: 400;
+
+  @include sP(
+    [ //
+    font-size $commonFontSize,
+    line-height $commonLineHeight,
+    letter-spacing $commonLetterSpacing,
+    ]
+  );
+}
+
+// default common p and style, the color is set to greenyellow so we can see where the styles are missing and to distinguish it from the primary brand color
+p,
+a {
+  color: greenyellow;
+  font-family: $sofia;
+  font-size: 100px;
+  font-weight: 400;
+
+  @include print {
+    color: black;
+    font-size: 13px;
+    line-height: 22px;
+  }
+}
+
+// this is set to purple so we can see where the hover styles are missing on desktop
+a:hover {
+  color: red;
+
+  // we don't need this behavior on mobile
+  @include mobile {
+    color: inherit;
+  }
+}
+
+body:not(.prerender) .page {
+  min-height: 100svh;
+  opacity: 0;
+  overflow: clip visible;
+  position: relative; // Important for layout of MenuPanels
+}
+
+li {
+  display: list-item;
+}
+
+::selection * {
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+}
+
+.cookie-consent-container {
+  position: relative;
+  display: block;
+  @include sP([ min-height 50]);
+}
+
+.cookie-consent__message {
+  font-style: oblique;
+  text-decoration: underline;
+
+  @include sP(
+    [ //
+    font-size $commonFontSize,
+    line-height $commonLineHeight,
+    letter-spacing $commonLetterSpacing,
+    ]
+  );
+  @include mobile {
+    display: block;
+    padding-bottom: 30px;
+  }
+}

@@ -107,17 +107,14 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         {[...Array(4)].map((_, repeatIndex) => (
           <React.Fragment key={repeatIndex}>
             {skills.map(({ skill_name }, index) => (
-              <>
-                <span
-                  key={index}
-                  className="tech-item flex items-center whitespace-nowrap"
-                >
+              <React.Fragment key={index}>
+                <span className="tech-item flex items-center whitespace-nowrap">
                   {skill_name}
                 </span>
                 <span className="text-[6px] md:text-xs">
                   <MdCircle className="-mt-1 md:mt-0" />
                 </span>
-              </>
+              </React.Fragment>
             ))}
           </React.Fragment>
         ))}

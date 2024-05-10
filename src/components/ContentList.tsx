@@ -146,7 +146,7 @@ export default function ContentList({
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="my-4 flex flex-col gap-1 rounded-xl border-t border-t-2 border-t-blue-50 px-8 py-6 text-blue-50 md:flex-row md:justify-between"
+              className="my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-blue-50 px-8 py-6 text-blue-50 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
               <div>

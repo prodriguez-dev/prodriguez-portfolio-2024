@@ -44,67 +44,63 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
   useEffect(() => {
     if (isPageLoaded) {
       console.log("Initializing animations");
-      let ctx = gsap.context(() => {
-        const masterTimeline = gsap.timeline();
+      const masterTimeline = gsap.timeline();
 
-        // Fade out the loading text first
-        if (loadingTextRef.current) {
-          masterTimeline.to(loadingTextRef.current, {
-            opacity: 0,
-            duration: 0.5,
-            ease: "Power1.easeOut",
-            onComplete: () => {
-              gsap.set(loadingTextRef.current, { display: "none" });
-            },
-          });
-        }
+      // Fade out the loading text first
+      if (loadingTextRef.current) {
+        masterTimeline.to(loadingTextRef.current, {
+          opacity: 0,
+          duration: 0.5,
+          ease: "Power1.easeOut",
+          onComplete: () => {
+            gsap.set(loadingTextRef.current, { display: "none" });
+          },
+        });
+      }
 
-        // Background animation
-        if (bgBackgroundRef.current) {
-          masterTimeline.fromTo(
-            bgBackgroundRef.current,
-            { opacity: 0, top: 800 },
-            { opacity: 1, top: 0, duration: 0.7, ease: "Power3.easeIn" },
-          );
-        }
-
-        // Image animation
+      // Background animation
+      if (bgBackgroundRef.current) {
         masterTimeline.fromTo(
-          imageRef.current,
-          {
-            opacity: 0,
-            scale: 0.5,
-          },
-          {
-            duration: 1.0,
-            opacity: 1,
-            scale: 1,
-            ease: "Power3.easeOut",
-          },
+          bgBackgroundRef.current,
+          { opacity: 0, top: 800 },
+          { opacity: 1, top: 0, duration: 0.7, ease: "Power3.easeIn" },
         );
+      }
 
-        // Text animation
-        if (textRef.current) {
-          const split = new SplitText(textRef.current, { type: "words" });
-          const textTimeline = gsap.timeline();
-          split.words.forEach((word, index) => {
-            textTimeline.from(
-              word,
-              {
-                duration: 0.8,
-                y: 50,
-                opacity: 0,
-                ease: "Power3.easeOut",
-                force3D: true,
-              },
-              index * 0.1,
-            );
-          });
-          masterTimeline.add(textTimeline, "+=0.5");
-        }
-      }, component);
+      // Image animation
+      masterTimeline.fromTo(
+        imageRef.current,
+        {
+          opacity: 0,
+          scale: 0.5,
+        },
+        {
+          duration: 1.0,
+          opacity: 1,
+          scale: 1,
+          ease: "Power3.easeOut",
+        },
+      );
 
-      return () => ctx.revert();
+      // Text animation
+      if (textRef.current) {
+        const split = new SplitText(textRef.current, { type: "words" });
+        const textTimeline = gsap.timeline();
+        split.words.forEach((word, index) => {
+          textTimeline.from(
+            word,
+            {
+              duration: 0.8,
+              y: 50,
+              opacity: 0,
+              ease: "Power3.easeOut",
+              force3D: true,
+            },
+            index * 0.1,
+          );
+        });
+        masterTimeline.add(textTimeline, "+=0.5");
+      }
     }
   }, [isPageLoaded]);
 

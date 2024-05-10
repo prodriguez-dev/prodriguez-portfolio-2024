@@ -4,7 +4,9 @@ import { createClient, repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
 import clsx from "clsx";
 import type { Metadata } from "next";
-import "./globals.css";
+import "./fonts.css";
+import "@/scss/reset.scss";
+import "@/scss/globals.scss";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();

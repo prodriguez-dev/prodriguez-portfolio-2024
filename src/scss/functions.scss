@@ -1,0 +1,54 @@
+@use "sass:math";
+@use "sass:map";
+@import "src/scss/variables.scss";
+
+// Source: https://css-tricks.com/snippets/sass/advanced-type-checking/
+@function is-number($value) {
+  @return type-of($value) == "number";
+}
+
+// Source: https://stackoverflow.com/a/58638675/1279545
+@function has-pixel-unit($value) {
+  @return is-number($value) and index("px", unit($value)) != null;
+}
+
+// Source: https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+  @if is-number($number) and not unitless($number) {
+    //@return $number / ($number * 0 + 1);
+    // >> Deprecation Warning: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function sv($propertyValue, $scalingFactor: $defaultScalingValue) {
+  @if not is-number($propertyValue) {
+    @error 'function sv() expects a number for the $propertyValue parameter. Given value: #{$propertyValue}';
+  }
+
+  @if not has-pixel-unit($propertyValue) and not unitless($propertyValue) {
+    @error 'function sv() expects pixel unit (or no unit) for the $propertyValue parameter. Given value: #{$propertyValue}';
+  }
+
+  $min: round(strip-unit($propertyValue) * $scalingFactor);
+
+  $a: math.div($min, 10);
+  $b: math.div(strip-unit($propertyValue) - $min, 10);
+  $c: math.div($defaultMobileMax, 10);
+  $d: math.div($defaultMaxScreen - $defaultMobileMax, 10);
+
+  @return calc(#{$a}rem + #{$b} * ((100vw - #{$c}rem) / #{$d}));
+}
+
+// Z function return the z-index value
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return ((length($z-indexes) - index($z-indexes, $name)) + 1) * 10;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}

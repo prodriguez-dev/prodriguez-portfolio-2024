@@ -1,0 +1,26 @@
+.wrapper {
+  @include sP([ //
+    margin-top -400 "-32%",
+    ]);
+}
+
+.headline {
+  @include sP([ //
+    font-size 38 20,
+    ]);
+}
+
+.skills {
+  @include sP([ //
+    font-size 38 20,
+    max-width 1160 '90%',
+    padding-bottom 154 100,
+    gap 10 0,
+    ]);
+}
+
+.bullet {
+  @include sP([ //
+    font-size 16 6,
+    ]);
+}

@@ -79,7 +79,7 @@ export function NameLogo({ name }: { name: KeyTextField | null }) {
     <Link
       href="/"
       aria-label="Home page"
-      className="text-3xl font-extrabold tracking-normal text-[#f7efd8]"
+      className="namelogo font-extrabold tracking-normal text-[#f7efd8]"
       ref={logoRef}
     >
       {logoName}

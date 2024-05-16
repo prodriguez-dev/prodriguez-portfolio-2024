@@ -3,9 +3,11 @@ import Button from "@/components/Button";
 import ContentList from "@/components/ContentList";
 import Heading from "@/components/Heading";
 import { createClient } from "@/prismicio";
+import clsx from "clsx";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { MdViewList } from "react-icons/md";
+import s from "./RecentContent.module.scss"
 
 /**
  * Props for `RecentContent`.
@@ -48,7 +50,7 @@ const RecentContent = async ({
       <div className="bg-blue-400 pb-10 md:rounded-xl">
         <Heading
           size="md"
-          className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-blue-50"
+          className={clsx(s.headline, "stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-blue-50")}
         >
           {slice.primary.heading}
         </Heading>

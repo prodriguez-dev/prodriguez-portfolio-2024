@@ -1,12 +1,13 @@
 "use client";
 
-import Bounded from "@/components/Bounded";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import gsap from "gsap";
 import { SliceComponentProps } from "@prismicio/react";
-import { useRef, useEffect, useState } from "react";
+import clsx from "clsx";
+import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { useEffect, useRef, useState } from "react";
+import s from "./HomeHero1.module.scss";
 
 gsap.registerPlugin(SplitText);
 
@@ -19,7 +20,6 @@ export type HomeHero1Props = SliceComponentProps<Content.HomeHero1Slice>;
  * Component for "HomeHero1" Slices.
  */
 const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
-  const component = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
   const bgBackgroundRef = useRef(null);
@@ -108,7 +108,7 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="home-hero-section bg-[#3d7ef7]"
+      className={clsx(s.home_hero_section, "bg-[#3d7ef7]")}
     >
       <div
         ref={loadingTextRef}
@@ -126,35 +126,33 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
         Loading...
       </div>
       {isFilled.image(slice.primary.background) && (
-        <div className="home-hero-bg-wrapper" ref={bgBackgroundRef}>
+        <div className={s.home_hero_bg_wrapper} ref={bgBackgroundRef}>
           <PrismicNextImage
             field={slice.primary.background}
-            className={`home-hero-bg ${!isPageLoaded ? "opacity-0" : ""}`}
+            className={clsx(s.home_hero_bg, !isPageLoaded && "opacity-0")}
             placeholder="empty"
             priority
           />
         </div>
       )}
-      <Bounded>
-        <div className={`hero-bounded ${!isPageLoaded ? "opacity-0" : ""}`}>
-          {isFilled.keyText(slice.primary.description) && (
-            <h2 ref={textRef} className="hero-text tracking-wide text-blue-950">
-              {slice.primary.description}
-            </h2>
-          )}
-          {isFilled.image(slice.primary.avatar) && (
-            <div ref={imageRef}>
-              <PrismicNextImage
-                field={slice.primary.avatar}
-                className="hero-image object-fit"
-                imgixParams={{ q: 90 }}
-                placeholder="empty"
-                priority
-              />
-            </div>
-          )}
-        </div>
-      </Bounded>
+      <div className={clsx(s.hero_bounded, !isPageLoaded && "opacity-0")}>
+        {isFilled.keyText(slice.primary.description) && (
+          <h2 ref={textRef} className={clsx(s.hero_text, "tracking-wide text-blue-950")}>
+            {slice.primary.description}
+          </h2>
+        )}
+        {isFilled.image(slice.primary.avatar) && (
+          <div ref={imageRef}>
+            <PrismicNextImage
+              field={slice.primary.avatar}
+              className={s.hero_image}
+              imgixParams={{ q: 90 }}
+              placeholder="empty"
+              priority
+            />
+          </div>
+        )}
+      </div>
     </section>
   );
 };

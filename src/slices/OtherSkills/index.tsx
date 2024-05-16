@@ -1,14 +1,15 @@
 "use client";
 
 import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import clsx from "clsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useLayoutEffect, useRef } from "react";
 import { MdCircle } from "react-icons/md";
+import s from "./OtherSkills.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,7 +71,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="wrapper overflow-hidden"
+      className={clsx("overflow-hidden")}
       ref={component}
     >
       <Bounded as="div" className="relative">
@@ -82,23 +83,21 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
             priority
           />
         )}
-        <div className="mt-[-31%] flex flex-col justify-center">
-          <Heading
-            size="md"
-            className="mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-blue-950"
-            as="h2"
+        <div className={clsx(s.wrapper, "flex flex-col justify-center")}>
+          <h3
+            className={clsx(s.headline, "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-blue-950")}
           >
             {slice.primary.heading}
-          </Heading>
+          </h3>
         </div>
       </Bounded>
 
-      <div className="sofia-extra-cond mx-auto -mt-[2%] mb-[6%] flex max-w-6xl flex-col justify-between gap-3 overflow-hidden text-lg font-bold uppercase text-blue-950 opacity-70 mix-blend-hard-light md:text-5xl md:font-black">
+      <div className={clsx(s.skills, "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden uppercase text-blue-950 opacity-70 mix-blend-hard-light font-black")}>
         {renderRepeatedSkills(firstThird)}
         {renderRepeatedSkills(secondThird)}
         {renderRepeatedSkills(thirdThird)}
       </div>
-    </section>
+    </section >
   );
 
   function renderRepeatedSkills(skills: Skill[]) {
@@ -111,7 +110,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
                 <span className="tech-item flex items-center whitespace-nowrap">
                   {skill_name}
                 </span>
-                <span className="text-[6px] md:text-xs">
+                <span className={s.bullet}>
                   <MdCircle className="-mt-1 md:mt-0" />
                 </span>
               </React.Fragment>

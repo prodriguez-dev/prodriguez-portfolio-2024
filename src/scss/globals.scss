@@ -36,6 +36,38 @@
   }
 }
 
+.background-pattern {
+  @include sP([ //
+    margin-top -16,
+    ]);
+}
+
+.outer-bounded {}
+
+.inner-bounded {
+  @include sP([ //
+    max-width 1280 '100%',
+    ])
+}
+
+.namelogo {
+  @include sP([ //
+    font-size 24 24,
+    ]);
+}
+
+.navbar-nav {
+  @include sP([ //
+    font-size 16 16,
+    ]);
+}
+
+.button-text {
+  @include sP([ //
+    font-size 16 16,
+    ]);
+}
+
 .tags,
 .tags ul {
   color: #f8fafc;
@@ -49,11 +81,26 @@
 }
 
 .footer-icons {
-  @apply p-2 text-2xl text-blue-50 transition-all duration-300 hover:scale-125 hover:text-blue-400;
+  @apply p-2 text-blue-50 transition-all duration-300 hover:scale-125 hover:text-blue-950;
+
+  @include sP([ //
+    font-size 12 12,
+    ]);
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors duration-300 hover:text-blue-400;
+  @apply font-extrabold transition-colors duration-300 hover:text-blue-950;
+  @include sP([ //
+    font-size 12 12,
+    ]);
+
+
+}
+
+p.footer-power-text {
+  @include sP([ //
+    font-size 12 12,
+    ]);
 }
 
 .nav-proj-blog {
@@ -61,56 +108,6 @@
 
   span:first-of-type {
     @apply translate-y-8 md:translate-y-10;
-  }
-}
-
-.home-hero-section {
-  @apply relative overflow-hidden md:-mt-32;
-}
-
-.home-hero-bg-wrapper {
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  @apply md:pt-24;
-}
-
-.home-hero-bg {
-  height: auto;
-  width: 100vw;
-}
-
-.hero-bounded {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-}
-
-.hero-text {
-  font-weight: 700;
-}
-
-.hero-image {
-  object-fit: fill;
-}
-
-@media screen and (min-width: 1600px) and (max-width: 1900px) {
-  .hero-bounded {
-    margin-top: 14.75rem; /* 236px to rem */
-    margin-right: 3.5rem; /* 56px to rem */
-    margin-left: 8rem; /* 128px to rem */
-    margin-bottom: 10.25rem; /* 164px to rem */
-  }
-
-  .hero-text {
-    font-size: 1.9rem; /* 32px to rem */
-    line-height: 3.375rem; /* 54px to rem */
-  }
-
-  .hero-image {
-    width: 10.5rem; /* 180px to rem */
-    margin-top: 1.5rem; /* 24px to rem */
   }
 }
 

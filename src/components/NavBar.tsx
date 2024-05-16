@@ -56,7 +56,7 @@ export default function NavBar({
                     href={asLink(link) as string}
                     target={label === "Resume" ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-[#f7efd8] transition-colors duration-300 hover:text-blue-950"
+                    className="navbar-nav group relative block overflow-hidden rounded px-3 py-1 text-2xl font-bold text-[#f7efd8] transition-colors duration-300 hover:text-blue-950"
                     onClick={() => setOpen(false)}
                     aria-current={
                       pathname.includes(asLink(link) as string)
@@ -108,7 +108,7 @@ function DesktopMenu({
           <li>
             <PrismicNextLink
               className={clsx(
-                "group relative block overflow-hidden rounded px-4 py-1 text-xl font-extrabold tracking-wide text-[#f7efd8] transition-colors duration-300 hover:text-blue-950",
+                "navbar-nav group relative block overflow-hidden rounded px-4 py-1 font-extrabold tracking-wide text-[#f7efd8] transition-colors duration-300 hover:text-blue-950",
               )}
               field={link}
               aria-current={

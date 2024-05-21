@@ -2,7 +2,7 @@
 
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
@@ -136,10 +136,10 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
         </div>
       )}
       <div className={clsx(s.hero_bounded, !isPageLoaded && "opacity-0")}>
-        {isFilled.keyText(slice.primary.description) && (
-          <h2 ref={textRef} className={clsx(s.hero_text, "tracking-wide text-blue-950")}>
-            {slice.primary.description}
-          </h2>
+        {isFilled.richText(slice.primary.description) && (
+          <div ref={textRef} className={clsx(s.hero_text, "text-blue-950")}>
+            <PrismicRichText field={slice.primary.description} />
+          </div>
         )}
         {isFilled.image(slice.primary.avatar) && (
           <div ref={imageRef}>

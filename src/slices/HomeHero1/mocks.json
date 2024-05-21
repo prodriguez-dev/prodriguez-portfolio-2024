@@ -26,13 +26,7 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"description": {
-				"__TYPE__": "FieldContent",
-				"value": "detail",
-				"type": "Text"
-			},
 			"background": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
@@ -50,7 +44,21 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor tempor ea aliqua anim magna amet mollit commodo. Irure ipsum id consequat in."
+						}
+					}
+				]
 			}
 		},
 		"items": [

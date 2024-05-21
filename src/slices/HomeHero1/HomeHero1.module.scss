@@ -4,6 +4,7 @@
   @include sP([ //
     margin-top -72 0 0.9,
     ]);
+
 }
 
 .home_hero_bg_wrapper {
@@ -30,25 +31,44 @@
   @include sP([ //
     gap 24 8,
     max-width 980 '58%' 0.4,
-    margin-top 224 '11%' 0.5,
-    margin-bottom 224 40 0.4,
+    margin-top 224 '11%' 0.45,
+    margin-bottom 224 '12%' 0.4,
     ]);
+
+
+  @include xLarge {
+    margin-top: 13%;
+    max-width: 58%;
+  }
 }
 
-.hero_text {
-  font-weight: 700;
+.hero_text p {
+  font-family: $sofia-cond;
+
+  @apply text-blue-950;
+
 
   @include sP([ //
-    font-size 26 10 0.4,
-    line-height 48 18 0.4,
+    font-size 38 10 0.4,
+    line-height 54 18 0.4,
     ]);
+
+  @include xLarge {
+    font-size: 3.1em;
+    line-height: 2.0em;
+  }
 }
 
 .hero_image {
   object-fit: fill;
 
   @include sP([ //
-    width 160 50 0.4,
+    width 160 62 0.5,
     margin-top 24 12 0.4,
     ]);
+
+  @include xLarge {
+    width: 200px;
+    margin-top: 18%;
+  }
 }

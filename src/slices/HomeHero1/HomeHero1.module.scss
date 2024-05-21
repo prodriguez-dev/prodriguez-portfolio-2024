@@ -47,9 +47,17 @@
 
   @apply text-blue-950;
 
+  strong {
+    font-weight: 900;
+  }
+
+  em strong {
+    font-weight: 700;
+  }
+
 
   @include sP([ //
-    font-size 38 10 0.4,
+    font-size 36 10 0.4,
     line-height 54 18 0.4,
     ]);
 

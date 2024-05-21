@@ -4,15 +4,16 @@ $defaultMaxScreen: 1680;
 $defaultMobileMax: 768;
 
 // Shorthands for scaling values
-$fsv: $defaultScalingValue; // default font-size, line-height, letter-spacing (text related) scaling value
-$dsv: 0.45; // default dimensions scaling value, use for paddings, margins, width, height etc
-$fhv: 0.55; // default dimensions for the firm highlights
+$fsv: $defaultScalingValue;
+$dsv: 0.45;
+$fhv: 0.55;
 
 // Values used by breakpoint media-query mixins.
 $breakpointUpperLimit: (
   mobile: 768,
   desktop: 1680,
   large: 1920,
+  extralarge: 2100,
 );
 
 // Animate

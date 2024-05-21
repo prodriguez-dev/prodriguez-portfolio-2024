@@ -4,37 +4,9 @@
 @import "src/scss/variables.scss";
 @import "src/scss/functions.scss";
 
-// DEPRECATED: Use the trn() mixin instead.
+
 @mixin animate {
   transition: all $defaultAnimateDuration ease;
-}
-
-@mixin hoverColor($color) {
-  @include desktop {
-    @include trn(color);
-    &:hover {
-      color: $color;
-    }
-  }
-}
-
-@mixin hoverBg($color) {
-  @include desktop {
-    @include trn(background-color);
-    &:hover {
-      background-color: $color;
-    }
-  }
-}
-
-@mixin hoverColorAndBg($color, $colorBg) {
-  @include desktop {
-    @include trn(color, background-color);
-    &:hover {
-      color: $color;
-      background-color: $colorBg;
-    }
-  }
 }
 
 @mixin mobile {
@@ -44,7 +16,9 @@
 }
 
 @mixin desktop {
-  @media print, screen and (min-width: #{map-get($breakpointUpperLimit, mobile)}px) {
+
+  @media print,
+  screen and (min-width: #{map-get($breakpointUpperLimit, mobile)}px) {
     @content;
   }
 }
@@ -61,6 +35,12 @@
   }
 }
 
+@mixin xxLarge {
+  @media screen and (min-width: #{map-get($breakpointUpperLimit, extralarge)}px) {
+    @content;
+  }
+}
+
 @mixin print {
   @media print {
     @content;
@@ -68,32 +48,37 @@
 }
 
 @mixin ie11 {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
     @content;
   }
 }
 
-@mixin scalable(
-  $property,
-  $propertyValue,
-  $mobileOverrideValue: false,
-  $scalingFactor: $defaultScalingValue
-) {
+@mixin scalable($property, $propertyValue, $mobileOverrideValue: false, $scalingFactor: $defaultScalingValue) {
   #{$property}: sv($propertyValue, $scalingFactor);
 
-  @if $mobileOverrideValue == false {
+  @if $mobileOverrideValue ==false {
     // Mobile-value defaults to the $propertyValue, unless a non-null value is given by the user.
     $mobileOverrideValue: $propertyValue;
   }
 
-  @if $mobileOverrideValue != "OFF" {
+  @if $mobileOverrideValue !="OFF" {
+
     // Optional: Overrides the calculation-property at mobile breakpoint. The property becomes fixed to the given $mobileOverrideValue.
     @include mobile {
-      @if type-of($mobileOverrideValue) == "string" {
-        #{$property}: unquote($mobileOverrideValue);
-      } @else {
-        #{$property}: strip-unit($mobileOverrideValue) *
-          1px; // Variable may or may not have units. Normalize to pixel unit.
+      @if $mobileOverrideValue =="CONTINUE_SCALING" {
+        #{$property}: sv($propertyValue, $scalingFactor);
+      }
+
+      @else {
+        @if type-of($mobileOverrideValue)=="string" {
+          #{$property}: unquote($mobileOverrideValue);
+        }
+
+        @else {
+          #{$property}: strip-unit($mobileOverrideValue) * 1px; // Variable may or may not have units. Normalize to pixel unit.
+        }
       }
     }
   }
@@ -105,117 +90,47 @@
 }
 
 // sP() – "scalable properties"
-
 @mixin sP($args) {
-  @if (type-of($args) == list and type-of(nth($args, 1)) == list) {
+  @if (type-of($args)==list and type-of(nth($args, 1))==list) {
+
     // Handling a set of list arguments
     @each $entry in $args {
-      @if (type-of($entry) != list) {
+      @if (type-of($entry) !=list) {
         @error 'mixin sP() is handling a set of lists, but encountered a non-list entry. $entry: #{$entry}';
       }
 
       $numArgs: length($entry);
+
       @if $numArgs < 2 {
         @error 'mixin sP() is handling a set of lists, but encountered an entry with less than 2 values. $entry: #{$entry}';
       }
-      @if $numArgs > 4 {
+
+      @if $numArgs >4 {
         @error 'mixin sP() is handling a set of lists, but encountered an entry with more than 4 values. $entry: #{$entry}';
       }
 
-      @include scalable(
-        nth($entry, 1),
+      @include scalable(nth($entry, 1),
         nth($entry, 2),
-        if($numArgs >= 3, nth($entry, 3), false),
-        if($numArgs >= 4, nth($entry, 4), $defaultScalingValue)
-      );
+        if($numArgs >=3, nth($entry, 3), false),
+        if($numArgs >=4, nth($entry, 4), $defaultScalingValue));
     }
-  } @else {
+  }
+
+  @else {
     // Handling a single list argument
     $numArgs: length($args);
+
     @if $numArgs < 2 {
       @error 'mixin sP() requires a list argument with at least 2 values. $args: #{$args}';
     }
-    @if $numArgs > 4 {
+
+    @if $numArgs >4 {
       @error 'mixin sP() encountered a list argument with more than 4 values. $args: #{$args}';
     }
 
-    @include scalable(
-      nth($args, 1),
+    @include scalable(nth($args, 1),
       nth($args, 2),
-      if($numArgs >= 3, nth($args, 3), false),
-      if($numArgs >= 4, nth($args, 4), $defaultScalingValue)
-    );
+      if($numArgs >=3, nth($args, 3), false),
+      if($numArgs >=4, nth($args, 4), $defaultScalingValue));
   }
-}
-
-@mixin underline($tdc: $navy, $tdcHover: $blue) {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: $tdc;
-
-  @include sP(
-    [ //
-    text-underline-offset 4,
-    ]
-  );
-
-  @include desktop {
-    &:hover {
-      text-decoration-color: $tdcHover;
-    }
-  }
-
-  @include print {
-    text-decoration-thickness: 0.1pt;
-  }
-}
-
-// mixin to apply specific CSS transitions to multiple properties, replacement for the animate() mixin
-// which applies all CSS transitions to all properties, we don't need that in most cases
-
-@mixin trn($properties...) {
-  $duration: 0.5s;
-  $easing: ease;
-
-  $transition-declarations: ();
-
-  @each $property in $properties {
-    $declaration: #{$property} #{$duration} #{$easing};
-    $transition-declarations: append(
-      $transition-declarations,
-      $declaration,
-      comma
-    );
-  }
-
-  & {
-    transition: #{$transition-declarations};
-  }
-}
-
-@mixin outline($color, $offset) {
-  &:focus-visible {
-    overflow: visible;
-    outline: 2px solid white;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 2px black;
-
-    &.inverted-outline {
-      outline-color: black;
-      box-shadow: 0 0 0 2px white;
-    }
-  }
-}
-
-@mixin removeOutline {
-  &:focus,
-  &:focus-visible {
-    outline: none;
-    box-shadow: none;
-  }
-}
-
-@mixin printFontStyle {
-  font-size: $printFontSize;
-  line-height: $printLineHeight;
 }

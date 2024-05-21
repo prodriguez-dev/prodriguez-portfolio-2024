@@ -13,7 +13,7 @@
   top: 0;
 
   @include sP([ //
-    padding-top 36 0,
+    padding-top 36 0 0.9,
     ]);
 }
 
@@ -29,9 +29,9 @@
   margin: 0 auto;
 
   @include sP([ //
-    gap 24 8,
-    max-width 980 '58%' 0.4,
-    margin-top 224 '11%' 0.45,
+    gap 24 8 0.3,
+    max-width 980 '58%' 0.45,
+    margin-top 224 '11%' 0.5,
     margin-bottom 224 '12%' 0.4,
     ]);
 
@@ -44,6 +44,7 @@
 
 .hero_text p {
   font-family: $sofia-cond;
+  text-transform: uppercase;
 
   @apply text-blue-950;
 
@@ -57,13 +58,32 @@
 
 
   @include sP([ //
-    font-size 36 10 0.4,
-    line-height 54 18 0.4,
+    font-size 32 "CONTINUE_SCALING" 0.34,
+    line-height 52 "CONTINUE_SCALING" 0.38,
     ]);
 
+  @include large {
+    @include sP([ //
+      font-size 32 "CONTINUE_SCALING" 0.30,
+      line-height 52 "CONTINUE_SCALING" 0.32,
+      ]);
+  }
+
   @include xLarge {
-    font-size: 3.1em;
+    font-size: 3.2em;
+    line-height: 1.8em;
+  }
+
+  @include xxLarge {
+    font-size: 3.4em;
     line-height: 2.0em;
+  }
+
+  @include mobile {
+    @include sP([ //
+      font-size 32 "CONTINUE_SCALING" 0.43,
+      line-height 52 "CONTINUE_SCALING" 0.43,
+      ]);
   }
 }
 
@@ -71,12 +91,16 @@
   object-fit: fill;
 
   @include sP([ //
-    width 160 62 0.5,
-    margin-top 24 12 0.4,
+    width 160 "CONTINUE_SCALING" 0.475,
+    margin-top 24 6 0.4,
     ]);
 
   @include xLarge {
     width: 200px;
     margin-top: 18%;
+  }
+
+  @include xxLarge {
+    width: 220px;
   }
 }

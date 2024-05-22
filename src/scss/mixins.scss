@@ -9,6 +9,25 @@
   transition: all $defaultAnimateDuration ease;
 }
 
+@mixin trn($properties...) {
+  $duration: 0.5s;
+  $easing: ease;
+
+  $transition-declarations: (
+  );
+
+@each $property in $properties {
+  $declaration: #{$property} #{$duration} #{$easing};
+  $transition-declarations: append($transition-declarations,
+      $declaration,
+      comma);
+}
+
+& {
+  transition: #{$transition-declarations};
+}
+}
+
 @mixin mobile {
   @media screen and (max-width: #{map-get($breakpointUpperLimit, mobile) - 1}px) {
     @content;

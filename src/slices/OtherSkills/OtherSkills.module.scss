@@ -1,7 +1,7 @@
 .wrapper {
   @include sP(
     [ //
-    margin-top -420 "-32%",
+    margin-top -420 "-35%",
     ]
   );
 }
@@ -9,7 +9,8 @@
 .headline {
   @include sP(
     [ //
-    font-size 38 20,
+    font-size 38 "CONTINUE_SCALING" 0.6,
+    line-height 44 "CONTINUE_SCALING" 0.6,
     ]
   );
 }
@@ -17,15 +18,23 @@
 .skills {
   @include sP(
     [ //
-    font-size 38 20,
-    max-width 1140 "90%",
+    font-size 38 "CONTINUE_SCALING" 0.6,
+    line-height 44 "CONTINUE_SCALING" 0.6,
+    max-width 1140 "89%" 0.67,
     padding-bottom 154 100,
-    transX -5 -5,
-    gap 10 0,
+    --x -3.5 -2 0.75,
     ]
   );
 
-  transform: translateX(var(transx));
+  translate: var(--x);
+
+  @media screen and (max-width: 920px) {
+    @include sP(
+      [ //
+      max-width 1300 "89%" 0.53,
+      ]
+    );
+  }
 }
 
 .bullet {

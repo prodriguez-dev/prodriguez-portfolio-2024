@@ -47,7 +47,7 @@ const RecentContent = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="bg-gray-800 pb-10 md:rounded-xl">
+      <div className="bg-gray-900 pb-10 md:rounded-xl">
         <Heading
           size="md"
           className={clsx(s.headline, "stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-gray-50")}

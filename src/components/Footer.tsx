@@ -12,7 +12,7 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Bounded as="footer" className={clsx("bg-gray-800 tracking-wide text-gray-50")}>
+    <Bounded as="footer" className={clsx("tracking-wide text-gray-50")}>
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row ">
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link

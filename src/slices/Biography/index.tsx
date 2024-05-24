@@ -29,13 +29,11 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
           {
             x: -100,
             opacity: 0,
-
             scaleX: 0,
           },
           {
             x: 0,
             opacity: 1,
-
             scaleX: 1,
             ease: "elastic.inOut",
             duration: 1,
@@ -46,7 +44,6 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             },
           },
         )
-
         .fromTo(
           ".job-title",
           {
@@ -89,7 +86,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       className=""
     >
       <div
-        className={`grid gap-x-8 gap-y-6 rounded-2xl bg-[#60a5fa] px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}]`}
+        className={`grid gap-x-8 gap-y-6 rounded-2xl bg-gray-400 px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}]`}
         data-speed=".2"
       >
         {!textLeftColumn && (
@@ -100,7 +97,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         )}
         <div className={`${!textLeftColumn && "md:col-start-2"}`}>
           <h1
-            className="mb-4 text-[clamp(4rem,9vmin,20rem)] font-extrabold leading-none tracking-tight md:mb-8"
+            className="mb-4 text-[clamp(4rem,9vmin,20rem)] font-extrabold leading-none tracking-tight text-gray-900 md:mb-8"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
@@ -117,7 +114,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             {slice.primary.title}
           </span>
 
-          <div className="prose prose-xl col-start-1 mt-4 text-blue-800 md:prose-2xl md:mt-10">
+          <div className="prose prose-xl col-start-1 mt-4 text-gray-800 md:prose-2xl md:mt-10">
             <PrismicRichText field={slice.primary.description} />
           </div>
 

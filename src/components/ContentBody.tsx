@@ -16,19 +16,19 @@ export default function ContentBody({
 
   return (
     <Bounded as="article">
-      <div className="rounded-xl bg-blue-400 px-0 py-4 md:px-4">
+      <div className="rounded-xl bg-gray-400 px-0 py-4 md:px-4">
         <Heading
           as="h1"
-          className="border-b border-blue-100 pb-3 text-blue-50"
+          className="border-b border-gray-100 pb-3 text-gray-50"
           size="lg"
         >
           {page.data.title}
         </Heading>
-        <div className="mt-6 flex flex-row flex-wrap gap-2 text-blue-950 md:gap-4">
+        <div className="mt-6 flex flex-row flex-wrap gap-2 text-gray-900 md:gap-4">
           {page.tags.map((tag, index) => (
             <span
               key={index}
-              className="w-fit whitespace-nowrap rounded-full bg-blue-500 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
+              className="w-fit whitespace-nowrap rounded-full bg-gray-500 px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg"
             >
               {tag}
             </span>
@@ -41,17 +41,17 @@ export default function ContentBody({
         </div>
         <div className="mt-5 flex flex-col px-4 tracking-wide md:mt-14 md:flex-row md:px-6">
           <div>
-            <p className="text-2xl font-bold text-blue-50">{formattedDate}</p>
+            <p className="text-2xl font-bold text-gray-50">{formattedDate}</p>
             {isFilled.keyText(page.data.client_name) && (
-              <p className="mt-2 text-2xl font-light text-blue-50 md:mt-3">
+              <p className="mt-2 text-2xl font-light text-gray-50 md:mt-3">
                 Client:{" "}
-                <span className="ml-1 font-extrabold text-blue-400">
+                <span className="ml-1 font-extrabold text-gray-400">
                   {page.data.client_name}
                 </span>
               </p>
             )}
             {isFilled.richText(page.data.description) && (
-              <div className="bullet-markers prose prose-lg prose-invert col-start-1 -ml-2 mt-1 text-blue-50 md:mt-5">
+              <div className="bullet-markers prose prose-lg prose-invert col-start-1 -ml-2 mt-1 text-gray-50 md:mt-5">
                 <PrismicRichText field={page.data.description} />
               </div>
             )}

@@ -6,7 +6,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import s from "./HomeHero1.module.scss";
 
 gsap.registerPlugin(SplitText);
@@ -24,125 +24,72 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
   const imageRef = useRef(null);
   const textRef = useRef(null);
   const bgBackgroundRef = useRef(null);
-  const loadingTextRef = useRef(null);
-  const [isPageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
-    const handleLoad = () => {
-      // console.log("Page fully loaded");
-      setPageLoaded(true);
-    };
+    // Initialize animations immediately
+    let ctx = gsap.context(() => {
+      const masterTimeline = gsap.timeline();
 
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
+      // Image animation
+      masterTimeline.fromTo(
+        imageRef.current,
+        {
+          opacity: 0,
+          scale: 0.5,
+        },
+        {
+          duration: 1.0,
+          opacity: 1,
+          scale: 1,
+          ease: "Power3.easeOut",
+        },
+      );
 
-    return () => window.removeEventListener("load", handleLoad);
-  }, []);
-
-  useEffect(() => {
-    if (isPageLoaded) {
-      // console.log("Initializing animations");
-      let ctx = gsap.context(() => {
-        const masterTimeline = gsap.timeline();
-
-        // Fade out the loading text first
-        if (loadingTextRef.current) {
-          masterTimeline.to(loadingTextRef.current, {
-            opacity: 0,
-            duration: 0.5,
-            ease: "Power1.easeOut",
-            onComplete: () => {
-              gsap.set(loadingTextRef.current, { display: "none" });
+      // Text animation
+      if (textRef.current) {
+        const split = new SplitText(textRef.current, { type: "words" });
+        const textTimeline = gsap.timeline();
+        split.words.forEach((word, index) => {
+          textTimeline.from(
+            word,
+            {
+              duration: 0.8,
+              y: 50,
+              opacity: 0,
+              ease: "Power3.easeOut",
+              force3D: true,
             },
-          });
-        }
-
-        // Background animation
-        if (bgBackgroundRef.current) {
-          masterTimeline.fromTo(
-            bgBackgroundRef.current,
-            { opacity: 0 },
-            { opacity: 1, duration: 0.5, ease: "Power3.easeIn" },
+            index * 0.1,
           );
-        }
+        });
+        masterTimeline.add(textTimeline, "+=0.5");
+      }
+    }, component);
 
-        // Image animation
-        masterTimeline.fromTo(
-          imageRef.current,
-          {
-            opacity: 0,
-            scale: 0.5,
-          },
-          {
-            duration: 1.0,
-            opacity: 1,
-            scale: 1,
-            ease: "Power3.easeOut",
-          },
-        );
-
-        // Text animation
-        if (textRef.current) {
-          const split = new SplitText(textRef.current, { type: "words" });
-          const textTimeline = gsap.timeline();
-          split.words.forEach((word, index) => {
-            textTimeline.from(
-              word,
-              {
-                duration: 0.8,
-                y: 50,
-                opacity: 0,
-                ease: "Power3.easeOut",
-                force3D: true,
-              },
-              index * 0.1,
-            );
-          });
-          masterTimeline.add(textTimeline, "+=0.5");
-        }
-      }, component);
-
-      return () => ctx.revert();
-    }
-  }, [isPageLoaded]);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx(s.home_hero_section, "bg-[#3d7ef7]")}
+      className={clsx(s.home_hero_section, "bg-gray-400")}
     >
-      <div
-        ref={loadingTextRef}
-        className={clsx("loading-text", s.loading_text)}
-        style={{
-          opacity: 1,
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          color: "white",
-        }}
-      >
-        Loading...
-      </div>
       {isFilled.image(slice.primary.background) && (
         <div className={s.home_hero_bg_wrapper} ref={bgBackgroundRef}>
           <PrismicNextImage
             field={slice.primary.background}
-            className={clsx(s.home_hero_bg, !isPageLoaded && "opacity-0")}
+            className={clsx(s.home_hero_bg)}
+            imgixParams={{ q: 70 }}
             placeholder="empty"
             priority
           />
         </div>
       )}
-      <div className={clsx(s.hero_bounded_wrapper, !isPageLoaded && "opacity-0")}>
+      <div className={clsx(s.hero_bounded_wrapper)}>
         <div className={s.hero_bounded}>
           {isFilled.richText(slice.primary.description) && (
-            <div ref={textRef} className={clsx(s.hero_text, "text-blue-950")}>
+            <div ref={textRef} className={clsx(s.hero_text, "text-gray-900")}>
               <PrismicRichText field={slice.primary.description} />
             </div>
           )}
@@ -159,7 +106,7 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
           )}
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

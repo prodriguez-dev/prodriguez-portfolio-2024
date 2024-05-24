@@ -66,39 +66,39 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         <Heading
           as="h3"
           size="md"
-          className="sofia-extra-cond stroke-headline uppercase italic tracking-wide"
+          className="sofia-extra-cond stroke-headline uppercase italic tracking-wide text-gray-900"
         >
           {slice.primary.heading}
         </Heading>
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`experience to-blue-[950] ml-6 mt-8 flex max-w-prose rounded-xl bg-blue-400 px-8 py-7 md:mt-16`}
+            className={`experience ml-6 mt-8 flex max-w-prose rounded-xl bg-gray-400 px-8 py-7 md:mt-16`}
           >
             <div className="w-full">
               <Heading
                 as="h4"
                 size="sm"
-                className="font-extrabold italic tracking-wide text-blue-950"
+                className="font-extrabold italic tracking-wide text-gray-900"
               >
                 {item.title}
               </Heading>
 
-              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-medium italic tracking-wide text-blue-500 md:text-3xl">
+              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-medium italic tracking-wide text-gray-500 md:text-3xl">
                 {item.institution}
               </div>
 
-              <div className="mt-1 flex flex-col text-lg font-extrabold tracking-widest text-blue-800 md:mt-2 md:flex-row md:justify-between md:text-xl">
+              <div className="mt-1 flex flex-col text-lg font-extrabold tracking-widest text-gray-800 md:mt-2 md:flex-row md:justify-between md:text-xl">
                 {Boolean(item.location) && (
                   <span className="uppercase ">{item.location}</span>
                 )}
                 {Boolean(item.time_period) && (
-                  <span className="font-normal text-blue-600">
+                  <span className="font-normal text-gray-600">
                     {item.time_period}
                   </span>
                 )}
               </div>
-              <div className="prose-md bullet-markers prose -ml-2 mt-0 tracking-wide text-blue-50 md:prose-xl md:mt-4">
+              <div className="prose-md bullet-markers prose -ml-2 mt-0 tracking-wide text-gray-50 md:prose-xl md:mt-4">
                 <PrismicRichText field={item.description} />
               </div>
             </div>

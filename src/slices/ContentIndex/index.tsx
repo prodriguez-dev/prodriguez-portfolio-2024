@@ -40,23 +40,25 @@ const ContentIndex = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <Heading
-        size="xl"
-        className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-blue-50"
-      >
-        {slice.primary.heading}
-      </Heading>
-      {isFilled.richText(slice.primary.description) && (
-        <div className="prose prose-xl prose-invert mb-10">
-          <PrismicRichText field={slice.primary.description} />
-        </div>
-      )}
-      <ContentList
-        items={items}
-        contentType={slice.primary.content_type}
-        viewMoreText={slice.primary.view_more_text}
-        fallbackItemImage={slice.primary.fallback_item_image}
-      />
+      <div className="bg-gray-400 pb-10 md:rounded-xl">
+        <Heading
+          size="xl"
+          className="stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-gray-50"
+        >
+          {slice.primary.heading}
+        </Heading>
+        {isFilled.richText(slice.primary.description) && (
+          <div className="prose prose-xl prose-invert mb-10 text-gray-50">
+            <PrismicRichText field={slice.primary.description} />
+          </div>
+        )}
+        <ContentList
+          items={items}
+          contentType={slice.primary.content_type}
+          viewMoreText={slice.primary.view_more_text}
+          fallbackItemImage={slice.primary.fallback_item_image}
+        />
+      </div>
     </Bounded>
   );
 };

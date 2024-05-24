@@ -146,18 +146,18 @@ export default function ContentList({
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-blue-50 px-8 py-6 text-blue-50 md:flex-row md:justify-between"
+              className="my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-gray-50 px-8 py-6 text-gray-50 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
               <div>
-                <div className="z-20 text-3xl font-extrabold tracking-wide text-blue-50 md:text-4xl">
+                <div className="z-20 text-3xl font-extrabold tracking-wide text-gray-50 md:text-4xl">
                   {post.data.title}
                 </div>
-                <div className="mt-5 flex flex-row flex-wrap gap-2 text-blue-50 md:gap-4">
+                <div className="mt-5 flex flex-row flex-wrap gap-2 text-gray-50 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-blue-700 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
+                      className="w-fit whitespace-nowrap rounded-full bg-gray-700 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
                     >
                       {tag}
                     </span>
@@ -169,7 +169,7 @@ export default function ContentList({
                   )}
                 </div>
               </div>
-              <div className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide text-blue-950 md:mt-0">
+              <div className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide text-gray-900 md:mt-0">
                 {viewMoreText} <FiEye className="text-xl" />
               </div>
             </a>

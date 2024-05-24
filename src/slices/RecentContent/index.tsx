@@ -47,16 +47,16 @@ const RecentContent = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="bg-blue-400 pb-10 md:rounded-xl">
+      <div className="bg-gray-800 pb-10 md:rounded-xl">
         <Heading
           size="md"
-          className={clsx(s.headline, "stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-blue-50")}
+          className={clsx(s.headline, "stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-gray-50")}
         >
           {slice.primary.heading}
         </Heading>
         <div className="">
           {isFilled.richText(slice.primary.description) && (
-            <div className="prose prose-xl mb-10">
+            <div className="prose prose-xl mb-10 text-gray-50">
               <PrismicRichText field={slice.primary.description} />
             </div>
           )}

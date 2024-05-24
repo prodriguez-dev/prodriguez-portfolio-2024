@@ -85,14 +85,14 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         )}
         <div className={clsx(s.wrapper, "flex flex-col justify-center")}>
           <h3
-            className={clsx(s.headline, "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-blue-950")}
+            className={clsx(s.headline, "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-gray-900")}
           >
             {slice.primary.heading}
           </h3>
         </div>
       </Bounded>
 
-      <div className={clsx(s.skills, "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden uppercase text-blue-950 opacity-70 mix-blend-hard-light font-black")}>
+      <div className={clsx(s.skills, "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden uppercase text-gray-900 opacity-70 mix-blend-hard-light font-black")}>
         {renderRepeatedSkills(firstThird)}
         {renderRepeatedSkills(secondThird)}
         {renderRepeatedSkills(thirdThird)}

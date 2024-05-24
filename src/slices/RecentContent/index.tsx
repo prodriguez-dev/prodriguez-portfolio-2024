@@ -50,7 +50,7 @@ const RecentContent = async ({
       <div className="bg-gray-900 pb-10 md:rounded-xl">
         <Heading
           size="md"
-          className={clsx(s.headline, "stroke-headline sofia-extra-cond mb-8 uppercase italic tracking-wide text-gray-50")}
+          className={clsx(s.headline, "sofia-extra-cond mb-8 uppercase italic tracking-wide text-gray-50")}
         >
           {slice.primary.heading}
         </Heading>

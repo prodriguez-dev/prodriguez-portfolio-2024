@@ -78,7 +78,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         {isFilled.image(slice.primary.background) && (
           <PrismicNextImage
             field={slice.primary.background}
-            className=""
+            className="mb-6 md:mb-10"
             placeholder="empty"
             priority
           />

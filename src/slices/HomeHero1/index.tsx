@@ -73,7 +73,7 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx(s.home_hero_section, "bg-gray-400")}
+      className={clsx(s.home_hero_section, "bg-gray-900")}
     >
       {isFilled.image(slice.primary.background) && (
         <div className={s.home_hero_bg_wrapper} ref={bgBackgroundRef}>

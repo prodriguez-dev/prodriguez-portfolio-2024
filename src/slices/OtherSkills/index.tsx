@@ -85,24 +85,37 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         )}
         <div className={clsx(s.wrapper, "flex flex-col justify-center")}>
           <h3
-            className={clsx(s.headline, "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-gray-900")}
+            className={clsx(
+              s.headline,
+              "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-gray-900",
+            )}
           >
             {slice.primary.heading}
           </h3>
         </div>
       </Bounded>
 
-      <div className={clsx(s.skills, "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden uppercase text-gray-900 opacity-70 mix-blend-hard-light font-black")}>
+      <div
+        className={clsx(
+          s.skills,
+          "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden font-black uppercase text-gray-900 opacity-70 mix-blend-hard-light",
+        )}
+      >
         {renderRepeatedSkills(firstThird)}
         {renderRepeatedSkills(secondThird)}
         {renderRepeatedSkills(thirdThird)}
       </div>
-    </section >
+    </section>
   );
 
   function renderRepeatedSkills(skills: Skill[]) {
     return (
-      <div className="tech-row flex items-center justify-center gap-1 md:gap-4">
+      <div
+        className={clsx(
+          s.tech_row,
+          "tech-row flex items-center justify-center gap-1 md:gap-4",
+        )}
+      >
         {[...Array(4)].map((_, repeatIndex) => (
           <React.Fragment key={repeatIndex}>
             {skills.map(({ skill_name }, index) => (

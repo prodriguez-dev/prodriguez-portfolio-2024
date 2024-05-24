@@ -1,26 +1,37 @@
 .wrapper {
-  @include sP([ //
-    margin-top -400 "-32%",
-    ]);
+  @include sP(
+    [ //
+    margin-top -420 "-32%",
+    ]
+  );
 }
 
 .headline {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 38 20,
-    ]);
+    ]
+  );
 }
 
 .skills {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 38 20,
-    max-width 1160 '90%',
+    max-width 1140 "90%",
     padding-bottom 154 100,
+    transX -5 -5,
     gap 10 0,
-    ]);
+    ]
+  );
+
+  transform: translateX(var(transx));
 }
 
 .bullet {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 6,
-    ]);
+    ]
+  );
 }

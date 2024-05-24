@@ -6,8 +6,10 @@ import Button from "@/components/Button";
 import { Content, KeyTextField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
+import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { BsFillPersonFill, BsPersonLinesFill } from "react-icons/bs";
+import s from "./Biography.module.scss"
 
 /**
  * Props for `Biography`.
@@ -86,7 +88,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       className=""
     >
       <div
-        className={`grid gap-x-8 gap-y-6 rounded-2xl bg-gray-400 px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}]`}
+        className={`grid gap-x-8 gap-y-6 rounded-2xl bg-gray-900 px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}]`}
         data-speed=".2"
       >
         {!textLeftColumn && (
@@ -97,24 +99,24 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         )}
         <div className={`${!textLeftColumn && "md:col-start-2"}`}>
           <h1
-            className="mb-4 text-[clamp(4rem,9vmin,20rem)] font-extrabold leading-none tracking-tight text-gray-900 md:mb-8"
+            className={clsx(s.bio_headline, "mb-4 font-extrabold leading-none tracking-tight text-gray-900 md:mb-8")}
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className="text-yellow-300">
+            <span className="text-gray-50">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
-            <span className="block text-yellow-300 md:ml-4 md:inline">
+            <span className="block text-gray-50 md:ml-4 md:inline">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
 
-          <span className="sofia-cond job-title block bg-gradient-to-tr from-yellow-600 via-yellow-200 to-yellow-600 bg-clip-text text-3xl font-bold uppercase italic tracking-wide text-transparent opacity-0 md:text-4xl">
+          <span className={clsx(s.job_title, "sofia-cond job-title block bg-gradient-to-tr from-amber-600 via-amber-200 to-amber-600 bg-clip-text font-bold uppercase italic tracking-wide text-transparent opacity-0")}>
             {slice.primary.title}
           </span>
 
-          <div className="prose prose-xl col-start-1 mt-4 text-gray-800 md:prose-2xl md:mt-10">
+          <div className={clsx(s.bio_text, "prose prose-xl col-start-1 mt-4 text-gray-50 md:mt-10")}>
             <PrismicRichText field={slice.primary.description} />
           </div>
 

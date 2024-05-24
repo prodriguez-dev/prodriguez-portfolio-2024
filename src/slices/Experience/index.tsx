@@ -66,7 +66,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         <Heading
           as="h3"
           size="md"
-          className="sofia-extra-cond stroke-headline uppercase italic tracking-wide text-gray-900"
+          className="sofia-extra-cond uppercase italic tracking-wide text-gray-50"
         >
           {slice.primary.heading}
         </Heading>

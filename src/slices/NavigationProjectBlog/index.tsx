@@ -26,7 +26,7 @@ const NavigationProjectBlog = ({
           <Button
             linkField={slice.primary.prev_link}
             label={`Prev ${slice.primary.nav_type}`}
-            className="nav-proj-blog"
+            className="nav-proj-blog global-text-sm"
             icon={<FaArrowLeft />}
             iconPosition="left"
           />
@@ -35,7 +35,7 @@ const NavigationProjectBlog = ({
           <Button
             linkField={slice.primary.next_link}
             label={`Next ${slice.primary.nav_type}`}
-            className="nav-proj-blog"
+            className="nav-proj-blog global-text-sm"
             icon={<FaArrowRight />}
           />
         )}

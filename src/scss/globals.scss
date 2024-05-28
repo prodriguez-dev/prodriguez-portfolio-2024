@@ -121,10 +121,8 @@ p.footer-power-text {
 }
 
 .nav-proj-blog {
-  @apply text-sm md:text-xl;
-
   span:first-of-type {
-    @apply translate-y-8 md:translate-y-10;
+    @apply translate-y-10 md:translate-y-14;
   }
 }
 

@@ -108,7 +108,7 @@ function DesktopMenu({
           <li>
             <PrismicNextLink
               className={clsx(
-                "navbar-nav group relative block overflow-hidden rounded px-4 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-gray-900",
+                "navbar-nav group relative block overflow-hidden rounded px-4 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-gray-900 active:text-gray-900",
               )}
               field={link}
               aria-current={
@@ -128,7 +128,7 @@ function DesktopMenu({
           </li>
           {index < settings.data.nav_item.length - 1 && (
             <span
-              className="hidden text-3xl font-thin leading-[0] text-gray-50 md:inline"
+              className="hidden font-thin leading-[0] text-gray-50 md:inline"
               aria-hidden="true"
             >
               /

@@ -146,30 +146,30 @@ export default function ContentList({
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-gray-700 px-8 py-6 text-gray-50 md:flex-row md:justify-between"
+              className="global-text-lg my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-gray-700 px-8 py-6 text-gray-50 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
               <div>
-                <div className="z-20 text-3xl font-extrabold tracking-wide text-gray-50 md:text-4xl">
+                <div className="z-20 font-extrabold tracking-wide text-gray-50">
                   {post.data.title}
                 </div>
-                <div className="mt-5 flex flex-row flex-wrap gap-2 text-gray-50 md:gap-4">
+                <div className="global-text-sm mt-5 flex flex-row flex-wrap gap-2 text-gray-50 md:gap-4">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="w-fit whitespace-nowrap rounded-full bg-gray-700 px-3 text-sm font-bold tracking-wide md:px-4 md:text-lg"
+                      className="w-fit whitespace-nowrap rounded-full bg-gray-700 px-3 font-bold tracking-wide md:px-4"
                     >
                       {tag}
                     </span>
                   ))}
                   {isFilled.richText(post.data.tags) && (
-                    <span className="tags">
+                    <span className="global-text-sm tags">
                       <PrismicRichText field={post.data.tags} />
                     </span>
                   )}
                 </div>
               </div>
-              <div className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap text-lg font-medium tracking-wide text-gray-900 md:mt-0">
+              <div className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap tracking-wide text-gray-900 md:mt-0">
                 {viewMoreText} <FiEye className="text-xl" />
               </div>
             </a>

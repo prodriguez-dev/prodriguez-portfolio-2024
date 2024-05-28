@@ -37,70 +37,87 @@
 }
 
 .background-pattern {
-  @include sP([ //
+  @include sP(
+    [ //
     margin-top -16,
-    ]);
+    ]
+  );
 }
 
-.outer-bounded {}
+.outer-bounded {
+}
 
 .inner-bounded {
-  @include sP([ //
-    max-width 1280 '100%',
-    ])
+  @include sP(
+    [ //
+    max-width 1280 "100%",
+    ]
+  );
 }
 
 .namelogo {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 24 24,
-    ]);
+    ]
+  );
 }
 
 .navbar-nav {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 16,
-    ]);
+    ]
+  );
 }
 
 .button-text {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 16,
-    ]);
+    ]
+  );
 }
 
 .tags,
 .tags ul {
-  color: #FAFAFA;
+  color: #fafafa;
   /* Tailwind gray-50 */
   @apply flex list-none flex-row flex-wrap gap-2 md:gap-4;
 }
 
 .tags li,
 .tags span {
-  background-color: #6B7280;
+  background-color: #6b7280;
   /* Tailwind gray-600 */
-  @apply w-fit whitespace-nowrap rounded-full px-2 text-sm font-bold tracking-wide md:px-3 md:text-lg;
+  @apply w-fit whitespace-nowrap rounded-full px-2 font-bold tracking-wide md:px-3;
 }
 
 .footer-icons {
   @apply p-2 text-gray-50 transition-all duration-300 hover:scale-125 hover:text-gray-900;
 
-  @include sP([ //
-    font-size 12 12,
-    ]);
+  @include sP(
+    [ //
+    font-size 20 20,
+    ]
+  );
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors duration-300 hover:text-gray-900;
-  @include sP([ //
-    font-size 12 12,
-    ]);
+  @apply font-extrabold transition-colors duration-300 hover:text-amber-700;
+  @include sP(
+    [ //
+    font-size 16 13,
+    ]
+  );
 }
 
 p.footer-power-text {
-  @include sP([ //
-    font-size 12 12,
-    ]);
+  @include sP(
+    [ //
+    font-size 16 13,
+    ]
+  );
 }
 
 .nav-proj-blog {
@@ -143,7 +160,7 @@ p.footer-power-text {
 
 .bullet-markers {
   li::marker {
-    color: #E5E7EB !important;
+    color: #e5e7eb !important;
     /* Tailwind gray-200 */
   }
 }
@@ -170,4 +187,44 @@ p.footer-power-text {
 .img-shine:hover::after {
   background: rgba(255, 255, 255, 0.2);
   transform: translateX(-50%) translateX(100%) skewX(45deg);
+}
+
+.global-text-xl {
+  @include sP(
+    [ //
+    font-size 46 24,
+    ]
+  );
+}
+
+.global-text-lg {
+  @include sP(
+    [ //
+    font-size 36 24,
+    ]
+  );
+}
+
+.global-text-md {
+  @include sP(
+    [ //
+    font-size 28 18,
+    ]
+  );
+}
+
+.global-text-mdsm {
+  @include sP(
+    [ //
+    font-size 20 18,
+    ]
+  );
+}
+
+.global-text-sm {
+  @include sP(
+    [ //
+    font-size 16 13,
+    ]
+  );
 }

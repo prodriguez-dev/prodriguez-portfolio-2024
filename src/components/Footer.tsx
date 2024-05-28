@@ -17,7 +17,7 @@ export default async function Footer() {
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
             href="/"
-            className="text-3xl font-extrabold tracking-wide transition-colors duration-300 hover:text-gray-400"
+            className="global-text-mdsm font-extrabold tracking-wide transition-colors duration-300 hover:text-gray-400"
           >
             {settings.data.name}
           </Link>
@@ -30,7 +30,7 @@ export default async function Footer() {
                   <li>
                     <PrismicNextLink
                       className={clsx(
-                        "group relative block overflow-hidden rounded px-1 py-1 text-xl font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-gray-400  md:px-3 md:text-2xl",
+                        "global-text-mdsm group relative block overflow-hidden rounded px-1 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-gray-400 md:px-3",
                       )}
                       field={link}
                     >
@@ -39,7 +39,9 @@ export default async function Footer() {
                   </li>
                   {index < settings.data.nav_item.length - 1 && (
                     <span
-                      className={clsx("footer-copyright font-thin leading-[0] text-gray-50")}
+                      className={clsx(
+                        "footer-copyright font-thin leading-[0] text-gray-50",
+                      )}
                       aria-hidden="true"
                     >
                       /
@@ -50,7 +52,7 @@ export default async function Footer() {
             )}
           </ul>
         </nav>
-        <div className="socials inline-flex justify-center sm:justify-end">
+        <div className="global-text-mdsm socials inline-flex justify-center sm:justify-end">
           {isFilled.link(settings.data.github_link) && (
             <PrismicNextLink
               field={settings.data.github_link}
@@ -81,7 +83,7 @@ export default async function Footer() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-4 text-center">
-        <p className="text-sm text-gray-500">
+        <p className="global-text-sm text-gray-500">
           © {new Date().getFullYear()} {settings.data.name}. All Rights
           Reserved.
         </p>

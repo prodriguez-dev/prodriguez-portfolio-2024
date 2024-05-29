@@ -11,6 +11,7 @@
     [ //
     font-size 38 "CONTINUE_SCALING" 0.6,
     line-height 44 "CONTINUE_SCALING" 0.6,
+    margin-bottom 20 "CONTINUE_SCALING" 0.6,
     ]
   );
 }
@@ -19,7 +20,7 @@
   @include sP(
     [ //
     font-size 38 "CONTINUE_SCALING" 0.6,
-    line-height 44 "CONTINUE_SCALING" 0.6,
+    line-height 60 "CONTINUE_SCALING" 0.6,
     max-width 1140 "89%" 0.67,
     padding-bottom 154 100,
     --x -3.5 -2 0.75,

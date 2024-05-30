@@ -88,13 +88,13 @@
 
 .tags li,
 .tags span {
-  background-color: #6b7280;
+  background-color: #78350f;
   /* Tailwind gray-600 */
   @apply w-fit whitespace-nowrap rounded-full px-2 font-bold tracking-wide md:px-3;
 }
 
 .footer-icons {
-  @apply p-2 text-gray-50 transition-all duration-300 hover:scale-125 hover:text-gray-900;
+  @apply p-2 text-gray-50 transition-all duration-300 hover:scale-125 hover:text-amber-400;
 
   @include sP(
     [ //
@@ -104,7 +104,7 @@
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors duration-300 hover:text-amber-700;
+  @apply font-extrabold transition-colors duration-300 hover:text-amber-400;
   @include sP(
     [ //
     font-size 16 13,

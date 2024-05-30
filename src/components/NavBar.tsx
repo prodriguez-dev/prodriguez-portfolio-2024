@@ -108,7 +108,7 @@ function DesktopMenu({
           <li>
             <PrismicNextLink
               className={clsx(
-                "navbar-nav group relative block overflow-hidden rounded px-4 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-gray-900 active:text-gray-900",
+                "navbar-nav group relative block overflow-hidden rounded px-4 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-gray-50 active:text-gray-50",
               )}
               field={link}
               aria-current={

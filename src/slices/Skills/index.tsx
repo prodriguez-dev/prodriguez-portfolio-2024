@@ -28,7 +28,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
     >
       <Bounded as="div" className="">
         <div
-          className="mb-8 grid rounded-2xl bg-gray-800 px-4 py-8 md:px-16"
+          className="mb-8 grid rounded-2xl bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-8 md:px-16"
           style={{ gridTemplateColumns: `repeat(${columnCount}, 1fr)` }}
         >
           {filledItems.map((item, i) => (

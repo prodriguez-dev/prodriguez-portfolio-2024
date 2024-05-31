@@ -5,6 +5,8 @@ import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
+import clsx from "clsx";
+import s from "./Experience.module.scss";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 
@@ -61,48 +63,68 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
       className="wrapper overflow-hidden"
       ref={component}
     >
-      <Bounded as="div">
+      <Bounded as="div" className="mb-8">
         <Heading
           as="h3"
           size="xl"
-          className="sofia-extra-cond uppercase italic tracking-wide text-gray-50"
+          className="sofia-extra-cond mt-4 uppercase italic tracking-wide text-gray-50"
         >
           {slice.primary.heading}
         </Heading>
-        {slice.items.map((item, index) => (
-          <div
-            key={index}
-            className={`experience ml-6 mt-8 flex max-w-prose rounded-xl bg-gradient-to-b from-gray-900 to-gray-800 px-8 py-7 md:mt-16`}
-          >
-            <div className="w-full">
-              <Heading
-                as="h4"
-                size="sm"
-                className="font-extrabold italic tracking-wide text-gray-50"
-              >
-                {item.title}
-              </Heading>
+        <div className="space-y-8 md:space-y-16">
+          {slice.items.map((item, index) => (
+            <div
+              key={index}
+              className={clsx(
+                s.container,
+                "experience flex rounded-xl bg-gradient-to-b from-gray-900 to-gray-800 px-16 py-12",
+              )}
+            >
+              <div className="w-full">
+                <Heading
+                  as="h4"
+                  size="md"
+                  className="font-extrabold italic tracking-wide text-gray-50"
+                >
+                  {item.title}
+                </Heading>
 
-              <div className="mt-1 flex w-fit items-center justify-start gap-1 text-2xl font-medium italic tracking-wide text-gray-500 md:text-3xl">
-                {item.institution}
-              </div>
+                <div
+                  className={clsx(
+                    s.institution,
+                    "mt-1 text-lg font-medium italic tracking-wide text-gray-500",
+                  )}
+                >
+                  {item.institution}
+                </div>
 
-              <div className="mt-1 flex flex-col text-lg font-extrabold tracking-widest text-amber-500 md:mt-2 md:flex-row md:justify-between md:text-xl">
-                {Boolean(item.location) && (
-                  <span className="uppercase ">{item.location}</span>
-                )}
-                {Boolean(item.time_period) && (
-                  <span className="font-normal text-gray-100">
-                    {item.time_period}
-                  </span>
-                )}
-              </div>
-              <div className="prose-md bullet-markers prose -ml-2 mt-0 tracking-wide text-gray-50 md:prose-xl md:mt-4">
-                <PrismicRichText field={item.description} />
+                <div
+                  className={clsx(
+                    s.location,
+                    "mt-1 flex flex-col font-semibold tracking-widest text-amber-500 md:mt-2 md:flex-row md:justify-between",
+                  )}
+                >
+                  {Boolean(item.location) && (
+                    <span className="uppercase">{item.location}</span>
+                  )}
+                  {Boolean(item.time_period) && (
+                    <span className="font-normal text-gray-100">
+                      {item.time_period}
+                    </span>
+                  )}
+                </div>
+                <div
+                  className={clsx(
+                    s.description,
+                    "bullet-markers prose mt-4 text-gray-50",
+                  )}
+                >
+                  <PrismicRichText field={item.description} />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </Bounded>
     </section>
   );

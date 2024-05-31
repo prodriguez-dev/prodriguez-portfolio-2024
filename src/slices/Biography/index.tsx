@@ -88,7 +88,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       className=""
     >
       <div
-        className={`mb-8 grid gap-x-8 gap-y-6 rounded-2xl bg-gray-900 px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}] md:pl-16`}
+        className={`mb-8 grid gap-x-8 gap-y-6 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-800 px-6 py-8 md:grid-cols-[${textLeftColumn ? "2fr,1fr" : "1fr,2fr"}] md:pl-16`}
         data-speed=".2"
       >
         {!textLeftColumn && (

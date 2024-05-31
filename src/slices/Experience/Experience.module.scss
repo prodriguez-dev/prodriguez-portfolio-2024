@@ -1,0 +1,28 @@
+.institution {
+  @include sP(
+    [ //
+    font-size 24 18,
+    margin-top 6 6,
+    margin-bottom 10 10,
+    ]
+  );
+}
+
+.location {
+  @include sP(
+    [ //
+    font-size 16 14,
+    ]
+  );
+}
+
+.description {
+  ul {
+    @include sP(
+      [ //
+      font-size 20 16,
+      width 800 "100%",
+      ]
+    );
+  }
+}

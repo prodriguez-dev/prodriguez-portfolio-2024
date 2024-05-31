@@ -23,7 +23,6 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // create as many GSAP animations and/or ScrollTriggers here as you want...
       const tl = gsap.timeline({
         scrollTrigger: {
           pin: true, // pin the trigger element while active
@@ -65,7 +64,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
       <Bounded as="div">
         <Heading
           as="h3"
-          size="md"
+          size="xl"
           className="sofia-extra-cond uppercase italic tracking-wide text-gray-50"
         >
           {slice.primary.heading}
@@ -73,13 +72,13 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         {slice.items.map((item, index) => (
           <div
             key={index}
-            className={`experience ml-6 mt-8 flex max-w-prose rounded-xl bg-gray-400 px-8 py-7 md:mt-16`}
+            className={`experience ml-6 mt-8 flex max-w-prose rounded-xl bg-gradient-to-b from-gray-900 to-gray-800 px-8 py-7 md:mt-16`}
           >
             <div className="w-full">
               <Heading
                 as="h4"
                 size="sm"
-                className="font-extrabold italic tracking-wide text-gray-900"
+                className="font-extrabold italic tracking-wide text-gray-50"
               >
                 {item.title}
               </Heading>
@@ -88,12 +87,12 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 {item.institution}
               </div>
 
-              <div className="mt-1 flex flex-col text-lg font-extrabold tracking-widest text-gray-800 md:mt-2 md:flex-row md:justify-between md:text-xl">
+              <div className="mt-1 flex flex-col text-lg font-extrabold tracking-widest text-amber-500 md:mt-2 md:flex-row md:justify-between md:text-xl">
                 {Boolean(item.location) && (
                   <span className="uppercase ">{item.location}</span>
                 )}
                 {Boolean(item.time_period) && (
-                  <span className="font-normal text-gray-600">
+                  <span className="font-normal text-gray-100">
                     {item.time_period}
                   </span>
                 )}

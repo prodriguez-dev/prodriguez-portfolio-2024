@@ -1,16 +1,13 @@
 "use client";
 
-import clsx from "clsx";
-import React, { useState } from "react";
 import { Content, asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
-import { MdMenu, MdClose } from "react-icons/md";
-import Button from "./Button";
+import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import React, { useState } from "react";
+import { MdClose, MdEmail, MdMenu } from "react-icons/md";
+import Button from "./Button";
 import { NameLogo } from "./NameLogo";
-import { MdEmail } from "react-icons/md";
-import Link from "next/link";
-import { list } from "postcss";
 
 export default function NavBar({
   settings,
@@ -119,7 +116,7 @@ function DesktopMenu({
                 className={clsx(
                   "absolute inset-0 z-0 h-full rounded bg-gray-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
                   pathname.includes(asLink(link) as string)
-                    ? "translate-y-8"
+                    ? "translate-y-0"
                     : "translate-y-10",
                 )}
               />

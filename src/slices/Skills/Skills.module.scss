@@ -1,0 +1,29 @@
+.skills_list {
+  h3 {
+    font-weight: 700;
+    font-family: $sofia-extra-cond;
+    font-style: italic;
+    text-transform: uppercase;
+
+    @include sP(
+      [ //
+      font-size 45 24,
+      line-height 54 28,
+      letter-spacing 1 1,
+      margin-bottom 8 8,
+      ]
+    );
+  }
+
+  ul {
+    list-style: disc;
+
+    @include sP(
+      [ //
+      font-size 20 12,
+      line-height 30 18,
+      margin-left 28 12,
+      ]
+    );
+  }
+}

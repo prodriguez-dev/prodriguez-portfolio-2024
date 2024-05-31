@@ -287,6 +287,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SkillsSlice
   | OtherSkillsSlice
   | ExperienceSlice
   | ContentIndexSlice
@@ -1483,6 +1484,48 @@ export type RecentContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Skills → Items*
+ */
+export interface SkillsSliceDefaultItem {
+  /**
+   * Skills List field in *Skills → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.items[].skills_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  skills_list: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Skills Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SkillsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<SkillsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Skills*
+ */
+type SkillsSliceVariation = SkillsSliceDefault;
+
+/**
+ * Skills Shared Slice
+ *
+ * - **API ID**: `skills`
+ * - **Description**: Skills
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SkillsSlice = prismic.SharedSlice<"skills", SkillsSliceVariation>;
+
+/**
  * Primary content in *TechList → Default → Primary*
  */
 export interface TechListSliceDefaultPrimary {
@@ -1668,6 +1711,10 @@ declare module "@prismicio/client" {
       RecentContentSliceDefaultPrimary,
       RecentContentSliceVariation,
       RecentContentSliceDefault,
+      SkillsSlice,
+      SkillsSliceDefaultItem,
+      SkillsSliceVariation,
+      SkillsSliceDefault,
       TechListSlice,
       TechListSliceDefaultPrimary,
       TechListSliceDefaultItem,

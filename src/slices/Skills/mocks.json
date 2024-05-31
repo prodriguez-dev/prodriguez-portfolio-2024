@@ -1,0 +1,28 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skills_list",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ad consectetur qui incididunt pariatur aliqua exercitation Lorem ipsum enim do eiusmod dolor. Proident laboris et consectetur."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

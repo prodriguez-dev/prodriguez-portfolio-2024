@@ -13,6 +13,7 @@ export const components = {
   navigation_project_blog: dynamic(() => import("./NavigationProjectBlog")),
   other_skills: dynamic(() => import("./OtherSkills")),
   recent_content: dynamic(() => import("./RecentContent")),
+  skills: dynamic(() => import("./Skills")),
   tech_list: dynamic(() => import("./TechList")),
   text_block: dynamic(() => import("./TextBlock")),
 };

@@ -1,24 +1,33 @@
 .bio_headline {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 72 24,
-    ]);
+    ]
+  );
 }
 
 .job_title {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 32 20,
-    ]);
+    ]
+  );
 }
 
-
 .bio_text p {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 24 16,
-    ]);
+    letter-spacing 1 1,
+    width 680 "100%",
+    ]
+  );
 
   @apply text-gray-50;
 
   strong {
+    font-weight: 800;
+    font-style: italic;
     @apply text-gray-50;
   }
 }

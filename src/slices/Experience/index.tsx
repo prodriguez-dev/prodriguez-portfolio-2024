@@ -92,7 +92,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 <div
                   className={clsx(
                     s.institution,
-                    "mt-1 text-lg font-medium italic tracking-wide text-gray-500",
+                    "mt-1 text-lg font-medium italic tracking-wide text-amber-500",
                   )}
                 >
                   {item.institution}
@@ -101,7 +101,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 <div
                   className={clsx(
                     s.location,
-                    "mt-1 flex flex-col font-semibold tracking-widest text-amber-500 md:mt-2 md:flex-row md:justify-between",
+                    "mt-1 flex flex-col font-semibold tracking-widest text-gray-400 md:mt-2 md:flex-row md:justify-between",
                   )}
                 >
                   {Boolean(item.location) && (

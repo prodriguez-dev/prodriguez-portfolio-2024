@@ -1,0 +1,76 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "trap",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "fierce",
+							"type": "Text"
+						}
+					],
+					[
+						"picture",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+								"width": 4076,
+								"height": 2712
+							},
+							"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+							"width": 4076,
+							"height": 2712,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"testimonial",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Irure duis in quis amet in Lorem cillum deserunt dolor cillum voluptate aliquip aliqua commodo deserunt."
+									}
+								}
+							]
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "massage",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

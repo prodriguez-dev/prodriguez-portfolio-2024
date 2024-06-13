@@ -15,5 +15,6 @@ export const components = {
   recent_content: dynamic(() => import("./RecentContent")),
   skills: dynamic(() => import("./Skills")),
   tech_list: dynamic(() => import("./TechList")),
+  testimonials: dynamic(() => import("./Testimonials")),
   text_block: dynamic(() => import("./TextBlock")),
 };

@@ -75,6 +75,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
       ref={component}
     >
       <Bounded as="div" className="relative">
+        <div className="md:mb-12">
         {isFilled.image(slice.primary.background) && (
           <PrismicNextImage
             field={slice.primary.background}
@@ -93,9 +94,7 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
             {slice.primary.heading}
           </h3>
         </div>
-      </Bounded>
-
-      <div
+        <div
         className={clsx(
           s.skills,
           "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden font-black uppercase text-gray-900 opacity-70 mix-blend-hard-light",
@@ -105,6 +104,8 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
         {renderRepeatedSkills(secondThird)}
         {renderRepeatedSkills(thirdThird)}
       </div>
+        </div>
+      </Bounded>
     </section>
   );
 

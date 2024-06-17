@@ -51,11 +51,11 @@
   width: fit-content;
   margin: 0 auto;
   border: 1px solid white;
-  @apply border-gray-700;
+  @apply border-gray-900;
 
   @include sP([ //
-    max-width 100 100,
-    border-width 2 2,
+    max-width 80 80,
+    border-width 3 3,
     ]);
 }
 
@@ -77,8 +77,8 @@
 
     @include sP([ //
       font-size 18 16,
-      line-height 22 20,
-      margin-bottom 24 24,
+      line-height 24 22,
+      margin-bottom 30 30,
       ]);
   }
 }

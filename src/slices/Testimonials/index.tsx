@@ -28,7 +28,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
           <Heading
             as="h3"
             size="xl"
-            className="sofia-extra-cond mt-4 uppercase italic tracking-wide text-gray-50"
+            className="sofia-extra-cond global-center-align mt-4 uppercase italic tracking-wide text-gray-50"
           >
             {slice.primary.heading}
           </Heading>
@@ -52,7 +52,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
                     <PrismicNextImage
                       field={item.picture}
                       className={clsx(s.image, "justify-self-center")}
-                      imgixParams={{ w: 100, q: 90 }}
+                      imgixParams={{ w: 100, h: 100, q: 90 }}
                       placeholder="empty"
                       priority
                     />

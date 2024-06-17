@@ -43,7 +43,7 @@ const ContentIndex = async ({
       <div className="pb-10 md:rounded-xl">
         <Heading
           size="xl"
-          className="sofia-extra-cond mb-8 uppercase italic tracking-wide text-gray-50"
+          className="sofia-extra-cond global-center-align my-10 uppercase italic tracking-wide text-gray-50"
         >
           {slice.primary.heading}
         </Heading>

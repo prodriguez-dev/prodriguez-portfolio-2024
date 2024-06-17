@@ -3,7 +3,7 @@
 import Avatar from "@/components/Avatar";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
-import { Content, KeyTextField } from "@prismicio/client";
+import { Content, KeyTextField, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
 import clsx from "clsx";
@@ -133,19 +133,21 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             <PrismicRichText field={slice.primary.description} />
           </div>
 
-          <Button
-            linkField={slice.primary.button_link}
-            label={slice.primary.button_text}
-            className="mx-auto mt-10 md:mx-0"
-            icon={
-              resumeButton ? (
-                <BsPersonLinesFill className="-mt-1 inline-block" />
-              ) : (
-                <BsFillPersonFill className="-mt-1 inline-block" />
-              )
-            }
-            target={resumeButton ? "_blank" : undefined}
-          />
+          {isFilled.keyText(slice.primary.button_text) && isFilled.link(slice.primary.button_link) &&
+            <Button
+              linkField={slice.primary.button_link}
+              label={slice.primary.button_text}
+              className="mx-auto mt-10 md:mx-0"
+              icon={
+                resumeButton ? (
+                  <BsPersonLinesFill className="-mt-1 inline-block" />
+                ) : (
+                  <BsFillPersonFill className="-mt-1 inline-block" />
+                )
+              }
+              target={resumeButton ? "_blank" : undefined}
+            />
+          }
         </div>
         {textLeftColumn && (
           <Avatar

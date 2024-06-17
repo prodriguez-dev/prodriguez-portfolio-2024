@@ -3,21 +3,17 @@
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-import dynamic from "next/dynamic";
+import { PrismicImage, PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 import s from "./Testimonials.module.scss";
 import clsx from "clsx";
-
-// Dynamically import Carousel with SSR disabled
-const Carousel = dynamic(
-  async () => {
-    const mod = await import("nuka-carousel");
-    return mod.default || mod.Carousel || mod; // Adjust this line as needed based on the actual exports
-  },
-  {
-    ssr: false,
-  },
-);
+import { PrismicNextImage } from "@prismicio/next";
+import Head from "next/head";
 
 export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 
@@ -40,69 +36,50 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
         )}
 
         {slice.items && (
-          <Carousel
-            autoplay
-            autoplayInterval={3000}
-            wrapAround
-            speed={1000}
-            renderCenterLeftControls={({
-              previousSlide,
-            }: {
-              previousSlide: () => void;
-            }) => (
-              <button
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-                onClick={previousSlide}
-              >
-                ◀
-              </button>
-            )}
-            renderCenterRightControls={({
-              nextSlide,
-            }: {
-              nextSlide: () => void;
-            }) => (
-              <button
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-                onClick={nextSlide}
-              >
-                ▶
-              </button>
-            )}
-            renderBottomCenterControls={({
-              currentSlide,
-            }: {
-              currentSlide: number;
-            }) => (
-              <div
-                style={{
-                  padding: "10px",
-                  background: "#fff",
-                  borderRadius: "10px",
-                }}
-              >
-                {currentSlide + 1} / {slice.items.length}
-              </div>
-            )}
-          >
-            {slice.items.map((item, index) => (
-              <div key={index} className={clsx(s.testimonial, "")}>
-                {isFilled.keyText(item.name) && (
-                  <Heading as="h4" className="">
-                    {item.name}
-                  </Heading>
-                )}
-              </div>
-            ))}
-          </Carousel>
+          <div className={s.testimonial_wrapper}>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              autoplay={{ delay: 4000 }}
+              loop
+              pagination={{ clickable: true }}
+              navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
+              spaceBetween={50}
+              slidesPerView={1}
+              speed={1000}
+            >
+              {slice.items.map((item, index) => (
+                <SwiperSlide key={index} className={s.testimonial}>
+                  {isFilled.image(item.picture) &&
+                    <PrismicNextImage
+                      field={item.picture}
+                      className={clsx(s.image, "justify-self-center")}
+                      imgixParams={{ w: 100, q: 90 }}
+                      placeholder="empty"
+                      priority
+                    />
+                  }
+                  {isFilled.keyText(item.name) && (
+                    <Heading as="h4" className="global-text-md w-fit justify-self-center text-gray-50">
+                      {item.name}
+                    </Heading>
+                  )}
+                  {isFilled.keyText(item.title) && (
+                    <Heading as="h5" className={clsx(s.title, "global-text-mdsm w-fit justify-self-center text-amber-400")}>
+                      {item.title}
+                    </Heading>
+                  )}
+                  {isFilled.richText(item.testimonial) &&
+                    <div className={s.info}>
+                      <PrismicRichText field={item.testimonial} />
+                    </div>
+                  }
+                </SwiperSlide>
+              ))}
+              <div className="swiper-button-next"></div>
+              <div className="swiper-button-prev"></div>
+              <div className="swiper-pagination"></div>
+            </Swiper>
+          </div>
         )}
       </Bounded>
     </section>

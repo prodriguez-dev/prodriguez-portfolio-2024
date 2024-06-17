@@ -39,15 +39,15 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(20, 20)
-              : gsap.utils.random(-20, -20);
+              ? gsap.utils.random(8, 8)
+              : gsap.utils.random(-8, -8);
           },
         },
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(-20, -20)
-              : gsap.utils.random(20, 20);
+              ? gsap.utils.random(-8, -8)
+              : gsap.utils.random(8, 8);
           },
           ease: "power2.inOut",
         },

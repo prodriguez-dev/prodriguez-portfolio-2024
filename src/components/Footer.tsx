@@ -12,12 +12,12 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
 
   return (
-    <Bounded as="footer" className={clsx("tracking-wide text-gray-50")}>
-      <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row ">
+    <Bounded as="footer" className={clsx("tracking-wide")}>
+      < div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row " >
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
             href="/"
-            className="global-text-mdsm font-extrabold tracking-wide transition-colors duration-300 hover:text-amber-400"
+            className="global-text-mdsm footer-name-link text-gray-50 font-extrabold tracking-wide transition-colors duration-300 hover:text-amber-400"
           >
             {settings.data.name}
           </Link>
@@ -44,6 +44,7 @@ export default async function Footer() {
                       )}
                       aria-hidden="true"
                     >
+
                       /
                     </span>
                   )}
@@ -81,7 +82,7 @@ export default async function Footer() {
             </PrismicNextLink>
           )}
         </div>
-      </div>
+      </div >
       <div className="flex flex-col items-center gap-4 text-center">
         <p className="global-text-sm text-gray-500">
           © {new Date().getFullYear()} {settings.data.name}. All Rights
@@ -155,6 +156,6 @@ export default async function Footer() {
           .
         </p>
       </div>
-    </Bounded>
+    </Bounded >
   );
 }

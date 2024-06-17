@@ -20,12 +20,12 @@ export default function Heading({
   return (
     <Comp
       className={clsx(
-        "font-bold leading-tight  text-blue-50",
+        className,
+        "font-bold leading-tight",
         size === "xl" && "global-text-xl",
         size === "lg" && "global-text-lg",
         size === "md" && "global-text-md",
         size === "sm" && "global-text-sm",
-        className,
       )}
       style={style}
       ref={ref}

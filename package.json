@@ -13,9 +13,6 @@
     "@prismicio/client": "^7.3.1",
     "@prismicio/next": "^1.5.0",
     "@prismicio/react": "^2.7.3",
-    "@react-three/drei": "^9.102.6",
-    "@react-three/fiber": "^8.15.19",
-    "@types/three": "^0.162.0",
     "clsx": "^2.1.0",
     "gsap": "npm:@gsap/shockingly@^3.12.5",
     "next": "14.1.3",
@@ -23,8 +20,7 @@
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-reconciler": "^0.29.0",
-    "swiper": "^11.1.4",
-    "three": "^0.162.0"
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.38",

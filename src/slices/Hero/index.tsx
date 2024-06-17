@@ -1,7 +1,6 @@
 "use client";
 
 import Bounded from "@/components/Bounded";
-import Shapes from "@/slices/Hero/Shapes";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { gsap } from "gsap";
@@ -82,7 +81,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       ref={component}
     >
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
-        <Shapes />
+        {/* <Shapes /> */}
         <div className="col-start-1 md:row-start-1">
           <h1
             className={

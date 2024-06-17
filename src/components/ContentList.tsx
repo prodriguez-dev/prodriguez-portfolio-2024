@@ -146,7 +146,7 @@ export default function ContentList({
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
-              className="global-text-lg my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-gray-700 px-8 py-6 text-gray-50 md:flex-row md:justify-between"
+              className="global-text-lg bg-gray-900 my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-gray-700 px-8 py-10 text-gray-50 md:flex-row md:justify-between"
               aria-label={post.data.title || ""}
             >
               <div>
@@ -169,8 +169,8 @@ export default function ContentList({
                   )}
                 </div>
               </div>
-              <div className="mt-4 flex h-fit items-center gap-2 whitespace-nowrap tracking-wide text-gray-900 md:mt-0">
-                {viewMoreText} <FiEye className="text-xl" />
+              <div className="mt-4 global-text-mdsm flex h-fit items-center gap-2 whitespace-nowrap tracking-wide text-gray-50 md:mt-0">
+                {viewMoreText} <FiEye className="global-text-mdsm" />
               </div>
             </a>
           </li>

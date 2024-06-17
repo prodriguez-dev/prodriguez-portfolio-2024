@@ -1,4 +1,9 @@
 .testimonial_wrapper {
+
+  @include sP([ //
+    margin-bottom 20 20,
+  ]);
+
   :global {
     .swiper {
       width: 100%;
@@ -23,12 +28,22 @@
         @apply bg-amber-400;
       }
     }
+
+    .swiper-pagination {
+      @include sP([ //
+        bottom -4 -4,
+      ]);
+    }
   }
 }
 
 .testimonial {
   display: grid;
   justify-content: center;
+
+  @include sP([ //
+    gap 4 4,
+  ]);
 }
 
 .image {
@@ -46,6 +61,10 @@
 
 .title {
   @apply text-amber-500;
+
+  @include sP([ //
+    margin-bottom 8 8,
+  ]);
 }
 
 .info {
@@ -57,7 +76,9 @@
     margin: 0 auto;
 
     @include sP([ //
-      font-size 16 16,
+      font-size 18 16,
+      line-height 22 20,
+      margin-bottom 24 24,
       ]);
   }
 }

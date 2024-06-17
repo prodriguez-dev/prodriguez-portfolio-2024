@@ -26,7 +26,7 @@ export default function Button({
       target={target}
       className={clsx(
         className,
-        "button-text group relative flex w-fit items-center justify-center overflow-hidden rounded-md bg-gray-800 px-4 py-2 font-bold tracking-wide no-underline drop-shadow-md transition-all duration-300 ease-out hover:scale-105 hover:text-gray-900",
+        "button-text group relative flex w-fit items-center justify-center overflow-hidden rounded-md bg-gray-900 px-4 py-2 font-bold tracking-wide no-underline drop-shadow-md transition-all duration-300 ease-out hover:scale-105 hover:text-gray-900",
       )}
     >
       <span

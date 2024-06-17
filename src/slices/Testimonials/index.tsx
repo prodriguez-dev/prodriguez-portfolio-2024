@@ -3,17 +3,16 @@
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content, isFilled } from "@prismicio/client";
-import { PrismicImage, PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import clsx from "clsx";
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import s from "./Testimonials.module.scss";
-import clsx from "clsx";
-import { PrismicNextImage } from "@prismicio/next";
-import Head from "next/head";
 
 export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 
@@ -38,7 +37,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
         {slice.items && (
           <div className={s.testimonial_wrapper}>
             <Swiper
-              modules={[Navigation, Pagination]}
+              modules={[Navigation, Pagination, Autoplay]}
               autoplay={{ delay: 4000 }}
               loop
               pagination={{ clickable: true }}
@@ -48,7 +47,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
               speed={1000}
             >
               {slice.items.map((item, index) => (
-                <SwiperSlide key={index} className={s.testimonial}>
+                <SwiperSlide key={index} className={clsx(s.testimonial, "tracking-wide")}>
                   {isFilled.image(item.picture) &&
                     <PrismicNextImage
                       field={item.picture}

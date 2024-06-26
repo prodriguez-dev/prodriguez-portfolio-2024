@@ -14,7 +14,7 @@ gsap.registerPlugin(SplitText);
 /**
  * Props for `HeroStage`.
  */
-export type HeroStageProps = SliceComponentProps<Content.HeroStageSlice>;
+export type HeroStageProps = SliceComponentProps<Content.HomeHero1Slice>;
 
 /**
  * Component for "HeroStage" Slices.

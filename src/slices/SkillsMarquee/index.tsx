@@ -20,8 +20,7 @@ interface Skill {
 /**
  * Props for `SkillsMarquee`.
  */
-export type SkillsMarqueeProps =
-  SliceComponentProps<Content.SkillsMarqueeSlice>;
+export type SkillsMarqueeProps = SliceComponentProps<Content.OtherSkillsSlice>;
 
 /**
  * Component for "SkillsMarquee" Slices.

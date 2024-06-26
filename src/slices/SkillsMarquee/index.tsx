@@ -9,7 +9,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useLayoutEffect, useRef } from "react";
 import { MdCircle } from "react-icons/md";
-import s from "./OtherSkills.module.scss";
+import s from "./SkillsMarquee.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,14 +18,15 @@ interface Skill {
 }
 
 /**
- * Props for `OtherSkills`.
+ * Props for `SkillsMarquee`.
  */
-export type OtherSkillsProps = SliceComponentProps<Content.OtherSkillsSlice>;
+export type SkillsMarqueeProps =
+  SliceComponentProps<Content.SkillsMarqueeSlice>;
 
 /**
- * Component for "OtherSkills" Slices.
+ * Component for "SkillsMarquee" Slices.
  */
-const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
+const SkillsMarquee = ({ slice }: SkillsMarqueeProps): JSX.Element => {
   const component = useRef(null);
 
   useLayoutEffect(() => {
@@ -136,4 +137,4 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
   }
 };
 
-export default OtherSkills;
+export default SkillsMarquee;

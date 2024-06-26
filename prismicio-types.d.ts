@@ -1125,11 +1125,11 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Primary content in *HomeHero1 → Default → Primary*
+ * Primary content in *HeroStage → Default → Primary*
  */
 export interface HomeHero1SliceDefaultPrimary {
   /**
-   * Background field in *HomeHero1 → Default → Primary*
+   * Background field in *HeroStage → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1139,7 +1139,7 @@ export interface HomeHero1SliceDefaultPrimary {
   background: prismic.ImageField<never>;
 
   /**
-   * Description field in *HomeHero1 → Default → Primary*
+   * Description field in *HeroStage → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1149,7 +1149,7 @@ export interface HomeHero1SliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Avatar field in *HomeHero1 → Default → Primary*
+   * Avatar field in *HeroStage → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1160,7 +1160,7 @@ export interface HomeHero1SliceDefaultPrimary {
 }
 
 /**
- * Default variation for HomeHero1 Slice
+ * Default variation for HeroStage Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1173,12 +1173,12 @@ export type HomeHero1SliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *HomeHero1*
+ * Slice variation for *HeroStage*
  */
 type HomeHero1SliceVariation = HomeHero1SliceDefault;
 
 /**
- * HomeHero1 Shared Slice
+ * HeroStage Shared Slice
  *
  * - **API ID**: `home_hero1`
  * - **Description**: HomeHero1
@@ -1311,11 +1311,11 @@ export type NavigationProjectBlogSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *OtherSkills → Default → Primary*
+ * Primary content in *SkillsMarquee → Default → Primary*
  */
 export interface OtherSkillsSliceDefaultPrimary {
   /**
-   * Background field in *OtherSkills → Default → Primary*
+   * Background field in *SkillsMarquee → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -1325,7 +1325,7 @@ export interface OtherSkillsSliceDefaultPrimary {
   background: prismic.ImageField<never>;
 
   /**
-   * Heading field in *OtherSkills → Default → Primary*
+   * Heading field in *SkillsMarquee → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1336,11 +1336,11 @@ export interface OtherSkillsSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *OtherSkills → Items*
+ * Primary content in *SkillsMarquee → Items*
  */
 export interface OtherSkillsSliceDefaultItem {
   /**
-   * Skill Name field in *OtherSkills → Items*
+   * Skill Name field in *SkillsMarquee → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1351,7 +1351,7 @@ export interface OtherSkillsSliceDefaultItem {
 }
 
 /**
- * Default variation for OtherSkills Slice
+ * Default variation for SkillsMarquee Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1364,12 +1364,12 @@ export type OtherSkillsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *OtherSkills*
+ * Slice variation for *SkillsMarquee*
  */
 type OtherSkillsSliceVariation = OtherSkillsSliceDefault;
 
 /**
- * OtherSkills Shared Slice
+ * SkillsMarquee Shared Slice
  *
  * - **API ID**: `other_skills`
  * - **Description**: OtherSkills

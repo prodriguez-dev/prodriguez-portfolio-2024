@@ -1,7 +1,7 @@
 {
   "id": "other_skills",
   "type": "SharedSlice",
-  "name": "OtherSkills",
+  "name": "SkillsMarquee",
   "description": "OtherSkills",
   "variations": [
     {

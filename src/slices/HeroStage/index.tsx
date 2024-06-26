@@ -7,19 +7,19 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useEffect, useRef } from "react";
-import s from "./HomeHero1.module.scss";
+import s from "./HeroStage.module.scss";
 
 gsap.registerPlugin(SplitText);
 
 /**
- * Props for `HomeHero1`.
+ * Props for `HeroStage`.
  */
-export type HomeHero1Props = SliceComponentProps<Content.HomeHero1Slice>;
+export type HeroStageProps = SliceComponentProps<Content.HeroStageSlice>;
 
 /**
- * Component for "HomeHero1" Slices.
+ * Component for "HeroStage" Slices.
  */
-const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
+const HeroStage = ({ slice }: HeroStageProps): JSX.Element => {
   const component = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
@@ -110,4 +110,4 @@ const HomeHero1 = ({ slice }: HomeHero1Props): JSX.Element => {
   );
 };
 
-export default HomeHero1;
+export default HeroStage;

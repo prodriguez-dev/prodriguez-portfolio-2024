@@ -1,7 +1,7 @@
 {
   "id": "home_hero1",
   "type": "SharedSlice",
-  "name": "HomeHero1",
+  "name": "HeroStage",
   "description": "HomeHero1",
   "variations": [
     {

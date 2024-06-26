@@ -76,34 +76,34 @@ const OtherSkills = ({ slice }: OtherSkillsProps): JSX.Element => {
     >
       <Bounded as="div" className="relative">
         <div className="md:mb-12">
-        {isFilled.image(slice.primary.background) && (
-          <PrismicNextImage
-            field={slice.primary.background}
-            className="mb-6 md:mb-10"
-            placeholder="empty"
-            priority
-          />
-        )}
-        <div className={clsx(s.wrapper, "flex flex-col justify-center")}>
-          <h3
+          {isFilled.image(slice.primary.background) && (
+            <PrismicNextImage
+              field={slice.primary.background}
+              className="mb-6 md:mb-10"
+              placeholder="empty"
+              priority
+            />
+          )}
+          <div className={clsx(s.wrapper, "flex flex-col justify-center")}>
+            <h3
+              className={clsx(
+                s.headline,
+                "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-gray-900",
+              )}
+            >
+              {slice.primary.heading}
+            </h3>
+          </div>
+          <div
             className={clsx(
-              s.headline,
-              "mx-auto mb-1 justify-self-center font-black uppercase tracking-wide text-gray-900",
+              s.skills,
+              "sofia-extra-cond mx-auto flex flex-col justify-between overflow-hidden font-black uppercase text-gray-900 opacity-70 mix-blend-hard-light",
             )}
           >
-            {slice.primary.heading}
-          </h3>
-        </div>
-        <div
-        className={clsx(
-          s.skills,
-          "sofia-extra-cond mx-auto flex flex-col justify-between gap-3 overflow-hidden font-black uppercase text-gray-900 opacity-70 mix-blend-hard-light",
-        )}
-      >
-        {renderRepeatedSkills(firstThird)}
-        {renderRepeatedSkills(secondThird)}
-        {renderRepeatedSkills(thirdThird)}
-      </div>
+            {renderRepeatedSkills(firstThird)}
+            {renderRepeatedSkills(secondThird)}
+            {renderRepeatedSkills(thirdThird)}
+          </div>
         </div>
       </Bounded>
     </section>

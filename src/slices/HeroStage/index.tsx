@@ -20,7 +20,7 @@ export type HeroStageProps = SliceComponentProps<Content.HomeHero1Slice>;
  * Component for "HeroStage" Slices.
  */
 const HeroStage = ({ slice }: HeroStageProps): JSX.Element => {
-  const component = useRef(null);
+  const componentRef = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
   const bgBackgroundRef = useRef(null);
@@ -31,19 +31,21 @@ const HeroStage = ({ slice }: HeroStageProps): JSX.Element => {
       const masterTimeline = gsap.timeline();
 
       // Image animation
-      masterTimeline.fromTo(
-        imageRef.current,
-        {
-          opacity: 0,
-          scale: 0.5,
-        },
-        {
-          duration: 1.0,
-          opacity: 1,
-          scale: 1,
-          ease: "Power3.easeOut",
-        },
-      );
+      if (imageRef.current) {
+        masterTimeline.fromTo(
+          imageRef.current,
+          {
+            opacity: 0,
+            scale: 0.5,
+          },
+          {
+            duration: 1.0,
+            opacity: 1,
+            scale: 1,
+            ease: "Power3.easeOut",
+          },
+        );
+      }
 
       // Text animation
       if (textRef.current) {
@@ -64,13 +66,14 @@ const HeroStage = ({ slice }: HeroStageProps): JSX.Element => {
         });
         masterTimeline.add(textTimeline, "+=0.5");
       }
-    }, component);
+    }, componentRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
     <section
+      ref={componentRef}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={clsx(s.home_hero_section, "bg-gray-800")}

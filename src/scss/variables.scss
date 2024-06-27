@@ -21,9 +21,9 @@ $defaultAnimateDuration: 0.5s;
 $dad: $defaultAnimateDuration;
 
 // Font families
-$sofia: "Sofia Sans", sans-serif;
-$sofia-cond: "Sofia Sans Condensed", sans-serif;
-$sofia-extra-cond: "Sofia Sans Extra Condensed", sans-serif;
+$sofia: var(--font-sofia-sans), sans-serif;
+$sofia-cond: var(--font-sofia-sans-condensed), sans-serif;
+$sofia-extra-cond: var(--font-sofia-sans-extra-condensed), sans-serif;
 
 // Font sizes
 $commonFontSize: 19px;

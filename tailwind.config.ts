@@ -8,7 +8,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-sofia-sans)"],
+        "sans-condensed": ["var(--font-sofia-sans-condensed)"],
+        "sans-extra-condensed": ["var(--font-sofia-sans-extra-condensed)"],
+      },
+    },
+  },
   plugins: [require("@tailwindcss/typography")],
 };
+
 export default config;

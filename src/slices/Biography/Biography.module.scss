@@ -14,12 +14,13 @@
   );
 }
 
-.bio_text p {
+.bio_text p,
+.bio_text ul {
   @include sP(
     [ //
-    font-size 24 16,
-    letter-spacing 1 1,
-    width 680 "100%",
+    font-size 22 16,
+    letter-spacing 0.7 0.7,
+    width 780 "100%",
     ]
   );
 

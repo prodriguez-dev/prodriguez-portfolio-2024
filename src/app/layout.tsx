@@ -63,6 +63,34 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/s/sofiasans/v1/raxqHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSrFkx8lw.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/s/sofiasansextracondensed/v1/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSuJk4.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/s/sofiasansextracondensed/v1/raxqHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSrFkx8lw.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/s/sofiasansextracondensed/v1/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSuJk4.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </Head>
       <body suppressHydrationWarning={true}>
         <Header />

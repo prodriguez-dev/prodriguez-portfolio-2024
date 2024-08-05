@@ -98,7 +98,7 @@
 }
 
 .footer-power {
-  @apply font-extrabold transition-colors duration-300 hover:text-amber-400;
+  @apply font-extrabold text-gray-400 transition-colors duration-300 hover:text-amber-400;
   @include sP(
     [ //
     font-size 16 13,

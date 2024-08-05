@@ -24,12 +24,6 @@
 
 .background-gradient {
   margin-top: -16px;
-  /* background: radial-gradient(
-    circle at top center,
-    hsla(38, 64%, 51%, 0.75) 0%,
-    hsla(38, 0%, 0%, 0) 50%,
-    hsla(38, 0%, 0%, 0) 100%
-  ); */
 
   @media only screen and (max-width: 767px) {
     margin-top: 64px;
@@ -37,35 +31,46 @@
 }
 
 .background-pattern {
-  @include sP([ //
+  @include sP(
+    [ //
     margin-top -16,
-    ]);
+    ]
+  );
 }
 
-.outer-bounded {}
+.outer-bounded {
+}
 
 .inner-bounded {
-  @include sP([ //
+  @include sP(
+    [ //
     max-width 1280 "100%",
-    ]);
+    ]
+  );
 }
 
 .namelogo {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 24 24,
-    ]);
+    ]
+  );
 }
 
 .navbar-nav {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 16,
-    ]);
+    ]
+  );
 }
 
 .button-text {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 16,
-    ]);
+    ]
+  );
 }
 
 .tags,
@@ -85,24 +90,30 @@
 .footer-icons {
   @apply p-2 text-gray-50 transition-all duration-300 hover:scale-125 hover:text-amber-400;
 
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 20 20,
-    ]);
+    ]
+  );
 }
 
 .footer-power {
   @apply font-extrabold transition-colors duration-300 hover:text-amber-400;
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 13,
-    ]);
+    ]
+  );
 }
 
 p.footer-power-text {
   @apply text-gray-500;
 
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 13,
-    ]);
+    ]
+  );
 }
 
 .nav-proj-blog {
@@ -173,33 +184,43 @@ p.footer-power-text {
 }
 
 .global-text-xl {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 46 24,
-    ]);
+    ]
+  );
 }
 
 .global-text-lg {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 36 24,
-    ]);
+    ]
+  );
 }
 
 .global-text-md {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 28 18,
-    ]);
+    ]
+  );
 }
 
 .global-text-mdsm {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 20 18,
-    ]);
+    ]
+  );
 }
 
 .global-text-sm {
-  @include sP([ //
+  @include sP(
+    [ //
     font-size 16 13,
-    ]);
+    ]
+  );
 }
 
 .global-center-align {

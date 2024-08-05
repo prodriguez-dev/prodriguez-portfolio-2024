@@ -65,7 +65,7 @@ export default function RootLayout({
         />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
       </Head>
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className="bg-gray-800">
         <Header />
         {children}
         <Footer />

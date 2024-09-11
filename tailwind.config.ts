@@ -15,6 +15,16 @@ const config: Config = {
         "sans-condensed": ["var(--font-sofia-sans-condensed)"],
         "sans-extra-condensed": ["var(--font-sofia-sans-extra-condensed)"],
       },
+      typography: (theme: any) => ({
+        DEFAULT: {
+          css: {
+            p: {
+              marginBottom: "0",
+              width: "100% !important",
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

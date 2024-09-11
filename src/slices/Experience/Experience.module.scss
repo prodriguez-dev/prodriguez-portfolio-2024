@@ -17,11 +17,30 @@
 }
 
 .description {
+  p {
+    margin-bottom: 0;
+    width: 100% !important;
+    all: unset;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  em {
+    @apply text-gray-50;
+
+    @include sP(
+      [ //
+      font-size 22 18,
+      ]
+    );
+  }
+
   ul {
     @include sP(
       [ //
       font-size 20 16,
-      width 800 "100%",
+      width 1000 "100%",
       ]
     );
   }

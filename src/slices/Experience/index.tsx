@@ -116,7 +116,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 <div
                   className={clsx(
                     s.description,
-                    "bullet-markers prose mt-4 text-gray-50",
+                    "bullet-markers prose mt-4 text-gray-50 prose-p:mb-0 prose-em:text-gray-50 prose-ul:w-full",
                   )}
                 >
                   <PrismicRichText field={item.description} />

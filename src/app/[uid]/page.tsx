@@ -1,3 +1,10 @@
+import {
+  absoluteUrl,
+  buildDescription,
+  buildOgImage,
+  buildPageTitle,
+  getSiteDefaults,
+} from "@/lib/metadata";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { SliceZone } from "@prismicio/react";
@@ -21,13 +28,37 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const client = createClient();
-  const page = await client
-    .getByUID("page", params.uid)
-    .catch(() => notFound());
+  const [page, settings] = await Promise.all([
+    client.getByUID("page", params.uid).catch(() => notFound()),
+    client.getSingle("settings"),
+  ]);
+  const site = getSiteDefaults(settings);
+  const title = buildPageTitle(page.data.meta_title, page.uid, site.title);
+  const description = buildDescription(
+    page.data.meta_description,
+    site.description,
+  );
+  const ogImage = buildOgImage(page.data.meta_image || settings.data.og_image);
+  const path = page.url || `/${page.uid}`;
 
   return {
-    title: page.data.meta_title,
-    description: page.data.meta_description,
+    title,
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(path),
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage.url],
+    },
   };
 }
 

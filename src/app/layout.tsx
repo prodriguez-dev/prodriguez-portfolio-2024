@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { getSiteDefaults } from "@/lib/metadata";
 import { createClient, repositoryName } from "@/prismicio";
 import "@/scss/globals.scss";
 import "@/scss/reset.scss";
@@ -38,28 +39,28 @@ const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
   const settings = await client.getSingle("settings");
-  const title = settings.data.meta_title || settings.data.name || "Portfolio";
-  const description =
-    settings.data.meta_description || "Personal portfolio website.";
+  const site = getSiteDefaults(settings);
 
   return {
-    metadataBase: new URL("https://prodriguez.dev"),
+    metadataBase: new URL(site.siteUrl),
     title: {
-      default: title,
-      template: `%s | ${settings.data.name || "Portfolio"}`,
+      default: site.title,
+      template: `%s | ${site.siteName}`,
     },
-    description,
+    description: site.description,
     openGraph: {
-      title,
-      description,
-      siteName: settings.data.name || "Portfolio",
+      title: site.title,
+      description: site.description,
+      siteName: site.siteName,
       type: "website",
-      url: "https://prodriguez.dev",
+      url: site.siteUrl,
+      images: [site.ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: site.title,
+      description: site.description,
+      images: [site.ogImage.url],
     },
     alternates: {
       canonical: "/",

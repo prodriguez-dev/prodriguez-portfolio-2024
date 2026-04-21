@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# prodriguez-portfolio-2024
 
-## Getting Started
+Personal portfolio site built with Next.js, TypeScript, Prismic, Tailwind, Sass, and GSAP.
 
-First, run the development server:
+## Stack
+
+- Next.js 14
+- React 18
+- TypeScript
+- Prismic CMS
+- Tailwind CSS
+- Sass
+- GSAP
+
+## Requirements
+
+- Node.js 18.17+ recommended
+- npm
+- access to the connected Prismic repository
+
+## Getting started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `npm run dev` - start local development server
+- `npm run build` - create production build
+- `npm run start` - run production build locally
+- `npm run lint` - run Next.js linting
+- `npm run slicemachine` - launch Slice Machine for Prismic slices
 
-## Learn More
+## Prismic setup
 
-To learn more about Next.js, take a look at the following resources:
+This project pulls site content and metadata from Prismic.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Important files:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `src/prismicio.ts` - Prismic client setup and route resolvers
+- `slicemachine.config.json` - repository configuration
+- `customtypes/` - custom type schemas
+- `src/slices/` - slice components
 
-## Deploy on Vercel
+If you point this repo at a different Prismic environment, check:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `NEXT_PUBLIC_PRISMIC_ENVIRONMENT`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If that variable is not set, the app falls back to the repository name from `slicemachine.config.json`.
+
+## Project structure
+
+```text
+src/
+  app/           App Router routes
+  components/    shared UI components
+  slices/        Prismic slice components
+  scss/          global Sass utilities and styles
+  utils/         helper functions
+```
+
+## Notes
+
+- The site now uses the public `gsap` package. No private GSAP registry or auth token is required.
+- Global site metadata is generated from the Prismic `settings` document in `src/app/layout.tsx`.
+- Header and footer both consume the shared `settings` payload passed from the root layout.
+
+## Recommended next cleanup
+
+- upgrade Next.js to a patched release
+- reduce remaining lint/type debt in shared components
+- improve contact form embedding so it is not hardcoded to one JotForm script
+- document deployment workflow if this repo is used as a portfolio sample for clients or hiring

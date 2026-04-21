@@ -10,7 +10,6 @@ import {
   Sofia_Sans_Condensed,
   Sofia_Sans_Extra_Condensed,
 } from "next/font/google";
-import Head from "next/head";
 
 const sofiaSans = Sofia_Sans({
   subsets: ["latin"],
@@ -39,36 +38,52 @@ const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
   const settings = await client.getSingle("settings");
+  const title = settings.data.meta_title || settings.data.name || "Portfolio";
+  const description =
+    settings.data.meta_description || "Personal portfolio website.";
 
   return {
-    title: settings.data.meta_title,
-    description: settings.data.meta_description,
+    metadataBase: new URL("https://prodriguez.dev"),
+    title: {
+      default: title,
+      template: `%s | ${settings.data.name || "Portfolio"}`,
+    },
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: settings.data.name || "Portfolio",
+      type: "website",
+      url: "https://prodriguez.dev",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: "/",
+    },
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const client = createClient();
+  const settings = await client.getSingle("settings");
+
   return (
     <html
       lang="en"
       className={`${sofiaSans.variable} ${sofiaSansCondensed.variable} ${sofiaSansExtraCondensed.variable}`}
     >
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      </Head>
       <body suppressHydrationWarning={true} className="bg-gray-800">
-        <Header />
+        <Header settings={settings} />
         {children}
-        <Footer />
+        <Footer settings={settings} />
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
         <div className="background-pattern pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/bg/abstract-pattern-1.svg')]"></div>
         <PrismicPreview repositoryName={repositoryName} />

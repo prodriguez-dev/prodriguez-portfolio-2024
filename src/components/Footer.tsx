@@ -1,19 +1,19 @@
 import Bounded from "@/components/Bounded";
-import { createClient } from "@/prismicio";
-import { isFilled } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
-export default async function Footer() {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
+type FooterProps = {
+  settings: Content.SettingsDocument;
+};
 
+export default function Footer({ settings }: FooterProps) {
   return (
     <Bounded as="footer" className={clsx("tracking-wide")}>
-      < div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row " >
+      <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row">
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
             href="/"
@@ -25,7 +25,7 @@ export default async function Footer() {
         <nav className="navigation" aria-label="Footer Navigation">
           <ul className="flex flex-wrap items-center gap-1 md:mr-12">
             {settings.data.nav_item.map(
-              ({ link, label }: { link: any; label: any }, index: number) => (
+              ({ link, label }, index: number) => (
                 <React.Fragment key={label}>
                   <li>
                     <PrismicNextLink
@@ -82,7 +82,7 @@ export default async function Footer() {
             </PrismicNextLink>
           )}
         </div>
-      </div >
+      </div>
       <div className="flex flex-col items-center gap-4 text-center">
         <p className="global-text-sm text-gray-500">
           © {new Date().getFullYear()} {settings.data.name}. All Rights
@@ -93,18 +93,25 @@ export default async function Footer() {
           <a
             href="https://nextjs.org/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             Next.js
           </a>
           ,{" "}
-          <a href="https://react.dev/" target="_blank" className="footer-power">
+          <a
+            href="https://react.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-power"
+          >
             React.js
           </a>
           ,{" "}
           <a
             href="https://www.typescriptlang.org/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             TypeScript
@@ -113,6 +120,7 @@ export default async function Footer() {
           <a
             href="https://nodejs.org/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             Node.js
@@ -121,18 +129,25 @@ export default async function Footer() {
           <a
             href="https://tailwindcss.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             TailwindCSS
           </a>
           ,{" "}
-          <a href="https://gsap.com/" target="_blank" className="footer-power">
+          <a
+            href="https://gsap.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-power"
+          >
             GSAP
           </a>
           ,{" "}
           <a
             href="https://prismic.io/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             Prismic
@@ -141,6 +156,7 @@ export default async function Footer() {
           <a
             href="https://github.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             GitHub
@@ -149,6 +165,7 @@ export default async function Footer() {
           <a
             href="https://vercel.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-power"
           >
             Vercel
@@ -156,6 +173,6 @@ export default async function Footer() {
           .
         </p>
       </div>
-    </Bounded >
+    </Bounded>
   );
 }

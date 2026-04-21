@@ -7,10 +7,11 @@ import {
 
 import { components } from "../../slices";
 
-export default function SliceSimulatorPage({
+export default async function SliceSimulatorPage({
   searchParams,
 }: SliceSimulatorParams) {
-  const slices = getSlices(searchParams.state);
+  const resolvedSearchParams = await searchParams;
+  const slices = getSlices(resolvedSearchParams.state);
 
   return (
     <SliceSimulator background="#022c22">

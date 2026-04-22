@@ -1,7 +1,8 @@
 import Bounded from "@/components/Bounded";
 import ContentList from "@/components/ContentList";
 import Heading from "@/components/Heading";
-import { createClient } from "@/prismicio";
+import { getContentEntries } from "@/lib/content-data";
+import type { SiteImage } from "@/lib/content-types";
 import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 /**
@@ -15,25 +16,16 @@ export type ContentIndexProps = SliceComponentProps<Content.ContentIndexSlice>;
 const ContentIndex = async ({
   slice,
 }: ContentIndexProps): Promise<JSX.Element> => {
-  const client = createClient();
   const contentType = slice.primary.content_type || "Blog";
-
-  let items: Array<Content.BlogPostDocument | Content.ProjectDocument>;
-
-  if (contentType === "Blog") {
-    items = await client.getAllByType("blog_post");
-  } else {
-    items = await client.getAllByType("project");
-  }
-
-  items = items
-    .filter((item) => item.data.date) // Continue filtering out null dates
-    .sort((a, b) => {
-      return (
-        new Date(b.data.date!.toString()).getTime() -
-        new Date(a.data.date!.toString()).getTime()
-      );
-    });
+  const items = getContentEntries(contentType);
+  const fallbackItemImage =
+    isFilled.image(slice.primary.fallback_item_image)
+      ? {
+          url: slice.primary.fallback_item_image.url,
+          alt: slice.primary.fallback_item_image.alt || "",
+          dimensions: slice.primary.fallback_item_image.dimensions,
+        }
+      : undefined;
 
   return (
     <Bounded
@@ -56,7 +48,7 @@ const ContentIndex = async ({
           items={items}
           contentType={slice.primary.content_type}
           viewMoreText={slice.primary.view_more_text}
-          fallbackItemImage={slice.primary.fallback_item_image}
+          fallbackItemImage={fallbackItemImage as SiteImage | undefined}
         />
       </div>
     </Bounded>

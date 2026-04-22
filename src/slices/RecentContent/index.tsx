@@ -2,12 +2,13 @@ import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import ContentList from "@/components/ContentList";
 import Heading from "@/components/Heading";
-import { createClient } from "@/prismicio";
+import { getContentEntries } from "@/lib/content-data";
+import type { SiteImage } from "@/lib/content-types";
 import clsx from "clsx";
-import { Content, isFilled } from "@prismicio/client";
+import { asLink, Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { MdViewList } from "react-icons/md";
-import s from "./RecentContent.module.scss"
+import s from "./RecentContent.module.scss";
 
 /**
  * Props for `RecentContent`.
@@ -21,26 +22,17 @@ export type RecentContentProps =
 const RecentContent = async ({
   slice,
 }: RecentContentProps): Promise<JSX.Element> => {
-  const client = createClient();
   const contentType = slice.primary.content_type || "Blog";
-
-  let items: Array<Content.BlogPostDocument | Content.ProjectDocument>;
-
-  if (contentType === "Blog") {
-    items = await client.getAllByType("blog_post");
-  } else {
-    items = await client.getAllByType("project");
-  }
-
-  items = items
-    .filter((item) => item.data.date) // Continue filtering out null dates
-    .sort((a, b) => {
-      return (
-        new Date(b.data.date!.toString()).getTime() -
-        new Date(a.data.date!.toString()).getTime()
-      );
-    })
-    .slice(0, 3); // Get only the first three items from the sorted array
+  const items = getContentEntries(contentType).slice(0, 3);
+  const fallbackItemImage =
+    isFilled.image(slice.primary.fallback_item_image)
+      ? {
+          url: slice.primary.fallback_item_image.url,
+          alt: slice.primary.fallback_item_image.alt || "",
+          dimensions: slice.primary.fallback_item_image.dimensions,
+        }
+      : undefined;
+  const buttonHref = asLink(slice.primary.button_link) || undefined;
 
   return (
     <Bounded
@@ -64,11 +56,11 @@ const RecentContent = async ({
             items={items}
             contentType={slice.primary.content_type}
             viewMoreText={slice.primary.view_more_text}
-            fallbackItemImage={slice.primary.fallback_item_image}
+            fallbackItemImage={fallbackItemImage as SiteImage | undefined}
           />
           <div className="mx-auto w-fit">
             <Button
-              linkField={slice.primary.button_link}
+              href={buttonHref}
               label={slice.primary.button_text}
               className="mt-10"
               icon={<MdViewList className="inline-block" />}

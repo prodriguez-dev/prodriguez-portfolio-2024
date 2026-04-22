@@ -1,7 +1,6 @@
 "use client";
 
-import { Content, asImageSrc, isFilled } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
+import type { ContentEntry, SiteImage } from "@/lib/content-types";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
@@ -10,10 +9,10 @@ import { FiEye } from "react-icons/fi";
 gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
-  items: (Content.BlogPostDocument | Content.ProjectDocument)[];
-  contentType: Content.ContentIndexSlice["primary"]["content_type"];
-  fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
-  viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
+  items: ContentEntry[];
+  contentType?: string | null;
+  fallbackItemImage?: SiteImage | null;
+  viewMoreText?: string | null;
 };
 
 export default function ContentList({
@@ -112,15 +111,8 @@ export default function ContentList({
   };
 
   const contentImages = items.map((item) => {
-    const image = isFilled.image(item.data.hover_image)
-      ? item.data.hover_image
-      : fallbackItemImage;
-    return asImageSrc(image, {
-      fit: "crop",
-      w: 220,
-      h: 140,
-      exp: -1,
-    });
+    const image = item.hoverImage || fallbackItemImage;
+    return image?.url || "";
   });
 
   // Preload images
@@ -145,16 +137,16 @@ export default function ContentList({
             className="list-item opacity-0"
           >
             <a
-              href={`${urlPrefix}/${post.uid}`}
+              href={post.href || `${urlPrefix}/${post.uid}`}
               className="global-text-lg bg-gray-900 my-4 flex flex-col gap-1 rounded-xl border-t-2 border-t-gray-700 px-8 py-10 text-gray-50 md:flex-row md:justify-between"
-              aria-label={post.data.title || ""}
+              aria-label={post.title || ""}
             >
               <div>
                 <div className="z-20 font-extrabold tracking-wide text-gray-50">
-                  {post.data.title}
+                  {post.title}
                 </div>
                 <div className="global-text-sm mt-5 flex flex-row flex-wrap gap-2 text-gray-50 md:gap-4">
-                  {post.tags.map((tag, index) => (
+                  {(post.tags || []).map((tag, index) => (
                     <span
                       key={index}
                       className="w-fit whitespace-nowrap rounded-full bg-gray-700 px-3 font-bold tracking-wide md:px-4"
@@ -162,11 +154,6 @@ export default function ContentList({
                       {tag}
                     </span>
                   ))}
-                  {isFilled.richText(post.data.tags) && (
-                    <span className="global-text-sm tags">
-                      <PrismicRichText field={post.data.tags} />
-                    </span>
-                  )}
                 </div>
               </div>
               <div className="mt-4 global-text-mdsm flex h-fit items-center gap-2 whitespace-nowrap tracking-wide text-gray-50 md:mt-0">

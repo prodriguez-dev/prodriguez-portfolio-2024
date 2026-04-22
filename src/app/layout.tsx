@@ -1,10 +1,9 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { getSiteDefaults } from "@/lib/metadata";
-import { createClient, repositoryName } from "@/prismicio";
+import { siteSettings } from "@/lib/site-content";
 import "@/scss/globals.scss";
 import "@/scss/reset.scss";
-import { PrismicPreview } from "@prismicio/next";
 import type { Metadata } from "next";
 import {
   Sofia_Sans,
@@ -37,9 +36,14 @@ const sofiaSansExtraCondensed = Sofia_Sans_Extra_Condensed({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
-  const site = getSiteDefaults(settings);
+  const site = getSiteDefaults({
+    data: {
+      name: siteSettings.name,
+      meta_title: siteSettings.metaTitle,
+      meta_description: siteSettings.metaDescription,
+      og_image: siteSettings.ogImage,
+    },
+  });
 
   return {
     metadataBase: new URL(site.siteUrl),
@@ -68,26 +72,22 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
-
   return (
     <html
       lang="en"
       className={`${sofiaSans.variable} ${sofiaSansCondensed.variable} ${sofiaSansExtraCondensed.variable}`}
     >
       <body suppressHydrationWarning={true} className="bg-gray-800">
-        <Header settings={settings} />
+        <Header settings={siteSettings} />
         {children}
-        <Footer settings={settings} />
+        <Footer settings={siteSettings} />
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
         <div className="background-pattern pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/bg/abstract-pattern-1.svg')]"></div>
-        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );

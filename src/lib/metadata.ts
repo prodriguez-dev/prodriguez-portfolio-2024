@@ -1,3 +1,5 @@
+import { siteSettings } from "@/lib/site-content";
+
 type MaybeString = string | null | undefined;
 
 type ImageLike = {
@@ -10,9 +12,8 @@ type ImageLike = {
 } | null | undefined;
 
 const SITE_URL = "https://prodriguez.dev";
-const SITE_NAME = "Paul Rodriguez";
-const DEFAULT_DESCRIPTION =
-  "Solutions Architect focused on technical discovery, enterprise platforms, and scalable system design across client-facing, high-stakes digital initiatives.";
+const SITE_NAME = siteSettings.name;
+const DEFAULT_DESCRIPTION = siteSettings.metaDescription;
 
 export function absoluteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();
@@ -50,9 +51,9 @@ export function getSiteDefaults(settings?: {
   };
 }) {
   const siteName = firstNonEmpty(settings?.data?.name, SITE_NAME) || SITE_NAME;
-  const title = buildPageTitle(settings?.data?.meta_title, siteName);
-  const description = buildDescription(settings?.data?.meta_description);
-  const ogImage = buildOgImage(settings?.data?.og_image);
+  const title = buildPageTitle(settings?.data?.meta_title, siteSettings.metaTitle, siteName);
+  const description = buildDescription(settings?.data?.meta_description, siteSettings.metaDescription);
+  const ogImage = buildOgImage(settings?.data?.og_image || siteSettings.ogImage);
 
   return {
     siteName,

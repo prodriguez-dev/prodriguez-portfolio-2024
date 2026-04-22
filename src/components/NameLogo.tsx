@@ -2,11 +2,10 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { SplitText } from "gsap/SplitText";
-import { KeyTextField } from "@prismicio/client";
 
 gsap.registerPlugin(SplitText);
 
-export function NameLogo({ name }: { name: KeyTextField | null }) {
+export function NameLogo({ name }: { name: string | null }) {
   const logoRef = useRef<HTMLAnchorElement | null>(null);
   const [hovering, setHovering] = useState(false);
   let splitTextRef = useRef<SplitText | null>(null);

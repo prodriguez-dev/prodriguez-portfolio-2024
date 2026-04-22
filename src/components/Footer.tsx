@@ -1,13 +1,12 @@
 import Bounded from "@/components/Bounded";
-import { Content, isFilled } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { SiteSettings } from "@/lib/site-content";
 
 type FooterProps = {
-  settings: Content.SettingsDocument;
+  settings: SiteSettings;
 };
 
 export default function Footer({ settings }: FooterProps) {
@@ -19,74 +18,67 @@ export default function Footer({ settings }: FooterProps) {
             href="/"
             className="global-text-mdsm footer-name-link text-gray-50 font-extrabold tracking-wide transition-colors duration-300 hover:text-amber-400"
           >
-            {settings.data.name}
+            {settings.name}
           </Link>
         </div>
         <nav className="navigation" aria-label="Footer Navigation">
           <ul className="flex flex-wrap items-center gap-1 md:mr-12">
-            {settings.data.nav_item.map(
-              ({ link, label }, index: number) => (
-                <React.Fragment key={label}>
-                  <li>
-                    <PrismicNextLink
-                      className={clsx(
-                        "global-text-mdsm group relative block overflow-hidden rounded px-1 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-amber-400 md:px-3",
-                      )}
-                      field={link}
-                    >
-                      {label}
-                    </PrismicNextLink>
-                  </li>
-                  {index < settings.data.nav_item.length - 1 && (
-                    <span
-                      className={clsx(
-                        "footer-copyright font-thin leading-[0] text-gray-50",
-                      )}
-                      aria-hidden="true"
-                    >
-
-                      /
-                    </span>
-                  )}
-                </React.Fragment>
-              ),
-            )}
+            {settings.navItems.map(({ href, label }, index: number) => (
+              <React.Fragment key={label}>
+                <li>
+                  <Link
+                    className={clsx(
+                      "global-text-mdsm group relative block overflow-hidden rounded px-1 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-amber-400 md:px-3",
+                    )}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  >
+                    {label}
+                  </Link>
+                </li>
+                {index < settings.navItems.length - 1 && (
+                  <span
+                    className={clsx(
+                      "footer-copyright font-thin leading-[0] text-gray-50",
+                    )}
+                    aria-hidden="true"
+                  >
+                    /
+                  </span>
+                )}
+              </React.Fragment>
+            ))}
           </ul>
         </nav>
         <div className="global-text-mdsm socials inline-flex justify-center sm:justify-end">
-          {isFilled.link(settings.data.github_link) && (
-            <PrismicNextLink
-              field={settings.data.github_link}
-              className="footer-icons"
-              aria-label={settings.data.name + " on GitHub"}
-            >
-              <FaGithub />
-            </PrismicNextLink>
-          )}
-          {isFilled.link(settings.data.linkedin_link) && (
-            <PrismicNextLink
-              field={settings.data.linkedin_link}
-              className="footer-icons"
-              aria-label={settings.data.name + " on LinkedIn"}
-            >
-              <FaLinkedin />
-            </PrismicNextLink>
-          )}
-          {isFilled.link(settings.data.twitter_link) && (
-            <PrismicNextLink
-              field={settings.data.twitter_link}
-              className="footer-icons"
-              aria-label={settings.data.name + " on Twitter"}
-            >
-              <FaXTwitter />
-            </PrismicNextLink>
-          )}
+          {settings.socialLinks.map((link) => {
+            const icon =
+              link.platform === "github"
+                ? <FaGithub />
+                : link.platform === "linkedin"
+                  ? <FaLinkedin />
+                  : <FaXTwitter />;
+            const label = `${settings.name} on ${link.platform === "twitter" ? "Twitter" : link.platform.charAt(0).toUpperCase() + link.platform.slice(1)}`;
+
+            return (
+              <Link
+                key={link.platform}
+                href={link.href}
+                className="footer-icons"
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {icon}
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div className="flex flex-col items-center gap-4 text-center">
         <p className="global-text-sm text-gray-500">
-          © {new Date().getFullYear()} {settings.data.name}. All Rights
-          Reserved.
+          © {new Date().getFullYear()} {settings.name}. All Rights Reserved.
         </p>
         <p className={clsx("footer-power-text text-gray-700")}>
           Powered by{" "}
@@ -142,15 +134,6 @@ export default function Footer({ settings }: FooterProps) {
             className="footer-power"
           >
             GSAP
-          </a>
-          ,{" "}
-          <a
-            href="https://prismic.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            Prismic
           </a>
           ,{" "}
           <a

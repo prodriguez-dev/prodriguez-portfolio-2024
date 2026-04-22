@@ -1,16 +1,16 @@
 "use client";
 
-import { Content, asLink } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useMemo, useState } from "react";
 import { MdClose, MdEmail, MdMenu } from "react-icons/md";
 import Button from "./Button";
 import { NameLogo } from "./NameLogo";
+import { SiteSettings } from "@/lib/site-content";
 
 type NavBarProps = {
-  settings: Content.SettingsDocument;
+  settings: SiteSettings;
 };
 
 type NavItemProps = {
@@ -33,11 +33,13 @@ function isActivePath(pathname: string, href: string) {
 }
 
 function NavItem({ href, label, isActive, onClick }: NavItemProps) {
+  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+
   return (
-    <PrismicNextLink
+    <Link
       href={href}
-      target={label === "Resume" ? "_blank" : undefined}
-      rel={label === "Resume" ? "noopener noreferrer" : undefined}
+      target={label === "Resume" || isExternal ? "_blank" : undefined}
+      rel={label === "Resume" || isExternal ? "noopener noreferrer" : undefined}
       className="navbar-nav group relative block overflow-hidden rounded px-3 py-1 font-bold text-gray-50 transition-colors duration-300 hover:text-gray-900 md:px-4 md:font-extrabold md:tracking-wide md:hover:text-gray-50 md:active:text-gray-50"
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
@@ -49,7 +51,7 @@ function NavItem({ href, label, isActive, onClick }: NavItemProps) {
         )}
       />
       <span className="relative text-2xl md:text-base">{label}</span>
-    </PrismicNextLink>
+    </Link>
   );
 }
 
@@ -71,21 +73,15 @@ export default function NavBar({ settings }: NavBarProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const navItems = useMemo(
-    () =>
-      settings.data.nav_item
-        .map(({ link, label }) => ({
-          href: asLink(link) || "#",
-          label: label || "",
-        }))
-        .filter((item) => item.label && item.href !== "#"),
-    [settings.data.nav_item],
+    () => settings.navItems.filter((item) => item.label && item.href),
+    [settings.navItems],
   );
 
   return (
     <nav aria-label="Main navigation">
       <div className="flex flex-col justify-between bg-gray-800 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
         <div className="flex items-center justify-between">
-          <NameLogo name={settings.data.name} />
+          <NameLogo name={settings.name} />
           <button
             type="button"
             aria-expanded={open}
@@ -122,8 +118,8 @@ export default function NavBar({ settings }: NavBarProps) {
               ))}
               <li>
                 <Button
-                  linkField={settings.data.cta_link}
-                  label={settings.data.cta_label}
+                  href={settings.cta.href}
+                  label={settings.cta.label}
                   className="ml-3"
                   icon={<MdEmail className="-mt-1 inline-block" />}
                 />
@@ -143,7 +139,7 @@ function DesktopMenu({
   pathname,
   navItems,
 }: {
-  settings: Content.SettingsDocument;
+  settings: SiteSettings;
   pathname: string;
   navItems: { href: string; label: string }[];
 }) {
@@ -163,8 +159,8 @@ function DesktopMenu({
       ))}
       <li>
         <Button
-          linkField={settings.data.cta_link}
-          label={settings.data.cta_label}
+          href={settings.cta.href}
+          label={settings.cta.label}
           className="ml-3"
           icon={<MdEmail className="inline-block" />}
         />

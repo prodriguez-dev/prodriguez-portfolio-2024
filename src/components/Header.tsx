@@ -1,10 +1,10 @@
 import React from "react";
-import { Content } from "@prismicio/client";
 
 import NavBar from "@/components/NavBar";
+import { SiteSettings } from "@/lib/site-content";
 
 type HeaderProps = {
-  settings: Content.SettingsDocument;
+  settings: SiteSettings;
 };
 
 export default function Header({ settings }: HeaderProps) {

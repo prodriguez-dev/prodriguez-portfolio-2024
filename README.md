@@ -1,13 +1,13 @@
 # prodriguez-portfolio-2024
 
-Personal portfolio site built with Next.js, TypeScript, Prismic, Tailwind, Sass, and GSAP.
+Personal portfolio site built with Next.js, TypeScript, local content modules, Tailwind, Sass, and GSAP.
 
 ## Stack
 
 - Next.js 14
 - React 18
 - TypeScript
-- Prismic CMS
+- Local TypeScript content files
 - Tailwind CSS
 - Sass
 - GSAP
@@ -16,7 +16,6 @@ Personal portfolio site built with Next.js, TypeScript, Prismic, Tailwind, Sass,
 
 - Node.js 18.17+ recommended
 - npm
-- access to the connected Prismic repository
 
 ## Getting started
 
@@ -40,24 +39,19 @@ Open <http://localhost:3000>.
 - `npm run build` - create production build
 - `npm run start` - run production build locally
 - `npm run lint` - run Next.js linting
-- `npm run slicemachine` - launch Slice Machine for Prismic slices
 
-## Prismic setup
+## Content model
 
-This project pulls site content and metadata from Prismic.
+The site now uses local content files instead of Prismic runtime content.
 
-Important files:
+Important areas:
 
-- `src/prismicio.ts` - Prismic client setup and route resolvers
-- `slicemachine.config.json` - repository configuration
-- `customtypes/` - custom type schemas
-- `src/slices/` - slice components
-
-If you point this repo at a different Prismic environment, check:
-
-- `NEXT_PUBLIC_PRISMIC_ENVIRONMENT`
-
-If that variable is not set, the app falls back to the repository name from `slicemachine.config.json`.
+- `src/lib/site-content.ts` - site settings and shared metadata inputs
+- `src/lib/phase-one-pages.tsx` - local rendering/content for the core top-level pages
+- `src/content/projects.ts` - local project detail content exported from the prior CMS
+- `src/content/blog.ts` - local blog content source, currently empty
+- `src/lib/content-data.ts` - content lookup and sorting helpers
+- `src/lib/content-rendering.tsx` - shared rendering for local project/blog detail pages
 
 ## Project structure
 
@@ -65,16 +59,18 @@ If that variable is not set, the app falls back to the repository name from `sli
 src/
   app/           App Router routes
   components/    shared UI components
-  slices/        Prismic slice components
+  content/       local project/blog content
+  lib/           metadata, local content, render helpers
   scss/          global Sass utilities and styles
   utils/         helper functions
 ```
 
 ## Notes
 
-- The site now uses the public `gsap` package. No private GSAP registry or auth token is required.
-- Global site metadata is generated from the Prismic `settings` document in `src/app/layout.tsx`.
-- Header and footer both consume the shared `settings` payload passed from the root layout.
+- The site no longer depends on Prismic runtime routes, preview plumbing, or Slice Machine simulator pages.
+- Global site metadata is generated from local site settings in `src/app/layout.tsx`.
+- Header and footer consume the shared local settings payload from the root layout.
+- Project detail content is statically generated from local files.
 
 ## Recommended next cleanup
 

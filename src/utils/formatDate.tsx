@@ -1,6 +1,4 @@
-import { DateField } from "@prismicio/client";
-
-export function formatDate(dateStr: DateField): string {
+export function formatDate(dateStr?: string | null): string {
   if (!dateStr) return "";
 
   // Parse the date as UTC

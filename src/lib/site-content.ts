@@ -30,11 +30,6 @@ export const siteSettings: SiteSettings = {
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Silver Tech Help", href: "/silver-tech-help" },
-    {
-      label: "Resume",
-      href: "https://www.prodriguez.dev/resume",
-      external: true,
-    },
   ],
   cta: {
     label: "Contact",

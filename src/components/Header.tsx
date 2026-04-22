@@ -9,7 +9,7 @@ type HeaderProps = {
 
 export default function Header({ settings }: HeaderProps) {
   return (
-    <header className="top-0 z-50 mx-auto max-w-[1360px] md:sticky md:top-4">
+    <header className="sticky top-0 z-50">
       <NavBar settings={settings} />
     </header>
   );

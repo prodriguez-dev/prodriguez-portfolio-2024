@@ -78,7 +78,7 @@ export function NameLogo({ name }: { name: string | null }) {
     <Link
       href="/"
       aria-label="Home page"
-      className="namelogo text- font-extrabold tracking-normal text-[#ffffff] hover:text-[#ffffff]"
+      className="namelogo font-[var(--font-sofia-sans-extra-condensed)] text-[1.4rem] font-black uppercase italic tracking-[0.04em] text-[#111111] transition-colors hover:text-[#c4621a]"
       ref={logoRef}
     >
       {logoName}

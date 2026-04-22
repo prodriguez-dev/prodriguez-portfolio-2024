@@ -1,13 +1,12 @@
 "use client";
 
-import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useMemo, useState } from "react";
-import { MdClose, MdEmail, MdMenu } from "react-icons/md";
-import Button from "./Button";
-import { NameLogo } from "./NameLogo";
+import { MdEmail, MdMenu } from "react-icons/md";
 import { SiteSettings } from "@/lib/site-content";
+import { NameLogo } from "./NameLogo";
+import clsx from "clsx";
 
 type NavBarProps = {
   settings: SiteSettings;
@@ -33,39 +32,18 @@ function isActivePath(pathname: string, href: string) {
 }
 
 function NavItem({ href, label, isActive, onClick }: NavItemProps) {
-  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
-
   return (
     <Link
       href={href}
-      target={label === "Resume" || isExternal ? "_blank" : undefined}
-      rel={label === "Resume" || isExternal ? "noopener noreferrer" : undefined}
-      className="navbar-nav group relative block overflow-hidden rounded px-3 py-1 font-bold text-gray-50 transition-colors duration-300 hover:text-gray-900 md:px-4 md:font-extrabold md:tracking-wide md:hover:text-gray-50 md:active:text-gray-50"
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
-    >
-      <span
-        className={clsx(
-          "absolute inset-0 z-0 hidden h-full rounded bg-gray-500 transition-transform duration-300 ease-in-out group-hover:translate-y-0 md:block",
-          isActive ? "translate-y-0" : "translate-y-10",
-        )}
-      />
-      <span className="relative text-2xl md:text-base">{label}</span>
-    </Link>
-  );
-}
-
-function NavSeparator({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <li
       className={clsx(
-        "font-thin leading-[0] text-gray-50",
-        mobile ? "md:hidden" : "hidden md:inline",
+        "text-sm font-bold uppercase tracking-[0.18em] transition-colors",
+        isActive ? "text-[#111111]" : "text-[#7a7570] hover:text-[#111111]",
       )}
-      aria-hidden="true"
     >
-      /
-    </li>
+      {label}
+    </Link>
   );
 }
 
@@ -78,93 +56,64 @@ export default function NavBar({ settings }: NavBarProps) {
   );
 
   return (
-    <nav aria-label="Main navigation">
-      <div className="flex flex-col justify-between bg-gray-800 px-4 py-3 md:m-4 md:flex-row md:items-center md:rounded-xl md:px-7">
-        <div className="flex items-center justify-between">
-          <NameLogo name={settings.name} />
-          <button
-            type="button"
-            aria-expanded={open}
-            aria-controls="mobile-navigation"
-            aria-label={open ? "Close menu" : "Open menu"}
-            className="block p-2 text-2xl text-gray-50 transition-colors duration-300 hover:text-gray-400 md:hidden"
-            onClick={() => setOpen((current) => !current)}
+    <nav aria-label="Main navigation" className="px-4 pt-4 md:px-6">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between rounded-2xl border border-[#e0dbd0] bg-[rgba(244,241,235,0.92)] px-4 py-3 shadow-[0_1px_0_rgba(0,0,0,0.07)] backdrop-blur-xl md:px-6">
+        <NameLogo name={settings.name} />
+
+        <div className="hidden items-center gap-4 md:flex">
+          {navItems.map(({ href, label }, index) => (
+            <React.Fragment key={`${label}-${href}`}>
+              <NavItem href={href} label={label} isActive={isActivePath(pathname, href)} />
+              {index < navItems.length - 1 && <span className="text-[#cccccc]">/</span>}
+            </React.Fragment>
+          ))}
+          <Link
+            href={settings.cta.href}
+            className="ml-3 inline-flex items-center gap-2 rounded-[10px] bg-[#c4621a] px-4 py-2 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
           >
-            {open ? <MdClose /> : <MdMenu />}
-          </button>
+            <span>{settings.cta.label}</span>
+            <MdEmail className="text-base" />
+          </Link>
         </div>
 
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="inline-flex items-center justify-center rounded-md p-2 text-2xl text-[#111111] md:hidden"
+          onClick={() => setOpen((current) => !current)}
+        >
+          <MdMenu />
+        </button>
+      </div>
+
+      {open && (
         <div
           id="mobile-navigation"
-          className={clsx(
-            "background-master fixed bottom-0 left-0 right-0 top-0 z-50 md:hidden",
-            open ? "translate-x-0" : "translate-x-[100%]",
-          )}
+          className="mx-auto mt-3 max-w-[1280px] rounded-2xl border border-[#e0dbd0] bg-[#f4f1eb] p-4 shadow-[0_8px_32px_rgba(0,0,0,0.08)] md:hidden"
         >
-          <div className="flex h-full flex-col items-end gap-4 pr-4 pt-14 transition-transform duration-300 ease-in-out">
-            <ul className="flex flex-col items-end gap-4">
-              {navItems.map(({ href, label }, index) => (
-                <React.Fragment key={`${label}-${href}`}>
-                  <li className="first:mt-8">
-                    <NavItem
-                      href={href}
-                      label={label}
-                      isActive={isActivePath(pathname, href)}
-                      onClick={() => setOpen(false)}
-                    />
-                  </li>
-                  {index < navItems.length - 1 && <NavSeparator mobile />}
-                </React.Fragment>
-              ))}
-              <li>
-                <Button
-                  href={settings.cta.href}
-                  label={settings.cta.label}
-                  className="ml-3"
-                  icon={<MdEmail className="-mt-1 inline-block" />}
-                />
-              </li>
-            </ul>
+          <div className="flex flex-col gap-4">
+            {navItems.map(({ href, label }) => (
+              <NavItem
+                key={`${label}-${href}`}
+                href={href}
+                label={label}
+                isActive={isActivePath(pathname, href)}
+                onClick={() => setOpen(false)}
+              />
+            ))}
+            <Link
+              href={settings.cta.href}
+              onClick={() => setOpen(false)}
+              className="inline-flex w-fit items-center gap-2 rounded-[10px] bg-[#c4621a] px-4 py-2 text-sm font-extrabold uppercase tracking-[0.12em] text-white"
+            >
+              <span>{settings.cta.label}</span>
+              <MdEmail className="text-base" />
+            </Link>
           </div>
         </div>
-
-        <DesktopMenu settings={settings} pathname={pathname} navItems={navItems} />
-      </div>
+      )}
     </nav>
-  );
-}
-
-function DesktopMenu({
-  settings,
-  pathname,
-  navItems,
-}: {
-  settings: SiteSettings;
-  pathname: string;
-  navItems: { href: string; label: string }[];
-}) {
-  return (
-    <ul className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 md:flex">
-      {navItems.map(({ href, label }, index) => (
-        <React.Fragment key={`${label}-${href}`}>
-          <li>
-            <NavItem
-              href={href}
-              label={label}
-              isActive={isActivePath(pathname, href)}
-            />
-          </li>
-          {index < navItems.length - 1 && <NavSeparator />}
-        </React.Fragment>
-      ))}
-      <li>
-        <Button
-          href={settings.cta.href}
-          label={settings.cta.label}
-          className="ml-3"
-          icon={<MdEmail className="inline-block" />}
-        />
-      </li>
-    </ul>
   );
 }

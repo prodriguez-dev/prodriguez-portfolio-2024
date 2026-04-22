@@ -1,5 +1,4 @@
 import Bounded from "@/components/Bounded";
-import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
@@ -11,151 +10,69 @@ type FooterProps = {
 
 export default function Footer({ settings }: FooterProps) {
   return (
-    <Bounded as="footer" className={clsx("tracking-wide")}>
-      <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-4 sm:flex-row">
-        <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
-          <Link
-            href="/"
-            className="global-text-mdsm footer-name-link text-gray-50 font-extrabold tracking-wide transition-colors duration-300 hover:text-amber-400"
-          >
-            {settings.name}
-          </Link>
-        </div>
-        <nav className="navigation" aria-label="Footer Navigation">
-          <ul className="flex flex-wrap items-center gap-1 md:mr-12">
-            {settings.navItems.map(({ href, label }, index: number) => (
-              <React.Fragment key={label}>
-                <li>
-                  <Link
-                    className={clsx(
-                      "global-text-mdsm group relative block overflow-hidden rounded px-1 py-1 font-extrabold tracking-wide text-gray-50 transition-colors duration-300 hover:text-amber-400 md:px-3",
-                    )}
-                    href={href}
-                    target={href.startsWith("http") ? "_blank" : undefined}
-                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  >
+    <footer className="bg-[#ede9e1] text-[#111111]">
+      <Bounded as="div" className="py-12">
+        <div className="grid gap-10 border-t border-[#d9d2c6] pt-10 md:grid-cols-[1.2fr,1fr,1fr] md:items-start">
+          <div>
+            <Link
+              href="/"
+              className="font-[var(--font-sofia-sans-extra-condensed)] text-3xl font-black uppercase italic tracking-[0.04em] text-[#111111] transition-colors hover:text-[#c4621a]"
+            >
+              {settings.name}
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-6 text-[#7a7570]">
+              Solutions Architect, frontend engineer, and public speaker building clear, high-trust digital experiences.
+            </p>
+          </div>
+
+          <nav aria-label="Footer Navigation">
+            <div className="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">Navigate</div>
+            <ul className="space-y-3 text-sm font-bold uppercase tracking-[0.12em]">
+              <li><Link href="/" className="transition-colors hover:text-[#c4621a]">Home</Link></li>
+              {settings.navItems.map(({ href, label }) => (
+                <li key={label}>
+                  <Link href={href} className="transition-colors hover:text-[#c4621a]">
                     {label}
                   </Link>
                 </li>
-                {index < settings.navItems.length - 1 && (
-                  <span
-                    className={clsx(
-                      "footer-copyright font-thin leading-[0] text-gray-50",
-                    )}
-                    aria-hidden="true"
-                  >
-                    /
-                  </span>
-                )}
-              </React.Fragment>
-            ))}
-          </ul>
-        </nav>
-        <div className="global-text-mdsm socials inline-flex justify-center sm:justify-end">
-          {settings.socialLinks.map((link) => {
-            const icon =
-              link.platform === "github"
-                ? <FaGithub />
-                : link.platform === "linkedin"
-                  ? <FaLinkedin />
-                  : <FaXTwitter />;
-            const label = `${settings.name} on ${link.platform === "twitter" ? "Twitter" : link.platform.charAt(0).toUpperCase() + link.platform.slice(1)}`;
+              ))}
+              <li><Link href={settings.cta.href} className="transition-colors hover:text-[#c4621a]">{settings.cta.label}</Link></li>
+            </ul>
+          </nav>
 
-            return (
-              <Link
-                key={link.platform}
-                href={link.href}
-                className="footer-icons"
-                aria-label={label}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {icon}
-              </Link>
-            );
-          })}
+          <div>
+            <div className="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">Elsewhere</div>
+            <div className="flex gap-4 text-xl text-[#111111]">
+              {settings.socialLinks.map((link) => {
+                const icon =
+                  link.platform === "github"
+                    ? <FaGithub />
+                    : link.platform === "linkedin"
+                      ? <FaLinkedin />
+                      : <FaXTwitter />;
+
+                return (
+                  <Link
+                    key={link.platform}
+                    href={link.href}
+                    aria-label={link.platform}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-[#c4621a]"
+                  >
+                    {icon}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center gap-4 text-center">
-        <p className="global-text-sm text-gray-500">
-          © {new Date().getFullYear()} {settings.name}. All Rights Reserved.
-        </p>
-        <p className={clsx("footer-power-text text-gray-700")}>
-          Powered by{" "}
-          <a
-            href="https://nextjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            Next.js
-          </a>
-          ,{" "}
-          <a
-            href="https://react.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            React.js
-          </a>
-          ,{" "}
-          <a
-            href="https://www.typescriptlang.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            TypeScript
-          </a>
-          ,{" "}
-          <a
-            href="https://nodejs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            Node.js
-          </a>
-          ,{" "}
-          <a
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            TailwindCSS
-          </a>
-          ,{" "}
-          <a
-            href="https://gsap.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            GSAP
-          </a>
-          ,{" "}
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            GitHub
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://vercel.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-power"
-          >
-            Vercel
-          </a>
-          .
-        </p>
-      </div>
-    </Bounded>
+
+        <div className="mt-8 flex flex-col gap-2 border-t border-[#d9d2c6] pt-6 text-sm text-[#7a7570] md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} {settings.name}. All rights reserved.</p>
+          <p>Built with Next.js, React, TypeScript, TailwindCSS, GSAP, GitHub, and Vercel.</p>
+        </div>
+      </Bounded>
+    </footer>
   );
 }

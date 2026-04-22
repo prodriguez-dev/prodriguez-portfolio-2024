@@ -82,12 +82,10 @@ export default function RootLayout({
       lang="en"
       className={`${sofiaSans.variable} ${sofiaSansCondensed.variable} ${sofiaSansExtraCondensed.variable}`}
     >
-      <body suppressHydrationWarning={true} className="bg-gray-800">
+      <body suppressHydrationWarning={true} className="bg-[#f4f1eb] text-[#111111]">
         <Header settings={siteSettings} />
-        {children}
+        <main>{children}</main>
         <Footer settings={siteSettings} />
-        <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
-        <div className="background-pattern pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/bg/abstract-pattern-1.svg')]"></div>
       </body>
     </html>
   );

@@ -1,24 +1,20 @@
-import ContentBody from "@/components/ContentBody";
-import {
-  absoluteUrl,
-  buildDescription,
-  buildOgImage,
-  buildPageTitle,
-  getSiteDefaults,
-} from "@/lib/metadata";
-import { createClient } from "@/prismicio";
+import { getProjectEntry, projectEntries } from "@/lib/content-data";
+import { renderContentEntry } from "@/lib/content-rendering";
+import { absoluteUrl, buildDescription, buildOgImage, buildPageTitle } from "@/lib/metadata";
+import { siteSettings } from "@/lib/site-content";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
-  const client = createClient();
-  const page = await client
-    .getByUID("project", params.uid)
-    .catch(() => notFound());
+  const entry = getProjectEntry(params.uid);
 
-  return <ContentBody page={page} />;
+  if (!entry) {
+    notFound();
+  }
+
+  return renderContentEntry(entry);
 }
 
 export async function generateMetadata({
@@ -26,25 +22,20 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const client = createClient();
-  const [page, settings] = await Promise.all([
-    client.getByUID("project", params.uid).catch(() => notFound()),
-    client.getSingle("settings"),
-  ]);
-  const site = getSiteDefaults(settings);
-  const projectTitle =
-    (typeof page.data.title === "string" && page.data.title.trim()) ||
-    page.uid ||
-    "Project";
-  const fallbackDescription = firstProjectDescription(page.data.description);
-  const title = buildPageTitle(page.data.meta_title, projectTitle, site.title);
+  const entry = getProjectEntry(params.uid);
+
+  if (!entry) {
+    notFound();
+  }
+
+  const title = buildPageTitle(entry.metaTitle, entry.title, siteSettings.metaTitle);
   const description = buildDescription(
-    page.data.meta_description,
-    fallbackDescription,
-    site.description,
+    entry.metaDescription,
+    entry.description?.find((block) => block.text?.trim())?.text,
+    siteSettings.metaDescription,
   );
-  const ogImage = buildOgImage(page.data.meta_image || page.data.hover_image || settings.data.og_image);
-  const path = page.url || `/projects/${page.uid}`;
+  const ogImage = buildOgImage(entry.metaImage || entry.hoverImage || siteSettings.ogImage);
+  const path = entry.href || `/projects/${entry.uid}`;
 
   return {
     title,
@@ -67,29 +58,6 @@ export async function generateMetadata({
   };
 }
 
-function firstProjectDescription(description: unknown) {
-  if (!Array.isArray(description)) {
-    return undefined;
-  }
-
-  const firstTextBlock = description.find(
-    (item): item is { type?: string; text?: string } =>
-      Boolean(item) && typeof item === "object",
-  );
-
-  if (!firstTextBlock || typeof firstTextBlock.text !== "string") {
-    return undefined;
-  }
-
-  const text = firstTextBlock.text.trim();
-  return text || undefined;
-}
-
 export async function generateStaticParams() {
-  const client = createClient();
-  const pages = await client.getAllByType("project");
-
-  return pages.map((page) => {
-    return { uid: page.uid };
-  });
+  return projectEntries.map((entry) => ({ uid: entry.uid }));
 }

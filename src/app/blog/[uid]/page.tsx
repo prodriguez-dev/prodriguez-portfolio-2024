@@ -1,17 +1,20 @@
-import ContentBody from "@/components/ContentBody";
-import { createClient } from "@/prismicio";
+import { blogEntries, getBlogEntry } from "@/lib/content-data";
+import { renderContentEntry } from "@/lib/content-rendering";
+import { absoluteUrl, buildDescription, buildOgImage, buildPageTitle } from "@/lib/metadata";
+import { siteSettings } from "@/lib/site-content";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
-  const client = createClient();
-  const page = await client
-    .getByUID("blog_post", params.uid)
-    .catch(() => notFound());
+  const entry = getBlogEntry(params.uid);
 
-  return <ContentBody page={page} />;
+  if (!entry) {
+    notFound();
+  }
+
+  return renderContentEntry(entry);
 }
 
 export async function generateMetadata({
@@ -19,22 +22,38 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const client = createClient();
-  const page = await client
-    .getByUID("blog_post", params.uid)
-    .catch(() => notFound());
+  const entry = getBlogEntry(params.uid);
+
+  if (!entry) {
+    notFound();
+  }
+
+  const title = buildPageTitle(entry.metaTitle, entry.title, siteSettings.metaTitle);
+  const description = buildDescription(entry.metaDescription, siteSettings.metaDescription);
+  const ogImage = buildOgImage(entry.metaImage || entry.hoverImage || siteSettings.ogImage);
+  const path = entry.href || `/blog/${entry.uid}`;
 
   return {
-    title: page.data.title,
-    description: page.data.meta_description,
+    title,
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(path),
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage.url],
+    },
   };
 }
 
 export async function generateStaticParams() {
-  const client = createClient();
-  const pages = await client.getAllByType("blog_post");
-
-  return pages.map((page) => {
-    return { uid: page.uid };
-  });
+  return blogEntries.map((entry) => ({ uid: entry.uid }));
 }

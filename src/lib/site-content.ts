@@ -1,17 +1,4 @@
-export type SiteLink = {
-  label: string;
-  href: string;
-  external?: boolean;
-};
-
-export type SiteImage = {
-  url: string;
-  alt?: string;
-  dimensions?: {
-    width?: number;
-    height?: number;
-  };
-};
+import type { SiteImage, SiteLink } from "@/lib/content-types";
 
 export type SiteSettings = {
   name: string;

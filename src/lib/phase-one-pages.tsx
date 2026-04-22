@@ -2,8 +2,9 @@ import Avatar from "@/components/Avatar";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import type { RichTextBlock, SiteImage } from "@/lib/content-types";
 import { absoluteUrl, buildDescription, buildOgImage, buildPageTitle, getSiteDefaults } from "@/lib/metadata";
-import { getPhaseOnePage, siteSettings, type SiteImage } from "@/lib/site-content";
+import { getPhaseOnePage, siteSettings } from "@/lib/site-content";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,11 +12,6 @@ import type { Metadata } from "next";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-
-type RichTextBlock = {
-  type: "paragraph" | "heading2" | "heading3" | "list-item";
-  text: string;
-};
 
 type HeroSection = {
   firstName: string;

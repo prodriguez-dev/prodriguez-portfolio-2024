@@ -12,7 +12,7 @@ type ImageLike = {
 const SITE_URL = "https://prodriguez.dev";
 const SITE_NAME = "Paul Rodriguez";
 const DEFAULT_DESCRIPTION =
-  "Frontend developer portfolio featuring web experiences, client projects, and clear technical problem-solving.";
+  "Solutions Architect focused on technical discovery, enterprise platforms, and scalable system design across client-facing, high-stakes digital initiatives.";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();

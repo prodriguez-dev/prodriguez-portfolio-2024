@@ -69,10 +69,10 @@ export default function NavBar({ settings }: NavBarProps) {
           ))}
           <Link
             href={settings.cta.href}
-            className="ml-3 inline-flex items-center gap-2 rounded-[10px] bg-[#c4621a] px-4 py-2 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+            className="ml-3 inline-flex h-9 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-3.5 text-[11px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
           >
             <span>{settings.cta.label}</span>
-            <MdEmail className="text-base" />
+            <MdEmail className="text-[13px]" />
           </Link>
         </div>
 
@@ -106,10 +106,10 @@ export default function NavBar({ settings }: NavBarProps) {
             <Link
               href={settings.cta.href}
               onClick={() => setOpen(false)}
-              className="inline-flex w-fit items-center gap-2 rounded-[10px] bg-[#c4621a] px-4 py-2 text-sm font-extrabold uppercase tracking-[0.12em] text-white"
+              className="inline-flex h-9 w-fit items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-3.5 text-[11px] font-extrabold uppercase tracking-[0.1em] text-white"
             >
               <span>{settings.cta.label}</span>
-              <MdEmail className="text-base" />
+              <MdEmail className="text-[13px]" />
             </Link>
           </div>
         </div>

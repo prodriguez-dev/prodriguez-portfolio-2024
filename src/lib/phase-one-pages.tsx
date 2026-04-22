@@ -2,21 +2,42 @@ import Avatar from "@/components/Avatar";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
-import type { RichTextBlock, SiteImage } from "@/lib/content-types";
+import type { ContentEntry, RichTextBlock, SiteImage } from "@/lib/content-types";
 import { absoluteUrl, buildDescription, buildOgImage, buildPageTitle, getSiteDefaults } from "@/lib/metadata";
 import { getPhaseOnePage, siteSettings } from "@/lib/site-content";
+import { projects } from "@/content/projects";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { BsPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+import { MdCircle, MdEmail } from "react-icons/md";
 
 type HeroSection = {
   firstName: string;
   lastName: string;
-  tagLine: string;
+  introLines: string[];
+  stageImage: SiteImage;
+};
+
+type HomeSkillMarqueeSection = {
+  heading: string;
+  items: string[];
+};
+
+type HomeProjectsSection = {
+  heading: string;
+  items: ContentEntry[];
+};
+
+type HomeTestimonialsSection = {
+  heading: string;
+  items: Array<{
+    quote: string;
+    name: string;
+    role: string;
+  }>;
 };
 
 type BiographySection = {
@@ -65,6 +86,9 @@ type PhaseOnePageContent = {
   metaTitle: string;
   metaDescription: string;
   hero?: HeroSection;
+  homeSkillsMarquee?: HomeSkillMarqueeSection;
+  homeProjects?: HomeProjectsSection;
+  homeTestimonials?: HomeTestimonialsSection;
   biography?: BiographySection;
   experiences?: {
     heading: string;
@@ -88,6 +112,10 @@ const stageImage: SiteImage = {
   dimensions: { width: 1600, height: 1200 },
 };
 
+const latestProjects = [...projects]
+  .sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime())
+  .slice(0, 3);
+
 const pages: Record<string, PhaseOnePageContent> = {
   home: {
     uid: "home",
@@ -99,87 +127,54 @@ const pages: Record<string, PhaseOnePageContent> = {
     hero: {
       firstName: "Paul",
       lastName: "Rodriguez",
-      tagLine: "Solutions Architect",
-    },
-    biography: {
-      firstName: "Paul",
-      lastName: "Rodriguez",
-      title: "Trusted technical partner for high-stakes enterprise work",
-      description: [
-        {
-          type: "paragraph",
-          text: "I work at the intersection of technical discovery, solution design, and stakeholder alignment. My focus is helping teams translate business goals into practical architecture decisions that can actually ship.",
-        },
-        {
-          type: "paragraph",
-          text: "My background spans client-facing engineering, enterprise platforms, APIs, security-aware systems, and implementation work where communication matters as much as the technical design.",
-        },
+      introLines: [
+        "Solutions architect.",
+        "Technical translator.",
+        "Client-facing builder for high-stakes digital work.",
       ],
-      buttonText: "View Resume",
-      buttonHref: "https://www.prodriguez.dev/resume",
-      buttonTarget: "_blank",
-      avatar: avatarImage,
+      stageImage,
     },
-    experiences: {
-      heading: "Experience",
+    homeSkillsMarquee: {
+      heading: "Skills",
+      items: [
+        "Solution Architecture",
+        "Technical Discovery",
+        "Enterprise Systems",
+        "API Integrations",
+        "Stakeholder Alignment",
+        "Client-Facing Delivery",
+        "GSAP",
+        "React",
+        "Next.js",
+        "Accessibility",
+      ],
+    },
+    homeProjects: {
+      heading: "Latest Projects",
+      items: latestProjects,
+    },
+    homeTestimonials: {
+      heading: "Testimonials",
       items: [
         {
-          title: "Solutions Architect",
-          institution: "Liberty Blume",
-          location: "Denver, CO",
-          timePeriod: "Starting May 2026",
-          description: [
-            "Supporting Blume Business Solutions with solutions architecture, technical discovery, and client-facing design work.",
-            "Helping connect stakeholder goals, product requirements, and scalable implementation paths.",
-          ],
+          quote:
+            "Paul brings a rare mix of technical confidence, design instinct, and calm communication when the work gets complicated.",
+          name: "Former teammate",
+          role: "Client delivery / engineering",
         },
         {
-          title: "Sales Engineer and Technical Advisor",
-          institution: "Enterprise SaaS and platform teams",
-          location: "Remote / Hybrid",
-          timePeriod: "Recent years",
-          description: [
-            "Led discovery conversations, technical demos, and architecture discussions for complex buyer journeys.",
-            "Worked across APIs, integrations, security questions, implementation planning, and cross-functional communication.",
-          ],
+          quote:
+            "He can walk from implementation detail to business context without losing the room, which makes him incredibly effective with clients.",
+          name: "Cross-functional collaborator",
+          role: "Strategy and product",
+        },
+        {
+          quote:
+            "When projects get messy, Paul is the kind of person you want in the middle of it. He makes the next move obvious.",
+          name: "Project partner",
+          role: "Digital delivery",
         },
       ],
-    },
-    skills: {
-      columns: [
-        [
-          "Technical discovery",
-          "Solution architecture",
-          "Enterprise systems",
-          "API integrations",
-        ],
-        [
-          "Stakeholder communication",
-          "Pre-sales engineering",
-          "Implementation strategy",
-          "Business alignment",
-        ],
-        [
-          "Security-aware design",
-          "Client-facing delivery",
-          "Cross-functional leadership",
-          "English / Spanish",
-        ],
-      ],
-    },
-    textSections: [
-      {
-        heading: "What I do best",
-        text: [
-          {
-            type: "paragraph",
-            text: "I’m strongest in situations where the technical path is not obvious yet, the business stakes are real, and someone needs to turn ambiguity into a clear plan.",
-          },
-        ],
-      },
-    ],
-    imageSection: {
-      image: stageImage,
     },
   },
   about: {
@@ -327,24 +322,163 @@ function renderRichText(blocks: RichTextBlock[], className?: string) {
   );
 }
 
-function HeroSection({ hero }: { hero: HeroSection }) {
+function HeroSectionBlock({ hero }: { hero: HeroSection }) {
   return (
-    <Bounded>
-      <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
-        <div className="col-start-1 md:row-start-1">
-          <h1
-            className="mb-8 text-[clamp(3rem,10vmin,20rem)] font-extrabold leading-none"
-            aria-label={`${hero.firstName} ${hero.lastName}`}
-          >
-            <span className="block text-blue-50">{hero.firstName}</span>
-            <span className="-mt-[.2em] block text-blue-50">{hero.lastName}</span>
-          </h1>
-          <span className="md:text-4x1 block bg-gradient-to-tr from-blue-500 via-blue-200 to-blue-500 bg-clip-text text-4xl font-bold uppercase tracking-[.2em] text-transparent">
-            {hero.tagLine}
-          </span>
+    <section className="relative overflow-hidden bg-[#0b1117] px-4 py-16 md:px-6 md:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.18),transparent_40%),radial-gradient(circle_at_bottom,rgba(245,158,11,0.16),transparent_30%)]" />
+      <Bounded>
+        <div className="relative grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr]">
+          <div>
+            <div className="mb-6 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">
+              Paul Rodriguez
+            </div>
+            <h1 className="text-5xl font-black uppercase leading-[0.9] tracking-tight text-white md:text-7xl">
+              <span className="block">{hero.firstName}</span>
+              <span className="block text-cyan-300">{hero.lastName}</span>
+            </h1>
+            <div className="mt-8 max-w-2xl space-y-4 rounded-2xl border border-white/10 bg-black/30 p-6 shadow-2xl shadow-cyan-950/30">
+              {hero.introLines.map((line) => (
+                <div key={line} className="flex items-start gap-3 text-lg text-slate-100 md:text-2xl">
+                  <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-amber-400" />
+                  <span>{line}</span>
+                </div>
+              ))}
+              <div className="pt-2 font-mono text-sm uppercase tracking-[0.3em] text-cyan-200/80">
+                typing on the screen behind it
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-xl">
+            <div className="absolute -inset-6 rounded-[2rem] bg-cyan-400/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
+              <Image
+                src={hero.stageImage.url}
+                alt={hero.stageImage.alt || ""}
+                width={hero.stageImage.dimensions?.width || 1600}
+                height={hero.stageImage.dimensions?.height || 1200}
+                className="h-auto w-full rounded-[1.5rem] object-cover"
+                priority
+              />
+              <div className="pointer-events-none absolute inset-x-[12%] top-[10%] rounded-2xl border border-cyan-300/20 bg-slate-950/70 px-5 py-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan-200 shadow-xl shadow-black/40 md:text-sm">
+                <div className="mb-3 flex gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                </div>
+                <div className="space-y-2">
+                  <div>{"> architecting digital systems"}</div>
+                  <div>{"> aligning business and build reality"}</div>
+                  <div className="text-amber-300">{"> typing..."}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Bounded>
+    </section>
+  );
+}
+
+function SkillsMarqueeSectionBlock({ section }: { section: HomeSkillMarqueeSection }) {
+  const marqueeItems = [...section.items, ...section.items];
+
+  return (
+    <section className="overflow-hidden border-y border-white/10 bg-[#0d141b] py-8">
+      <Bounded className="mb-4">
+        <Heading as="h2" size="sm" className="uppercase tracking-[0.35em] text-cyan-200">
+          {section.heading}
+        </Heading>
+      </Bounded>
+      <div className="overflow-hidden whitespace-nowrap">
+        <div className="inline-flex min-w-full animate-[marquee_24s_linear_infinite] gap-8 px-4 py-3 text-lg font-semibold uppercase tracking-[0.2em] text-slate-100 md:text-2xl">
+          {marqueeItems.map((item, index) => (
+            <span key={`${item}-${index}`} className="inline-flex items-center gap-3">
+              <MdCircle className="text-amber-400" />
+              {item}
+            </span>
+          ))}
         </div>
       </div>
-    </Bounded>
+    </section>
+  );
+}
+
+function HomeProjectsSectionBlock({ section }: { section: HomeProjectsSection }) {
+  return (
+    <section className="bg-[#0b1117] py-16 md:py-24">
+      <Bounded>
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <Heading as="h2" size="lg" className="text-white">
+            {section.heading}
+          </Heading>
+          <Link href="/projects" className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200 transition hover:text-cyan-100">
+            View all
+          </Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {section.items.map((project) => (
+            <Link
+              key={project.uid}
+              href={project.href}
+              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.08]"
+            >
+              {project.hoverImage?.url && (
+                <Image
+                  src={project.hoverImage.url}
+                  alt={project.hoverImage.alt || project.title}
+                  width={project.hoverImage.dimensions?.width || 900}
+                  height={project.hoverImage.dimensions?.height || 625}
+                  className="h-56 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              )}
+              <div className="space-y-4 p-6">
+                <div className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200">
+                  {project.clientName}
+                </div>
+                <Heading as="h3" size="sm" className="text-white">
+                  {project.title}
+                </Heading>
+                <ul className="space-y-2 text-sm text-slate-200">
+                  {(project.description ?? []).slice(0, 2).map((item, index) => (
+                    <li key={index} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-400" />
+                      <span>{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Bounded>
+    </section>
+  );
+}
+
+function HomeTestimonialsSectionBlock({ section }: { section: HomeTestimonialsSection }) {
+  return (
+    <section className="bg-[#101820] py-16 md:py-24">
+      <Bounded>
+        <Heading as="h2" size="lg" className="mb-10 text-white">
+          {section.heading}
+        </Heading>
+        <div className="grid gap-6 md:grid-cols-3">
+          {section.items.map((item) => (
+            <article
+              key={`${item.name}-${item.role}`}
+              className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-lg shadow-black/20"
+            >
+              <p className="text-lg leading-8 text-slate-100">“{item.quote}”</p>
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <div className="font-semibold uppercase tracking-[0.18em] text-cyan-200">{item.name}</div>
+                <div className="mt-1 text-sm text-slate-300">{item.role}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Bounded>
+    </section>
   );
 }
 
@@ -572,7 +706,10 @@ export function renderPhaseOnePage(uid: string) {
 
   return (
     <>
-      {page.hero && <HeroSection hero={page.hero} />}
+      {page.hero && <HeroSectionBlock hero={page.hero} />}
+      {page.homeSkillsMarquee && <SkillsMarqueeSectionBlock section={page.homeSkillsMarquee} />}
+      {page.homeProjects && <HomeProjectsSectionBlock section={page.homeProjects} />}
+      {page.homeTestimonials && <HomeTestimonialsSectionBlock section={page.homeTestimonials} />}
       {page.biography && <BiographySectionBlock biography={page.biography} />}
       {page.experiences && (
         <ExperienceSection heading={page.experiences.heading} items={page.experiences.items} />

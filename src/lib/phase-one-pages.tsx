@@ -165,13 +165,13 @@ type PhaseOnePageContent = {
 };
 
 const stageImage: SiteImage = {
-  url: "https://images.prismic.io/prodriguez-portfolio-2024/ZlBBNCol0Zci9aaw_paul-stage-photo-1.jpg?auto=format,compress",
+  url: "/images/prismic/ZlBBNCol0Zci9aaw_paul-stage-photo-1.jpg",
   alt: "Paul Rodriguez on stage",
   dimensions: { width: 1800, height: 2200 },
 };
 
 const standingImage: SiteImage = {
-  url: "https://images.prismic.io/prodriguez-portfolio-2024/Zk16dSol0Zci9Vnk_paul-rodriguez-standing-up.png?auto=format,compress",
+  url: "/images/prismic/Zk16dSol0Zci9Vnk_paul-rodriguez-standing-up.png",
   alt: "Paul Rodriguez standing",
   dimensions: { width: 1000, height: 1800 },
 };
@@ -195,25 +195,25 @@ const ericMaAvatar: SiteImage = {
 };
 
 const robertAlgeriAvatar: SiteImage = {
-  url: "https://images.prismic.io/prodriguez-portfolio-2024/ZmSN55m069VX1kom_robert-algeri.jpg?auto=format,compress",
+  url: "/images/prismic/ZmSN55m069VX1kom_robert-algeri.jpg",
   alt: "Robert Algeri",
   dimensions: { width: 512, height: 512 },
 };
 
 const jonTraisterAvatar: SiteImage = {
-  url: "https://images.prismic.io/prodriguez-portfolio-2024/ZmSN5pm069VX1kol_jon-traister.jpg?auto=format,compress",
+  url: "/images/prismic/ZmSN5pm069VX1kol_jon-traister.jpg",
   alt: "Jon Traister",
   dimensions: { width: 512, height: 512 },
 };
 
 const chrisHeggAvatar: SiteImage = {
-  url: "https://images.prismic.io/prodriguez-portfolio-2024/ZmSN5Zm069VX1kok_chris-hegg.jpg?auto=format,compress",
+  url: "/images/prismic/ZmSN5Zm069VX1kok_chris-hegg.jpg",
   alt: "Chris Hegg",
   dimensions: { width: 512, height: 512 },
 };
 
 const jamiePhillipsAvatar: SiteImage = {
-  url: "https://images.prismic.io/prodriguez-portfolio-2024/ZmSN5Jm069VX1koj_jamie-phillips.jpg?auto=format,compress",
+  url: "/images/prismic/ZmSN5Jm069VX1koj_jamie-phillips.jpg",
   alt: "Jamie H. Phillips",
   dimensions: { width: 512, height: 512 },
 };

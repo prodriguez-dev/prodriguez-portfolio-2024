@@ -8,7 +8,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Dish Network",
     "href": "/projects/dish---branding-microsite",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZgtbRMt2UUcvBUZm_dish-brand-microsite-portfolio-developer-javascript-gsap-prodriguez-1-feat.png?auto=format,compress",
+      "url": "/images/prismic/ZgtbRMt2UUcvBUZm_dish-brand-microsite-portfolio-developer-javascript-gsap-prodriguez-1-feat.png",
       "alt": "Dish - Branding Microsite - Hover Image",
       "dimensions": {
         "width": 900,
@@ -54,7 +54,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/sullivan-worcester",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCKxPPdc1huKl6d_sullivan-law-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCKxPPdc1huKl6d_sullivan-law-img-1.jpg",
       "alt": "Sullivan Law - Hover Image",
       "dimensions": {
         "width": 600,
@@ -94,7 +94,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiKtkfPdc1huKpa9_sullivan-worcester-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiKtkfPdc1huKpa9_sullivan-worcester-img-2.jpg",
           "alt": "Sullivan Law - Screens Shot",
           "dimensions": {
             "width": 1200,
@@ -116,7 +116,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/larkin-hoffman",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCIDPPdc1huKl6Q_larkin-hoffman-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCIDPPdc1huKl6Q_larkin-hoffman-img-1.jpg",
       "alt": "Larkin Hoffman - Hover Image",
       "dimensions": {
         "width": 600,
@@ -156,7 +156,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiHF_vPdc1huKoFh_larkin-hoffman-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiHF_vPdc1huKoFh_larkin-hoffman-img-2.jpg",
           "alt": "Larkin Hoffman - Screens Shot",
           "dimensions": {
             "width": 1000,
@@ -178,7 +178,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Happier Homes",
     "href": "/projects/happier-homes",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCXIfPdc1huKl77_happier-homes-logo-img-3.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCXIfPdc1huKl77_happier-homes-logo-img-3.jpg",
       "alt": "Happier Homes - Hover Image",
       "dimensions": {
         "width": 600,
@@ -213,7 +213,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCWd_Pdc1huKl71_happier-homes-logo-explore_v2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiCWd_Pdc1huKl71_happier-homes-logo-explore_v2.jpg",
           "alt": "Happier Homes - Logo Design",
           "dimensions": {
             "width": 1000,
@@ -224,7 +224,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCYe_Pdc1huKl8A_happier-homes-print-1.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiCYe_Pdc1huKl8A_happier-homes-print-1.jpg",
           "alt": "Happier Homes - Cards and T-Shirt Design",
           "dimensions": {
             "width": 1000,
@@ -235,7 +235,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCYjvPdc1huKl8C_happier-homes-print-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiCYjvPdc1huKl8C_happier-homes-print-2.jpg",
           "alt": "Happier Homes - Hats, Polo and Sweatshirt design",
           "dimensions": {
             "width": 1000,
@@ -256,7 +256,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Dish Network",
     "href": "/projects/domo-visualizer",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZgtbPst2UUcvBUZl_domo-portfolio-developer-reactjs-javascript-prodriguez-1-feat.png?auto=format,compress",
+      "url": "/images/prismic/ZgtbPst2UUcvBUZl_domo-portfolio-developer-reactjs-javascript-prodriguez-1-feat.png",
       "alt": "Domo Visualizer - Hover Image",
       "dimensions": {
         "width": 900,
@@ -296,7 +296,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/ice-miller",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCI5_Pdc1huKl6W_ice-miller-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCI5_Pdc1huKl6W_ice-miller-img-1.jpg",
       "alt": "Ice Miller - Hover Image",
       "dimensions": {
         "width": 600,
@@ -336,7 +336,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiHKtPPdc1huKoF__ice-miller-img-5.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiHKtPPdc1huKoF__ice-miller-img-5.jpg",
           "alt": "Ice Miller - Screens Shot",
           "dimensions": {
             "width": 1200,
@@ -358,7 +358,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/tarter-krinsky",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCJn_Pdc1huKl6Y_tarter-krinsky-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCJn_Pdc1huKl6Y_tarter-krinsky-img-1.jpg",
       "alt": "Tarter Krinsky & Drogin - Hover Image",
       "dimensions": {
         "width": 600,
@@ -397,7 +397,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiKlI_Pdc1huKpYU_tarter-krinsky-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiKlI_Pdc1huKpYU_tarter-krinsky-img-2.jpg",
           "alt": "Tarter Krinsky & Drogin - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -419,7 +419,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/moses-singer",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCMVfPdc1huKl6k_moses-singer-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCMVfPdc1huKl6k_moses-singer-img-1.jpg",
       "alt": "Moses Singer - Hover Image",
       "dimensions": {
         "width": 600,
@@ -456,7 +456,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiLR8fPdc1huKpis_moses-singer-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiLR8fPdc1huKpis_moses-singer-img-2.jpg",
           "alt": "Moses Singer - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -478,7 +478,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/polsinelli",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCLz_Pdc1huKl6i_polsinelli-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCLz_Pdc1huKl6i_polsinelli-img-1.jpg",
       "alt": "Polsinelli - Hover Image",
       "dimensions": {
         "width": 600,
@@ -515,7 +515,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiLXVPPdc1huKpjy_polsinelli-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiLXVPPdc1huKpjy_polsinelli-img-2.jpg",
           "alt": "Polsinelli - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -537,7 +537,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Susan Bruce Travel",
     "href": "/projects/susan-bruce-travel",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCLOPPdc1huKl6e_susan-bruce-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCLOPPdc1huKl6e_susan-bruce-img-1.jpg",
       "alt": "Susan Bruce Travel - Hover Image",
       "dimensions": {
         "width": 600,
@@ -573,7 +573,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiKwgvPdc1huKpbg_susan-bruce-travel-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiKwgvPdc1huKpbg_susan-bruce-travel-img-2.jpg",
           "alt": "Susan Bruce Travel - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -595,7 +595,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Dish Network",
     "href": "/projects/ontech-smart-services",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCNhvPdc1huKl6o_ontech-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCNhvPdc1huKl6o_ontech-img-1.jpg",
       "alt": "OnTech Smart Services - Hover Image",
       "dimensions": {
         "width": 600,
@@ -632,7 +632,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiLa4PPdc1huKpkL_ontech-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiLa4PPdc1huKpkL_ontech-img-2.jpg",
           "alt": "OnTech Smart Services - Screen Shots",
           "dimensions": {
             "width": 900,
@@ -654,7 +654,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Dish Network",
     "href": "/projects/dynamic-html5-banners",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZgtbTMt2UUcvBUZp_dco-banners-portfolio-developer-javascript-jquery-gsap-prodriguez-1-feat.png?auto=format,compress",
+      "url": "/images/prismic/ZgtbTMt2UUcvBUZp_dco-banners-portfolio-developer-javascript-jquery-gsap-prodriguez-1-feat.png",
       "alt": "DCO Banner - Hover Image",
       "dimensions": {
         "width": 900,
@@ -697,7 +697,7 @@ export const projects: ContentEntry[] = [
     "clientName": "School Project",
     "href": "/projects/roofstops",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZgtbF8t2UUcvBUZc_roofstops-portfolio-developer-reactjs-javascript-prodriguez-1-feat.png?auto=format,compress",
+      "url": "/images/prismic/ZgtbF8t2UUcvBUZc_roofstops-portfolio-developer-reactjs-javascript-prodriguez-1-feat.png",
       "alt": "Roofstops - Hover Image",
       "dimensions": {
         "width": 900,
@@ -744,7 +744,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/wilson-elser",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCOe_Pdc1huKl6t_wilson-elser-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCOe_Pdc1huKl6t_wilson-elser-img-1.jpg",
       "alt": "Wilson Elser - Hover Image",
       "dimensions": {
         "width": 600,
@@ -783,7 +783,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiKgIPPdc1huKpWn_wilson-elser-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiKgIPPdc1huKpWn_wilson-elser-img-2.jpg",
           "alt": "Wilson Elser - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -805,7 +805,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/robinson-cole",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCItvPdc1huKl6V_robinson-cole-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCItvPdc1huKl6V_robinson-cole-img-1.jpg",
       "alt": "Robinson + Cole - Hover Image",
       "dimensions": {
         "width": 600,
@@ -845,7 +845,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiHO5fPdc1huKoGm_robinson-cole-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiHO5fPdc1huKoGm_robinson-cole-img-2.jpg",
           "alt": "Robinson + Cole - Hover Image",
           "dimensions": {
             "width": 1200,
@@ -867,7 +867,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/ub-greensfelder",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCHevPdc1huKl6O_ub-greensfelder-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCHevPdc1huKl6O_ub-greensfelder-img-1.jpg",
       "alt": "UB Greensfelder - Hover Image",
       "dimensions": {
         "width": 600,
@@ -907,7 +907,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiKhYvPdc1huKpXI_ub-greensfelder-img-3.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiKhYvPdc1huKpXI_ub-greensfelder-img-3.jpg",
           "alt": "UB Greensfelder - Screens Shot",
           "dimensions": {
             "width": 1200,
@@ -929,7 +929,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Great Jakes",
     "href": "/projects/patterson-belknap",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCKQPPdc1huKl6c_pbwt-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCKQPPdc1huKl6c_pbwt-img-1.jpg",
       "alt": "Patterson Belknap - Hover Image",
       "dimensions": {
         "width": 600,
@@ -969,7 +969,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiKn3PPdc1huKpZB_patterson-belknap-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiKn3PPdc1huKpZB_patterson-belknap-img-2.jpg",
           "alt": "Patterson Belknap - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -991,7 +991,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Five Seasons Windows & Doors",
     "href": "/projects/five-seasons-windows",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCM6PPdc1huKl6l_five-seasons-img-1.jpg?auto=format,compress",
+      "url": "/images/prismic/ZiCM6PPdc1huKl6l_five-seasons-img-1.jpg",
       "alt": "Five Seasons Windows - Hover Image",
       "dimensions": {
         "width": 600,
@@ -1031,7 +1031,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiLU5PPdc1huKpjn_five-seasons-img-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiLU5PPdc1huKpjn_five-seasons-img-2.jpg",
           "alt": "Five Seasons Windows - Screen Shots",
           "dimensions": {
             "width": 1200,
@@ -1053,7 +1053,7 @@ export const projects: ContentEntry[] = [
     "clientName": "School Project",
     "href": "/projects/rhyme-on-a-dime",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZgtbLst2UUcvBUZf_rhymeonadime-portfolio-developer-javascript-api-prodriguez-1-feat.png?auto=format,compress",
+      "url": "/images/prismic/ZgtbLst2UUcvBUZf_rhymeonadime-portfolio-developer-javascript-api-prodriguez-1-feat.png",
       "alt": "Rhyme On A Dime - Hover Image",
       "dimensions": {
         "width": 900,
@@ -1102,7 +1102,7 @@ export const projects: ContentEntry[] = [
     "clientName": "Windy City Classics",
     "href": "/projects/windy-city-classics",
     "hoverImage": {
-      "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCQ_vPdc1huKl6z_windy-city-classics_logo.png?auto=format,compress",
+      "url": "/images/prismic/ZiCQ_vPdc1huKl6z_windy-city-classics_logo.png",
       "alt": "Windy City Classics - Hover Image",
       "dimensions": {
         "width": 600,
@@ -1132,7 +1132,7 @@ export const projects: ContentEntry[] = [
       {
         "type": "image",
         "image": {
-          "url": "https://images.prismic.io/prodriguez-portfolio-2024/ZiCV2vPdc1huKl70_windy-city-classics-variations-2.jpg?auto=format,compress",
+          "url": "/images/prismic/ZiCV2vPdc1huKl70_windy-city-classics-variations-2.jpg",
           "alt": "Windy City Classics - Screen Shots",
           "dimensions": {
             "width": 1000,
@@ -1147,3 +1147,4 @@ export const projects: ContentEntry[] = [
     ]
   }
 ];
+

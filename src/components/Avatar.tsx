@@ -1,17 +1,17 @@
 "use client";
 
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
-import { ImageField } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import type { SiteImage } from "@/lib/content-types";
 import clsx from "clsx";
 import gsap from "gsap";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function Avatar({
   image,
   className,
 }: {
-  image: ImageField;
+  image: SiteImage;
   className?: string;
 }) {
   const component = useRef(null);
@@ -78,11 +78,12 @@ export default function Avatar({
         className="avatar aspect-square overflow-hidden rounded-full border-2 border-gray-600 opacity-0"
         style={{ perspective: "500px", perspectiveOrigin: "150% 150%" }}
       >
-        <PrismicNextImage
-          field={image}
+        <Image
+          src={image.url}
+          alt={image.alt || ""}
+          width={image.dimensions?.width || 1200}
+          height={image.dimensions?.height || 1200}
           className="avatar-image h-full w-full object-fill"
-          imgixParams={{ q: 90 }}
-          placeholder="empty"
           priority
         />
         <div className="highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>

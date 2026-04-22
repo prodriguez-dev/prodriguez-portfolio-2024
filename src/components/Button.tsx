@@ -1,13 +1,10 @@
-import { KeyTextField, LinkField, asLink } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 
 type ButtonProps = {
-  linkField?: LinkField | null;
   href?: string;
-  label: KeyTextField | string | null;
+  label: string | null;
   className?: string;
   icon?: React.ReactNode;
   target?: string;
@@ -15,7 +12,6 @@ type ButtonProps = {
 };
 
 export default function Button({
-  linkField,
   href,
   label,
   className,
@@ -23,7 +19,7 @@ export default function Button({
   iconPosition = "right",
   target,
 }: ButtonProps) {
-  const resolvedHref = href || (linkField ? asLink(linkField) : undefined) || "#";
+  const resolvedHref = href || "#";
   const isExternal = target === "_blank" || /^https?:\/\//.test(resolvedHref) || resolvedHref.startsWith("mailto:");
   const buttonClassName = clsx(
     className,
@@ -52,18 +48,6 @@ export default function Button({
       </span>
     </>
   );
-
-  if (linkField) {
-    return (
-      <PrismicNextLink
-        field={linkField}
-        target={target}
-        className={buttonClassName}
-      >
-        {content}
-      </PrismicNextLink>
-    );
-  }
 
   return (
     <Link

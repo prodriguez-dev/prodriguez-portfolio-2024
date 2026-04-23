@@ -891,17 +891,19 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
 
 function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
   return (
-    <SectionShell className="bg-[#ede9e1] py-24">
+    <SectionShell className="bg-[#ede9e1] py-24 overflow-x-clip">
       <SectionEyebrow>Skills</SectionEyebrow>
-      <div className="space-y-4 overflow-hidden">
+      <div className="hidden space-y-4 overflow-hidden md:block">
         {skills.marqueeRows.map((row, rowIndex) => {
           const items = [...row, ...row, ...row];
           return (
             <div key={rowIndex} className="overflow-hidden whitespace-nowrap border-y border-[#e0dbd0] py-3">
-              <div className={clsx(
-                "inline-flex min-w-full gap-6 will-change-transform",
-                rowIndex === 0 ? "animate-[marquee_32s_linear_infinite]" : "animate-[marquee-reverse_26s_linear_infinite]",
-              )}>
+              <div
+                className={clsx(
+                  "inline-flex min-w-full gap-6 will-change-transform",
+                  rowIndex === 0 ? "animate-[marquee_32s_linear_infinite]" : "animate-[marquee-reverse_26s_linear_infinite]",
+                )}
+              >
                 {items.map((item, index) => (
                   <span
                     key={`${rowIndex}-${item}-${index}`}
@@ -919,9 +921,26 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
           );
         })}
       </div>
+      <div className="mt-2 grid gap-3 md:hidden">
+        {skills.marqueeRows.map((row, rowIndex) => (
+          <div key={rowIndex} className="flex flex-wrap gap-2 border-y border-[#e0dbd0] py-4">
+            {row.map((item) => (
+              <span
+                key={`${rowIndex}-${item}`}
+                className="rounded-full border border-[#d9d2c6] bg-white px-3 py-2 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#666666]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
       <div className="mt-8 flex flex-wrap gap-2">
         {skills.pills.map((skill) => (
-          <span key={skill} className="rounded-full bg-white px-3 py-2 text-[12px] font-extrabold uppercase tracking-[0.05em] text-[#666666] border border-[#e0dbd0]">
+          <span
+            key={skill}
+            className="rounded-full border border-[#e0dbd0] bg-white px-3 py-2 text-[12px] font-extrabold uppercase tracking-[0.05em] text-[#666666]"
+          >
             {skill}
           </span>
         ))}
@@ -1043,12 +1062,12 @@ function SilverTechServicesSectionBlock({ section }: { section: SilverTechServic
 
 function SilverTechQuoteSectionBlock({ section }: { section: SilverTechQuoteSection }) {
   return (
-    <SectionShell className="py-24">
-      <div className="rounded-[24px] border border-[#e0dbd0] bg-white px-8 py-16 text-center shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:px-20 md:py-[72px]">
-        <p className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3rem,6vw,6rem)] font-black uppercase italic leading-[0.95] tracking-[-0.01em] text-[#111111]">
+    <SectionShell className="py-24 overflow-x-clip">
+      <div className="rounded-[24px] border border-[#e0dbd0] bg-white px-6 py-12 text-center shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:px-20 md:py-[72px]">
+        <p className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.25rem,10vw,6rem)] font-black uppercase italic leading-[0.95] tracking-[-0.01em] text-[#111111] break-words">
           {section.quote}
         </p>
-        <p className="mt-6 text-[16px] font-extrabold uppercase tracking-[0.14em] text-[#c4621a]">{section.attribution}</p>
+        <p className="mt-6 text-[14px] font-extrabold uppercase tracking-[0.14em] text-[#c4621a] md:text-[16px]">{section.attribution}</p>
       </div>
     </SectionShell>
   );

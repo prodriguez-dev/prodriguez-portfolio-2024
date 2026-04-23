@@ -140,7 +140,7 @@ export default function HeroMotion({
           className={clsx("ml-1 inline-block h-5 w-[2px] bg-[#f0a05a]", isTypingDone && "opacity-0")}
         />
       </p>
-      <h1 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(5rem,12vw,13rem)] font-black uppercase italic leading-[0.88] tracking-[-0.01em] text-[#ede9e1]">
+      <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3.6rem,18vw,13rem)] font-black uppercase italic leading-[0.88] tracking-[-0.01em] text-[#ede9e1] sm:text-[clamp(5rem,12vw,13rem)]">
         {[firstName, lastName].map((part, index) => (
           <span
             key={part}

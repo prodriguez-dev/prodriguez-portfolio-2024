@@ -9,7 +9,7 @@ type FooterProps = {
 
 export default function Footer({ settings }: FooterProps) {
   return (
-    <footer className="border-t border-[#e0dbd0] bg-[#ede9e1] text-[#111111]">
+    <footer className="relative z-20 overflow-hidden border-t border-[#e0dbd0] bg-[#ede9e1] text-[#111111]">
       <Bounded as="div" className="py-10">
         <div className="flex flex-wrap items-center justify-between gap-6 border-b border-[#e0dbd0] pb-6">
           <Link

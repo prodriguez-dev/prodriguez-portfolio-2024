@@ -636,7 +636,7 @@ function DisplayHeading({ children, className }: { children: React.ReactNode; cl
   return (
     <h2
       className={clsx(
-        "font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3rem,6vw,7rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em]",
+        "break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.5rem,11vw,7rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] sm:text-[clamp(3rem,6vw,7rem)]",
         className,
       )}
     >
@@ -891,7 +891,7 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
 
 function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
   return (
-    <SectionShell className="bg-[#ede9e1] py-24 overflow-x-clip">
+    <SectionShell className="bg-[#ede9e1] py-24 overflow-hidden">
       <SectionEyebrow>Skills</SectionEyebrow>
       <div className="hidden space-y-4 overflow-hidden md:block">
         {skills.marqueeRows.map((row, rowIndex) => {
@@ -921,7 +921,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
           );
         })}
       </div>
-      <div className="mt-2 grid gap-3 md:hidden">
+      <div className="mt-2 hidden gap-3 md:hidden">
         {skills.marqueeRows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-wrap gap-2 border-y border-[#e0dbd0] py-4">
             {row.map((item) => (
@@ -1022,7 +1022,7 @@ function SilverTechHeroSectionBlock({ section }: { section: SilverTechHeroSectio
       <div className="grid gap-8 md:grid-cols-[1fr,1fr] md:items-center">
         <div>
           <SectionEyebrow>Silver Tech Help</SectionEyebrow>
-          <h1 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(4rem,9vw,9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111]">
+          <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.9rem,13vw,9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,9vw,9rem)]">
             <span className="block">{section.headingTop}</span>
             <span className="block">{section.headingBottom}</span>
           </h1>
@@ -1078,7 +1078,7 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
     <SectionShell className="py-24">
       <div className="grid gap-12 md:grid-cols-[1fr,1fr] md:gap-20">
         <div>
-          <h1 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(4rem,8vw,8rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111]">
+          <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.9rem,13vw,8rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,8vw,8rem)]">
             {contact.headingLines.map((line) => (
               <span key={line} className="block">{line}</span>
             ))}

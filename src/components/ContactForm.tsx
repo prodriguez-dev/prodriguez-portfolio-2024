@@ -121,14 +121,22 @@ export default function ContactForm({ subjects }: ContactFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:p-11">
+      <div className="mb-6">
+        <h2 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
+          Start the conversation
+        </h2>
+        <p className="mt-3 text-[16px] leading-7 text-[#4d4a45]">
+          Tell me what you&apos;re working on and I&apos;ll get back to you.
+        </p>
+      </div>
       <div className="grid gap-5 md:grid-cols-2">
         <label className="block">
-          <span className="mb-2 block text-sm font-bold uppercase tracking-[0.08em] text-[#111111]">Name</span>
+          <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Name</span>
           <input
             value={values.name}
             onChange={(event) => updateField("name", event.target.value)}
             className={clsx(
-              "w-full rounded-[10px] border px-[18px] py-[14px] outline-none transition focus:border-[#c4621a]",
+              "w-full rounded-[10px] border px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
               errors.name ? "border-[#d55c45]" : "border-[#e0dbd0]",
             )}
             placeholder="Your name"
@@ -136,12 +144,12 @@ export default function ContactForm({ subjects }: ContactFormProps) {
           {errors.name && <span className="mt-2 block text-sm text-[#d55c45]">{errors.name}</span>}
         </label>
         <label className="block">
-          <span className="mb-2 block text-sm font-bold uppercase tracking-[0.08em] text-[#111111]">Email</span>
+          <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Email</span>
           <input
             value={values.email}
             onChange={(event) => updateField("email", event.target.value)}
             className={clsx(
-              "w-full rounded-[10px] border px-[18px] py-[14px] outline-none transition focus:border-[#c4621a]",
+              "w-full rounded-[10px] border px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
               errors.email ? "border-[#d55c45]" : "border-[#e0dbd0]",
             )}
             placeholder="you@example.com"
@@ -151,12 +159,12 @@ export default function ContactForm({ subjects }: ContactFormProps) {
         </label>
       </div>
       <label className="mt-5 block">
-        <span className="mb-2 block text-sm font-bold uppercase tracking-[0.08em] text-[#111111]">Subject</span>
+        <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Subject</span>
         <select
           value={values.subject}
           onChange={(event) => updateField("subject", event.target.value)}
           className={clsx(
-            "w-full rounded-[10px] border bg-white px-[18px] py-[14px] outline-none transition focus:border-[#c4621a]",
+            "w-full rounded-[10px] border bg-white px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
             errors.subject ? "border-[#d55c45]" : "border-[#e0dbd0]",
           )}
           disabled={!hasSubjects}
@@ -168,12 +176,12 @@ export default function ContactForm({ subjects }: ContactFormProps) {
         {errors.subject && <span className="mt-2 block text-sm text-[#d55c45]">{errors.subject}</span>}
       </label>
       <label className="mt-5 block">
-        <span className="mb-2 block text-sm font-bold uppercase tracking-[0.08em] text-[#111111]">Message</span>
+        <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Message</span>
         <textarea
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
           className={clsx(
-            "min-h-[140px] w-full rounded-[10px] border px-[18px] py-[14px] outline-none transition focus:border-[#c4621a]",
+            "min-h-[180px] w-full rounded-[10px] border px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
             errors.message ? "border-[#d55c45]" : "border-[#e0dbd0]",
           )}
           placeholder="Tell me a bit about what you need."

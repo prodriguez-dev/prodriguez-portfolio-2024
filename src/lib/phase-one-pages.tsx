@@ -863,11 +863,13 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
           </div>
         </div>
         <div>
-          <DisplayHeading className="text-[#111111]">{biography.heading}</DisplayHeading>
-          <div className="mt-4 font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.2em] text-[#c4621a]">
+          <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3rem,9vw,6.5rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] text-[#111111]">
+            {biography.heading}
+          </h1>
+          <div className="mt-4 break-words font-[var(--font-sofia-sans-condensed)] text-[15px] font-extrabold uppercase italic tracking-[0.16em] text-[#c4621a] sm:text-[16px]">
             {biography.role}
           </div>
-          <ul className="mt-8 space-y-4 text-[17px] leading-8 text-[#111111]">
+          <ul className="mt-8 max-w-3xl space-y-4 text-[17px] leading-8 text-[#111111]">
             {biography.bullets.map((bullet) => (
               <li key={bullet} className="flex gap-3">
                 <span className="mt-2 text-[#c4621a]">●</span>
@@ -921,7 +923,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
           );
         })}
       </div>
-      <div className="mt-2 hidden gap-3 md:hidden">
+      <div className="mt-2 flex gap-3 md:hidden">
         {skills.marqueeRows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-wrap gap-2 border-y border-[#e0dbd0] py-4">
             {row.map((item) => (
@@ -1026,8 +1028,8 @@ function SilverTechHeroSectionBlock({ section }: { section: SilverTechHeroSectio
             <span className="block">{section.headingTop}</span>
             <span className="block">{section.headingBottom}</span>
           </h1>
-          <p className="mt-6 text-[20px] font-black leading-8 text-[#111111]">{section.lead}</p>
-          <div className="mt-6 space-y-5 text-[17px] leading-8 text-[#4d4a45]">
+          <p className="mt-6 max-w-xl text-[19px] font-black leading-8 text-[#111111]">{section.lead}</p>
+          <div className="mt-6 max-w-xl space-y-5 text-[17px] leading-8 text-[#4d4a45]">
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -1083,7 +1085,7 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
               <span key={line} className="block">{line}</span>
             ))}
           </h1>
-          <p className="mt-6 max-w-xl text-[17px] leading-8 text-[#4d4a45]">{contact.intro}</p>
+          <p className="mt-6 max-w-xl text-[18px] leading-8 text-[#4d4a45]">{contact.intro}</p>
           <div className="mt-8 space-y-4">
             {contact.cards.map((card) => (
               <Link
@@ -1095,7 +1097,7 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
               >
                 <div>
                   <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">{card.label}</div>
-                  <div className="mt-2 text-[16px] font-semibold text-[#111111]">{card.value}</div>
+                  <div className="mt-2 text-[18px] font-semibold text-[#111111]">{card.value}</div>
                 </div>
                 <span className="text-[#c4621a]">↗</span>
               </Link>

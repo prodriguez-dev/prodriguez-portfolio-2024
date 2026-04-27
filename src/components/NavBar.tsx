@@ -38,7 +38,7 @@ function NavItem({ href, label, isActive, onClick }: NavItemProps) {
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={clsx(
-        "text-sm font-bold uppercase tracking-[0.18em] transition-colors",
+        "text-[13px] font-extrabold uppercase tracking-[0.14em] transition-colors lg:text-[14px]",
         isActive ? "text-[#111111]" : "text-[#7a7570] hover:text-[#111111]",
       )}
     >
@@ -57,10 +57,10 @@ export default function NavBar({ settings }: NavBarProps) {
 
   return (
     <nav aria-label="Main navigation" className="px-4 pt-4 md:px-6">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between rounded-2xl border border-[#e0dbd0] bg-[rgba(244,241,235,0.92)] px-4 py-3 shadow-[0_1px_0_rgba(0,0,0,0.07)] backdrop-blur-xl md:px-6">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between rounded-2xl border border-[#e0dbd0] bg-[rgba(244,241,235,0.92)] px-4 py-3.5 shadow-[0_1px_0_rgba(0,0,0,0.07)] backdrop-blur-xl md:px-6">
         <NameLogo name={settings.name} />
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-5 lg:gap-6 md:flex">
           {navItems.map(({ href, label }, index) => (
             <React.Fragment key={`${label}-${href}`}>
               <NavItem href={href} label={label} isActive={isActivePath(pathname, href)} />
@@ -69,7 +69,7 @@ export default function NavBar({ settings }: NavBarProps) {
           ))}
           <Link
             href={settings.cta.href}
-            className="ml-3 inline-flex h-9 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-3.5 text-[11px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+            className="ml-3 inline-flex h-10 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-4 text-[12px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
           >
             <span>{settings.cta.label}</span>
             <MdEmail className="text-[13px]" />

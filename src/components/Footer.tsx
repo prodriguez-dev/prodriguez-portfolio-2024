@@ -9,7 +9,7 @@ type FooterProps = {
 
 export default function Footer({ settings }: FooterProps) {
   return (
-    <footer className="relative z-20 overflow-hidden border-t border-[#e0dbd0] bg-[#ede9e1] text-[#111111]">
+    <footer className="relative z-20 isolate overflow-hidden border-t border-[#e0dbd0] bg-[#ede9e1] text-[#111111]">
       <Bounded as="div" className="py-10">
         <div className="flex flex-wrap items-center justify-between gap-6 border-b border-[#e0dbd0] pb-6">
           <Link
@@ -55,9 +55,9 @@ export default function Footer({ settings }: FooterProps) {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-2 pt-5 text-[12px] text-[#cccccc]">
-          <p>© {new Date().getFullYear()} {settings.name}. All Rights Reserved.</p>
-          <p>Next.js · React · TypeScript · TailwindCSS · GSAP · Vercel</p>
+        <div className="flex flex-col gap-2 pt-5 text-[12px] text-[#7a7570] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <p className="m-0 text-[12px] font-medium text-[#7a7570]">© {new Date().getFullYear()} {settings.name}. All rights reserved.</p>
+          <p className="m-0 text-[12px] font-medium text-[#9a958d]">Next.js · React · TypeScript · Tailwind CSS · GSAP · Vercel</p>
         </div>
       </Bounded>
     </footer>

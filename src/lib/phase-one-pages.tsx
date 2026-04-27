@@ -271,12 +271,12 @@ const pages: Record<string, PhaseOnePageContent> = {
     title: "Paul Rodriguez | Solutions Architect",
     metaTitle: "Paul Rodriguez | Solutions Architect",
     metaDescription:
-      "Solutions Architect, frontend engineer, and public speaker building clear, high-trust digital experiences.",
+      "Solutions Architect, Sales Engineer, and Developer Evangelist helping teams turn technical complexity into clear direction.",
     hero: {
       firstName: "Paul",
       lastName: "Rodriguez",
-      tagline: "Solutions Architect / Frontend Engineer / Public Speaker",
-      body: "I help teams figure out what to build, how to build it, and how to explain it without the usual confusion.",
+      tagline: "Solutions Architect / Sales Engineer / Developer Evangelist",
+      body: "I help teams turn technical complexity into clear direction, from discovery and architecture to demos, delivery, and communication.",
       primaryCta: { label: "Contact", href: "/contact" },
       secondaryCta: { label: "About", href: "/about" },
       stageImage,
@@ -647,7 +647,7 @@ function DisplayHeading({ children, className }: { children: React.ReactNode; cl
 
 function HomeHeroSection({ hero }: { hero: HeroSection }) {
   return (
-    <section className="relative min-h-[100vh] overflow-hidden bg-[#1a1610] pt-20 text-[#ede9e1]">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#1a1610] pt-20 text-[#ede9e1]">
       <Image
         src={hero.stageImage.url}
         alt={hero.stageImage.alt || ""}
@@ -656,7 +656,7 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-[rgba(10,8,6,0.58)]" />
-      <SectionShell wide className="relative flex min-h-[calc(100vh-5rem)] items-center py-16">
+      <SectionShell wide className="relative flex min-h-[calc(100svh-5rem)] items-start py-14 sm:items-center sm:py-16 lg:py-20">
         <HeroMotion
           tagline={hero.tagline}
           firstName={hero.firstName}
@@ -679,8 +679,8 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
             </Link>
           }
         />
-        <div className="pointer-events-none absolute inset-y-0 right-[3%] hidden items-end lg:flex">
-          <div className="relative h-[min(70vh,640px)] w-[min(34vw,420px)]">
+        <div className="pointer-events-none absolute inset-y-0 right-[2%] hidden items-end xl:flex">
+          <div className="relative h-[min(66vh,620px)] w-[min(30vw,400px)]">
             <Image
               src={hero.standingImage.url}
               alt={hero.standingImage.alt || ""}

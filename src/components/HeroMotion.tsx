@@ -129,7 +129,7 @@ export default function HeroMotion({
   }, [isTypingDone]);
 
   return (
-    <div ref={containerRef} className="relative z-10 max-w-[580px]">
+    <div ref={containerRef} className="relative z-10 w-full max-w-[860px] lg:max-w-[720px] xl:max-w-[860px]">
       <p
         ref={taglineRef}
         className="mb-6 flex min-h-[24px] items-center font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.2em] text-[#f0a05a]"
@@ -140,20 +140,20 @@ export default function HeroMotion({
           className={clsx("ml-1 inline-block h-5 w-[2px] bg-[#f0a05a]", isTypingDone && "opacity-0")}
         />
       </p>
-      <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3.6rem,18vw,13rem)] font-black uppercase italic leading-[0.88] tracking-[-0.01em] text-[#ede9e1] sm:text-[clamp(5rem,12vw,13rem)]">
+      <h1 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3.9rem,12vw,10rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#ede9e1] sm:text-[clamp(5.5rem,10vw,11.5rem)] lg:text-[clamp(6.5rem,9vw,12rem)]">
         {[firstName, lastName].map((part, index) => (
           <span
             key={part}
             ref={(node) => {
               nameRefs.current[index] = node;
             }}
-            className="block"
+            className="block whitespace-nowrap"
           >
             {part}
           </span>
         ))}
       </h1>
-      <p ref={bodyRef} className="mt-6 max-w-xl text-[18px] font-medium leading-8 text-[rgba(237,233,225,0.8)]">
+      <p ref={bodyRef} className="mt-6 max-w-xl text-[17px] font-medium leading-7 text-[rgba(237,233,225,0.8)] sm:text-[18px] sm:leading-8">
         {body}
       </p>
       <div ref={ctaWrapRef} className="mt-10 flex flex-wrap gap-4">

@@ -276,7 +276,7 @@ const pages: Record<string, PhaseOnePageContent> = {
       firstName: "Paul",
       lastName: "Rodriguez",
       tagline: "Solutions Architect / Frontend Engineer / Public Speaker",
-      body: "I build clear, high-trust digital experiences across architecture, frontend engineering, and client-facing delivery.",
+      body: "I help teams figure out what to build, how to build it, and how to explain it without the usual confusion.",
       primaryCta: { label: "Contact", href: "/contact" },
       secondaryCta: { label: "About", href: "/about" },
       stageImage,
@@ -296,23 +296,23 @@ const pages: Record<string, PhaseOnePageContent> = {
         {
           icon: "01",
           title: "Solutions Architecture",
-          body: "Turn messy requirements into clear systems, practical decisions, and a buildable path forward.",
+          body: "Turn messy requirements into clear technical direction and a plan the team can actually execute.",
         },
         {
           icon: "02",
           title: "Frontend Engineering",
-          body: "Build polished interfaces with strong interaction design, accessibility, and production-ready implementation.",
+          body: "Build frontend experiences that look sharp, work well, and hold up in production.",
         },
         {
           icon: "03",
           title: "Client-Facing Delivery",
-          body: "Translate between business goals, stakeholder needs, and technical execution without losing the plot.",
+          body: "Keep business goals, stakeholder expectations, and technical execution moving in the same direction.",
         },
       ],
     },
     homeProjects: {
       heading: "Featured Projects",
-      body: "A quick look at a few projects that best show the mix of architecture, polish, and delivery judgment.",
+      body: "A few projects that show how I work across architecture, frontend execution, and client-facing delivery.",
       items: latestProjects,
     },
     homeTestimonials: {
@@ -335,8 +335,8 @@ const pages: Record<string, PhaseOnePageContent> = {
       ],
     },
     homeContactCta: {
-      heading: "Let’s build something great.",
-      body: "If you need architecture, frontend leadership, or a calm operator in the middle of complex work, let’s talk.",
+      heading: "Let's build something great.",
+      body: "If you need help with architecture, frontend work, or untangling something complicated, let's talk.",
       cta: { label: "Get in touch", href: "/contact" },
     },
   },
@@ -351,12 +351,12 @@ const pages: Record<string, PhaseOnePageContent> = {
       heading: "Paul Rodriguez",
       role: "Solutions Architect, Frontend Engineer, and Public Speaker",
       bullets: [
-        "Architecting enterprise and client-facing digital solutions with a bias for clarity.",
-        "Bridging stakeholder goals, technical strategy, and implementation reality.",
-        "Leading frontend builds with strong systems thinking and visual polish.",
-        "Comfortable in discovery, pre-sales, delivery, and platform evolution work.",
-        "Focused on trust, momentum, and making the next decision obvious.",
-        "Equally at home with code, clients, and the messy middle between them.",
+        "I work across discovery, architecture, and delivery, especially when a project needs both technical depth and clear communication.",
+        "A lot of my work lives in the space between clients, stakeholders, and engineering teams.",
+        "I like turning vague requirements into a plan people can understand and execute.",
+        "My background includes enterprise platform work, frontend development, and client-facing technical consulting.",
+        "I'm comfortable leading technical conversations, building the thing, or doing both when the job calls for it.",
+        "I care a lot about clarity, momentum, and keeping good work from getting buried under noise.",
       ],
       avatar: aboutHeadshot,
       certifications: ["Salesforce Admin", "Salesforce Dev", "AWS", "Unqork"],
@@ -420,8 +420,8 @@ const pages: Record<string, PhaseOnePageContent> = {
           location: "New York, NY",
           timePeriod: "Oct 2024–Present",
           description: [
-            "Shape solution strategy for enterprise and client-facing engagements.",
-            "Translate discovery into scoped technical direction and implementation planning.",
+            "Lead technical discovery and solution strategy for enterprise and client-facing work.",
+            "Turn early conversations into clear technical direction and implementation plans.",
           ],
         },
         {
@@ -440,8 +440,8 @@ const pages: Record<string, PhaseOnePageContent> = {
           location: "Denver, CO",
           timePeriod: "Mar 2016–Present",
           description: [
-            "Built websites, applications, and brand systems for small businesses and founder-led teams.",
-            "Owned strategy, design, engineering, and client communication end to end.",
+            "Built websites, applications, and digital systems for small businesses and founder-led teams.",
+            "Handled strategy, design, engineering, and client communication end to end.",
           ],
         },
         {
@@ -588,9 +588,9 @@ const pages: Record<string, PhaseOnePageContent> = {
     metaDescription:
       "Get in touch with Paul Rodriguez about solutions architecture, technical discovery, enterprise platforms, and strategic technical consulting.",
     contact: {
-      headingLines: ["Let’s Build", "Something", "Great."],
+      headingLines: ["Let's Build", "Something", "Great."],
       intro:
-        "If you need architecture, frontend leadership, technical discovery, speaking, or Silver Tech Help, send a note and I’ll get back to you.",
+        "If you need help with architecture, frontend work, technical discovery, speaking, or Silver Tech Help, send a note and I'll get back to you.",
       cards: [
         { label: "Email", value: "paul@prodriguez.dev", href: "mailto:paul@prodriguez.dev" },
         { label: "LinkedIn", value: "linkedin.com/in/paul-rodriguez-dev", href: "https://www.linkedin.com/in/paul-rodriguez-dev/" },
@@ -796,7 +796,7 @@ function HomeTestimonialsSectionBlock({ section }: { section: HomeTestimonialsSe
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {section.items.map((item) => (
           <article key={item.name} className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)]">
-            <p className="text-[20px] italic leading-9 text-[#111111]">“{item.quote}”</p>
+            <p className="text-[20px] italic leading-9 text-[#111111]">&ldquo;{item.quote}&rdquo;</p>
             <div className="mt-8 flex items-center gap-4">
               <AvatarBubble image={item.avatar} name={item.name} />
               <div>
@@ -991,7 +991,7 @@ function ReferencesSectionBlock({ section }: { section: ReferenceSection }) {
       <div className="grid gap-4 md:grid-cols-2">
         {section.items.map((item) => (
           <article key={item.name} className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)]">
-            <p className="text-[18px] italic leading-8 text-[#111111]">“{item.quote}”</p>
+            <p className="text-[18px] italic leading-8 text-[#111111]">&ldquo;{item.quote}&rdquo;</p>
             <div className="mt-6 flex items-center gap-4">
               <AvatarBubble image={item.avatar} name={item.name} />
               <div>

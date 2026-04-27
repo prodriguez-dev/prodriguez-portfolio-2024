@@ -11,7 +11,8 @@ type ExperienceItem = {
   institution: string;
   location?: string;
   timePeriod?: string;
-  description: string[];
+  summary?: string;
+  bullets: string[];
 };
 
 type ProjectItem = ContentEntry & {
@@ -72,9 +73,10 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
                 isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-70",
               )}
             >
-              <div className="overflow-hidden">
-                <ul className="px-6 pb-6 pt-1 space-y-3 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
-                  {item.description.map((line) => (
+              <div className="overflow-hidden px-6 pb-6 pt-1">
+                {item.summary && <p className="max-w-[72ch] text-[17px] leading-8 text-[#2a2723] md:text-[18px] md:leading-8">{item.summary}</p>}
+                <ul className="mt-4 space-y-3 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
+                  {item.bullets.map((line) => (
                     <li key={line} className="flex items-start gap-3">
                       <span className="mt-[0.5em] text-[12px] leading-none text-[#c4621a]">●</span>
                       <span>{line}</span>

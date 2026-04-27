@@ -65,7 +65,7 @@ type HomeContactCtaSection = {
 type BiographySection = {
   heading: string;
   role: string;
-  bullets: string[];
+  paragraphs: string[];
   avatar?: SiteImage;
   certifications: string[];
   languages: string[];
@@ -84,7 +84,8 @@ type ExperienceItem = {
   institution: string;
   location?: string;
   timePeriod?: string;
-  description: string[];
+  summary?: string;
+  bullets: string[];
 };
 
 type EducationSection = {
@@ -350,12 +351,10 @@ const pages: Record<string, PhaseOnePageContent> = {
     biography: {
       heading: "Paul Rodriguez",
       role: "Solutions Architect / Sales Engineer / Developer Evangelist",
-      bullets: [
+      paragraphs: [
         "I help teams turn technical complexity into clear direction, especially when the work sits between discovery, architecture, demos, and delivery.",
-        "My best work happens in the gap between business goals and implementation -- figuring out what actually needs to be built, how to explain it, and how to keep momentum once the room is aligned.",
-        "I bring a mix of client-facing technical leadership, hands-on engineering background, and presentation instincts that makes me useful in high-trust conversations.",
-        "That includes enterprise platforms, APIs and integrations, modern frontend systems, and the kind of technical translation that keeps projects from getting lost in jargon or vague requirements.",
-        "I’m comfortable leading discovery, shaping solution direction, running demos, answering hard questions live, and getting close enough to the work to keep the plan honest.",
+        "My best work happens in the gap between business goals and implementation -- figuring out what actually needs to be built, how to explain it, and how to keep momentum once the room is aligned. I bring a mix of client-facing technical leadership, hands-on engineering background, and presentation instincts that makes me useful in high-trust conversations.",
+        "That includes enterprise platforms, APIs and integrations, modern frontend systems, and the kind of technical translation that keeps projects from getting lost in jargon or vague requirements. I’m comfortable leading discovery, shaping solution direction, running demos, answering hard questions live, and getting close enough to the work to keep the plan honest.",
         "My background in stage performance and communication sharpened the part of the job that a lot of technical teams underrate -- making people feel confident about where they’re going and why.",
       ],
       avatar: aboutHeadshot,
@@ -364,7 +363,6 @@ const pages: Record<string, PhaseOnePageContent> = {
       socialLinks: [
         { label: "GitHub ↗", href: "https://github.com/prodriguez-dev" },
         { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/paul-rodriguez-dev/" },
-        { label: "Twitter/X ↗", href: "https://x.com/prodriguez_dev" },
       ],
       primaryCta: { label: "Download Resume", href: "/Paul-Rodriguez-Resume.pdf" },
       secondaryCta: { label: "Get in Touch", href: "/contact" },
@@ -419,9 +417,12 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "Auxo Solutions",
           location: "New York, NY",
           timePeriod: "Oct 2024–Present",
-          description: [
-            "Lead technical discovery and solution design for enterprise and regulated-platform work, helping stakeholders get from vague goals to real implementation direction.",
-            "Architect client-facing systems involving APIs, onboarding flows, and high-trust transaction paths where technical choices directly affect usability, risk, and revenue.",
+          summary:
+            "Lead technical discovery and solution design for enterprise financial and insurance platforms, with a focus on high-trust workflows, integrations, and stakeholder alignment.",
+          bullets: [
+            "Architect client-facing systems involving onboarding flows, APIs, and high-trust transaction paths where technical choices directly affect usability, risk, and revenue.",
+            "Built an end-to-end annuities calculator for American National that supports complex investment workflows in under 10 minutes.",
+            "Led a high-risk migration on a business-critical dashboard while maintaining production stability and removing third-party licensing costs.",
             "Bridge business, product, and engineering conversations so the plan stays clear enough to sell, build, and defend.",
           ],
         },
@@ -430,10 +431,12 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "Great Jakes",
           location: "New York, NY",
           timePeriod: "Jul 2021–Sep 2024",
-          description: [
-            "Modernized enterprise SaaS platforms and custom web applications for global law firms, with a focus on scalability, maintainability, and delivery speed.",
-            "Re-architected a multi-tenant platform, reduced technical debt, and helped teams ship more efficiently through stronger frontend systems and component architecture.",
-            "Mentored engineers across distributed delivery work while improving quality, UX, and long-term platform stability.",
+          summary:
+            "Modernized enterprise SaaS platforms and custom web applications for global law firms, improving scalability, maintainability, and delivery speed.",
+          bullets: [
+            "Re-architected a multi-tenant platform, improving scalability by 35% and creating a stronger foundation for long-term growth.",
+            "Increased annual project output by 250% through frontend upgrades and reusable component architecture.",
+            "Reduced technical debt by 30% and mentored a distributed team of 10 engineers across active delivery work.",
           ],
         },
         {
@@ -441,10 +444,12 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "Smart Code Shop",
           location: "Denver, CO",
           timePeriod: "Mar 2016–Present",
-          description: [
-            "Lead discovery, architecture, and delivery for small businesses and founder-led teams that need practical technical direction without layers of ceremony.",
+          summary:
+            "Lead discovery, architecture, and delivery for small businesses and founder-led teams that need practical technical direction and hands-on execution.",
+          bullets: [
             "Translate early client conversations into websites, applications, and digital systems that are actually scoped, buildable, and useful.",
             "Own the full arc from positioning and UX through engineering and launch, which keeps strategy tied to execution.",
+            "Help clients move from vague requirements to clear decisions without burying the work in process.",
           ],
         },
         {
@@ -452,10 +457,12 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "OneTen Creative (DISH Network)",
           location: "Denver, CO",
           timePeriod: "Jul 2018–Jun 2021",
-          description: [
-            "Led frontend development and architecture for DISH e-commerce experiences, campaign launches, and high-traffic retail initiatives.",
-            "Supported major conversion and performance gains through stronger component systems, cleaner launches, and better execution under pressure.",
-            "Worked at the intersection of engineering, marketing, and digital experience where speed mattered, but sloppiness was expensive.",
+          summary:
+            "Led frontend development for DISH e-commerce experiences, campaign launches, and high-traffic retail initiatives where performance and conversion mattered.",
+          bullets: [
+            "Helped drive a 164% year-over-year sales increase during a major Black Friday / Cyber Monday redesign.",
+            "Built a custom Shopify component ecosystem that supported a 20% increase in new business acquisitions.",
+            "Engineered and optimized DCO HTML5 banners that contributed to a 200% conversion increase.",
           ],
         },
         {
@@ -463,8 +470,10 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "Denver Print Company",
           location: "Denver, CO",
           timePeriod: "Nov 2014–Mar 2016",
-          description: [
+          summary:
             "Delivered client design, WordPress development, and digital production work across web and print engagements.",
+          bullets: [
+            "Improved WordPress site performance by 25% and developed large-format event graphics that increased brand visibility.",
           ],
         },
         {
@@ -472,8 +481,9 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "Graphik Creative",
           location: "Denver, CO",
           timePeriod: "Mar 2012–Jan 2013",
-          description: [
-            "Handled WordPress, e-commerce, and brand-supporting digital work across agency client projects.",
+          summary: "Handled WordPress, e-commerce, and brand-supporting digital work across agency client projects.",
+          bullets: [
+            "Developed and deployed WordPress and e-commerce websites while creating logos and marketing materials for client brands.",
           ],
         },
         {
@@ -481,8 +491,10 @@ const pages: Record<string, PhaseOnePageContent> = {
           institution: "SlantMedia Creative",
           location: "Chicago, IL",
           timePeriod: "Apr 2008–Mar 2012",
-          description: [
+          summary:
             "Worked across web development, design, and creative production for client campaigns, combining digital, branding, and marketing execution.",
+          bullets: [
+            "Helped redesign The Bedding Experts logo, ads, TV commercials, and PHP e-commerce website during one of the company’s strongest sales quarters in two years.",
           ],
         },
       ],
@@ -884,14 +896,11 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
           <div className="mt-4 break-words font-[var(--font-sofia-sans-condensed)] text-[15px] font-extrabold uppercase italic tracking-[0.16em] text-[#c4621a] sm:text-[16px]">
             {biography.role}
           </div>
-          <ul className="mt-8 max-w-3xl space-y-4 text-[17px] leading-8 text-[#111111]">
-            {biography.bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-3">
-                <span className="mt-2 text-[#c4621a]">●</span>
-                <span>{bullet}</span>
-              </li>
+          <div className="mt-8 max-w-3xl space-y-5 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
+            {biography.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
-          </ul>
+          </div>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link href={biography.primaryCta.href} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90">
               {biography.primaryCta.label}

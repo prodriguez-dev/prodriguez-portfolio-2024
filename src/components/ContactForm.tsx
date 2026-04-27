@@ -125,13 +125,13 @@ export default function ContactForm({ subjects }: ContactFormProps) {
         <h2 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
           Start the conversation
         </h2>
-        <p className="mt-3 text-[16px] leading-7 text-[#4d4a45]">
+        <p className="mt-3 text-[17px] leading-8 text-[#4d4a45]">
           Tell me what you&apos;re working on and I&apos;ll get back to you.
         </p>
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         <label className="block">
-          <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Name</span>
+          <span className="mb-2 block text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Name</span>
           <input
             value={values.name}
             onChange={(event) => updateField("name", event.target.value)}
@@ -141,10 +141,10 @@ export default function ContactForm({ subjects }: ContactFormProps) {
             )}
             placeholder="Your name"
           />
-          {errors.name && <span className="mt-2 block text-sm text-[#d55c45]">{errors.name}</span>}
+          {errors.name && <span className="mt-2 block text-[15px] text-[#d55c45]">{errors.name}</span>}
         </label>
         <label className="block">
-          <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Email</span>
+          <span className="mb-2 block text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Email</span>
           <input
             value={values.email}
             onChange={(event) => updateField("email", event.target.value)}
@@ -155,11 +155,11 @@ export default function ContactForm({ subjects }: ContactFormProps) {
             placeholder="you@example.com"
             type="email"
           />
-          {errors.email && <span className="mt-2 block text-sm text-[#d55c45]">{errors.email}</span>}
+          {errors.email && <span className="mt-2 block text-[15px] text-[#d55c45]">{errors.email}</span>}
         </label>
       </div>
       <label className="mt-5 block">
-        <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Subject</span>
+        <span className="mb-2 block text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Subject</span>
         <select
           value={values.subject}
           onChange={(event) => updateField("subject", event.target.value)}
@@ -173,10 +173,10 @@ export default function ContactForm({ subjects }: ContactFormProps) {
             <option key={subject}>{subject}</option>
           ))}
         </select>
-        {errors.subject && <span className="mt-2 block text-sm text-[#d55c45]">{errors.subject}</span>}
+        {errors.subject && <span className="mt-2 block text-[15px] text-[#d55c45]">{errors.subject}</span>}
       </label>
       <label className="mt-5 block">
-        <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Message</span>
+        <span className="mb-2 block text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#111111]">Message</span>
         <textarea
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
@@ -186,13 +186,13 @@ export default function ContactForm({ subjects }: ContactFormProps) {
           )}
           placeholder="Tell me a bit about what you need."
         />
-        {errors.message && <span className="mt-2 block text-sm text-[#d55c45]">{errors.message}</span>}
+        {errors.message && <span className="mt-2 block text-[15px] text-[#d55c45]">{errors.message}</span>}
       </label>
-      {submitError && <div className="mt-5 rounded-[12px] border border-[#f1c3ba] bg-[#fff5f3] px-4 py-3 text-sm text-[#a33d2f]">{submitError}</div>}
+      {submitError && <div className="mt-5 rounded-[12px] border border-[#f1c3ba] bg-[#fff5f3] px-4 py-3 text-[15px] text-[#a33d2f]">{submitError}</div>}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>

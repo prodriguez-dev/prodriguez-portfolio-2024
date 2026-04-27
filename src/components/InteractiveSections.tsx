@@ -51,7 +51,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
                 <div className="mt-2 text-[20px] font-black italic text-[#c4621a]">{item.institution}</div>
               </div>
               <div className="flex items-start gap-6 md:text-right">
-                <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#7a7570] md:text-[14px]">
+                <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#7a7570] md:text-[15px]">
                   {item.timePeriod && <div>{item.timePeriod}</div>}
                   {item.location && <div className="mt-1">{item.location}</div>}
                 </div>
@@ -73,7 +73,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
               )}
             >
               <div className="overflow-hidden">
-                <ul className="px-6 pb-6 pt-1 space-y-3 text-[16px] leading-7 text-[#111111] md:text-[17px] md:leading-8">
+                <ul className="px-6 pb-6 pt-1 space-y-3 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
                   {item.description.map((line) => (
                     <li key={line} className="flex items-start gap-3">
                       <span className="mt-[0.5em] text-[12px] leading-none text-[#c4621a]">●</span>
@@ -114,7 +114,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                 setOpenUid(nextItems[0]?.uid || null);
               }}
               className={clsx(
-                "rounded-full border px-4 py-2 text-sm font-extrabold uppercase tracking-[0.08em] transition",
+                "rounded-full border px-4.5 py-2.5 text-[13px] font-extrabold uppercase tracking-[0.08em] transition",
                 isActive
                   ? "border-[#c4621a] bg-[#c4621a] text-white"
                   : "border-[#e0dbd0] bg-transparent text-[#666666] hover:border-[#bdb8ae] hover:text-[#111111]",
@@ -144,20 +144,20 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                       {item.title}
                     </h3>
                     {item.award && (
-                      <span className="rounded-full bg-[#ece8df] px-2 py-1 text-[11px] font-extrabold uppercase tracking-[0.06em] text-[#c4621a]">
+                      <span className="rounded-full bg-[#ece8df] px-2.5 py-1 text-[12px] font-extrabold uppercase tracking-[0.06em] text-[#c4621a]">
                         Award winning
                       </span>
                     )}
                   </div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {(item.tags || []).slice(0, 4).map((tag) => (
-                      <span key={tag} className="rounded-full bg-[#ece8df] px-3 py-1 text-[12px] font-extrabold uppercase tracking-[0.05em] text-[#666666]">
+                      <span key={tag} className="rounded-full bg-[#ece8df] px-3.5 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#666666]">
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-[13px] font-extrabold uppercase tracking-[0.1em] text-[#7a7570] md:block md:text-right md:text-[14px]">
+                <div className="flex items-center justify-between text-[14px] font-extrabold uppercase tracking-[0.1em] text-[#7a7570] md:block md:text-right md:text-[15px]">
                   <div>{item.yearLabel}</div>
                   <div className={clsx("mt-2 text-[#c4621a] transition-transform duration-200", isOpen && "translate-x-1")}>→</div>
                 </div>
@@ -171,8 +171,8 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                 <div className="overflow-hidden">
                   <div className="grid gap-6 p-6 md:grid-cols-[1fr,1.2fr]">
                     <div>
-                      <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">About this project</div>
-                      <ul className="mt-4 space-y-3 text-[16px] leading-7 text-[#111111] md:text-[17px] md:leading-8">
+                      <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">About this project</div>
+                      <ul className="mt-4 space-y-3 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
                         {(item.description || []).map((line, index) => (
                           <li key={`${item.uid}-${index}`} className="flex items-start gap-3">
                             <span className="mt-[0.5em] text-[12px] leading-none text-[#c4621a]">●</span>
@@ -185,7 +185,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                           href={item.link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-6 inline-flex rounded-[10px] bg-[#c4621a] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+                          className="mt-6 inline-flex rounded-[10px] bg-[#c4621a] px-5.5 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
                         >
                           Visit Site ↗
                         </Link>

@@ -811,8 +811,8 @@ function HomeTestimonialsSectionBlock({ section }: { section: HomeTestimonialsSe
             <div className="mt-8 flex items-center gap-4">
               <AvatarBubble image={item.avatar} name={item.name} />
               <div>
-                <div className="font-bold uppercase tracking-[0.08em] text-[#111111]">{item.name}</div>
-                <div className="text-sm text-[#7a7570]">{item.role}</div>
+                <div className="text-[14px] font-bold uppercase tracking-[0.08em] text-[#111111]">{item.name}</div>
+                <div className="text-[15px] text-[#7a7570]">{item.role}</div>
               </div>
             </div>
           </article>
@@ -889,10 +889,10 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
             ))}
           </ul>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href={biography.primaryCta.href} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90">
+            <Link href={biography.primaryCta.href} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90">
               {biography.primaryCta.label}
             </Link>
-            <Link href={biography.secondaryCta.href} className="inline-flex rounded-[10px] border border-[#e0dbd0] bg-white px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-[#111111] transition hover:-translate-y-0.5 hover:border-[#bdb8ae]">
+            <Link href={biography.secondaryCta.href} className="inline-flex rounded-[10px] border border-[#e0dbd0] bg-white px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-[#111111] transition hover:-translate-y-0.5 hover:border-[#bdb8ae]">
               {biography.secondaryCta.label}
             </Link>
           </div>
@@ -1039,13 +1039,13 @@ function SilverTechHeroSectionBlock({ section }: { section: SilverTechHeroSectio
             <span className="block">{section.headingTop}</span>
             <span className="block">{section.headingBottom}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-[19px] font-black leading-8 text-[#111111]">{section.lead}</p>
-          <div className="mt-6 max-w-xl space-y-5 text-[17px] leading-8 text-[#4d4a45]">
+          <p className="mt-6 max-w-xl text-[20px] font-black leading-8 text-[#111111]">{section.lead}</p>
+          <div className="mt-6 max-w-xl space-y-5 text-[18px] leading-8 text-[#4d4a45]">
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <Link href={section.cta.href} className="mt-8 inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90">
+          <Link href={section.cta.href} className="mt-8 inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90">
             {section.cta.label}
           </Link>
         </div>
@@ -1096,7 +1096,7 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
               <span key={line} className="block">{line}</span>
             ))}
           </h1>
-          <p className="mt-6 max-w-xl text-[18px] leading-8 text-[#4d4a45]">{contact.intro}</p>
+          <p className="mt-6 max-w-xl text-[19px] leading-8 text-[#4d4a45]">{contact.intro}</p>
           <div className="mt-8 space-y-4">
             {contact.cards.map((card) => (
               <Link
@@ -1107,8 +1107,8 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
                 className="flex items-center justify-between rounded-[16px] border border-[#e0dbd0] bg-white px-5 py-4 shadow-[0_2px_16px_rgba(0,0,0,0.05)] transition hover:translate-x-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
               >
                 <div>
-                  <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">{card.label}</div>
-                  <div className="mt-2 text-[18px] font-semibold text-[#111111]">{card.value}</div>
+                  <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">{card.label}</div>
+                  <div className="mt-2 text-[19px] font-semibold text-[#111111]">{card.value}</div>
                 </div>
                 <span className="text-[18px] text-[#c4621a]">↗</span>
               </Link>

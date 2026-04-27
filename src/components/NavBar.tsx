@@ -69,7 +69,7 @@ export default function NavBar({ settings }: NavBarProps) {
           ))}
           <Link
             href={settings.cta.href}
-            className="ml-4 inline-flex h-11 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-4.5 text-[13px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+            className="ml-5 inline-flex h-10 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-4 text-[12px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
           >
             <span>{settings.cta.label}</span>
             <MdEmail className="text-[13px]" />

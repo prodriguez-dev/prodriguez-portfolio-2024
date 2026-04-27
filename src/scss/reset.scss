@@ -240,29 +240,20 @@ p {
   );
 }
 
-// default common p and style, the color is set to greenyellow so we can see where the styles are missing and to distinguish it from the primary brand color
-p,
 a {
-  color: greenyellow;
-  font-family: $sofia;
-  font-size: 100px;
-  font-weight: 400;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
 
   @include print {
-    color: black;
-    font-size: 13px;
-    line-height: 22px;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
   }
 }
 
-// this is set to purple so we can see where the hover styles are missing on desktop
 a:hover {
-  color: red;
-
-  // we don't need this behavior on mobile
-  @include mobile {
-    color: inherit;
-  }
+  color: inherit;
 }
 
 body:not(.prerender) .page {

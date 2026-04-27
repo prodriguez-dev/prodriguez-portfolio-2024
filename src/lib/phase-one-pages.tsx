@@ -624,9 +624,20 @@ function SectionShell({
   );
 }
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+function SectionEyebrow({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="mb-4 font-[var(--font-sofia-sans-condensed)] text-[0.95rem] font-extrabold uppercase italic tracking-[0.2em] text-[#c4621a]">
+    <div
+      className={clsx(
+        "mb-4 font-[var(--font-sofia-sans-condensed)] text-[0.95rem] font-extrabold uppercase italic tracking-[0.2em] text-[#c4621a]",
+        className,
+      )}
+    >
       {children}
     </div>
   );
@@ -665,7 +676,7 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
           primaryCta={
             <Link
               href={hero.primaryCta.href}
-              className="inline-flex items-center rounded-[10px] bg-[#c4621a] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+              className="inline-flex items-center rounded-[10px] bg-[#c4621a] px-7 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
             >
               {hero.primaryCta.label}
             </Link>
@@ -673,7 +684,7 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
           secondaryCta={
             <Link
               href={hero.secondaryCta.href}
-              className="inline-flex items-center rounded-[10px] border border-[rgba(237,233,225,0.35)] bg-[rgba(255,255,255,0.06)] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-[#ede9e1] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[rgba(255,255,255,0.12)]"
+              className="inline-flex items-center rounded-[10px] border border-[rgba(237,233,225,0.35)] bg-[rgba(255,255,255,0.06)] px-7 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-[#ede9e1] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[rgba(255,255,255,0.12)]"
             >
               {hero.secondaryCta.label}
             </Link>
@@ -840,7 +851,7 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
           )}
           <div className="mt-6 space-y-3 text-sm font-bold uppercase tracking-[0.08em] text-[#111111]">
             {biography.socialLinks.map((link) => (
-              <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block transition hover:text-[#c4621a]">
+              <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block text-[#111111] transition hover:text-[#8b5a2b]">
                 {link.label}
               </Link>
             ))}
@@ -895,7 +906,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
   return (
     <SectionShell className="bg-[#ede9e1] py-24 overflow-hidden">
       <SectionEyebrow>Skills</SectionEyebrow>
-      <div className="hidden space-y-4 overflow-hidden md:block lg:hidden">
+      <div className="hidden">
         {skills.marqueeRows.map((row, rowIndex) => {
           const items = [...row, ...row, ...row];
           return (
@@ -954,7 +965,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
 function ExperienceSection({ heading, items }: { heading: string; items: ExperienceItem[] }) {
   return (
     <SectionShell className="py-24">
-      <SectionEyebrow>Career</SectionEyebrow>
+      <SectionEyebrow className="text-[1.05rem] tracking-[0.16em]">Career</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">{heading}</DisplayHeading>
       <ExperienceAccordion items={items} />
     </SectionShell>
@@ -1011,7 +1022,7 @@ function ReferencesSectionBlock({ section }: { section: ReferenceSection }) {
 function ProjectsPageSectionBlock({ section }: { section: ProjectsPageSection }) {
   return (
     <SectionShell className="py-24">
-      <SectionEyebrow>Project Archive</SectionEyebrow>
+      <SectionEyebrow className="text-[1.05rem] tracking-[0.16em]">Project Archive</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">Projects</DisplayHeading>
       <ProjectsExplorer categories={section.categories} items={section.items} />
     </SectionShell>

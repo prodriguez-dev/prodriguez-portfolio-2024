@@ -129,7 +129,7 @@ export default function HeroMotion({
   }, [isTypingDone]);
 
   return (
-    <div ref={containerRef} className="relative z-10 w-full max-w-[860px] lg:max-w-[720px] xl:max-w-[860px]">
+    <div ref={containerRef} className="relative z-10 w-full max-w-[860px] lg:max-w-[620px] xl:max-w-[760px] 2xl:max-w-[820px]">
       <p
         ref={taglineRef}
         className="mb-6 flex min-h-[24px] items-center font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.2em] text-[#f0a05a]"

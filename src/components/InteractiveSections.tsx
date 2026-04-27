@@ -51,7 +51,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
                 <div className="mt-2 text-[20px] font-black italic text-[#c4621a]">{item.institution}</div>
               </div>
               <div className="flex items-start gap-6 md:text-right">
-                <div className="text-sm uppercase tracking-[0.08em] text-[#7a7570]">
+                <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#7a7570] md:text-[14px]">
                   {item.timePeriod && <div>{item.timePeriod}</div>}
                   {item.location && <div className="mt-1">{item.location}</div>}
                 </div>
@@ -73,10 +73,10 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
               )}
             >
               <div className="overflow-hidden">
-                <ul className="px-6 pb-6 pt-1 space-y-3 text-[16px] leading-7 text-[#111111]">
+                <ul className="px-6 pb-6 pt-1 space-y-3 text-[16px] leading-7 text-[#111111] md:text-[17px] md:leading-8">
                   {item.description.map((line) => (
-                    <li key={line} className="flex gap-3">
-                      <span className="mt-2 text-[#c4621a]">●</span>
+                    <li key={line} className="flex items-start gap-3">
+                      <span className="mt-[0.5em] text-[12px] leading-none text-[#c4621a]">●</span>
                       <span>{line}</span>
                     </li>
                   ))}
@@ -157,7 +157,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm font-extrabold uppercase tracking-[0.1em] text-[#7a7570] md:block md:text-right">
+                <div className="flex items-center justify-between text-[13px] font-extrabold uppercase tracking-[0.1em] text-[#7a7570] md:block md:text-right md:text-[14px]">
                   <div>{item.yearLabel}</div>
                   <div className={clsx("mt-2 text-[#c4621a] transition-transform duration-200", isOpen && "translate-x-1")}>→</div>
                 </div>
@@ -172,10 +172,10 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                   <div className="grid gap-6 p-6 md:grid-cols-[1fr,1.2fr]">
                     <div>
                       <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">About this project</div>
-                      <ul className="mt-4 space-y-3 text-[16px] leading-7 text-[#111111]">
+                      <ul className="mt-4 space-y-3 text-[16px] leading-7 text-[#111111] md:text-[17px] md:leading-8">
                         {(item.description || []).map((line, index) => (
-                          <li key={`${item.uid}-${index}`} className="flex gap-3">
-                            <span className="mt-2 text-[#c4621a]">●</span>
+                          <li key={`${item.uid}-${index}`} className="flex items-start gap-3">
+                            <span className="mt-[0.5em] text-[12px] leading-none text-[#c4621a]">●</span>
                             <span>{line.text}</span>
                           </li>
                         ))}

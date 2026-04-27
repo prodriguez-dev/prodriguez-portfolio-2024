@@ -111,7 +111,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
             setIsSuccess(false);
             setSubmitError(null);
           }}
-          className="mt-8 inline-flex rounded-[10px] border border-[#e0dbd0] bg-white px-6 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-[#111111] transition hover:-translate-y-0.5 hover:border-[#bdb8ae]"
+          className="mt-8 inline-flex rounded-[10px] border border-[#e0dbd0] bg-white px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-[#111111] transition hover:-translate-y-0.5 hover:border-[#bdb8ae]"
         >
           Send Another
         </button>
@@ -136,7 +136,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
             value={values.name}
             onChange={(event) => updateField("name", event.target.value)}
             className={clsx(
-              "w-full rounded-[10px] border px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
+              "w-full rounded-[10px] border bg-[#fcfbf8] px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a] focus:bg-white",
               errors.name ? "border-[#d55c45]" : "border-[#e0dbd0]",
             )}
             placeholder="Your name"
@@ -149,7 +149,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
             value={values.email}
             onChange={(event) => updateField("email", event.target.value)}
             className={clsx(
-              "w-full rounded-[10px] border px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
+              "w-full rounded-[10px] border bg-[#fcfbf8] px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a] focus:bg-white",
               errors.email ? "border-[#d55c45]" : "border-[#e0dbd0]",
             )}
             placeholder="you@example.com"
@@ -164,7 +164,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
           value={values.subject}
           onChange={(event) => updateField("subject", event.target.value)}
           className={clsx(
-            "w-full rounded-[10px] border bg-white px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
+            "w-full rounded-[10px] border bg-[#fcfbf8] px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a] focus:bg-white",
             errors.subject ? "border-[#d55c45]" : "border-[#e0dbd0]",
           )}
           disabled={!hasSubjects}
@@ -181,7 +181,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
           value={values.message}
           onChange={(event) => updateField("message", event.target.value)}
           className={clsx(
-            "min-h-[180px] w-full rounded-[10px] border px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a]",
+            "min-h-[180px] w-full rounded-[10px] border bg-[#fcfbf8] px-[18px] py-[14px] text-[16px] outline-none transition focus:border-[#c4621a] focus:bg-white",
             errors.message ? "border-[#d55c45]" : "border-[#e0dbd0]",
           )}
           placeholder="Tell me a bit about what you need."

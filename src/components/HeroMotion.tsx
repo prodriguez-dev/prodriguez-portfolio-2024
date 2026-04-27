@@ -129,10 +129,10 @@ export default function HeroMotion({
   }, [isTypingDone]);
 
   return (
-    <div ref={containerRef} className="relative z-10 w-full max-w-[860px] lg:max-w-[620px] xl:max-w-[760px] 2xl:max-w-[820px]">
+    <div ref={containerRef} className="relative z-10 w-full max-w-[860px] lg:max-w-[660px] xl:max-w-[700px] 2xl:max-w-[760px] xl:pl-4 2xl:pl-8">
       <p
         ref={taglineRef}
-        className="mb-6 flex min-h-[24px] items-center font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.2em] text-[#f0a05a]"
+        className="mb-6 flex min-h-[24px] items-center font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.18em] text-[#f3ab68]"
       >
         <span>{typedTagline}</span>
         <span
@@ -153,10 +153,10 @@ export default function HeroMotion({
           </span>
         ))}
       </h1>
-      <p ref={bodyRef} className="mt-6 max-w-xl text-[17px] font-medium leading-7 text-[rgba(237,233,225,0.8)] sm:text-[18px] sm:leading-8">
+      <p ref={bodyRef} className="mt-6 max-w-[34rem] text-[18px] font-medium leading-8 text-[rgba(237,233,225,0.86)] sm:text-[19px]">
         {body}
       </p>
-      <div ref={ctaWrapRef} className="mt-10 flex flex-wrap gap-4">
+      <div ref={ctaWrapRef} className="mt-10 flex flex-wrap gap-4 sm:gap-5">
         {primaryCta}
         {secondaryCta}
       </div>

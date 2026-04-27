@@ -19,12 +19,12 @@ export default function Footer({ settings }: FooterProps) {
             {settings.name}
           </Link>
 
-          <nav aria-label="Footer Navigation" className="flex flex-wrap items-center gap-1.5">
+          <nav aria-label="Footer Navigation" className="flex flex-wrap items-center gap-2">
             {[{ label: "Home", href: "/" }, ...settings.navItems, settings.cta].map((item, index, items) => (
               <React.Fragment key={`${item.label}-${item.href}`}>
                 <Link
                   href={item.href}
-                  className="px-2 py-1 text-[14px] font-extrabold uppercase tracking-[0.04em] text-[#7a7570] transition-colors hover:text-[#c4621a]"
+                  className="px-2 py-1 text-[14px] font-extrabold uppercase tracking-[0.05em] text-[#67625c] transition-colors hover:text-[#c4621a]"
                 >
                   {item.label}
                 </Link>
@@ -46,7 +46,7 @@ export default function Footer({ settings }: FooterProps) {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[14px] font-extrabold text-[#7a7570] transition-colors hover:text-[#c4621a]"
+                    className="text-[14px] font-extrabold text-[#67625c] transition-colors hover:text-[#c4621a]"
                   >
                     {item.label}
                   </Link>
@@ -55,9 +55,9 @@ export default function Footer({ settings }: FooterProps) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 pt-5 text-[13px] text-[#7a7570] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-          <p className="m-0 text-[13px] font-medium text-[#7a7570]">© {new Date().getFullYear()} {settings.name}. All rights reserved.</p>
-          <p className="m-0 text-[13px] font-medium text-[#9a958d]">Next.js · React · TypeScript · Tailwind CSS · GSAP · Vercel</p>
+        <div className="flex flex-col gap-2 pt-5 text-[14px] text-[#67625c] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <p className="m-0 text-[14px] font-medium text-[#67625c]">© {new Date().getFullYear()} {settings.name}. All rights reserved.</p>
+          <p className="m-0 text-[14px] font-medium text-[#857f78]">Next.js · React · TypeScript · Tailwind CSS · GSAP · Vercel</p>
         </div>
       </Bounded>
     </footer>

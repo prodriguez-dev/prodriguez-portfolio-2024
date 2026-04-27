@@ -666,8 +666,8 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
         priority
         className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[rgba(10,8,6,0.58)]" />
-      <SectionShell wide className="relative flex min-h-[calc(100svh-5rem)] items-start py-14 sm:items-center sm:py-16 lg:py-20">
+      <div className="absolute inset-0 bg-[rgba(10,8,6,0.54)]" />
+      <SectionShell wide className="relative flex min-h-[calc(100svh-5rem)] items-start py-14 sm:items-center sm:py-16 lg:py-20 xl:pl-6 2xl:pl-10">
         <HeroMotion
           tagline={hero.tagline}
           firstName={hero.firstName}
@@ -676,7 +676,7 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
           primaryCta={
             <Link
               href={hero.primaryCta.href}
-              className="inline-flex items-center rounded-[10px] bg-[#c4621a] px-7 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+              className="inline-flex items-center rounded-[10px] bg-[#c4621a] px-7 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white shadow-[0_8px_24px_rgba(196,98,26,0.22)] transition hover:-translate-y-0.5 hover:opacity-90"
             >
               {hero.primaryCta.label}
             </Link>
@@ -684,14 +684,14 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
           secondaryCta={
             <Link
               href={hero.secondaryCta.href}
-              className="inline-flex items-center rounded-[10px] border border-[rgba(237,233,225,0.35)] bg-[rgba(255,255,255,0.06)] px-7 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-[#ede9e1] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[rgba(255,255,255,0.12)]"
+              className="inline-flex items-center rounded-[10px] border border-[rgba(237,233,225,0.38)] bg-[rgba(255,255,255,0.08)] px-7 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-[#ede9e1] backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[rgba(255,255,255,0.14)]"
             >
               {hero.secondaryCta.label}
             </Link>
           }
         />
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end justify-end xl:flex xl:w-[42%]">
-          <div className="relative h-[min(70vh,680px)] w-[min(34vw,440px)] 2xl:w-[420px]">
+        <div className="pointer-events-none absolute inset-y-0 right-[1%] hidden items-end justify-end xl:flex xl:w-[40%] 2xl:right-[3%]">
+          <div className="relative h-[min(74vh,700px)] w-[min(33vw,430px)] 2xl:w-[410px]">
             <Image
               src={hero.standingImage.url}
               alt={hero.standingImage.alt || ""}
@@ -714,7 +714,7 @@ function HomeStatsSectionBlock({ section }: { section: HomeStatsSection }) {
             <div className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.5rem,5vw,4rem)] font-black uppercase italic leading-none text-[#c4621a]">
               {item.value}
             </div>
-            <div className="mt-2 text-[13px] font-bold uppercase tracking-[0.06em] text-[#7a7570]">{item.label}</div>
+            <div className="mt-2 text-[14px] font-bold uppercase tracking-[0.08em] text-[#67625c]">{item.label}</div>
           </div>
         ))}
       </div>
@@ -725,7 +725,7 @@ function HomeStatsSectionBlock({ section }: { section: HomeStatsSection }) {
 function HomeServicesSectionBlock({ section }: { section: HomeServicesSection }) {
   return (
     <SectionShell className="py-24">
-      <SectionEyebrow>What I Do</SectionEyebrow>
+      <SectionEyebrow className="text-[#b85b17]">What I Do</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">{section.heading}</DisplayHeading>
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         {section.items.map((item) => (
@@ -743,7 +743,7 @@ function HomeServicesSectionBlock({ section }: { section: HomeServicesSection })
 function HomeProjectsSectionBlock({ section }: { section: HomeProjectsSection }) {
   return (
     <SectionShell className="bg-[#ede9e1] py-24">
-      <SectionEyebrow>Selected Work</SectionEyebrow>
+      <SectionEyebrow className="text-[#b85b17]">Selected Work</SectionEyebrow>
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <DisplayHeading className="text-[#111111]">{section.heading}</DisplayHeading>
@@ -802,7 +802,7 @@ function AvatarBubble({ image, name }: { image: SiteImage; name: string }) {
 function HomeTestimonialsSectionBlock({ section }: { section: HomeTestimonialsSection }) {
   return (
     <SectionShell className="py-24">
-      <SectionEyebrow>Kind Words</SectionEyebrow>
+      <SectionEyebrow className="text-[#b85b17]">Kind Words</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">{section.heading}</DisplayHeading>
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {section.items.map((item) => (
@@ -842,14 +842,14 @@ function HomeContactCtaSectionBlock({ section }: { section: HomeContactCtaSectio
 function BiographySectionBlock({ biography }: { biography: BiographySection }) {
   return (
     <SectionShell className="py-24">
-      <div className="grid gap-8 md:grid-cols-[300px,1fr]">
+      <div className="grid gap-10 md:grid-cols-[320px,1fr] md:gap-12">
         <div>
           {biography.avatar?.url && (
             <div className="relative aspect-square overflow-hidden rounded-[16px] border border-[#e0dbd0] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.05)]">
               <Image src={biography.avatar.url} alt={biography.avatar.alt || biography.heading} fill className="object-cover" />
             </div>
           )}
-          <div className="mt-6 space-y-3 text-sm font-bold uppercase tracking-[0.08em] text-[#111111]">
+          <div className="mt-6 space-y-3 text-[15px] font-bold uppercase tracking-[0.08em] text-[#111111]">
             {biography.socialLinks.map((link) => (
               <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block text-[#111111] transition hover:text-[#8b5a2b]">
                 {link.label}
@@ -857,18 +857,18 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
             ))}
           </div>
           <div className="mt-8">
-            <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">Certifications</div>
+            <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#67625c]">Certifications</div>
             <div className="mt-3 flex flex-wrap gap-2">
               {biography.certifications.map((item) => (
-                <span key={item} className="rounded-full bg-[#ece8df] px-3 py-1 text-[12px] font-extrabold uppercase tracking-[0.05em] text-[#666666]">{item}</span>
+                <span key={item} className="rounded-full bg-[#ece8df] px-3.5 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#5f5a54]">{item}</span>
               ))}
             </div>
           </div>
           <div className="mt-6">
-            <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">Languages</div>
+            <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#67625c]">Languages</div>
             <div className="mt-3 flex flex-wrap gap-2">
               {biography.languages.map((item) => (
-                <span key={item} className="rounded-full bg-[#ece8df] px-3 py-1 text-[12px] font-extrabold uppercase tracking-[0.05em] text-[#666666]">{item}</span>
+                <span key={item} className="rounded-full bg-[#ece8df] px-3.5 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#5f5a54]">{item}</span>
               ))}
             </div>
           </div>
@@ -965,7 +965,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
 function ExperienceSection({ heading, items }: { heading: string; items: ExperienceItem[] }) {
   return (
     <SectionShell className="py-24">
-      <SectionEyebrow className="text-[1.05rem] tracking-[0.16em]">Career</SectionEyebrow>
+      <SectionEyebrow className="text-[1.08rem] tracking-[0.16em] text-[#b85b17]">Career</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">{heading}</DisplayHeading>
       <ExperienceAccordion items={items} />
     </SectionShell>
@@ -1022,7 +1022,7 @@ function ReferencesSectionBlock({ section }: { section: ReferenceSection }) {
 function ProjectsPageSectionBlock({ section }: { section: ProjectsPageSection }) {
   return (
     <SectionShell className="py-24">
-      <SectionEyebrow className="text-[1.05rem] tracking-[0.16em]">Project Archive</SectionEyebrow>
+      <SectionEyebrow className="text-[1.08rem] tracking-[0.16em] text-[#b85b17]">Project Archive</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">Projects</DisplayHeading>
       <ProjectsExplorer categories={section.categories} items={section.items} />
     </SectionShell>
@@ -1034,7 +1034,7 @@ function SilverTechHeroSectionBlock({ section }: { section: SilverTechHeroSectio
     <SectionShell className="py-24">
       <div className="grid gap-8 md:grid-cols-[1fr,1fr] md:items-center">
         <div className="min-w-0">
-          <SectionEyebrow>Silver Tech Help</SectionEyebrow>
+          <SectionEyebrow className="text-[#b85b17]">Silver Tech Help</SectionEyebrow>
           <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.9rem,13vw,9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,9vw,9rem)]">
             <span className="block">{section.headingTop}</span>
             <span className="block">{section.headingBottom}</span>
@@ -1080,7 +1080,7 @@ function SilverTechQuoteSectionBlock({ section }: { section: SilverTechQuoteSect
         <p className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.25rem,10vw,6rem)] font-black uppercase italic leading-[0.95] tracking-[-0.01em] text-[#111111] break-words">
           {section.quote}
         </p>
-        <p className="mt-6 text-[14px] font-extrabold uppercase tracking-[0.14em] text-[#c4621a] md:text-[16px]">{section.attribution}</p>
+        <p className="mt-6 text-[15px] font-extrabold uppercase tracking-[0.14em] text-[#b85b17] md:text-[16px]">{section.attribution}</p>
       </div>
     </SectionShell>
   );

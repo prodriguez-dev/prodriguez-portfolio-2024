@@ -114,10 +114,10 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                 setOpenUid(nextItems[0]?.uid || null);
               }}
               className={clsx(
-                "rounded-full border px-4.5 py-2.5 text-[13px] font-extrabold uppercase tracking-[0.08em] transition",
+                "rounded-full border px-5 py-3 text-[13px] font-extrabold uppercase tracking-[0.08em] transition",
                 isActive
-                  ? "border-[#c4621a] bg-[#c4621a] text-white"
-                  : "border-[#e0dbd0] bg-transparent text-[#666666] hover:border-[#bdb8ae] hover:text-[#111111]",
+                  ? "border-[#c4621a] bg-[#c4621a] text-white shadow-[0_8px_18px_rgba(196,98,26,0.18)]"
+                  : "border-[#d8d2c7] bg-white text-[#5f5a54] hover:border-[#bdb8ae] hover:text-[#111111]",
               )}
             >
               {category}
@@ -157,7 +157,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-[14px] font-extrabold uppercase tracking-[0.1em] text-[#7a7570] md:block md:text-right md:text-[15px]">
+                <div className="flex items-center justify-between text-[14px] font-extrabold uppercase tracking-[0.1em] text-[#67625c] md:block md:text-right md:text-[15px]">
                   <div>{item.yearLabel}</div>
                   <div className={clsx("mt-2 text-[#c4621a] transition-transform duration-200", isOpen && "translate-x-1")}>→</div>
                 </div>
@@ -171,7 +171,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                 <div className="overflow-hidden">
                   <div className="grid gap-6 p-6 md:grid-cols-[1fr,1.2fr]">
                     <div>
-                      <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">About this project</div>
+                      <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#67625c]">About this project</div>
                       <ul className="mt-4 space-y-3 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
                         {(item.description || []).map((line, index) => (
                           <li key={`${item.uid}-${index}`} className="flex items-start gap-3">

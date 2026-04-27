@@ -38,7 +38,7 @@ function NavItem({ href, label, isActive, onClick }: NavItemProps) {
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={clsx(
-        "text-[14px] font-extrabold uppercase tracking-[0.14em] transition-colors lg:text-[15px]",
+        "text-[14px] font-extrabold uppercase tracking-[0.15em] transition-colors lg:text-[15px]",
         isActive ? "text-[#111111]" : "text-[#7a7570] hover:text-[#111111]",
       )}
     >
@@ -60,16 +60,16 @@ export default function NavBar({ settings }: NavBarProps) {
       <div className="mx-auto flex max-w-[1280px] items-center justify-between rounded-2xl border border-[#e0dbd0] bg-[rgba(244,241,235,0.92)] px-4 py-4 shadow-[0_1px_0_rgba(0,0,0,0.07)] backdrop-blur-xl md:px-6">
         <NameLogo name={settings.name} />
 
-        <div className="hidden items-center gap-6 lg:gap-7 md:flex">
+        <div className="hidden items-center gap-7 lg:gap-8 md:flex">
           {navItems.map(({ href, label }, index) => (
             <React.Fragment key={`${label}-${href}`}>
               <NavItem href={href} label={label} isActive={isActivePath(pathname, href)} />
-              {index < navItems.length - 1 && <span className="text-[#cccccc]">/</span>}
+              {index < navItems.length - 1 && <span className="px-1 text-[#cccccc]">/</span>}
             </React.Fragment>
           ))}
           <Link
             href={settings.cta.href}
-            className="ml-3 inline-flex h-11 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-4.5 text-[13px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+            className="ml-4 inline-flex h-11 items-center gap-1.5 rounded-[8px] bg-[#c4621a] px-4.5 text-[13px] font-extrabold uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
           >
             <span>{settings.cta.label}</span>
             <MdEmail className="text-[13px]" />

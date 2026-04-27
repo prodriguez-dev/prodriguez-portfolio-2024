@@ -679,13 +679,13 @@ function HomeHeroSection({ hero }: { hero: HeroSection }) {
             </Link>
           }
         />
-        <div className="pointer-events-none absolute inset-y-0 right-[2%] hidden items-end xl:flex">
-          <div className="relative h-[min(66vh,620px)] w-[min(30vw,400px)]">
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-end justify-end xl:flex xl:w-[42%]">
+          <div className="relative h-[min(70vh,680px)] w-[min(34vw,440px)] 2xl:w-[420px]">
             <Image
               src={hero.standingImage.url}
               alt={hero.standingImage.alt || ""}
               fill
-              className="object-contain object-bottom [mask-image:linear-gradient(to_top,transparent_0%,black_10%)]"
+              className="object-contain object-[center_bottom] [mask-image:linear-gradient(to_top,transparent_0%,black_10%)]"
             />
           </div>
         </div>
@@ -862,7 +862,7 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
             </div>
           </div>
         </div>
-        <div>
+        <div className="min-w-0">
           <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3rem,9vw,6.5rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] text-[#111111]">
             {biography.heading}
           </h1>
@@ -895,7 +895,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
   return (
     <SectionShell className="bg-[#ede9e1] py-24 overflow-hidden">
       <SectionEyebrow>Skills</SectionEyebrow>
-      <div className="hidden space-y-4 overflow-hidden md:block">
+      <div className="hidden space-y-4 overflow-hidden md:block lg:hidden">
         {skills.marqueeRows.map((row, rowIndex) => {
           const items = [...row, ...row, ...row];
           return (
@@ -1022,7 +1022,7 @@ function SilverTechHeroSectionBlock({ section }: { section: SilverTechHeroSectio
   return (
     <SectionShell className="py-24">
       <div className="grid gap-8 md:grid-cols-[1fr,1fr] md:items-center">
-        <div>
+        <div className="min-w-0">
           <SectionEyebrow>Silver Tech Help</SectionEyebrow>
           <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.9rem,13vw,9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,9vw,9rem)]">
             <span className="block">{section.headingTop}</span>
@@ -1093,13 +1093,13 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
                 href={card.href}
                 target={card.href.startsWith("http") ? "_blank" : undefined}
                 rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex items-center justify-between rounded-[16px] border border-[#e0dbd0] bg-white px-5 py-5 shadow-[0_2px_16px_rgba(0,0,0,0.05)] transition hover:translate-x-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+                className="flex items-center justify-between rounded-[16px] border border-[#e0dbd0] bg-white px-5 py-4 shadow-[0_2px_16px_rgba(0,0,0,0.05)] transition hover:translate-x-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
               >
                 <div>
                   <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#7a7570]">{card.label}</div>
                   <div className="mt-2 text-[18px] font-semibold text-[#111111]">{card.value}</div>
                 </div>
-                <span className="text-[#c4621a]">↗</span>
+                <span className="text-[18px] text-[#c4621a]">↗</span>
               </Link>
             ))}
           </div>

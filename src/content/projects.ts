@@ -28,11 +28,11 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Tested and refactored CSS, JavaScript and ScrollMagic code."
+        "text": "Refined the front-end build and animation system for a branded Dish microsite designed to feel polished, fast, and stable."
       },
       {
         "type": "list-item",
-        "text": "Worked with Dish IT to host Dish Brand microsite, incl. downloadable assets."
+        "text": "Worked with internal stakeholders and Dish IT to support launch requirements, hosting needs, and downloadable brand assets."
       }
     ],
     "link": {
@@ -74,15 +74,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "First website to be built with normal ReactJS structure versus proprietery Themer."
+        "text": "Helped move the team toward a more standard React architecture instead of relying on a proprietary theme system."
       },
       {
         "type": "list-item",
-        "text": "Built layout with Tailwind and Bootstrap."
+        "text": "Built a flexible front-end foundation that balanced speed, consistency, and maintainability across the site."
       },
       {
         "type": "list-item",
-        "text": "Instituted Storybook to test components."
+        "text": "Introduced Storybook into the workflow so components were easier to test, review, and reuse."
       }
     ],
     "link": {
@@ -136,15 +136,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Full revamped how we built our sites based on this project using CSS Modules and removed all the Tailwind and Bootstrap elemnts."
+        "text": "Used this project to reset how our team built firm websites, replacing heavier styling dependencies with a cleaner CSS Modules approach."
       },
       {
         "type": "list-item",
-        "text": "Also focused wrapping sections to also be re-usable components."
+        "text": "Structured layouts and sections as reusable components so the site was easier to scale and maintain."
       },
       {
         "type": "list-item",
-        "text": "Re-used this repo for all current templates moving forward."
+        "text": "The result became a stronger foundation for future templates and delivery work across the portfolio."
       }
     ],
     "link": {
@@ -194,19 +194,19 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Client need a logo for his Property Maintenance, Repairs & Remodeling Business."
+        "text": "Created the brand identity for a property maintenance and remodeling business that needed to look established from day one."
       },
       {
         "type": "list-item",
-        "text": "He had an idea of what he wanted and I brought it to life."
+        "text": "Took the client’s rough direction and turned it into a logo system that felt professional, memorable, and usable across real-world materials."
       },
       {
         "type": "list-item",
-        "text": "Designed Business Cards, Car Magnets, Hats and Hoodies."
+        "text": "Extended the brand across business cards, car magnets, hats, and hoodies to help the company show up consistently in the market."
       },
       {
         "type": "list-item",
-        "text": "He is now doing over $200K in work per year since he started the business with the logo."
+        "text": "The business went on to generate more than $200K annually after launch, giving the brand a strong early foundation."
       }
     ],
     "slices": [
@@ -275,11 +275,11 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Domo Visualizer is short for Dish Visualization Tool for Order Management"
+        "text": "Supported an internal Dish data-visualization tool that helped teams understand order-management flows more clearly."
       },
       {
         "type": "list-item",
-        "text": "Refreshed CSS layout for React.js and D3 data visualization Dish internal web application."
+        "text": "Refreshed the front-end experience around the React and D3 application so the interface felt clearer, more usable, and easier to work with."
       }
     ],
     "slices": [
@@ -316,15 +316,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Full revamped how we built our sites based on this project using CSS Modules and removed all the Tailwind and Bootstrap elemnts."
+        "text": "Used this project to keep refining a more maintainable website architecture built around CSS Modules and reusable patterns."
       },
       {
         "type": "list-item",
-        "text": "Also focused wrapping sections to also be re-usable components."
+        "text": "Wrapped layouts and content sections into reusable components to make delivery cleaner and more consistent."
       },
       {
         "type": "list-item",
-        "text": "Re-used this repo for all current templates moving forward."
+        "text": "Helped strengthen the template approach we could carry into future firm websites."
       }
     ],
     "link": {
@@ -377,15 +377,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Created re-usable ReactJS components."
+        "text": "Built reusable components that made the site easier to scale and maintain across a more complex content structure."
       },
       {
         "type": "list-item",
-        "text": "Scaling using themer"
+        "text": "Worked within the existing theme system while improving consistency and delivery speed."
       },
       {
         "type": "list-item",
-        "text": "Connected to Headless Wordpress CMS"
+        "text": "Connected the front end to a headless WordPress CMS so editors could manage content without sacrificing flexibility."
       }
     ],
     "link": {
@@ -436,15 +436,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Second website built with Great Jakes, first site built from the beginning."
+        "text": "One of the first full-site builds I helped take from the ground up at Great Jakes, which made it a key early delivery project."
       },
       {
         "type": "list-item",
-        "text": "Worked a on the Header a lot."
+        "text": "Spent extra time refining high-visibility navigation and header behavior so the experience felt more polished and easier to use."
       },
       {
         "type": "list-item",
-        "text": "Award Winning."
+        "text": "The finished work went on to receive industry recognition, which made it a strong proof point for the team."
       }
     ],
     "link": {
@@ -495,15 +495,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "First website built with Great Jakes, jumped in mid-build."
+        "text": "Jumped into this project mid-build and got up to speed quickly inside Great Jakes’ proprietary React-based theme system."
       },
       {
         "type": "list-item",
-        "text": "Had learn how their proprietary react template Themer worked."
+        "text": "Adapted to an unfamiliar delivery model while helping move the site toward launch without losing momentum."
       },
       {
         "type": "list-item",
-        "text": "Award Winning."
+        "text": "The finished site went on to earn industry recognition, making it an important early project in that environment."
       }
     ],
     "link": {
@@ -553,15 +553,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Client was having issues with her old Wordpress website."
+        "text": "Helped replace an aging travel site that had become difficult to manage and no longer supported the business well."
       },
       {
         "type": "list-item",
-        "text": "Recreated and updated site on Duda CMS."
+        "text": "Rebuilt the experience on Duda CMS to give the client a cleaner, easier-to-update site with a more current presentation."
       },
       {
         "type": "list-item",
-        "text": "Clients business increased by 250% since launch."
+        "text": "The refreshed site supported a major business lift, with reported growth of 250 percent after launch."
       }
     ],
     "link": {
@@ -616,11 +616,11 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Create Shopify pages and landing pages from mockup, with best SEO practices."
+        "text": "Built Shopify pages and landing experiences from approved designs with a focus on conversion, clarity, and solid SEO fundamentals."
       },
       {
         "type": "list-item",
-        "text": "Build reusable custom widgets/plugins in JavaScript, jQuery, Liquid, HTML and CSS."
+        "text": "Created reusable custom widgets and plugins so the team could move faster without rebuilding the same functionality each time."
       }
     ],
     "link": {
@@ -676,11 +676,11 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Code and animate HTML5 banners from mockup, optimize files under 125kb."
+        "text": "Built and animated HTML5 banner campaigns from approved creative while keeping assets performant and platform-compliant."
       },
       {
         "type": "list-item",
-        "text": "Supervise DCO brand standards across all Dish verticals, including Dish, Sling, OnTech, Dish Outdoors, Dish Latino, Dish Commercial and Dish Wireless."
+        "text": "Helped maintain DCO quality and brand consistency across multiple Dish business lines and campaign variations."
       }
     ],
     "slices": [
@@ -718,11 +718,11 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "ReactNativeJS mobile application that helps find rooftop bars and restaurants near you."
+        "text": "Built a mobile app concept for discovering rooftop bars and restaurants based on location and local context."
       },
       {
         "type": "list-item",
-        "text": "Built the Backend API in MongoDB."
+        "text": "Handled both the app experience and the backend API layer, using the project to connect product thinking with implementation."
       }
     ],
     "link": {
@@ -763,15 +763,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Created re-usable ReactJS components."
+        "text": "Built reusable components that supported a cleaner, more scalable implementation for a large-content law firm site."
       },
       {
         "type": "list-item",
-        "text": "Scaling using themer"
+        "text": "Worked within the team’s theme system while improving consistency and making the build easier to extend."
       },
       {
         "type": "list-item",
-        "text": "Connected to Headless Wordpress CMS"
+        "text": "Connected the experience to a headless WordPress CMS so content teams could manage updates more flexibly."
       }
     ],
     "link": {
@@ -825,15 +825,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Full revamped how we built our sites based on this project using CSS Modules and removed all the Tailwind and Bootstrap elemnts."
+        "text": "Used this build to keep pushing toward a cleaner shared architecture based on CSS Modules instead of heavier framework overlap."
       },
       {
         "type": "list-item",
-        "text": "Also focused wrapping sections to also be re-usable components."
+        "text": "Wrapped common sections into reusable patterns so the team could move faster without sacrificing consistency."
       },
       {
         "type": "list-item",
-        "text": "Re-used this repo for all current templates moving forward."
+        "text": "The implementation helped reinforce a template strategy we could reuse across later site launches."
       }
     ],
     "link": {
@@ -887,15 +887,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Full revamped how we built our sites based on this project using CSS Modules and removed all the Tailwind and Bootstrap elements."
+        "text": "Helped refine a stronger website foundation built around CSS Modules and reusable implementation patterns."
       },
       {
         "type": "list-item",
-        "text": "Also focused wrapping sections to also be re-usable components."
+        "text": "Focused on making sections modular so future delivery work would be faster and easier to maintain."
       },
       {
         "type": "list-item",
-        "text": "Re-used this repo for all current templates moving forward."
+        "text": "The project contributed to a more repeatable template system for later launches."
       }
     ],
     "link": {
@@ -949,15 +949,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Created re-usable ReactJS components."
+        "text": "Built reusable components that supported a more scalable implementation across a complex law firm site."
       },
       {
         "type": "list-item",
-        "text": "Scaling using themer"
+        "text": "Worked inside the existing theme system while improving flexibility and consistency."
       },
       {
         "type": "list-item",
-        "text": "Connected to Headless Wordpress CMS"
+        "text": "Connected the front end to a headless WordPress CMS to support a cleaner publishing workflow."
       }
     ],
     "link": {
@@ -1011,15 +1011,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Designed this website from scratch in Figma."
+        "text": "Designed the site from scratch in Figma, shaping both the visual direction and the user experience."
       },
       {
         "type": "list-item",
-        "text": "With designs approved, started web development using Duda CMS."
+        "text": "Turned the approved design into a live Duda CMS build that gave the business a more credible and effective web presence."
       },
       {
         "type": "list-item",
-        "text": "Since website launch, daily site views have increased by 400%."
+        "text": "After launch, daily site views reportedly increased by 400 percent."
       }
     ],
     "link": {
@@ -1072,15 +1072,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "First Project with API connections"
+        "text": "An early project built around the idea of turning a single word into creative prompts and inspiration."
       },
       {
         "type": "list-item",
-        "text": "JavaScript app that helps you find rhymes and inspiration from a single word."
+        "text": "Created a JavaScript experience that combined rhyme search, video, and image content into one lightweight tool."
       },
       {
         "type": "list-item",
-        "text": "Connected (3) REST API: Datamuse API, YouTube API and Pixbay API"
+        "text": "Connected multiple external APIs, which made it a useful early exercise in integrations and front-end product thinking."
       }
     ],
     "link": {
@@ -1117,15 +1117,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Client needed a logo for his car club"
+        "text": "Created a logo for a car club that wanted something custom, recognizable, and rooted in the group’s identity."
       },
       {
         "type": "list-item",
-        "text": "Started from from a sketch drawing and turned it a logo the group was extremely pleased with."
+        "text": "Started from a rough sketch and shaped it into a finished mark the group could rally around."
       },
       {
         "type": "list-item",
-        "text": "The logo has since been used for stickers, hoodies and banners."
+        "text": "The identity was later used across stickers, hoodies, and banners, giving the club a stronger visual presence."
       }
     ],
     "slices": [

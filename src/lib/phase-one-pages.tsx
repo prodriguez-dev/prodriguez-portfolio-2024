@@ -297,23 +297,23 @@ const pages: Record<string, PhaseOnePageContent> = {
         {
           icon: "01",
           title: "Solutions Architecture",
-          body: "Turn messy requirements into clear technical direction and a plan the team can actually execute.",
+          body: "Turn messy requirements into clear technical direction, sharper priorities, and a plan the team can actually execute.",
         },
         {
           icon: "02",
-          title: "Frontend Engineering",
-          body: "Build frontend experiences that look sharp, work well, and hold up in production.",
+          title: "Technical Discovery & Demos",
+          body: "Help teams and stakeholders understand what matters, what is possible, and how the solution should come together.",
         },
         {
           icon: "03",
           title: "Client-Facing Delivery",
-          body: "Keep business goals, stakeholder expectations, and technical execution moving in the same direction.",
+          body: "Keep business goals, stakeholder expectations, and technical execution moving in the same direction from first conversation through launch.",
         },
       ],
     },
     homeProjects: {
       heading: "Featured Projects",
-      body: "A few projects that show how I work across architecture, frontend execution, and client-facing delivery.",
+      body: "A few projects that show how I work across solution design, technical execution, and client-facing delivery.",
       items: latestProjects,
     },
     homeTestimonials: {
@@ -353,9 +353,9 @@ const pages: Record<string, PhaseOnePageContent> = {
       role: "Solutions Architect / Sales Engineer / Developer Evangelist",
       paragraphs: [
         "I help teams turn technical complexity into clear direction, especially when the work sits between discovery, architecture, demos, and delivery.",
-        "My best work happens in the gap between business goals and implementation -- figuring out what actually needs to be built, how to explain it, and how to keep momentum once the room is aligned. I bring a mix of client-facing technical leadership, hands-on engineering background, and presentation instincts that makes me useful in high-trust conversations.",
-        "That includes enterprise platforms, APIs and integrations, modern frontend systems, and the kind of technical translation that keeps projects from getting lost in jargon or vague requirements. I’m comfortable leading discovery, shaping solution direction, running demos, answering hard questions live, and getting close enough to the work to keep the plan honest.",
-        "My background in stage performance and communication sharpened the part of the job that a lot of technical teams underrate -- making people feel confident about where they’re going and why.",
+        "My best work happens in the gap between business goals and implementation -- figuring out what actually needs to be built, how to explain it, and how to keep momentum once the room is aligned. I bring a mix of client-facing technical leadership, hands-on engineering depth, and presentation instincts that makes me useful in high-trust conversations.",
+        "That includes enterprise platforms, APIs and integrations, solution design, and the kind of technical translation that keeps projects from getting lost in jargon or vague requirements. I’m comfortable leading discovery, shaping solution direction, running demos, answering hard questions live, and getting close enough to the work to keep the plan honest.",
+        "My engineering background helps me stay credible with builders. My communication background helps me make the work understandable to everyone else. That combination is the point.",
       ],
       avatar: aboutHeadshot,
       certifications: ["Salesforce Admin", "Salesforce Dev", "AWS", "Unqork"],
@@ -432,10 +432,10 @@ const pages: Record<string, PhaseOnePageContent> = {
           location: "New York, NY",
           timePeriod: "Jul 2021–Sep 2024",
           summary:
-            "Modernized enterprise SaaS platforms and custom web applications for global law firms, improving scalability, maintainability, and delivery speed.",
+            "Modernized enterprise SaaS platforms and digital products for global law firms, improving scalability, maintainability, and delivery speed.",
           bullets: [
             "Re-architected a multi-tenant platform, improving scalability by 35% and creating a stronger foundation for long-term growth.",
-            "Increased annual project output by 250% through frontend upgrades and reusable component architecture.",
+            "Increased annual project output by 250% through platform upgrades and reusable component architecture.",
             "Reduced technical debt by 30% and mentored a distributed team of 10 engineers across active delivery work.",
           ],
         },
@@ -458,7 +458,7 @@ const pages: Record<string, PhaseOnePageContent> = {
           location: "Denver, CO",
           timePeriod: "Jul 2018–Jun 2021",
           summary:
-            "Led frontend development for DISH e-commerce experiences, campaign launches, and high-traffic retail initiatives where performance and conversion mattered.",
+            "Led technical delivery for DISH e-commerce experiences, campaign launches, and high-traffic retail initiatives where performance and conversion mattered.",
           bullets: [
             "Helped drive a 164% year-over-year sales increase during a major Black Friday / Cyber Monday redesign.",
             "Built a custom Shopify component ecosystem that supported a 20% increase in new business acquisitions.",
@@ -981,7 +981,7 @@ function ExperienceSection({ heading, items }: { heading: string; items: Experie
       <SectionEyebrow className="text-[1.08rem] tracking-[0.16em] text-[#b85b17]">Career</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">{heading}</DisplayHeading>
       <p className="mt-4 max-w-[62ch] text-[17px] leading-8 text-[#4f4a44] md:text-[18px]">
-        A mix of architecture, frontend engineering, and client-facing delivery across enterprise platforms, agency work, and founder-led projects.
+        A mix of architecture, solution design, technical delivery, and client-facing work across enterprise platforms, agency environments, and founder-led projects.
       </p>
       <ExperienceAccordion items={items} />
     </SectionShell>

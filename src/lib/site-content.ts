@@ -8,7 +8,7 @@ export type SiteSettings = {
   navItems: SiteLink[];
   cta: SiteLink;
   socialLinks: Array<{
-    platform: "github" | "linkedin" | "twitter";
+    platform: "github" | "linkedin";
     href: string;
   }>;
 };
@@ -41,7 +41,6 @@ export const siteSettings: SiteSettings = {
       platform: "linkedin",
       href: "https://www.linkedin.com/in/paul-rodriguez-dev/",
     },
-    { platform: "twitter", href: "https://x.com/prodriguez_dev" },
   ],
 };
 

@@ -26,7 +26,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <div className="mt-10 space-y-4">
+    <div className="mt-10 space-y-5">
       {items.map((item, index) => {
         const isOpen = index === openIndex;
 
@@ -34,7 +34,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
           <article
             key={`${item.title}-${item.institution}`}
             className={clsx(
-              "overflow-hidden rounded-[16px] border bg-white shadow-[0_2px_16px_rgba(0,0,0,0.05)] transition duration-200",
+              "overflow-hidden rounded-[16px] border bg-white shadow-[0_2px_14px_rgba(0,0,0,0.045)] transition duration-200",
               isOpen
                 ? "-translate-y-[1px] border-[#bdb8ae] shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
                 : "border-[#e0dbd0] hover:-translate-y-[1px] hover:border-[#bdb8ae] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)]",
@@ -43,7 +43,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? -1 : index)}
-              className="flex w-full flex-col gap-3 px-6 py-6 text-left md:flex-row md:items-start md:justify-between"
+              className="flex w-full flex-col gap-3 px-6 py-5 text-left md:flex-row md:items-center md:justify-between"
             >
               <div>
                 <h3 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2rem,4vw,3rem)] font-black uppercase italic leading-none text-[#111111]">
@@ -51,14 +51,14 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
                 </h3>
                 <div className="mt-2 text-[20px] font-black italic text-[#c4621a]">{item.institution}</div>
               </div>
-              <div className="flex items-start gap-6 md:text-right">
-                <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#7a7570] md:text-[15px]">
+              <div className="flex items-center gap-5 md:text-right">
+                <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#67625c] md:text-[15px]">
                   {item.timePeriod && <div>{item.timePeriod}</div>}
                   {item.location && <div className="mt-1">{item.location}</div>}
                 </div>
                 <span
                   className={clsx(
-                    "mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#e0dbd0] text-[#c4621a] transition-transform duration-200",
+                    "inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#d6cfc3] bg-[#f8f5ef] text-[#c4621a] transition-transform duration-200",
                     isOpen && "rotate-180 border-[#c4621a]",
                   )}
                   aria-hidden="true"
@@ -73,11 +73,11 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
                 isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-70",
               )}
             >
-              <div className="overflow-hidden px-6 pb-6 pt-1">
-                {item.summary && <p className="max-w-[72ch] text-[17px] leading-8 text-[#2a2723] md:text-[18px] md:leading-8">{item.summary}</p>}
-                <ul className="mt-4 space-y-3 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
+              <div className="overflow-hidden px-6 pb-6 pt-0">
+                {item.summary && <p className="max-w-[68ch] text-[17px] leading-8 text-[#3b3732] md:text-[18px] md:leading-8">{item.summary}</p>}
+                <ul className="mt-4 max-w-[68ch] space-y-3.5 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
                   {item.bullets.map((line) => (
-                    <li key={line} className="flex items-start gap-3">
+                    <li key={line} className="flex items-start gap-3.5">
                       <span className="mt-[0.5em] text-[12px] leading-none text-[#c4621a]">●</span>
                       <span>{line}</span>
                     </li>

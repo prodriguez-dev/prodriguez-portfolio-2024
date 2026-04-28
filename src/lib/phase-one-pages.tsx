@@ -858,14 +858,14 @@ function HomeContactCtaSectionBlock({ section }: { section: HomeContactCtaSectio
 function BiographySectionBlock({ biography }: { biography: BiographySection }) {
   return (
     <SectionShell className="py-24">
-      <div className="grid gap-10 md:grid-cols-[320px,1fr] md:gap-12">
+      <div className="grid gap-10 md:grid-cols-[340px,minmax(0,780px)] md:gap-14 md:justify-between">
         <div>
           {biography.avatar?.url && (
             <div className="relative aspect-square overflow-hidden rounded-[16px] border border-[#e0dbd0] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.05)]">
               <Image src={biography.avatar.url} alt={biography.avatar.alt || biography.heading} fill className="object-cover" />
             </div>
           )}
-          <div className="mt-6 space-y-3 text-[15px] font-bold uppercase tracking-[0.08em] text-[#111111]">
+          <div className="mt-6 space-y-3 text-[15px] font-bold uppercase tracking-[0.08em] text-[#111111] md:text-[16px]">
             {biography.socialLinks.map((link) => (
               <Link key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block text-[#111111] transition hover:text-[#8b5a2b]">
                 {link.label}
@@ -873,18 +873,18 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
             ))}
           </div>
           <div className="mt-8">
-            <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#67625c]">Certifications</div>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="text-[14px] font-extrabold uppercase tracking-[0.18em] text-[#5f5a54]">Certifications</div>
+            <div className="mt-3 flex flex-wrap gap-2.5">
               {biography.certifications.map((item) => (
-                <span key={item} className="rounded-full bg-[#ece8df] px-3.5 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#5f5a54]">{item}</span>
+                <span key={item} className="rounded-full bg-[#ece8df] px-4 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#4f4a44] md:text-[14px]">{item}</span>
               ))}
             </div>
           </div>
           <div className="mt-6">
-            <div className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#67625c]">Languages</div>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="text-[14px] font-extrabold uppercase tracking-[0.18em] text-[#5f5a54]">Languages</div>
+            <div className="mt-3 flex flex-wrap gap-2.5">
               {biography.languages.map((item) => (
-                <span key={item} className="rounded-full bg-[#ece8df] px-3.5 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#5f5a54]">{item}</span>
+                <span key={item} className="rounded-full bg-[#ece8df] px-4 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.05em] text-[#4f4a44] md:text-[14px]">{item}</span>
               ))}
             </div>
           </div>
@@ -893,15 +893,15 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
           <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3rem,9vw,6.5rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] text-[#111111]">
             {biography.heading}
           </h1>
-          <div className="mt-4 break-words font-[var(--font-sofia-sans-condensed)] text-[15px] font-extrabold uppercase italic tracking-[0.16em] text-[#c4621a] sm:text-[16px]">
+          <div className="mt-5 break-words font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.16em] text-[#b85b17] sm:text-[18px]">
             {biography.role}
           </div>
-          <div className="mt-8 max-w-3xl space-y-5 text-[17px] leading-8 text-[#111111] md:text-[18px] md:leading-8">
+          <div className="mt-9 max-w-[72ch] space-y-6 text-[18px] leading-8 text-[#1f1c18] md:text-[19px] md:leading-9">
             {biography.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-12 flex flex-wrap gap-4">
             <Link href={biography.primaryCta.href} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-[10px] bg-[#c4621a] px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90">
               {biography.primaryCta.label}
             </Link>
@@ -980,6 +980,9 @@ function ExperienceSection({ heading, items }: { heading: string; items: Experie
     <SectionShell className="py-24">
       <SectionEyebrow className="text-[1.08rem] tracking-[0.16em] text-[#b85b17]">Career</SectionEyebrow>
       <DisplayHeading className="text-[#111111]">{heading}</DisplayHeading>
+      <p className="mt-4 max-w-[62ch] text-[17px] leading-8 text-[#4f4a44] md:text-[18px]">
+        A mix of architecture, frontend engineering, and client-facing delivery across enterprise platforms, agency work, and founder-led projects.
+      </p>
       <ExperienceAccordion items={items} />
     </SectionShell>
   );

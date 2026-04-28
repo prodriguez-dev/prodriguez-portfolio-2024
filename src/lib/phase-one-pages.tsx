@@ -313,7 +313,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     },
     homeProjects: {
       heading: "Featured Projects",
-      body: "A few projects that show how I work across solution design, technical execution, and client-facing delivery.",
+      body: "A few projects that show how I work across solution design, integrations, and client-facing delivery.",
       items: latestProjects,
     },
     homeTestimonials: {
@@ -352,10 +352,10 @@ const pages: Record<string, PhaseOnePageContent> = {
       heading: "Paul Rodriguez",
       role: "Solutions Architect / Sales Engineer / Developer Evangelist",
       paragraphs: [
-        "I help teams turn technical complexity into clear direction, especially when the work sits between discovery, architecture, demos, and delivery.",
-        "My best work happens in the gap between business goals and implementation -- figuring out what actually needs to be built, how to explain it, and how to keep momentum once the room is aligned. I bring a mix of client-facing technical leadership, hands-on engineering depth, and presentation instincts that makes me useful in high-trust conversations.",
-        "That includes enterprise platforms, APIs and integrations, solution design, and the kind of technical translation that keeps projects from getting lost in jargon or vague requirements. I’m comfortable leading discovery, shaping solution direction, running demos, answering hard questions live, and getting close enough to the work to keep the plan honest.",
-        "My engineering background helps me stay credible with builders. My communication background helps me make the work understandable to everyone else. That combination is the point.",
+        "I work at the intersection of technology, communication, and trust.",
+        "My background spans frontend engineering, solution architecture, enterprise platforms, and hands-on delivery, but the roles that fit me best are Solutions Architect, Sales Engineer, and Developer Evangelist. I do my best work when I’m helping people make sense of complex technical ideas, leading discovery conversations, and turning unclear requirements into plans teams can actually execute.",
+        "A lot of my work sits between clients, stakeholders, and engineering teams. I’m comfortable leading presentations, answering live questions, shaping demos, and helping technical conversations become more concrete and useful. That mix of technical depth and communication is a big part of what I bring.",
+        "My experience includes APIs and integrations, technical discovery, enterprise application design, and client-facing delivery. Recent work includes financial and insurance platforms, investor onboarding systems, digital purchase flows, and other high-trust workflows where usability, compliance, and operational reality all have to line up.",
       ],
       avatar: aboutHeadshot,
       certifications: ["Salesforce Admin", "Salesforce Dev", "AWS", "Unqork"],
@@ -418,12 +418,13 @@ const pages: Record<string, PhaseOnePageContent> = {
           location: "New York, NY",
           timePeriod: "Oct 2024–Present",
           summary:
-            "Lead technical discovery and solution design for enterprise financial and insurance platforms, with a focus on high-trust workflows, integrations, and stakeholder alignment.",
+            "Lead technical discovery and solution architecture for financial services and insurance platforms, helping clients turn complex requirements into secure, production-ready applications.",
           bullets: [
-            "Architect client-facing systems involving onboarding flows, APIs, and high-trust transaction paths where technical choices directly affect usability, risk, and revenue.",
-            "Built an end-to-end annuities calculator for American National that supports complex investment workflows in under 10 minutes.",
-            "Led a high-risk migration on a business-critical dashboard while maintaining production stability and removing third-party licensing costs.",
-            "Bridge business, product, and engineering conversations so the plan stays clear enough to sell, build, and defend.",
+            "Define implementation strategy, API integrations, and workflow architecture with clients, Application Engineers, and delivery teams.",
+            "Support public-facing annuity purchase flows tied to $8M+ in annuity investments, including identity checks, beneficiary workflows, funding, summary, and e-signature.",
+            "Architect integrations across identity verification, onboarding, and financial platform systems to support secure application and purchase journeys.",
+            "Support private-fund investor onboarding across 24 fund workflows facilitating $16M+ in investment activity, including subscription documents, legal review, signing, and final packet generation.",
+            "Improve platform readiness through solutions like Save as ZIP and cloud-based upload handling for file-size and timeout constraints.",
           ],
         },
         {

@@ -1020,12 +1020,12 @@ function ReferencesSectionBlock({ section }: { section: ReferenceSection }) {
       <div className="grid gap-4 md:grid-cols-2">
         {section.items.map((item) => (
           <article key={item.name} className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)]">
-            <p className="text-[18px] italic leading-8 text-[#111111]">&ldquo;{item.quote}&rdquo;</p>
-            <div className="mt-6 flex items-center gap-4">
+            <p className="text-[20px] italic leading-9 text-[#111111]">&ldquo;{item.quote}&rdquo;</p>
+            <div className="mt-8 flex items-center gap-4">
               <AvatarBubble image={item.avatar} name={item.name} />
               <div>
-                <div className="font-bold uppercase tracking-[0.08em] text-[#111111]">{item.name}</div>
-                <div className="text-sm text-[#7a7570]">{item.role}</div>
+                <div className="text-[14px] font-bold uppercase tracking-[0.08em] text-[#111111]">{item.name}</div>
+                <div className="text-[15px] text-[#7a7570]">{item.role}</div>
               </div>
             </div>
           </article>

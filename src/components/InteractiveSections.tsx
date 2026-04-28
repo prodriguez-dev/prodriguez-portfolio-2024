@@ -187,7 +187,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                           href={item.link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-6 inline-flex rounded-[10px] bg-[#c4621a] px-5.5 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:opacity-90"
+                          className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-[#c4621a] px-6 py-3.5 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white shadow-[0_8px_24px_rgba(196,98,26,0.18)] transition hover:-translate-y-0.5 hover:opacity-90"
                         >
                           Visit Site ↗
                         </Link>

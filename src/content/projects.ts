@@ -2,6 +2,112 @@ import type { ContentEntry } from "@/lib/content-types";
 
 export const projects: ContentEntry[] = [
   {
+    "uid": "american-national-annuity-application",
+    "title": "American National Annuity Application",
+    "date": "2026-04-28",
+    "clientName": "Auxo Solutions / American National",
+    "href": "/projects/american-national-annuity-application",
+    "hoverImage": {
+      "url": "/images/prismic/american-national-annuity-application.jpg",
+      "alt": "American National annuity application case study graphic",
+      "dimensions": {
+        "width": 1200,
+        "height": 800
+      }
+    },
+    "tags": [
+      "Solutions Architecture",
+      "Workflow Design",
+      "Integrations",
+      "Fintech",
+      "Insurance",
+      "UX",
+      "Ungork"
+    ],
+    "description": [
+      {
+        "type": "list-item",
+        "text": "Led solution architecture and implementation for a guided digital annuity quote, onboarding, and purchase experience in Ungork."
+      },
+      {
+        "type": "list-item",
+        "text": "Built a multi-step flow spanning quote, account setup, beneficiary details, funding, summary, and e-signature while keeping the experience compliant and easier to complete."
+      },
+      {
+        "type": "list-item",
+        "text": "Coordinated identity, eligibility, and platform integrations to support a production-ready experience tied to $8.2M in annuity purchases, with purchases up to $3M and funding in as little as 10 minutes."
+      }
+    ],
+    "link": {
+      "href": "https://annuitydirect.americannational.com/app/calculator#/display/calculator",
+      "label": "View Live App",
+      "external": true
+    },
+    "slices": [
+      {
+        "type": "text",
+        "blocks": [
+          {
+            "type": "heading2",
+            "text": "Project overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "This project brought together solution architecture, workflow design, implementation planning, and cross-functional delivery for a digital annuity experience built in Ungork. The goal was to guide users from initial quote through purchase with less friction, stronger trust signals, and cleaner operational handoff."
+          },
+          {
+            "type": "paragraph",
+            "text": "I worked across approved designs, stakeholder needs, and technical constraints to help shape a flow that could support real money movement, identity verification, funding, and e-signature without feeling like a compliance maze."
+          },
+          {
+            "type": "heading2",
+            "text": "What I owned"
+          },
+          {
+            "type": "list-item",
+            "text": "Built the public-facing annuity purchase flow in Ungork, supporting $8.2M in annuity purchases."
+          },
+          {
+            "type": "list-item",
+            "text": "Designed workflows across quote, onboarding, beneficiary, funding, summary, and e-signature."
+          },
+          {
+            "type": "list-item",
+            "text": "Coordinated identity verification, eligibility checks, and platform integrations needed to make the experience production-ready."
+          },
+          {
+            "type": "list-item",
+            "text": "Partnered with product, application engineers, and stakeholders to launch a compliant flow that balanced business goals with user clarity."
+          },
+          {
+            "type": "heading2",
+            "text": "Why it matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "This is the kind of work I like most -- translating a messy mix of business rules, technical dependencies, and user-risk moments into a guided experience that people can actually complete. It sits right at the intersection of architecture, customer trust, workflow design, and delivery."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "image": {
+          "url": "/images/prismic/american-national-annuity-application.jpg",
+          "alt": "American National annuity application case study graphic",
+          "dimensions": {
+            "width": 1200,
+            "height": 800
+          }
+        },
+        "href": "https://annuitydirect.americannational.com/app/calculator#/display/calculator"
+      },
+      {
+        "type": "navigation",
+        "navType": "Project"
+      }
+    ]
+  },
+  {
     "uid": "dish---branding-microsite",
     "title": "Dish - Branding Microsite",
     "date": "2019-03-25",

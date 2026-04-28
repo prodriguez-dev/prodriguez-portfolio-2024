@@ -219,7 +219,7 @@ const jamiePhillipsAvatar: SiteImage = {
   dimensions: { width: 512, height: 512 },
 };
 
-const latestProjects = ["larkin-hoffman", "sullivan-worcester", "moses-singer"]
+const latestProjects = ["american-national-annuity-application", "larkin-hoffman", "sullivan-worcester"]
   .map((uid) => projects.find((project) => project.uid === uid))
   .filter(Boolean) as ContentEntry[];
 
@@ -236,10 +236,12 @@ const projectCategoryMap: Record<string, string> = {
   "domo-visualizer": "Web Application",
   "dynamic-html5-banners": "DCO Banners",
   roofstops: "Web Application",
+  "american-national-annuity-application": "Web Application",
 };
 
 const featuredAwardUids = new Set(["moses-singer", "polsinelli"]);
 const projectListOrder = [
+  "american-national-annuity-application",
   "larkin-hoffman",
   "sullivan-worcester",
   "tarter-krinsky",

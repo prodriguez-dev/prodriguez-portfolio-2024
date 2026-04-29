@@ -22,12 +22,12 @@ export const projects: ContentEntry[] = [
       "Fintech",
       "Insurance",
       "UX",
-      "Ungork"
+      "Unqork"
     ],
     "description": [
       {
         "type": "list-item",
-        "text": "Led solution architecture and implementation for a guided digital annuity quote, onboarding, and purchase experience in Ungork."
+        "text": "Led solution architecture and implementation for a guided digital annuity quote, onboarding, and purchase experience in Unqork."
       },
       {
         "type": "list-item",
@@ -53,7 +53,7 @@ export const projects: ContentEntry[] = [
           },
           {
             "type": "paragraph",
-            "text": "This project brought together solution architecture, workflow design, implementation planning, and cross-functional delivery for a digital annuity experience built in Ungork. The goal was to guide users from initial quote through purchase with less friction, stronger trust signals, and cleaner operational handoff."
+            "text": "This project brought together solution architecture, workflow design, implementation planning, and cross-functional delivery for a digital annuity experience built in Unqork. The goal was to guide users from initial quote through purchase with less friction, stronger trust signals, and cleaner operational handoff."
           },
           {
             "type": "paragraph",
@@ -65,7 +65,7 @@ export const projects: ContentEntry[] = [
           },
           {
             "type": "list-item",
-            "text": "Built the public-facing annuity purchase flow in Ungork, supporting $8.2M in annuity purchases."
+            "text": "Built the public-facing annuity purchase flow in Unqork, supporting $8.2M in annuity purchases."
           },
           {
             "type": "list-item",

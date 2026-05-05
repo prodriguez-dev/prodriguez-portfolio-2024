@@ -364,7 +364,7 @@ const pages: Record<string, PhaseOnePageContent> = {
       languages: ["English", "Spanish"],
       socialLinks: [
         { label: "GitHub ↗", href: "https://github.com/prodriguez-dev" },
-        { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/paul-rodriguez-dev/" },
+        { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/prodriguez-dev/" },
       ],
       primaryCta: { label: "Download Resume", href: "/Paul-Rodriguez-Resume.pdf" },
       secondaryCta: { label: "Get in Touch", href: "/contact" },
@@ -612,7 +612,7 @@ const pages: Record<string, PhaseOnePageContent> = {
         "If you need help with architecture, frontend work, technical discovery, speaking, or Silver Tech Help, send a note and I'll get back to you.",
       cards: [
         { label: "Email", value: "paul@prodriguez.dev", href: "mailto:paul@prodriguez.dev" },
-        { label: "LinkedIn", value: "linkedin.com/in/paul-rodriguez-dev", href: "https://www.linkedin.com/in/paul-rodriguez-dev/" },
+        { label: "LinkedIn", value: "linkedin.com/in/prodriguez-dev", href: "https://www.linkedin.com/in/prodriguez-dev/" },
         { label: "GitHub", value: "github.com/prodriguez-dev", href: "https://github.com/prodriguez-dev" },
       ],
       formSubjects: [

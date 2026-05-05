@@ -39,7 +39,7 @@ export const siteSettings: SiteSettings = {
     { platform: "github", href: "https://github.com/prodriguez-dev" },
     {
       platform: "linkedin",
-      href: "https://www.linkedin.com/in/paul-rodriguez-dev/",
+      href: "https://www.linkedin.com/in/prodriguez-dev/",
     },
   ],
 };

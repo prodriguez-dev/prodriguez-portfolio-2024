@@ -219,7 +219,7 @@ const jamiePhillipsAvatar: SiteImage = {
   dimensions: { width: 512, height: 512 },
 };
 
-const latestProjects = ["american-national-annuity-application", "larkin-hoffman", "sullivan-worcester"]
+const latestProjects = ["workflow-intelligence-kit", "american-national-annuity-application", "larkin-hoffman"]
   .map((uid) => projects.find((project) => project.uid === uid))
   .filter(Boolean) as ContentEntry[];
 
@@ -237,10 +237,12 @@ const projectCategoryMap: Record<string, string> = {
   "dynamic-html5-banners": "DCO Banners",
   roofstops: "Web Application",
   "american-national-annuity-application": "Web Application",
+  "workflow-intelligence-kit": "AI Workflow Automation",
 };
 
 const featuredAwardUids = new Set(["moses-singer", "polsinelli"]);
 const projectListOrder = [
+  "workflow-intelligence-kit",
   "american-national-annuity-application",
   "larkin-hoffman",
   "sullivan-worcester",
@@ -271,26 +273,26 @@ const pages: Record<string, PhaseOnePageContent> = {
   home: {
     uid: "home",
     path: "/",
-    title: "Paul Rodriguez | Solutions Architect",
-    metaTitle: "Paul Rodriguez | Solutions Architect",
+    title: "Paul Rodriguez | AI Solutions Architect & Solutions Engineer",
+    metaTitle: "Paul Rodriguez | AI Solutions Architect & Solutions Engineer",
     metaDescription:
-      "Solutions Architect, Sales Engineer, and Developer Evangelist helping teams turn technical complexity into clear direction.",
+      "Solutions Architect and Solutions Engineer helping teams design AI-enabled workflows, enterprise SaaS solutions, integrations, and customer-facing technical systems.",
     hero: {
       firstName: "Paul",
       lastName: "Rodriguez",
-      tagline: "Solutions Architect / Sales Engineer / Developer Evangelist",
-      body: "I help teams turn technical complexity into clear direction, from discovery and architecture to demos, delivery, and communication.",
+      tagline: "AI Solutions Architect / Solutions Engineer / Workflow Automation",
+      body: "I help teams turn complex business problems into AI-enabled workflows, enterprise software solutions, and clear technical execution plans.",
       primaryCta: { label: "Contact", href: "/contact" },
-      secondaryCta: { label: "About", href: "/about" },
+      secondaryCta: { label: "AI Workflows", href: "/ai-workflows" },
       stageImage,
       standingImage,
     },
     homeStats: {
       items: [
-        { value: "12+", label: "Years Experience" },
-        { value: "$100K+", label: "Projects Delivered" },
+        { value: "10+", label: "Years Experience" },
+        { value: "24", label: "Brookfield Funds Supported" },
         { value: "164%", label: "Sales Lift (DISH)" },
-        { value: "98%", label: "Client Retention" },
+        { value: "AI", label: "Workflow Automation" },
       ],
     },
     homeServices: {
@@ -298,24 +300,24 @@ const pages: Record<string, PhaseOnePageContent> = {
       items: [
         {
           icon: "01",
-          title: "Solutions Architecture",
-          body: "Turn messy requirements into clear technical direction, sharper priorities, and a plan the team can actually execute.",
+          title: "Solutions Architecture & Discovery",
+          body: "Turn messy requirements into clear technical direction, sharper priorities, demos, validation plans, and implementation paths the team can actually execute.",
         },
         {
           icon: "02",
-          title: "Technical Discovery & Demos",
-          body: "Help teams and stakeholders understand what matters, what is possible, and how the solution should come together.",
+          title: "AI Workflow Automation",
+          body: "Design practical AI-enabled workflows for lead qualification, customer intake, CRM hygiene, deal intelligence, QuickBooks workflows, research, and internal operations.",
         },
         {
           icon: "03",
-          title: "Client-Facing Delivery",
-          body: "Keep business goals, stakeholder expectations, and technical execution moving in the same direction from first conversation through launch.",
+          title: "Customer-Facing Technical Validation",
+          body: "Help sales, product, engineering, and customer stakeholders understand what matters, what is possible, and how the solution should come together.",
         },
       ],
     },
     homeProjects: {
       heading: "Featured Projects",
-      body: "A few projects that show how I work across solution design, integrations, and client-facing delivery.",
+      body: "A few projects that show how I work across AI workflow automation, solution design, integrations, and client-facing delivery.",
       items: latestProjects,
     },
     homeTestimonials: {
@@ -339,7 +341,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     },
     homeContactCta: {
       heading: "Let's build something great.",
-      body: "If you need help with architecture, frontend work, or untangling something complicated, let's talk.",
+      body: "If you need help with AI workflow automation, solution architecture, technical discovery, or untangling something complicated, let's talk.",
       cta: { label: "Get in touch", href: "/contact" },
     },
   },
@@ -347,20 +349,20 @@ const pages: Record<string, PhaseOnePageContent> = {
     uid: "about",
     path: "/about",
     title: "About Paul Rodriguez",
-    metaTitle: "About Paul Rodriguez | Solutions Architect",
+    metaTitle: "About Paul Rodriguez | AI Solutions Architect",
     metaDescription:
-      "Learn about Paul Rodriguez, a Solutions Architect focused on discovery, enterprise systems, stakeholder alignment, and practical technical strategy.",
+      "Learn about Paul Rodriguez, a Solutions Architect focused on AI workflows, technical discovery, enterprise systems, stakeholder alignment, and practical technical strategy.",
     biography: {
       heading: "Paul Rodriguez",
-      role: "Solutions Architect / Sales Engineer / Developer Evangelist",
+      role: "AI Solutions Architect / Solutions Engineer / Workflow Automation",
       paragraphs: [
         "I work at the intersection of technology, communication, and trust.",
-        "My background spans frontend engineering, solution architecture, enterprise platforms, and hands-on delivery, but the roles that fit me best are Solutions Architect, Sales Engineer, and Developer Evangelist. I do my best work when I’m helping people make sense of complex technical ideas, leading discovery conversations, and turning unclear requirements into plans teams can actually execute.",
-        "A lot of my work sits between clients, stakeholders, and engineering teams. I’m comfortable leading presentations, answering live questions, shaping demos, and helping technical conversations become more concrete and useful. That mix of technical depth and communication is a big part of what I bring.",
-        "My experience includes APIs and integrations, technical discovery, enterprise application design, and client-facing delivery. Recent work includes financial and insurance platforms, investor onboarding systems, digital purchase flows, and other high-trust workflows where usability, compliance, and operational reality all have to line up.",
+        "My background spans solution architecture, enterprise platforms, frontend engineering, and hands-on delivery, but the roles that fit me best are Solutions Architect, Solutions Engineer, and applied AI workflow roles. I do my best work when I’m helping people make sense of complex technical ideas, leading discovery conversations, and turning unclear requirements into systems teams can actually use.",
+        "A lot of my work sits between clients, sales, product, and engineering teams. I’m comfortable leading presentations, answering live questions, shaping demos, and helping technical conversations become more concrete and useful. That mix of technical depth and communication is a big part of what I bring.",
+        "Recent work includes financial and insurance platforms, investor onboarding systems, digital purchase flows, paid AI workflow automation for real estate and insurance clients, a CPA assistant connected to QuickBooks and client intake, and a HubSpot-connected assistant for CRM cleanup and deal intelligence.",
       ],
       avatar: aboutHeadshot,
-      certifications: ["Salesforce Admin", "Salesforce Dev", "AWS", "Unqork"],
+      certifications: ["Salesforce Admin", "Salesforce Dev"],
       languages: ["English", "Spanish"],
       socialLinks: [
         { label: "GitHub ↗", href: "https://github.com/prodriguez-dev" },
@@ -374,41 +376,42 @@ const pages: Record<string, PhaseOnePageContent> = {
         [
           "Solution Architecture",
           "Technical Discovery",
-          "Enterprise Platforms",
-          "Salesforce",
-          "AWS",
-          "API Integrations",
-          "React",
-          "Next.js",
+          "AI Workflow Automation",
+          "OpenAI API",
+          "Anthropic API",
+          "Gemini API",
+          "HubSpot",
+          "QuickBooks",
         ],
         [
-          "TypeScript",
-          "GSAP",
-          "Accessibility",
-          "Client Workshops",
+          "RAG Workflows",
+          "Prompt Engineering",
+          "n8n",
+          "Zapier",
+          "Make",
+          "Technical Discovery",
           "Stakeholder Alignment",
-          "Pre-Sales",
-          "Information Architecture",
-          "Design Systems",
+          "Solution Architecture",
         ],
       ],
       pills: [
         "Solution Architecture",
         "Technical Discovery",
-        "Enterprise Platforms",
+        "AI Workflow Automation",
+        "OpenAI API",
+        "Anthropic API",
+        "Gemini API",
+        "Prompt Engineering",
+        "RAG Workflows",
+        "HubSpot",
+        "QuickBooks",
+        "n8n",
+        "Zapier",
+        "Make",
+        "Technical Discovery",
+        "Stakeholder Alignment",
         "API Integrations",
         "Salesforce",
-        "AWS",
-        "React",
-        "Next.js",
-        "TypeScript",
-        "GSAP",
-        "Accessibility",
-        "Pre-Sales",
-        "Client Workshops",
-        "Stakeholder Alignment",
-        "Design Systems",
-        "Information Architecture",
       ],
     },
     experiences: {
@@ -443,16 +446,16 @@ const pages: Record<string, PhaseOnePageContent> = {
           ],
         },
         {
-          title: "Founder & Solutions Architect",
+          title: "Principal Solutions Architect",
           institution: "Smart Code Shop",
           location: "Denver, CO",
           timePeriod: "Mar 2016–Present",
           summary:
-            "Lead discovery, architecture, and delivery for small businesses and founder-led teams that need practical technical direction and hands-on execution.",
+            "Advise owners of successful service-based businesses on technology strategy, automation, customer experience, and digital transformation.",
           bullets: [
-            "Translate early client conversations into websites, applications, and digital systems that are actually scoped, buildable, and useful.",
-            "Own the full arc from positioning and UX through engineering and launch, which keeps strategy tied to execution.",
-            "Help clients move from vague requirements to clear decisions without burying the work in process.",
+            "Built the Workflow Intelligence Kit, a reusable foundation for deploying client-specific AI assistants across real estate, insurance, accounting, and sales operations use cases.",
+            "Implemented paid AI workflow solutions supporting lead qualification, customer intake, proposal generation, research, content workflows, CRM cleanup, deal intelligence, QuickBooks workflows, and internal knowledge management.",
+            "Integrated AI assistants with business systems including HubSpot and QuickBooks to improve CRM hygiene, operational visibility, client intake, and decision support.",
           ],
         },
         {
@@ -557,6 +560,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     projectsPage: {
       categories: [
         "All",
+        "AI Workflow Automation",
         "Website Development",
         "Web Application",
         "E-Commerce",
@@ -565,6 +569,31 @@ const pages: Record<string, PhaseOnePageContent> = {
       ],
       items: projectList,
     },
+  },
+  "ai-workflows": {
+    uid: "ai-workflows",
+    path: "/ai-workflows",
+    title: "AI Workflows",
+    metaTitle: "AI Workflow Automation | Paul Rodriguez",
+    metaDescription:
+      "AI workflow automation work from Paul Rodriguez across lead qualification, customer intake, CRM hygiene, deal intelligence, QuickBooks workflows, research, and internal knowledge systems.",
+    textSections: [
+      {
+        heading: "AI Workflow Automation",
+        text: [
+          { type: "paragraph", text: "I build practical AI workflows for service businesses and internal operators: lead qualification, customer intake, proposal generation, research, content workflows, competitive intelligence, document analysis, CRM hygiene, and knowledge management." },
+          { type: "paragraph", text: "Recent work includes paid real-estate and insurance client workflows, a CPA assistant connected to QuickBooks and client intake, and a HubSpot-connected sales assistant for CRM cleanup and deal intelligence." },
+          { type: "paragraph", text: "The approach is intentionally human-in-the-loop. AI helps gather context, draft, classify, summarize, and surface next steps; humans stay in control of decisions, client communication, and high-trust operations." },
+        ],
+      },
+      {
+        heading: "Tools & Patterns",
+        text: [
+          { type: "paragraph", text: "Hands-on tools include ChatGPT, Claude, Gemini, Perplexity, OpenAI API, Anthropic API, Google AI Studio / Gemini API, Cursor, Claude Code, Codex, GitHub Copilot, n8n, Zapier, Make, HubSpot, QuickBooks, Obsidian workflows, RAG patterns, and internal wiki/search assistants." },
+          { type: "paragraph", text: "The Workflow Intelligence Kit provides the reusable foundation for these client-specific assistants: shared install patterns, workspace structure, reference skills, scheduled pulses, and integration discipline that can be adapted to each business domain." },
+        ],
+      },
+    ],
   },
   "silver-tech-help": {
     uid: "silver-tech-help",
@@ -609,7 +638,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     contact: {
       headingLines: ["Let's Build", "Something", "Great."],
       intro:
-        "If you need help with architecture, frontend work, technical discovery, speaking, or Silver Tech Help, send a note and I'll get back to you.",
+        "If you need help with AI workflow automation, solution architecture, technical discovery, or customer-facing technical validation, send a note and I'll get back to you.",
       cards: [
         { label: "Email", value: "paul@prodriguez.dev", href: "mailto:paul@prodriguez.dev" },
         { label: "LinkedIn", value: "linkedin.com/in/prodriguez-dev", href: "https://www.linkedin.com/in/prodriguez-dev/" },
@@ -617,10 +646,9 @@ const pages: Record<string, PhaseOnePageContent> = {
       ],
       formSubjects: [
         "General Inquiry",
+        "AI Workflow Automation",
         "Solutions Architecture Engagement",
-        "Frontend Development Project",
-        "Speaking Engagement",
-        "Silver Tech Help",
+        "Technical Discovery / Demo Support",
         "Other",
       ],
     },

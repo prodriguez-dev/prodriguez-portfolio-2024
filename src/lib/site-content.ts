@@ -23,13 +23,13 @@ export type SiteDocument = {
 
 export const siteSettings: SiteSettings = {
   name: "Paul Rodriguez",
-  metaTitle: "Paul Rodriguez | Solutions Architect",
+  metaTitle: "Paul Rodriguez | AI Solutions Architect & Solutions Engineer",
   metaDescription:
-    "Solutions Architect focused on technical discovery, enterprise platforms, and scalable system design across client-facing, high-stakes digital initiatives.",
+    "Solutions Architect and Solutions Engineer helping teams design AI-enabled workflows, enterprise SaaS solutions, integrations, and customer-facing technical systems.",
   navItems: [
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
-    { label: "Silver Tech Help", href: "/silver-tech-help" },
+    { label: "AI Workflows", href: "/ai-workflows" },
   ],
   cta: {
     label: "Contact",
@@ -47,17 +47,17 @@ export const siteSettings: SiteSettings = {
 export const phaseOnePages: Record<string, SiteDocument> = {
   home: {
     uid: "home",
-    title: "Paul Rodriguez | Solutions Architect",
-    metaTitle: "Paul Rodriguez | Solutions Architect",
+    title: "Paul Rodriguez | AI Solutions Architect & Solutions Engineer",
+    metaTitle: "Paul Rodriguez | AI Solutions Architect & Solutions Engineer",
     metaDescription:
-      "Solutions Architect focused on technical discovery, enterprise platforms, and scalable system design across client-facing, high-stakes digital initiatives.",
+      "Solutions Architect and Solutions Engineer helping teams design AI-enabled workflows, enterprise SaaS solutions, integrations, and customer-facing technical systems.",
   },
   about: {
     uid: "about",
     title: "About Paul Rodriguez",
     metaTitle: "About Paul Rodriguez | Solutions Architect",
     metaDescription:
-      "Learn about Paul Rodriguez, a Solutions Architect focused on discovery, enterprise systems, stakeholder alignment, and practical technical strategy.",
+      "Learn about Paul Rodriguez, a Solutions Architect focused on AI workflows, technical discovery, enterprise systems, stakeholder alignment, and practical technical strategy.",
   },
   contact: {
     uid: "contact",
@@ -71,7 +71,14 @@ export const phaseOnePages: Record<string, SiteDocument> = {
     title: "Projects",
     metaTitle: "Projects | Paul Rodriguez",
     metaDescription:
-      "Selected projects and case studies from Paul Rodriguez across product, platform, and client-facing technical work.",
+      "Selected projects and case studies from Paul Rodriguez across AI workflow automation, solution architecture, enterprise platforms, and client-facing technical work.",
+  },
+  "ai-workflows": {
+    uid: "ai-workflows",
+    title: "AI Workflows",
+    metaTitle: "AI Workflow Automation | Paul Rodriguez",
+    metaDescription:
+      "AI workflow automation work from Paul Rodriguez across lead qualification, customer intake, CRM hygiene, deal intelligence, QuickBooks workflows, research, and internal knowledge systems.",
   },
   'silver-tech-help': {
     uid: "silver-tech-help",

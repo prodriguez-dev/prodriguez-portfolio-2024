@@ -2,6 +2,90 @@ import type { ContentEntry } from "@/lib/content-types";
 
 export const projects: ContentEntry[] = [
   {
+    "uid": "workflow-intelligence-kit",
+    "title": "Workflow Intelligence Kit",
+    "date": "2026-06-01",
+    "clientName": "Smart Code Shop",
+    "href": "/projects/workflow-intelligence-kit",
+    "tags": [
+      "AI Workflow Automation",
+      "AI Agents",
+      "HubSpot",
+      "QuickBooks",
+      "OpenAI API",
+      "Anthropic API",
+      "Gemini",
+      "RAG",
+      "n8n"
+    ],
+    "description": [
+      {
+        "type": "list-item",
+        "text": "Built a reusable foundation for deploying client-specific AI assistants across real estate, insurance, accounting, and sales operations use cases."
+      },
+      {
+        "type": "list-item",
+        "text": "Implemented paid AI workflows supporting lead qualification, customer intake, proposal generation, research, CRM cleanup, deal intelligence, QuickBooks workflows, document analysis, and internal knowledge management."
+      },
+      {
+        "type": "list-item",
+        "text": "Designed the system around human-in-the-loop review, scoped integrations, reusable workspace patterns, and practical business outcomes rather than demo-only chatbot behavior."
+      }
+    ],
+    "link": {
+      "href": "https://github.com/prodriguez-dev/workflow-intelligence-kit",
+      "label": "View GitHub Repo",
+      "external": true
+    },
+    "slices": [
+      {
+        "type": "text",
+        "blocks": [
+          {
+            "type": "heading2",
+            "text": "Project overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Workflow Intelligence Kit is the reusable foundation behind client-specific AI assistants for service-business operations. It started as a generic agent base and is being shaped into a practical implementation kit for CRM cleanup, deal intelligence, QuickBooks-supported intake, research, proposal support, document analysis, and knowledge workflows."
+          },
+          {
+            "type": "heading2",
+            "text": "What it supports"
+          },
+          {
+            "type": "list-item",
+            "text": "HubSpot-connected sales workflows for CRM cleanup, account context, and deal intelligence."
+          },
+          {
+            "type": "list-item",
+            "text": "CPA workflows connected to QuickBooks and client intake patterns."
+          },
+          {
+            "type": "list-item",
+            "text": "Paid real-estate and insurance client workflows for lead qualification, research, intake, and operational support."
+          },
+          {
+            "type": "list-item",
+            "text": "Internal wiki/search assistants, RAG patterns, and human-in-the-loop review checkpoints."
+          },
+          {
+            "type": "heading2",
+            "text": "Why it matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "The work shows applied AI solutioning in the place businesses actually feel pain: repetitive intake, messy CRM data, scattered knowledge, slow research, proposal prep, and unclear handoffs. The value is not a generic chatbot. It is a repeatable way to turn business workflows into guided AI-assisted operations with sensible guardrails."
+          }
+        ]
+      },
+      {
+        "type": "navigation",
+        "navType": "Project"
+      }
+    ]
+  },
+  {
     "uid": "american-national-annuity-application",
     "title": "American National Annuity Application",
     "date": "2026-04-28",

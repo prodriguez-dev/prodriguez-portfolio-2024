@@ -11,7 +11,7 @@ type ImageLike = {
   } | null;
 } | null | undefined;
 
-const SITE_URL = "https://prodriguez.dev";
+const SITE_URL = "https://www.prodriguez.dev";
 const SITE_NAME = siteSettings.name;
 const DEFAULT_DESCRIPTION = siteSettings.metaDescription;
 

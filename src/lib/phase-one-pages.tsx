@@ -219,24 +219,29 @@ const jamiePhillipsAvatar: SiteImage = {
   dimensions: { width: 512, height: 512 },
 };
 
-const latestProjects = ["workflow-intelligence-kit", "american-national-annuity-application", "larkin-hoffman"]
+const latestProjects = [
+  "workflow-intelligence-kit",
+  "american-national-annuity-application",
+  "larkin-hoffman",
+  "dish---branding-microsite",
+]
   .map((uid) => projects.find((project) => project.uid === uid))
   .filter(Boolean) as ContentEntry[];
 
 const projectCategoryMap: Record<string, string> = {
-  "larkin-hoffman": "Website Development",
-  "sullivan-worcester": "Website Development",
+  "larkin-hoffman": "Enterprise SaaS / Platform Modernization",
+  "sullivan-worcester": "Enterprise SaaS / Platform Modernization",
   "tarter-krinsky": "Website Development",
   "moses-singer": "Website Development",
   polsinelli: "Website Development",
   "susan-bruce-travel": "Website Development",
   "happier-homes": "Logo & Print",
   "ontech-smart-services": "E-Commerce",
-  "dish---branding-microsite": "Website Development",
-  "domo-visualizer": "Web Application",
+  "dish---branding-microsite": "Customer-Facing Commerce",
+  "domo-visualizer": "Internal Tools / Data Visualization",
   "dynamic-html5-banners": "DCO Banners",
   roofstops: "Web Application",
-  "american-national-annuity-application": "Web Application",
+  "american-national-annuity-application": "Solutions Architecture",
   "workflow-intelligence-kit": "AI Workflow Automation",
 };
 
@@ -245,15 +250,15 @@ const projectListOrder = [
   "workflow-intelligence-kit",
   "american-national-annuity-application",
   "larkin-hoffman",
+  "dish---branding-microsite",
+  "domo-visualizer",
   "sullivan-worcester",
   "tarter-krinsky",
   "moses-singer",
   "polsinelli",
+  "ontech-smart-services",
   "susan-bruce-travel",
   "happier-homes",
-  "ontech-smart-services",
-  "dish---branding-microsite",
-  "domo-visualizer",
   "dynamic-html5-banners",
   "roofstops",
 ];
@@ -290,7 +295,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     homeStats: {
       items: [
         { value: "10+", label: "Years Experience" },
-        { value: "24", label: "Brookfield Funds Supported" },
+        { value: "24", label: "Private Fund Workflows" },
         { value: "164%", label: "Sales Lift (DISH)" },
         { value: "AI", label: "Workflow Automation" },
       ],
@@ -317,7 +322,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     },
     homeProjects: {
       heading: "Featured Projects",
-      body: "A few projects that show how I work across AI workflow automation, solution design, integrations, and client-facing delivery.",
+      body: "A few projects that show the arc: applied AI workflows, regulated solution architecture, enterprise platform modernization, and customer-facing commerce delivery.",
       items: latestProjects,
     },
     homeTestimonials: {
@@ -356,9 +361,11 @@ const pages: Record<string, PhaseOnePageContent> = {
       heading: "Paul Rodriguez",
       role: "AI Solutions Architect / Solutions Engineer / Workflow Automation",
       paragraphs: [
-        "I work at the intersection of technology, communication, and trust.",
-        "My background spans solution architecture, enterprise platforms, frontend engineering, and hands-on delivery, but the roles that fit me best are Solutions Architect, Solutions Engineer, and applied AI workflow roles. I do my best work when I’m helping people make sense of complex technical ideas, leading discovery conversations, and turning unclear requirements into systems teams can actually use.",
-        "A lot of my work sits between clients, sales, product, and engineering teams. I’m comfortable leading presentations, answering live questions, shaping demos, and helping technical conversations become more concrete and useful. That mix of technical depth and communication is a big part of what I bring.",
+        "The role I keep finding myself in is translator.",
+        "Not language translation, although I do speak Spanish. I mean the kind of translation that happens when business leaders, engineers, clients, and users are all describing the same problem in different ways.",
+        "That is where I tend to be useful: technical discovery, workflow design, solution architecture, and customer-facing delivery.",
+        "My background spans solution architecture, enterprise platforms, frontend engineering, and hands-on delivery, but the roles that fit me best are Solutions Architect, Solutions Engineer, and applied AI workflow roles. I’m strongest when a team has a messy business problem, unclear requirements, skeptical stakeholders, and needs someone who can turn that into a concrete solution path.",
+        "The pattern is usually the same: listen carefully, map the workflow, separate what matters from what is noise, design the system, shape the demo or prototype, and keep humans in control where judgment, risk, or client communication matter.",
         "Recent work includes financial and insurance platforms, investor onboarding systems, digital purchase flows, paid AI workflow automation for real estate and insurance clients, a CPA assistant connected to QuickBooks and client intake, and a HubSpot-connected assistant for CRM cleanup and deal intelligence.",
       ],
       avatar: aboutHeadshot,
@@ -408,7 +415,7 @@ const pages: Record<string, PhaseOnePageContent> = {
         "n8n",
         "Zapier",
         "Make",
-        "Technical Discovery",
+        "Sales Engineering",
         "Stakeholder Alignment",
         "API Integrations",
         "Salesforce",
@@ -426,9 +433,9 @@ const pages: Record<string, PhaseOnePageContent> = {
             "Lead technical discovery and solution architecture for financial services and insurance platforms, helping clients turn complex requirements into secure, production-ready applications.",
           bullets: [
             "Define implementation strategy, API integrations, and workflow architecture with clients, Application Engineers, and delivery teams.",
-            "Support public-facing annuity purchase flows tied to $8M+ in annuity investments, including identity checks, beneficiary workflows, funding, summary, and e-signature.",
+            "Shape public-facing annuity purchase flows tied to $8M+ in annuity investments, including identity checks, beneficiary workflows, funding, summary, and e-signature.",
             "Architect integrations across identity verification, onboarding, and financial platform systems to support secure application and purchase journeys.",
-            "Support private-fund investor onboarding across 24 fund workflows facilitating $16M+ in investment activity, including subscription documents, legal review, signing, and final packet generation.",
+            "Guide private-fund investor onboarding across 24 fund workflows facilitating $16M+ in investment activity, including subscription documents, legal review, signing, and final packet generation.",
             "Improve platform readiness through solutions like Save as ZIP and cloud-based upload handling for file-size and timeout constraints.",
           ],
         },
@@ -556,11 +563,15 @@ const pages: Record<string, PhaseOnePageContent> = {
     title: "Projects",
     metaTitle: "Projects | Paul Rodriguez",
     metaDescription:
-      "Selected projects and case studies from Paul Rodriguez across product, platform, and client-facing technical work.",
+      "Selected projects and case studies from Paul Rodriguez across AI workflow automation, solution architecture, enterprise platforms, and customer-facing technical delivery.",
     projectsPage: {
       categories: [
         "All",
         "AI Workflow Automation",
+        "Solutions Architecture",
+        "Enterprise SaaS / Platform Modernization",
+        "Customer-Facing Commerce",
+        "Internal Tools / Data Visualization",
         "Website Development",
         "Web Application",
         "E-Commerce",
@@ -638,7 +649,7 @@ const pages: Record<string, PhaseOnePageContent> = {
     contact: {
       headingLines: ["Let's Build", "Something", "Great."],
       intro:
-        "If you need help with AI workflow automation, solution architecture, technical discovery, or customer-facing technical validation, send a note and I'll get back to you.",
+        "If you need help with AI workflow automation, solution architecture, technical discovery, demo strategy, or customer-facing technical validation, send a note and I'll get back to you.",
       cards: [
         { label: "Email", value: "paul@prodriguez.dev", href: "mailto:paul@prodriguez.dev" },
         { label: "LinkedIn", value: "linkedin.com/in/prodriguez-dev", href: "https://www.linkedin.com/in/prodriguez-dev/" },
@@ -800,11 +811,11 @@ function HomeProjectsSectionBlock({ section }: { section: HomeProjectsSection })
           View all projects
         </Link>
       </div>
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {section.items.map((project) => (
           <Link
             key={project.uid}
-            href="/projects"
+            href={project.href || "/projects"}
             className="overflow-hidden rounded-[20px] border border-[#e0dbd0] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.05)] transition hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
           >
             {project.hoverImage?.url && (
@@ -1214,6 +1225,14 @@ export function getPhaseOneMetadata(uid: string): Metadata | null {
   return {
     title,
     description,
+    ...(uid === "silver-tech-help"
+      ? {
+          robots: {
+            index: false,
+            follow: false,
+          },
+        }
+      : {}),
     alternates: {
       canonical: page.path,
     },

@@ -7,6 +7,14 @@ export const projects: ContentEntry[] = [
     "date": "2026-06-01",
     "clientName": "Smart Code Shop",
     "href": "/projects/workflow-intelligence-kit",
+    "hoverImage": {
+      "url": "/images/prismic/workflow-intelligence-kit-ai-workflow-automation-hero.jpg",
+      "alt": "Workflow Intelligence Kit AI workflow automation hero image",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
     "tags": [
       "AI Workflow Automation",
       "AI Agents",
@@ -38,6 +46,17 @@ export const projects: ContentEntry[] = [
       "external": true
     },
     "slices": [
+      {
+        "type": "image",
+        "image": {
+          "url": "/images/prismic/workflow-intelligence-kit-ai-workflow-automation-hero.jpg",
+          "alt": "Workflow Intelligence Kit AI workflow automation hero image",
+          "dimensions": {
+            "width": 1280,
+            "height": 720
+          }
+        }
+      },
       {
         "type": "text",
         "blocks": [
@@ -206,23 +225,25 @@ export const projects: ContentEntry[] = [
       }
     },
     "tags": [
+      "Customer-Facing Commerce",
+      "Stakeholder Alignment",
+      "Launch Readiness",
       "JavaScript",
-      "jQuery",
-      "SASS",
-      "CSS",
-      "HTML",
       "GSAP",
-      "Scroll Magic",
       "SVG Animation"
     ],
     "description": [
       {
         "type": "list-item",
-        "text": "Refined the front-end build and animation system for a branded Dish microsite designed to feel polished, fast, and stable."
+        "text": "Supported a customer-facing Dish brand experience where polish, performance, stakeholder alignment, and launch readiness all mattered."
       },
       {
         "type": "list-item",
-        "text": "Worked with internal stakeholders and Dish IT to support launch requirements, hosting needs, and downloadable brand assets."
+        "text": "Worked with internal stakeholders and Dish IT to align hosting, downloadable brand assets, technical requirements, and release needs."
+      },
+      {
+        "type": "list-item",
+        "text": "Part of a broader DISH delivery track that included high-traffic commerce work, campaign launches, Shopify component systems, and conversion-focused digital experiences."
       }
     ],
     "link": {
@@ -231,6 +252,35 @@ export const projects: ContentEntry[] = [
       "external": true
     },
     "slices": [
+      {
+        "type": "text",
+        "blocks": [
+          {
+            "type": "heading2",
+            "text": "Project overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Dish brand microsite was one slice of a broader customer-facing commerce and digital delivery track. The work required more than clean front-end execution: it involved coordinating with stakeholders, understanding brand and launch constraints, and making sure the experience was stable enough for real public use."
+          },
+          {
+            "type": "heading2",
+            "text": "What I contributed"
+          },
+          {
+            "type": "list-item",
+            "text": "Refined the front-end build and animation system for a polished branded experience."
+          },
+          {
+            "type": "list-item",
+            "text": "Worked through hosting, IT, and asset-delivery requirements with internal stakeholders."
+          },
+          {
+            "type": "list-item",
+            "text": "Carried the same delivery discipline into DISH commerce work, campaign launches, Shopify components, and conversion-focused digital experiences."
+          }
+        ]
+      },
       {
         "type": "navigation",
         "navType": "Project"
@@ -314,10 +364,10 @@ export const projects: ContentEntry[] = [
       }
     },
     "tags": [
+      "Enterprise SaaS",
+      "Platform Modernization",
+      "Reusable Components",
       "ReactJS",
-      "JavaScript",
-      "SCSS",
-      "HTML",
       "CSS Modules",
       "Headless CMS",
       "Wordpress",
@@ -326,15 +376,15 @@ export const projects: ContentEntry[] = [
     "description": [
       {
         "type": "list-item",
-        "text": "Used this project to reset how our team built firm websites, replacing heavier styling dependencies with a cleaner CSS Modules approach."
+        "text": "Used this project to reset the Great Jakes build approach, replacing heavier styling dependencies with a cleaner CSS Modules and reusable-component architecture."
       },
       {
         "type": "list-item",
-        "text": "Structured layouts and sections as reusable components so the site was easier to scale and maintain."
+        "text": "Structured layouts and content sections as reusable patterns that improved scalability, maintainability, and delivery consistency across future firm websites."
       },
       {
         "type": "list-item",
-        "text": "The result became a stronger foundation for future templates and delivery work across the portfolio."
+        "text": "Good evidence of the platform-modernization side of my work: reducing technical debt, creating repeatable delivery paths, and making teams faster without making the system fragile."
       }
     ],
     "link": {
@@ -343,6 +393,35 @@ export const projects: ContentEntry[] = [
       "external": true
     },
     "slices": [
+      {
+        "type": "text",
+        "blocks": [
+          {
+            "type": "heading2",
+            "text": "Project overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Larkin Hoffman became a useful proof point for platform modernization work at Great Jakes. The project moved away from heavier styling dependencies and helped establish a cleaner component and CSS Modules pattern that could be reused across future builds."
+          },
+          {
+            "type": "heading2",
+            "text": "Why it matters"
+          },
+          {
+            "type": "list-item",
+            "text": "Reduced dependency weight and made the front-end foundation easier to reason about."
+          },
+          {
+            "type": "list-item",
+            "text": "Turned one site build into a repeatable delivery pattern for future enterprise client work."
+          },
+          {
+            "type": "list-item",
+            "text": "Shows the same operating mode I bring to solution architecture: simplify the system, make the path reusable, and leave the team with something sturdier than what it started with."
+          }
+        ]
+      },
       {
         "type": "image",
         "image": {

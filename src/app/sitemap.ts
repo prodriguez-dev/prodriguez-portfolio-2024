@@ -12,7 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const pages = [
     absolute("/"),
-    ...getPhaseOneStaticParams().map(({ uid }) => absolute(`/${uid}`)),
+    ...getPhaseOneStaticParams()
+      .filter(({ uid }) => uid !== "silver-tech-help")
+      .map(({ uid }) => absolute(`/${uid}`)),
     ...projectEntries.map((entry) => absolute(entry.href || `/projects/${entry.uid}`)),
   ];
 

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "clsx": "^2.1.0",
@@ -19,7 +20,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.12",
-    "@types/node": "^20",
+    "@types/node": "^22.20.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
@@ -31,6 +32,7 @@
     "sass": "^1.77.0",
     "stylelint-config-prettier": "^9.0.5",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.0.5"
   }
 }

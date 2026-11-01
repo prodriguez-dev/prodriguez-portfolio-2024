@@ -7,6 +7,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { projects } from "@/content/projects";
 import type { ContentEntry, RichTextBlock, SiteImage } from "@/lib/content-types";
+import { CONTACT_SUBJECTS } from "@/lib/contact-validation";
 import {
   absoluteUrl,
   buildDescription,
@@ -655,13 +656,7 @@ const pages: Record<string, PhaseOnePageContent> = {
         { label: "LinkedIn", value: "linkedin.com/in/prodriguez-dev", href: "https://www.linkedin.com/in/prodriguez-dev/" },
         { label: "GitHub", value: "github.com/prodriguez-dev", href: "https://github.com/prodriguez-dev" },
       ],
-      formSubjects: [
-        "General Inquiry",
-        "AI Workflow Automation",
-        "Solutions Architecture Engagement",
-        "Technical Discovery / Demo Support",
-        "Other",
-      ],
+      formSubjects: [...CONTACT_SUBJECTS],
     },
   },
 };

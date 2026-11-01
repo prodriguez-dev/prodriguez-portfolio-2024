@@ -6,7 +6,7 @@ This file is the single progress tracker. Execution sessions update it as they w
 
 - Branch: `claude/magical-hawking-b6qg2s` (Batch 1; see DECISIONS.md) · Last task commit: `e12ec80` · Updated 2026-11-01 (Batch 1 session).
 - Batch 1: P0-00 to P0-06 done locally; B1-PR open items are the preview `curl -I`, the live CSS grep after deploy, and Paul confirming Vercel env vars and Node version (answer 7).
-- Next task: B1-PR (open PR, Vercel preview checks, merge). Then Batch 2a (P1-01, Next 16), which is now the only way to clear the remaining 25 `next` advisories (see P0-01).
+- Next task: B1-PR, PR open at https://github.com/prodriguez-dev/prodriguez-portfolio-2024/pull/3 (Vercel preview checks, merge). Then Batch 2a (P1-01, Next 16), which is now the only way to clear the remaining 25 `next` advisories (see P0-01).
 - Blockers: none for code. The `pre-modernization` tag could not be pushed from the cloud session (see P0-00); Paul pushes it. Paul's answers (below) are needed before Batch 3-ui orphan handling (default exists) and Batch 5.
 
 ## Paul's answers (fill in; agents treat blank as "use the default in 07 §5")
@@ -41,7 +41,7 @@ Create `DECISIONS.md` in this directory on first judgment call. Reference entrie
 | P0-04 | Security headers; remove dead CORS block | done locally; preview check in B1-PR | `curl -I <preview>` shows nosniff, referrer-policy, permissions-policy, frame options, CSP-Report-Only; no console CSP violations on all pages | `curl -I localhost:3100/` (next start) shows all five headers; `OPTIONS /api/contact` returns no `Access-Control-*`. Chromium crawl of 27 sitemap URLs + `/silver-tech-help`: 0 CSP report-only violations, 0 console errors; a planted off-origin `<img>` was detected (negative control). Preview `curl -I` pending. B1 session. | 528e558 |
 | P0-05 | Contact hardening: shared validator, honeypot, 3 s minimum, generic errors, runtime/maxDuration | done | validator unit tests pass; curl: `{}` → 400, honeypot → 200 silent, valid → 200/503 per env; no provider text in responses | `npm test`: 18/18 (validator + route with mocked fetch; provider 401 body not echoed). curl on `next start` without key: `{}` 400, bad JSON 400, bad email 400, unknown subject 400, honeypot 200 `{ok:true}`, elapsedMs 1200 → 200, valid → 503 generic, 20k body → 413. Browser: empty-submit messages unchanged; honeypot off-screen, `aria-hidden`, not in tab order; valid submit sends `elapsedMs` ≥ 3000. Visible-text diff empty. Live 200 path needs the Vercel env (Paul, answer 7). B1 session. | d410d02 |
 | P0-06 | `engines`, `.nvmrc`, README deployment note | done | `npm ci` on Node 22 green; README updated | `engines.node` `>=22 <25`, `.nvmrc` `22`. `rm -rf node_modules && npm ci` on Node v22.23.4: green, no EBADENGINE. README: requirements, scripts, Vercel settings, env var names, rollback. Paul to confirm Node 22.x in Vercel. B1 session. | e12ec80 |
-| B1-PR | Open PR, merge, deploy; verify live headers and compiled CSS | todo | live `curl -I` and CSS grep recorded here | | |
+| B1-PR | Open PR, merge, deploy; verify live headers and compiled CSS | in-progress (PR opened: prodriguez-dev/prodriguez-portfolio-2024#3) | live `curl -I` and CSS grep recorded here | | |
 
 ## Batch 2a — Next 16 (`modernize/next16`)
 

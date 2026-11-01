@@ -99,7 +99,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
     return (
       <div className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:p-11">
         <div className="text-4xl">✉️</div>
-        <h3 className="mt-4 font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.4rem)] font-black uppercase italic leading-none text-[#111111]">
+        <h3 className="mt-4 font-sans-extra-condensed text-[clamp(2.2rem,5vw,3.4rem)] font-black uppercase italic leading-none text-[#111111]">
           Message Sent!
         </h3>
         <p className="mt-4 text-[17px] leading-8 text-[#4d4a45]">
@@ -122,7 +122,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
   return (
     <form onSubmit={handleSubmit} className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:p-11">
       <div className="mb-6">
-        <h2 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
+        <h2 className="font-sans-extra-condensed text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
           Start the conversation
         </h2>
         <p className="mt-3 text-[17px] leading-8 text-[#4d4a45]">

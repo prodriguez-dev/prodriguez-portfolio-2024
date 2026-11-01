@@ -14,7 +14,7 @@ export default function Footer({ settings }: FooterProps) {
         <div className="flex flex-col gap-8 border-b border-[#ddd6ca] pb-8 lg:flex-row lg:items-start lg:justify-between">
           <Link
             href="/"
-            className="font-[var(--font-sofia-sans-extra-condensed)] text-[24px] font-black uppercase italic tracking-[0.06em] text-[#111111] transition-colors hover:text-[#c4621a]"
+            className="font-sans-extra-condensed text-[24px] font-black uppercase italic tracking-[0.06em] text-[#111111] transition-colors hover:text-[#c4621a]"
           >
             {settings.name}
           </Link>

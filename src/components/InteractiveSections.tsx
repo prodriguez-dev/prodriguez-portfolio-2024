@@ -46,7 +46,7 @@ export function ExperienceAccordion({ items }: { items: ExperienceItem[] }) {
               className="flex w-full flex-col gap-3 px-6 py-5 text-left md:flex-row md:items-center md:justify-between"
             >
               <div>
-                <h3 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2rem,4vw,3rem)] font-black uppercase italic leading-none text-[#111111]">
+                <h3 className="font-sans-extra-condensed text-[clamp(2rem,4vw,3rem)] font-black uppercase italic leading-none text-[#111111]">
                   {item.title}
                 </h3>
                 <div className="mt-2 text-[20px] font-black italic text-[#c4621a]">{item.institution}</div>
@@ -142,7 +142,7 @@ export function ProjectsExplorer({ categories, items }: { categories: string[]; 
                 </div>
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(1.8rem,4vw,2.8rem)] font-black uppercase italic leading-none text-[#111111]">
+                    <h3 className="font-sans-extra-condensed text-[clamp(1.8rem,4vw,2.8rem)] font-black uppercase italic leading-none text-[#111111]">
                       {item.title}
                     </h3>
                     {item.award && (

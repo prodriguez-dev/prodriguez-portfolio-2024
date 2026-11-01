@@ -15,9 +15,7 @@
     "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1",
-    "react-reconciler": "^0.29.0",
-    "swiper": "^11.1.4"
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.12",

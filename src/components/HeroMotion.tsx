@@ -132,7 +132,7 @@ export default function HeroMotion({
     <div ref={containerRef} className="relative z-10 w-full max-w-[860px] lg:max-w-[660px] xl:max-w-[700px] 2xl:max-w-[760px] xl:pl-4 2xl:pl-8">
       <p
         ref={taglineRef}
-        className="mb-6 flex min-h-[24px] items-center font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.18em] text-[#f3ab68]"
+        className="mb-6 flex min-h-[24px] items-center font-sans-condensed text-[16px] font-extrabold uppercase italic tracking-[0.18em] text-[#f3ab68]"
       >
         <span>{typedTagline}</span>
         <span
@@ -140,7 +140,7 @@ export default function HeroMotion({
           className={clsx("ml-1 inline-block h-5 w-[2px] bg-[#f0a05a]", isTypingDone && "opacity-0")}
         />
       </p>
-      <h1 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3.9rem,12vw,10rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#ede9e1] sm:text-[clamp(5.5rem,10vw,11.5rem)] lg:text-[clamp(6.5rem,9vw,12rem)]">
+      <h1 className="font-sans-extra-condensed text-[clamp(3.9rem,12vw,10rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#ede9e1] sm:text-[clamp(5.5rem,10vw,11.5rem)] lg:text-[clamp(6.5rem,9vw,12rem)]">
         {[firstName, lastName].map((part, index) => (
           <span
             key={part}

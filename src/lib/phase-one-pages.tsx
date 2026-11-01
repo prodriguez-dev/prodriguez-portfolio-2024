@@ -7,6 +7,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { projects } from "@/content/projects";
 import type { ContentEntry, RichTextBlock, SiteImage } from "@/lib/content-types";
+import { CONTACT_SUBJECTS } from "@/lib/contact-validation";
 import {
   absoluteUrl,
   buildDescription,
@@ -655,13 +656,7 @@ const pages: Record<string, PhaseOnePageContent> = {
         { label: "LinkedIn", value: "linkedin.com/in/prodriguez-dev", href: "https://www.linkedin.com/in/prodriguez-dev/" },
         { label: "GitHub", value: "github.com/prodriguez-dev", href: "https://github.com/prodriguez-dev" },
       ],
-      formSubjects: [
-        "General Inquiry",
-        "AI Workflow Automation",
-        "Solutions Architecture Engagement",
-        "Technical Discovery / Demo Support",
-        "Other",
-      ],
+      formSubjects: [...CONTACT_SUBJECTS],
     },
   },
 };
@@ -692,7 +687,7 @@ function SectionEyebrow({
   return (
     <div
       className={clsx(
-        "mb-4 font-[var(--font-sofia-sans-condensed)] text-[0.95rem] font-extrabold uppercase italic tracking-[0.2em] text-[#c4621a]",
+        "mb-4 font-sans-condensed text-[0.95rem] font-extrabold uppercase italic tracking-[0.2em] text-[#c4621a]",
         className,
       )}
     >
@@ -705,7 +700,7 @@ function DisplayHeading({ children, className }: { children: React.ReactNode; cl
   return (
     <h2
       className={clsx(
-        "break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.5rem,11vw,7rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] sm:text-[clamp(3rem,6vw,7rem)]",
+        "break-words font-sans-extra-condensed text-[clamp(2.5rem,11vw,7rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] sm:text-[clamp(3rem,6vw,7rem)]",
         className,
       )}
     >
@@ -769,7 +764,7 @@ function HomeStatsSectionBlock({ section }: { section: HomeStatsSection }) {
       <div className="grid border-x border-b border-[#e0dbd0] md:grid-cols-4">
         {section.items.map((item, index) => (
           <div key={item.label} className={clsx("px-6 py-9", index < section.items.length - 1 && "border-b border-[#e0dbd0] md:border-b-0 md:border-r") }>
-            <div className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.5rem,5vw,4rem)] font-black uppercase italic leading-none text-[#c4621a]">
+            <div className="font-sans-extra-condensed text-[clamp(2.5rem,5vw,4rem)] font-black uppercase italic leading-none text-[#c4621a]">
               {item.value}
             </div>
             <div className="mt-2 text-[14px] font-bold uppercase tracking-[0.08em] text-[#67625c]">{item.label}</div>
@@ -788,8 +783,8 @@ function HomeServicesSectionBlock({ section }: { section: HomeServicesSection })
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         {section.items.map((item) => (
           <article key={item.title} className="rounded-[16px] border border-[#e0dbd0] bg-white p-10 shadow-[0_2px_16px_rgba(0,0,0,0.05)] transition hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
-            <div className="font-[var(--font-sofia-sans-extra-condensed)] text-[40px] font-black uppercase italic text-[#c4621a]">{item.icon}</div>
-            <h3 className="mt-4 font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2rem,4vw,2.6rem)] font-black uppercase italic leading-none text-[#111111]">{item.title}</h3>
+            <div className="font-sans-extra-condensed text-[40px] font-black uppercase italic text-[#c4621a]">{item.icon}</div>
+            <h3 className="mt-4 font-sans-extra-condensed text-[clamp(2rem,4vw,2.6rem)] font-black uppercase italic leading-none text-[#111111]">{item.title}</h3>
             <p className="mt-4 text-[15px] leading-7 text-[#4d4a45]">{item.body}</p>
           </article>
         ))}
@@ -831,7 +826,7 @@ function HomeProjectsSectionBlock({ section }: { section: HomeProjectsSection })
               <div className="text-sm font-bold uppercase tracking-[0.08em] text-[#7a7570]">
                 {project.clientName} · {project.date ? new Date(project.date).getFullYear() : ""}
               </div>
-              <h3 className="mt-3 font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
+              <h3 className="mt-3 font-sans-extra-condensed text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
                 {project.title}
               </h3>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -932,10 +927,10 @@ function BiographySectionBlock({ biography }: { biography: BiographySection }) {
           </div>
         </div>
         <div className="min-w-0">
-          <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(3rem,9vw,6.5rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] text-[#111111]">
+          <h1 className="break-words font-sans-extra-condensed text-[clamp(3rem,9vw,6.5rem)] font-black uppercase italic leading-[0.92] tracking-[-0.01em] text-[#111111]">
             {biography.heading}
           </h1>
-          <div className="mt-5 break-words font-[var(--font-sofia-sans-condensed)] text-[16px] font-extrabold uppercase italic tracking-[0.16em] text-[#b85b17] sm:text-[18px]">
+          <div className="mt-5 break-words font-sans-condensed text-[16px] font-extrabold uppercase italic tracking-[0.16em] text-[#b85b17] sm:text-[18px]">
             {biography.role}
           </div>
           <div className="mt-9 max-w-[72ch] space-y-6 text-[18px] leading-8 text-[#1f1c18] md:text-[19px] md:leading-9">
@@ -976,7 +971,7 @@ function SkillsSectionBlock({ skills }: { skills: SkillsSection }) {
                   <span
                     key={`${rowIndex}-${item}-${index}`}
                     className={clsx(
-                      "inline-flex items-center gap-4 font-[var(--font-sofia-sans-extra-condensed)] text-[44px] font-black uppercase italic leading-none",
+                      "inline-flex items-center gap-4 font-sans-extra-condensed text-[44px] font-black uppercase italic leading-none",
                       index % 5 === 4 ? "text-[#c4621a]" : "text-[#1e1e1e]",
                     )}
                   >
@@ -1093,7 +1088,7 @@ function SilverTechHeroSectionBlock({ section }: { section: SilverTechHeroSectio
       <div className="grid gap-8 md:grid-cols-[1fr,1fr] md:items-center">
         <div className="min-w-0">
           <SectionEyebrow className="text-[#b85b17]">Silver Tech Help</SectionEyebrow>
-          <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.9rem,13vw,9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,9vw,9rem)]">
+          <h1 className="break-words font-sans-extra-condensed text-[clamp(2.9rem,13vw,9rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,9vw,9rem)]">
             <span className="block">{section.headingTop}</span>
             <span className="block">{section.headingBottom}</span>
           </h1>
@@ -1135,7 +1130,7 @@ function SilverTechQuoteSectionBlock({ section }: { section: SilverTechQuoteSect
   return (
     <SectionShell className="py-24 overflow-x-clip">
       <div className="rounded-[24px] border border-[#e0dbd0] bg-white px-6 py-12 text-center shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:px-20 md:py-[72px]">
-        <p className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.25rem,10vw,6rem)] font-black uppercase italic leading-[0.95] tracking-[-0.01em] text-[#111111] break-words">
+        <p className="font-sans-extra-condensed text-[clamp(2.25rem,10vw,6rem)] font-black uppercase italic leading-[0.95] tracking-[-0.01em] text-[#111111] break-words">
           {section.quote}
         </p>
         <p className="mt-6 text-[15px] font-extrabold uppercase tracking-[0.14em] text-[#b85b17] md:text-[16px]">{section.attribution}</p>
@@ -1149,7 +1144,7 @@ function ContactSectionBlock({ contact }: { contact: ContactSection }) {
     <SectionShell className="py-24">
       <div className="grid gap-12 md:grid-cols-[1fr,1fr] md:gap-20">
         <div>
-          <h1 className="break-words font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.9rem,13vw,8rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,8vw,8rem)]">
+          <h1 className="break-words font-sans-extra-condensed text-[clamp(2.9rem,13vw,8rem)] font-black uppercase italic leading-[0.9] tracking-[-0.01em] text-[#111111] sm:text-[clamp(4rem,8vw,8rem)]">
             {contact.headingLines.map((line) => (
               <span key={line} className="block">{line}</span>
             ))}

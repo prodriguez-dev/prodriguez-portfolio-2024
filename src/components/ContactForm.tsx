@@ -1,20 +1,15 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
+import { type ContactErrors, type ContactValues, validateContact } from "@/lib/contact-validation";
 
 type ContactFormProps = {
   subjects: string[];
 };
 
-type FormState = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
-
-type FormErrors = Partial<Record<keyof FormState, string>>;
+type FormState = ContactValues;
+type FormErrors = ContactErrors;
 
 const initialState = (subjects: string[]): FormState => ({
   name: "",
@@ -23,37 +18,24 @@ const initialState = (subjects: string[]): FormState => ({
   message: "",
 });
 
-function validate(values: FormState): FormErrors {
-  const errors: FormErrors = {};
-
-  if (!values.name.trim()) errors.name = "Name is required.";
-  if (!values.email.trim()) {
-    errors.email = "Email is required.";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = "Enter a valid email address.";
-  }
-  if (!values.subject.trim()) errors.subject = "Subject is required.";
-  if (!values.message.trim()) {
-    errors.message = "Message is required.";
-  } else if (values.message.trim().length < 10) {
-    errors.message = "Message must be at least 10 characters.";
-  }
-
-  return errors;
-}
-
 export default function ContactForm({ subjects }: ContactFormProps) {
   const [values, setValues] = useState<FormState>(() => initialState(subjects));
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [company, setCompany] = useState("");
+  const mountedAt = useRef<number | null>(null);
+
+  useEffect(() => {
+    mountedAt.current = performance.now();
+  }, []);
 
   const hasSubjects = useMemo(() => subjects.length > 0, [subjects.length]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextErrors = validate(values);
+    const nextErrors = validateContact(values);
     setErrors(nextErrors);
     setSubmitError(null);
 
@@ -66,7 +48,11 @@ export default function ContactForm({ subjects }: ContactFormProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          company,
+          elapsedMs: mountedAt.current === null ? null : Math.round(performance.now() - mountedAt.current),
+        }),
       });
 
       const payload = await response.json().catch(() => ({}));
@@ -78,6 +64,8 @@ export default function ContactForm({ subjects }: ContactFormProps) {
       setIsSuccess(true);
       setValues(initialState(subjects));
       setErrors({});
+      setCompany("");
+      mountedAt.current = performance.now();
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : "Something went wrong. Please try again.");
     } finally {
@@ -99,7 +87,7 @@ export default function ContactForm({ subjects }: ContactFormProps) {
     return (
       <div className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:p-11">
         <div className="text-4xl">✉️</div>
-        <h3 className="mt-4 font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.4rem)] font-black uppercase italic leading-none text-[#111111]">
+        <h3 className="mt-4 font-sans-extra-condensed text-[clamp(2.2rem,5vw,3.4rem)] font-black uppercase italic leading-none text-[#111111]">
           Message Sent!
         </h3>
         <p className="mt-4 text-[17px] leading-8 text-[#4d4a45]">
@@ -122,12 +110,23 @@ export default function ContactForm({ subjects }: ContactFormProps) {
   return (
     <form onSubmit={handleSubmit} className="rounded-[20px] border border-[#e0dbd0] bg-white p-8 shadow-[0_2px_16px_rgba(0,0,0,0.05)] md:p-11">
       <div className="mb-6">
-        <h2 className="font-[var(--font-sofia-sans-extra-condensed)] text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
+        <h2 className="font-sans-extra-condensed text-[clamp(2.2rem,5vw,3.6rem)] font-black uppercase italic leading-none text-[#111111]">
           Start the conversation
         </h2>
         <p className="mt-3 text-[17px] leading-8 text-[#4d4a45]">
           Tell me what you&apos;re working on and I&apos;ll get back to you.
         </p>
+      </div>
+      {/* Honeypot: hidden from people and assistive tech; bots that fill it are dropped server-side. */}
+      <div aria-hidden="true" className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden">
+        <input
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={(event) => setCompany(event.target.value)}
+        />
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         <label className="block">

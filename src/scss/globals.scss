@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.sofia {
-  font-family: $sofia;
-}
-
-.sofia-cond {
-  font-family: $sofia-cond;
-}
-
-.sofia-extra-cond {
-  font-family: $sofia-extra-cond;
-}
-
 .background-master {
   @apply bg-gray-800;
 }

@@ -4,9 +4,10 @@ This file is the single progress tracker. Execution sessions update it as they w
 
 ## Current state
 
-- Branch: `master` · Last commit: `c6bec99` · Audit completed 2026-11-01 · No implementation started.
-- Next task: Batch 1, P0-01.
-- Blockers: none for Batch 1. Paul's answers (below) are needed before Batch 3-ui orphan handling (default exists) and Batch 5.
+- Branch: `claude/magical-hawking-b6qg2s` (Batch 1; see DECISIONS.md) · Last task commit: `e12ec80` · Updated 2026-11-01 (Batch 1 session).
+- Batch 1: P0-00 to P0-06 done locally; B1-PR open items are the preview `curl -I`, the live CSS grep after deploy, and Paul confirming Vercel env vars and Node version (answer 7).
+- Next task: B1-PR, PR open at https://github.com/prodriguez-dev/prodriguez-portfolio-2024/pull/3 (Vercel preview checks, merge). Then Batch 2a (P1-01, Next 16), which is now the only way to clear the remaining 25 `next` advisories (see P0-01).
+- Blockers: none for code. The `pre-modernization` tag could not be pushed from the cloud session (see P0-00); Paul pushes it. Paul's answers (below) are needed before Batch 3-ui orphan handling (default exists) and Batch 5.
 
 ## Paul's answers (fill in; agents treat blank as "use the default in 07 §5")
 
@@ -33,14 +34,14 @@ Create `DECISIONS.md` in this directory on first judgment call. Reference entrie
 
 | ID | Task | Status | Acceptance criteria | Evidence | Commit |
 |---|---|---|---|---|---|
-| P0-00 | Tag `pre-modernization` at `c6bec99`; add `typecheck` script | todo | tag exists; `npm run typecheck` works | | |
-| P0-01 | Next.js → latest 14.2.x; `eslint-config-next` to match | todo | `npm audit --omit=dev` has no `next`/`postcss` advisories; build generates 35 pages | | |
-| P0-02 | Remove `swiper`, `react-reconciler`; `npm audit fix`; update browserslist DB | todo | 0 critical in `npm audit --omit=dev`; build green | | |
-| P0-03 | Replace `font-[var(--font-sofia-sans-*)]` with `font-sans-extra-condensed` / `font-sans-condensed`; remove `.sofia-*` SCSS | todo | `grep -c "font-weight:var(--font-sofia" .next/static/css/*.css` = 0; screenshots at 390/768/1280/1920 show condensed type, no clipping | | |
-| P0-04 | Security headers; remove dead CORS block | todo | `curl -I <preview>` shows nosniff, referrer-policy, permissions-policy, frame options, CSP-Report-Only; no console CSP violations on all pages | | |
-| P0-05 | Contact hardening: shared validator, honeypot, 3 s minimum, generic errors, runtime/maxDuration | todo | validator unit tests pass; curl: `{}` → 400, honeypot → 200 silent, valid → 200/503 per env; no provider text in responses | | |
-| P0-06 | `engines`, `.nvmrc`, README deployment note | todo | `npm ci` on Node 22 green; README updated | | |
-| B1-PR | Open PR, merge, deploy; verify live headers and compiled CSS | todo | live `curl -I` and CSS grep recorded here | | |
+| P0-00 | Tag `pre-modernization` at `c6bec99`; add `typecheck` script | done | tag exists; `npm run typecheck` works | `git tag -l -n1` → `pre-modernization` at c6bec99 (annotated). **Tag push blocked**: this cloud session can only push its own branch; Paul to run `git tag -a pre-modernization c6bec99 -m "Rollback anchor before modernization" && git push origin pre-modernization`. `npm run typecheck` exit 0. Also fixed pre-existing `npm ci` failure (lock missing `yaml@2.9.1`); `rm -rf node_modules && npm ci` now green. B1 session. | a465606, ce3d3bb |
+| P0-01 | Next.js → latest 14.2.x; `eslint-config-next` to match | done (criterion partially met) | `npm audit --omit=dev` has no `next`/`postcss` advisories; build generates 35 pages | `next@14.2.35`, `eslint-config-next@14.2.35` (exact pins; 14.2.35 is the last 14.x). Build: 35/35 pages. **Criterion not met on 14.x:** `next` advisories 36 → 25; all remaining are patched only in ≥15.5, and the nested `postcss` is pinned by `next`. Cleared: 12 incl. critical GHSA-f82v-jwr5-mffw. Deferred to P1-01; see DECISIONS.md. B1 session. | 5a348c1 |
+| P0-02 | Remove `swiper`, `react-reconciler`; `npm audit fix`; update browserslist DB | done (criterion partially met) | 0 critical in `npm audit --omit=dev`; build green | No imports of either package in `src/`. `npm audit --omit=dev`: 6 (4 high, 2 critical) → 2 (1 high, 1 critical); remaining = `next` (critical, needs ≥15.5) and its nested `postcss`. swiper, immutable, nanoid, source-map-js cleared. `update-browserslist-db` → no Browserslist warning in build. Build green. B1 session. | 2ce88c9 |
+| P0-03 | Replace `font-[var(--font-sofia-sans-*)]` with `font-sans-extra-condensed` / `font-sans-condensed`; remove `.sofia-*` SCSS | done | `grep -c "font-weight:var(--font-sofia" .next/static/css/*.css` = 0; screenshots at 390/768/1280/1920 show condensed type, no clipping | 20 replacements in 6 files. Compiled CSS: `font-weight:var(--font-sofia` count 0; `.font-sans-extra-condensed{font-family:var(--font-sofia-sans-extra-condensed)}` present. Playwright screenshots on 6 pages × 4 widths show condensed display type; DOM check found no clipped headings and no new horizontal overflow. Visible-text diff empty on 6 pages. Pre-existing 688 px overflow at 390 on project pages (legacy renderer) logged under follow-ups for P1-03. B1 session. | b2d0e48 |
+| P0-04 | Security headers; remove dead CORS block | done locally; preview check in B1-PR | `curl -I <preview>` shows nosniff, referrer-policy, permissions-policy, frame options, CSP-Report-Only; no console CSP violations on all pages | `curl -I localhost:3100/` (next start) shows all five headers; `OPTIONS /api/contact` returns no `Access-Control-*`. Chromium crawl of 27 sitemap URLs + `/silver-tech-help`: 0 CSP report-only violations, 0 console errors; a planted off-origin `<img>` was detected (negative control). Preview `curl -I` pending. B1 session. | 528e558 |
+| P0-05 | Contact hardening: shared validator, honeypot, 3 s minimum, generic errors, runtime/maxDuration | done | validator unit tests pass; curl: `{}` → 400, honeypot → 200 silent, valid → 200/503 per env; no provider text in responses | `npm test`: 18/18 (validator + route with mocked fetch; provider 401 body not echoed). curl on `next start` without key: `{}` 400, bad JSON 400, bad email 400, unknown subject 400, honeypot 200 `{ok:true}`, elapsedMs 1200 → 200, valid → 503 generic, 20k body → 413. Browser: empty-submit messages unchanged; honeypot off-screen, `aria-hidden`, not in tab order; valid submit sends `elapsedMs` ≥ 3000. Visible-text diff empty. Live 200 path needs the Vercel env (Paul, answer 7). B1 session. | d410d02 |
+| P0-06 | `engines`, `.nvmrc`, README deployment note | done | `npm ci` on Node 22 green; README updated | `engines.node` `>=22 <25`, `.nvmrc` `22`. `rm -rf node_modules && npm ci` on Node v22.23.4: green, no EBADENGINE. README: requirements, scripts, Vercel settings, env var names, rollback. Paul to confirm Node 22.x in Vercel. B1 session. | e12ec80 |
+| B1-PR | Open PR, merge, deploy; verify live headers and compiled CSS | in-progress (PR opened: prodriguez-dev/prodriguez-portfolio-2024#3) | live `curl -I` and CSS grep recorded here | | |
 
 ## Batch 2a — Next 16 (`modernize/next16`)
 
@@ -123,6 +124,10 @@ Create `DECISIONS.md` in this directory on first judgment call. Reference entrie
 | V-06 | Production deploy; Paul smoke-tests | todo | |
 
 ## Proposed follow-ups (P3, out of scope unless approved)
+
+- (from Batch 1) Project detail pages overflow horizontally at 390 px (document 688 px wide); caused by the date/client row in `src/lib/content-rendering.tsx` (`div.col-span-1 mt-8 block md:ml-auto`). Pre-existing; fix within P1-03 when the template is rebuilt.
+- (from Batch 1) Dev-only `npm audit` still reports advisories via `eslint-config-next@14` (glob, minimatch, postcss-selector-parser). Expected to clear with ESLint 9 / `eslint-config-next@16` in P1-01c; re-check there.
+- (from Batch 1) `next/font/google` fetches fonts at build time and occasionally failed transiently in the cloud sandbox (`Cannot read properties of null (reading '1')` in the font loader); a rebuild succeeded. Consider `next/font/local` with committed WOFF2 files during P1-11 to make builds hermetic.
 
 - P3-01 per-page OG images with `next/og`
 - P3-02 MDX blog
